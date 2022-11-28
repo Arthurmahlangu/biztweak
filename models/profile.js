@@ -15,10 +15,13 @@ module.exports = (sequelize, DataTypes) => {
     }
     account.init({
         user_id: DataTypes.INTEGER,
-        profile_image: DataTypes.STRING
+        phone: DataTypes.STRING,
+        education: DataTypes.STRING,
+        work_experience: DataTypes.STRING,
+        other_work_experience: DataTypes.STRING
     }, {
         sequelize,
-        modelName: 'account',
+        modelName: 'profile',
     });
     return account;
 };
