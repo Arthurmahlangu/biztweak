@@ -1,5 +1,5 @@
-const { successResponse } = require("../helpers/methods")
-const db = require("../models")
+const { successResponse, failResponse } = require("../helpers/methods")
+const authService = require("../services/auth.service")
 
 /**
  *
@@ -7,11 +7,21 @@ const db = require("../models")
  * @param res
  * @returns {Promise<void>}
  */
-exports.login = async (req, res) => {
+exports.authEmail = async (req, res) => {
+    const { email, password } = req.body
+    const user = await authService.emailAuth(email, password)
+
+    if (!user.error) {
+        res.send(
+            successResponse(
+                "Authenticated", 
+                user.data
+            )
+        )
+    }
+
     res.send(
-        successResponse("Login", {
-            data: "Login data..."
-        })
+        failResponse(user.message, null)
     )
 }
 
@@ -21,33 +31,44 @@ exports.login = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.logout = async (req, res) => {
-    res.send(
-        successResponse("Express JS API Boiler Plate post api working like a charm...", {
-            data: "here comes you payload...",
-            request: req.body
-        })
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
- exports.register = async (req, res) => {
+exports.register = async (req, res) => {
     const { fullnames, email, password } = req.body
+    const user = await authService.register(fullnames, email, password)
 
-    const user = await db.users.create({
-        fullnames, email, role: 'entrepreneur', password 
-    });
-
-    console.log(user);
+    if (!user.error) {
+        res.send(
+            successResponse(
+                "Registered successfully", 
+                user.data
+            )
+        )
+    }
 
     res.send(
-        successResponse("Register", {
-            data: "Registration data..."
-        })
+        failResponse(user.message, null)
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.adminRegister = async (req, res) => {
+    const { fullnames, email, password } = req.body
+    const user = await authService.adminRegister(fullnames, email, password)
+
+    if (!user.error) {
+        res.send(
+            successResponse(
+                "Registered successfully", 
+                user.data
+            )
+        )
+    }
+
+    res.send(
+        failResponse(user.message, null)
     )
 }
