@@ -1,5 +1,8 @@
 const db = require("../models")
 const bcrypt = require("bcrypt");
+const process = require('process');
+const jwt = require("jsonwebtoken");
+const userResource = require("../resources/user.resource");
 
 const authService = {}
 
@@ -80,9 +83,13 @@ authService.emailAuth = async (email, password) => {
             const verify = await bcrypt.compare(password, user.password)
 
             if (verify) {
+                const token = jwt.sign({ 
+                    user: userResource(user) 
+                }, process.env.JWT_SECRET)
+
                 return {
                     error: false,
-                    data: user
+                    data: { token }
                 }
             }
         }

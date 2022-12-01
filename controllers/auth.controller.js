@@ -16,7 +16,7 @@ exports.authEmail = async (req, res) => {
         res.send(
             successResponse(
                 "Authenticated", 
-                userResource(user.data)
+                user.data
             )
         )
     }
