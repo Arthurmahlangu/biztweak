@@ -14,7 +14,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.bulkInsert('role', [{
+        await queryInterface.bulkInsert('roles', [{
             name: 'super',
             policy: 'CRUD-CRUD-CRUD',
             createdAt: new Date,
@@ -36,6 +36,6 @@ module.exports = {
     },
 
     async down(queryInterface, Sequelize) {
-        await queryInterface.bulkDelete('role', null, {});
+        await queryInterface.bulkDelete('roles', null, {});
     }
 };
