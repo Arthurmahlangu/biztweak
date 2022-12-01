@@ -1,22 +1,36 @@
 'use strict';
 
+// ----------------------------------------------
+// SELF         | GROUP         | OTHER         |
+// ----------------------------------------------
+// C.R.U.D      | C.R.U.D       | C.R.U.D       |
+// ----------------------------------------------
+
+// C - CREATE
+// R - READ
+// U - UPDATE
+// D - DELETE
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
         await queryInterface.bulkInsert('role', [{
             name: 'super',
-            policy: '7777',
-            isBetaMember: false
+            policy: 'CRUD-CRUD-CRUD',
+            createdAt: new Date,
+            updatedAt: new Date,
         },
         {
-            name: 'admin',
-            policy: '7777',
-            isBetaMember: false
+            name: 'administrator',
+            policy: 'CRUD-CR-RU',
+            createdAt: new Date,
+            updatedAt: new Date,
         },
         {
             name: 'entrepreneur',
-            policy: '7777',
-            isBetaMember: false
+            policy: 'CR--',
+            createdAt: new Date,
+            updatedAt: new Date,
         }
         ], {});
     },

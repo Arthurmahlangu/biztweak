@@ -1,4 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
+const userResource = require("../resources/user.resource")
 const authService = require("../services/auth.service")
 
 /**
@@ -38,8 +39,8 @@ exports.register = async (req, res) => {
     if (!user.error) {
         res.send(
             successResponse(
-                "Registered successfully", 
-                user.data
+                "Registration successful", 
+                userResource(user.data)
             )
         )
     }
@@ -62,8 +63,8 @@ exports.adminRegister = async (req, res) => {
     if (!user.error) {
         res.send(
             successResponse(
-                "Registered successfully", 
-                user.data
+                "Registration successful", 
+                userResource(user.data)
             )
         )
     }
