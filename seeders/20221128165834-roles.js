@@ -1,23 +1,34 @@
 'use strict';
 
+// ----------------------------------------------
+// SELF         | GROUP         | OTHER         |
+// ----------------------------------------------
+// C.R.U.D      | C.R.U.D       | C.R.U.D       |
+// ----------------------------------------------
+
+// C - CREATE
+// R - READ
+// U - UPDATE
+// D - DELETE
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
         await queryInterface.bulkInsert('role', [{
             name: 'super',
-            policy: 'rwx-rwx-rwx',
+            policy: 'CRUD-CRUD-CRUD',
             createdAt: new Date,
             updatedAt: new Date,
         },
         {
             name: 'administrator',
-            policy: 'rwx-rwx-rw',
+            policy: 'CRUD-CR-RU',
             createdAt: new Date,
             updatedAt: new Date,
         },
         {
             name: 'entrepreneur',
-            policy: 'rw--',
+            policy: 'CR--',
             createdAt: new Date,
             updatedAt: new Date,
         }

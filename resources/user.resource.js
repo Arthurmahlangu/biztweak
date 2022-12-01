@@ -1,12 +1,14 @@
 const userResource = (UserModel) => {
     const { 
         id, 
-        email, 
+        fullnames,
+        email,
         roles 
     } = UserModel
 
     return { 
         id, 
+        fullnames,
         email,
         roles 
     }
