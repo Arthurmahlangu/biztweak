@@ -2,6 +2,31 @@ const db = require("../models")
 
 const roleService = {}
 
+roleService.createRole = async (name, policy) => {
+    try {
+        const role = await db.role.create({ name, policy })
+
+        if (!role) {
+            return {
+                error: true,
+                message: 'Error creating role.'
+            }
+        }
+
+        return {
+            error: false,
+            data: role
+        }
+
+    } catch (error) {
+        console.log(error)
+        return {
+            error: true,
+            message: 'Technical error found.'
+        }
+    }
+}
+
 roleService.getRole = async (name) => {
     try {
         name = name || ''

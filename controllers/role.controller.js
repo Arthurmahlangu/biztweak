@@ -7,6 +7,30 @@ const roleService = require("../services/role.service")
  * @param res
  * @returns {Promise<void>}
  */
+exports.createRole = async (req, res) => {
+    const { name, policy } = req.body
+    const role = await roleService.createRole(name, policy)
+    
+    if (!role.error) {
+        res.send(
+            successResponse(
+                "Role created",
+                role.data
+            )
+        )
+    }
+
+    res.send(
+        failResponse(role.message, null)
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 exports.getRole = async (req, res) => {
     const role = await roleService.getRole(req.params.name)
     
