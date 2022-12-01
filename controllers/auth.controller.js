@@ -38,7 +38,7 @@ exports.register = async (req, res) => {
     if (!user.error) {
         res.send(
             successResponse(
-                "Registered successfully", 
+                "Registration successful", 
                 user.data
             )
         )
@@ -62,7 +62,7 @@ exports.adminRegister = async (req, res) => {
     if (!user.error) {
         res.send(
             successResponse(
-                "Registered successfully", 
+                "Registration successful", 
                 user.data
             )
         )
