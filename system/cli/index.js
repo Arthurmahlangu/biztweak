@@ -23,4 +23,22 @@ exports.init = async (program) => {
             console.log(`Building Repository: ${repositoryName}`)
             await buildRepository(repositoryName)
         })
+
+    program
+        .command("build:resource")
+        .description("Build Resource, Usage: node ebp build:repository <resource-name>")
+        .argument("<resourceName>", "Resource Name")
+        .action(async (resourceName) => {
+            console.log(`Building Resource: ${resourceName}`)
+            await buildRepository(resourceName)
+        })
+
+    program
+        .command("build:service")
+        .description("Build Service, Usage: node ebp build:service <service-name>")
+        .argument("<serviceName>", "Service Name")
+        .action(async (serviceName) => {
+            console.log(`Building Service: ${serviceName}`)
+            await buildRepository(serviceName)
+        })
 }

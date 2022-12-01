@@ -72,3 +72,81 @@ exports.buildRepository = async (name) => {
         }
     })
 }
+
+/**
+ * Creates a repository file for the given repository name.
+ * @param {string} name - The name of the repository.
+ * @returns None
+ */
+ exports.buildResource = async (name) => {
+    let resDir = path.join(__dirname, "../../resources")
+
+    if (!fs.existsSync(resDir)) {
+        fs.mkdirSync(resDir, { recursive: true })
+    }
+
+    const filePath = path.join(resDir, `${name}.resource.js`)
+
+    if (fs.existsSync(filePath)) {
+        console.log(`Resource ${name} already exists.`)
+        return
+    }
+
+    const stub = fs.readFileSync(path.join(__dirname, "../stubs/resource.stubs"), "utf8")
+    const resource = stub.replace(/resourceName/g, name)
+
+    let dirs = filePath.split("/")
+    dirs.pop()
+
+    const dir = dirs.join("/")
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true })
+    }
+
+    fs.writeFile(filePath, resource, (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Resource ${name}.resource.js created successfully`)
+        }
+    })
+}
+
+/**
+ * Creates a repository file for the given repository name.
+ * @param {string} name - The name of the repository.
+ * @returns None
+ */
+ exports.buildResource = async (name) => {
+    let servDir = path.join(__dirname, "../../service")
+
+    if (!fs.existsSync(servDir)) {
+        fs.mkdirSync(servDir, { recursive: true })
+    }
+
+    const filePath = path.join(servDir, `${name}.service.js`)
+
+    if (fs.existsSync(filePath)) {
+        console.log(`Service ${name} already exists.`)
+        return
+    }
+
+    const stub = fs.readFileSync(path.join(__dirname, "../stubs/service.stubs"), "utf8")
+    const service = stub.replace(/serviceName/g, name)
+
+    let dirs = filePath.split("/")
+    dirs.pop()
+
+    const dir = dirs.join("/")
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true })
+    }
+
+    fs.writeFile(filePath, service, (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Service ${name}.service.js created successfully`)
+        }
+    })
+}
