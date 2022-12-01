@@ -53,17 +53,17 @@ exports.getProfiles = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.updateProfiles = async (req, res) => {
-    const profiles = await profileService.updateProfile(req.params.id, req.body)
+exports.updateProfile = async (req, res) => {
+    const profile = await profileService.updateProfile(req.params.id, req.body)
     
-    if (!profiles.error) {
+    if (!profile.error) {
         res.send(
             successResponse("Profile updated successfully", null)
         )
     }
 
     res.send(
-        failResponse(profiles.message, null)
+        failResponse(profile.message, null)
     )
 }
 
@@ -73,16 +73,16 @@ exports.updateProfiles = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.deleteProfiles = async (req, res) => {
-    const profiles = await profileService.deleteProfile(req.params.id)
+exports.deleteProfile = async (req, res) => {
+    const profile = await profileService.deleteProfile(req.params.id)
     
-    if (!profiles.error) {
+    if (!profile.error) {
         res.send(
             successResponse("Profile deleted successfully", null)
         )
     }
 
     res.send(
-        failResponse(profiles.message, null)
+        failResponse(profile.message, null)
     )
 }
