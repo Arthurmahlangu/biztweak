@@ -4,6 +4,16 @@ const roleService = {}
 
 roleService.createRole = async (name, policy) => {
     try {
+
+        const roleFound = await db.role.findOne({ where: { name } })
+
+        if (roleFound) {
+            return {
+                error: true,
+                message: 'Role already exists.'
+            }
+        }
+
         const role = await db.role.create({ name, policy })
 
         if (!role) {
