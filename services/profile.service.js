@@ -1,4 +1,5 @@
 const db = require("../models")
+const bcrypt = require("bcrypt");
 const userResource = require("../resources/user.resource")
 
 const profileService = {}
@@ -68,6 +69,52 @@ profileService.updateProfile = async (id, columns) => {
             return {
                 error: true,
                 message: 'Profile not found.'
+            }
+        }
+
+        return {
+            error: false
+        }
+
+    } catch (error) {
+        console.log(error)
+        return {
+            error: true,
+            message: 'Technical error found.'
+        }
+    }
+}
+
+profileService.updatePassword = async (id, password) => {
+    try {
+
+        const user = await db.user.findOne({ where: { id } })
+
+        if (!user) {
+            return {
+                error: true,
+                message: 'Profile not found.'
+            }
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(password, salt)
+
+        const verify = await bcrypt.compare(password, user.password)
+
+        if (verify) {
+            return {
+                error: true,
+                message: 'Old and new password can not be the same.'
+            }
+        }
+
+        const userPassword = await db.user.update({ password: hash }, { where: { id } })
+
+        if (!userPassword) {
+            return {
+                error: true,
+                message: 'Password not updated.'
             }
         }
 

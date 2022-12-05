@@ -27,11 +27,11 @@ module.exports = (req, res, next) => {
     }
 
     if (!excludeURL.includes(req.url)) {
-        let isAuthorized = false
+        let isAuthorized = true
         switch (req.method) {
             case 'GET':
                 console.log('GET REQUEST')
-                isAuthorized = validateRequest(req.param.id || null)
+                // isAuthorized = validateRequest(req.param.id || null)
                 break;
             case 'POST':
                 console.log('POST REQUEST')
