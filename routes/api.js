@@ -6,13 +6,16 @@ const authMiddleware = require("../middlewares/auth.middleware");
 const authApi = require("./auth.api")
 const roleApi = require("./role.api")
 const profileApi = require("./profile.api")
-const IndexController = require("../controllers/index.controller")
+const IndexController = require("../controllers/index.controller");
+const authorizeMiddleware = require("../middlewares/authorize.middleware");
 
 passport.use(authMiddleware)
 
 const jwtOptions = {
     session: false
 }
+
+router.use("/", authorizeMiddleware)
 
 // Defaults
 router.get("/", passport.authenticate('jwt', jwtOptions), IndexController.index)

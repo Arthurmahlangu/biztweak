@@ -85,11 +85,32 @@ authService.emailAuth = async (email, password) => {
             if (verify) {
                 const token = jwt.sign({ 
                     user: userResource(user) 
-                }, process.env.JWT_SECRET)
+                }, process.env.JWT_SECRET, { expiresIn: "14m" })
+
+                const refreshToken = jwt.sign({ 
+                    user: userResource(user) 
+                }, process.env.JWT_REFRESH_SECRET, { expiresIn: "30d" })
+
+                const userToken = await db.token.findOne({ where: { userId: user.id }})
+
+                if (userToken) {
+                    await db.token.update({ 
+                        token,
+                        createdAt: new Date,
+                        updatedAt: new Date
+                    }, { where: { userId: user.id }})
+                } else {
+                    await db.token.create({ 
+                        userId: user.id, 
+                        token,
+                        createdAt: new Date,
+                        updatedAt: new Date
+                    })
+                }
 
                 return {
                     error: false,
-                    data: { token }
+                    data: { token, refreshToken }
                 }
             }
         }
