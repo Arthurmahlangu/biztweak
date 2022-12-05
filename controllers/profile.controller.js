@@ -73,6 +73,26 @@ exports.updateProfile = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
+exports.updatePassword = async (req, res) => {
+    const profile = await profileService.updatePassword(req.params.id, req.body.password)
+    
+    if (!profile.error) {
+        res.send(
+            successResponse("Password updated successfully", null)
+        )
+    }
+
+    res.send(
+        failResponse(profile.message, null)
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 exports.deleteProfile = async (req, res) => {
     const profile = await profileService.deleteProfile(req.params.id)
     

@@ -7,5 +7,6 @@ router.get('/profiles', profileController.getProfiles)
 router.get('/profiles/:id', profileController.getProfile)
 router.put('/profiles/:id', profileController.updateProfile)
 router.delete('/profiles/:id', profileController.deleteProfile)
+router.put('/password/:id', profileController.updatePassword)
 
 module.exports = router
