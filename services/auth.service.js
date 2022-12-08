@@ -6,6 +6,32 @@ const userResource = require("../resources/user.resource");
 
 const authService = {}
 
+authService.logout = async (id) => {
+    try {
+        id = id || 0
+
+        const token = await db.token.destroy({ where: { userId: id } })
+
+        if (!token) {
+            return {
+                error: true,
+                message: 'Logout failed.'
+            }
+        }
+
+        return {
+            error: false
+        }
+
+    } catch (error) {
+        console.log(error)
+        return {
+            error: true,
+            message: 'Technical error found.'
+        }
+    }
+}
+
 authService.register = async (fullnames, email, password) => {
     try {
         const salt = await bcrypt.genSalt(10)

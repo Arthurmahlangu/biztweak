@@ -73,3 +73,19 @@ exports.adminRegister = async (req, res) => {
         failResponse(user.message, null)
     )
 }
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.logout = async (req, res) => {
+    const user = await authService.logout(req.body.id)
+
+    res.send(
+        successResponse(
+            "Logout"
+        )
+    )
+}

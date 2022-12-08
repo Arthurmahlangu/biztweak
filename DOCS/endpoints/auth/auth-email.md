@@ -1,6 +1,6 @@
-# Entrepreneur registration
+# Account login
 
-Create entrepreneur account
+Login to account
 
 ## Endpoint
 POST: /api/v1/user/auth-email
