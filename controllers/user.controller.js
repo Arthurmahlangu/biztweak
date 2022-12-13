@@ -49,7 +49,7 @@ exports.getUser = async (req, res) => {
  */
 exports.updateProfile = async (req, res) => {
 
-    const {fullname, phone, education, work_experience, work_experience2, location} = req.body
+    const { fullname, phone, education, work_experience, work_experience2, location } = req.body
     const service = await updateUser(req.params.id, {
         fullname, phone, education, work_experience, work_experience2, location
     })
@@ -102,6 +102,31 @@ exports.updatePassword = async (req, res) => {
     const { password } = req.body
 
     const service = await updatePassword(req.params.id, password)
+
+    if (service.error) {
+        res.send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Updated", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.updateRole = async (req, res) => {
+
+    const { role } = req.body
+
+    const service = await updateUser(req.params.id, { role })
 
     if (service.error) {
         res.send(
