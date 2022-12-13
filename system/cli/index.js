@@ -1,4 +1,4 @@
-const { buildController, buildRepository } = require("./build")
+const { buildController, buildRepository, buildRoute, buildService, buildValidations } = require("./build")
 
 /**
  * Initializes the program.
@@ -25,12 +25,12 @@ exports.init = async (program) => {
         })
 
     program
-        .command("build:resource")
-        .description("Build Resource, Usage: node ebp build:repository <resource-name>")
-        .argument("<resourceName>", "Resource Name")
-        .action(async (resourceName) => {
-            console.log(`Building Resource: ${resourceName}`)
-            await buildRepository(resourceName)
+        .command("build:route")
+        .description("Build Route, Usage: node ebp build:route <route-name>")
+        .argument("<routeName>", "Route Name")
+        .action(async (routeName) => {
+            console.log(`Building Route: ${routeName}`)
+            await buildRoute(routeName)
         })
 
     program
@@ -39,6 +39,15 @@ exports.init = async (program) => {
         .argument("<serviceName>", "Service Name")
         .action(async (serviceName) => {
             console.log(`Building Service: ${serviceName}`)
-            await buildRepository(serviceName)
+            await buildService(serviceName)
+        })
+
+    program
+        .command("build:validations")
+        .description("Build Validations, Usage: node ebp build:validations <validations-name>")
+        .argument("<validationsName>", "Validations Name")
+        .action(async (validationsName) => {
+            console.log(`Building Validations: ${validationsName}`)
+            await buildValidations(validationsName)
         })
 }

@@ -1,132 +1,82 @@
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt')
 const db = require("../models")
-const bcrypt = require("bcrypt");
-const process = require('process');
-const jwt = require("jsonwebtoken");
-const userResource = require("../resources/user.resource");
 
-const authService = {}
-
-authService.register = async (fullnames, email, password) => {
+exports.emailAuth = async (email, password) => {
     try {
-        const salt = await bcrypt.genSalt(10)
-        const hash = await bcrypt.hash(password, salt)
 
         const user = await db.user.findOne({ where: { email } })
 
-        if (user) {
+        if (!user) {
             return {
                 error: true,
-                message: 'Account exits.'
+                message: 'Wrong email address or password.'
             }
         }
 
-        const newUser = await db.user.create({
-            fullnames, 
-            email, 
-            password: hash, 
-            roles: "entrepreneur"
-        })
+        const valid = await bcrypt.compare(password, user.password)
+
+        if (!valid) {
+            return {
+                error: true,
+                message: 'Wrong email address or password.'
+            }
+        }
+
+        const token = await jwt.sign({
+            id: user.id,
+            email: user.email,
+            fullname: user.fullname
+        }, process.env.TOKEN_SECRET)
 
         return {
             error: false,
-            data: newUser
-        }
-    } catch (error) {
-        console.log(error)
-        return {
-            error: true,
-            message: 'Technical error found.'
-        }
-    }
-}
-
-authService.adminRegister = async (fullnames, email, password) => {
-    try {
-        const salt = await bcrypt.genSalt(10)
-        const hash = await bcrypt.hash(password, salt)
-
-        const user = await db.user.findOne({ where: { email } })
-
-        if (user) {
-            return {
-                error: true,
-                message: 'Account exits.'
-            }
-        }
-
-        const newUser = await db.user.create({
-            fullnames, 
-            email, 
-            password: hash, 
-            roles: "administrator"
-        })
-
-        return {
-            error: false,
-            data: newUser
-        }
-    } catch (error) {
-        console.log(error)
-        return {
-            error: true,
-            message: 'Technical error found.'
-        }
-    }
-}
-
-authService.emailAuth = async (email, password) => {
-    try {
-
-        const user = await db.user.findOne({ where: { email } })
-
-        if (user) {
-            const verify = await bcrypt.compare(password, user.password)
-
-            if (verify) {
-                const token = jwt.sign({ 
-                    user: userResource(user) 
-                }, process.env.JWT_SECRET, { expiresIn: "14m" })
-
-                const refreshToken = jwt.sign({ 
-                    user: userResource(user) 
-                }, process.env.JWT_REFRESH_SECRET, { expiresIn: "30d" })
-
-                const userToken = await db.token.findOne({ where: { userId: user.id }})
-
-                if (userToken) {
-                    await db.token.update({ 
-                        token,
-                        createdAt: new Date,
-                        updatedAt: new Date
-                    }, { where: { userId: user.id }})
-                } else {
-                    await db.token.create({ 
-                        userId: user.id, 
-                        token,
-                        createdAt: new Date,
-                        updatedAt: new Date
-                    })
-                }
-
-                return {
-                    error: false,
-                    data: { token, refreshToken }
-                }
-            }
-        }
-
-        return {
-            error: true,
-            message: 'Wrong email address or password.'
+            data: token
         }
         
     } catch (error) {
-        console.log(error)
         return {
             error: true,
-            message: 'Technical error found.'
+            message: 'Technical error.'
         }
     }
 }
 
-module.exports = authService
+exports.emailRegister = async (fullname, email, password) => {
+    try {
+
+        const isUser = await db.user.findOne({ where: { email } })
+
+        if (isUser) {
+            return {
+                error: true,
+                message: 'Account already exists.'
+            }
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hashPassword = await bcrypt.hash(password, salt)
+
+        const newUser = await db.user.create({
+            fullname, email, password: hashPassword
+        })
+
+        if (!newUser) {
+            return {
+                error: true,
+                message: 'Registration failed.'
+            }
+        }
+
+        return {
+            error: false,
+            data: newUser
+        }
+        
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Technical error.'
+        }
+    }
+}
