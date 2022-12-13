@@ -1,33 +1,28 @@
 const express = require("express")
 const router = express.Router()
-const passport = require("passport");
-const authMiddleware = require("../middlewares/auth.middleware");
 
-const authApi = require("./auth.api")
-const roleApi = require("./role.api")
-const profileApi = require("./profile.api")
-const IndexController = require("../controllers/index.controller");
-const authorizeMiddleware = require("../middlewares/authorize.middleware");
-
-passport.use(authMiddleware)
-
-const jwtOptions = {
-    session: false
-}
-
-router.use("/", authorizeMiddleware)
-
-// Defaults
-router.get("/", passport.authenticate('jwt', jwtOptions), IndexController.index)
-router.get("/api", passport.authenticate('jwt', jwtOptions), IndexController.index)
-router.get("/api/v1", passport.authenticate('jwt', jwtOptions), IndexController.index)
+const IndexController = require("../controllers/index.controller")
+const { validate } = require("../middlewares/validators/wrapper.validator")
+const { indexValidator } = require("../middlewares/validators/index.validations")
+const UserApi = require("./user.api")
+const AuthApi = require("./auth.api")
+const CompanyApi = require("./company.api")
+const CourseApi = require("./course.api")
+const AssessmentApi = require("./assessment.api")
+const IncubatorApi = require("./incubator.api")
+const RuleApi = require("./rule.api")
 
 
-// Routes middleware
-router.use("/api/v1", authApi)
-router.use("/api/v1", roleApi)
-router.use("/api/v1", profileApi)
+router.get("/", IndexController.index)
+router.post("/", validate(indexValidator), IndexController.indexPost)
 
 
+router.use("/api/v1", UserApi)
+router.use("/api/v1", AuthApi)
+router.use("/api/v1", CompanyApi)
+router.use("/api/v1", CourseApi)
+router.use("/api/v1", AssessmentApi)
+router.use("/api/v1", IncubatorApi)
+router.use("/api/v1", RuleApi)
 
 module.exports = router

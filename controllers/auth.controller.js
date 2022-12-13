@@ -1,6 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
-const userResource = require("../resources/user.resource")
-const authService = require("../services/auth.service")
+const { emailAuth, emailRegister } = require("../services/auth.service")
 
 /**
  *
@@ -8,21 +7,21 @@ const authService = require("../services/auth.service")
  * @param res
  * @returns {Promise<void>}
  */
-exports.authEmail = async (req, res) => {
-    const { email, password } = req.body
-    const user = await authService.emailAuth(email, password)
+exports.emailAuth = async (req, res) => {
 
-    if (!user.error) {
+    const {email, password} = req.body
+    const service = await emailAuth(email, password)
+
+    if (service.error) {
         res.send(
-            successResponse(
-                "Authenticated", 
-                user.data
-            )
+            failResponse(service.message)
         )
     }
-
+    
     res.send(
-        failResponse(user.message, null)
+        successResponse("Login.", {
+            data: service.data
+        })
     )
 }
 
@@ -32,60 +31,20 @@ exports.authEmail = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.register = async (req, res) => {
-    const { fullnames, email, password } = req.body
-    const user = await authService.register(fullnames, email, password)
+exports.emailRegister = async (req, res) => {
 
-    if (!user.error) {
+    const {fullname, email, password} = req.body
+    const service = await emailRegister(fullname, email, password)
+
+    if (service.error) {
         res.send(
-            successResponse(
-                "Registration successful", 
-                userResource(user.data)
-            )
+            failResponse(service.message)
         )
     }
 
     res.send(
-        failResponse(user.message, null)
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
-exports.adminRegister = async (req, res) => {
-    const { fullnames, email, password } = req.body
-    const user = await authService.adminRegister(fullnames, email, password)
-
-    if (!user.error) {
-        res.send(
-            successResponse(
-                "Registration successful", 
-                userResource(user.data)
-            )
-        )
-    }
-
-    res.send(
-        failResponse(user.message, null)
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
-exports.logout = async (req, res) => {
-    const user = await authService.logout(req.body.id)
-
-    res.send(
-        successResponse(
-            "Logout"
-        )
+        successResponse("Register", {
+            data: "here comes your payload..."
+        })
     )
 }
