@@ -1,0 +1,9 @@
+exports.ExampleResource = (model) => {
+    const {
+        id
+    } = model
+
+    return {
+        id
+    }
+}

@@ -4,7 +4,7 @@ const pluralize = require('pluralize')
 const { failResponse } = require("../helpers/methods");
 
 
-const handler = async (auth, params, method, path) => {
+const handler = async (auth, params, method, path, route) => {
 
     const model = path.split("/")[1]
 
@@ -12,8 +12,8 @@ const handler = async (auth, params, method, path) => {
         where: { id: auth.id } 
     })
 
-    const rules = await db.rule.findOne({ 
-        where: { role: self.role, model, method } 
+    let rules = await db.rule.findOne({ 
+        where: { role: self.role, path: route.path, model, method } 
     })
 
     if (rules) {
@@ -109,7 +109,7 @@ const handler = async (auth, params, method, path) => {
  * @returns {*}
  */
  module.exports = async (req, res, next) => {
-    const { params, method, headers, path } = req
+    const { params, method, headers, path, route } = req
     const { authorization } = headers
 
     try {
@@ -136,7 +136,7 @@ const handler = async (auth, params, method, path) => {
         }
     
         const auth = jwt.decode(token)
-        const isSuccess = await handler(auth, params, method, path)
+        const isSuccess = await handler(auth, params, method, path, route)
     
         if (!isSuccess) {
             return res.

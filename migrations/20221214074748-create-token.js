@@ -2,36 +2,27 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('rules', {
+    await queryInterface.createTable('tokens', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      role: {
+      userid: {
+        type: Sequelize.INTEGER
+      },
+      type: {
         type: Sequelize.STRING
       },
-      path: {
-        type: Sequelize.STRING
+      data: {
+        type: Sequelize.TEXT
       },
-      model: {
-        type: Sequelize.STRING
+      token: {
+        type: Sequelize.TEXT
       },
-      method: {
-        type: Sequelize.STRING
-      },
-      owner: {
-        default: false,
-        type: Sequelize.BOOLEAN
-      },
-      group: {
-        default: false,
-        type: Sequelize.BOOLEAN
-      },
-      other: {
-        default: false,
-        type: Sequelize.BOOLEAN
+      expiry: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
@@ -44,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('rules');
+    await queryInterface.dropTable('tokens');
   }
 };

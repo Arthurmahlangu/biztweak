@@ -10,6 +10,7 @@ const CompanyApi = require("./company.api")
 const CourseApi = require("./course.api")
 const AssessmentApi = require("./assessment.api")
 const IncubatorApi = require("./incubator.api")
+const TokenApi = require("./token.api")
 const RuleApi = require("./rule.api")
 
 
@@ -23,6 +24,7 @@ router.use("/api/v1", CompanyApi)
 router.use("/api/v1", CourseApi)
 router.use("/api/v1", AssessmentApi)
 router.use("/api/v1", IncubatorApi)
+router.use("/api/v1", TokenApi)
 router.use("/api/v1", RuleApi)
 
 module.exports = router

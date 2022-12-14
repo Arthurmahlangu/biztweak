@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt")
 const db = require("../models")
+const { UserResource } = require("../resources/user.resource")
 
 exports.getUsers = async () => {
     try {
@@ -33,7 +34,7 @@ exports.getUser = async (id) => {
 
         return {
             error: false,
-            data: user
+            data: UserResource(user)
         }
 
     } catch (error) {
