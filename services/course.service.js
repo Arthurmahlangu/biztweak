@@ -33,6 +33,56 @@ exports.createCourse = async (payload) => {
     }
 }
 
+exports.createCourseAudio = async (payload) => {
+    try {
+        
+        const newCourse = await db.course_audio.create(payload)
+
+        if (!newCourse) {
+            return {
+                error: true,
+                message: 'Error adding course audio.'
+            }
+        }
+
+        return {
+            error: false,
+            data: newCourse
+        }
+
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Technical error.'
+        }
+    }
+}
+
+exports.createCourseVideo = async (payload) => {
+    try {
+        
+        const newCourse = await db.course_video.create(payload)
+
+        if (!newCourse) {
+            return {
+                error: true,
+                message: 'Error adding course video.'
+            }
+        }
+
+        return {
+            error: false,
+            data: newCourse
+        }
+
+    } catch (error) {
+        return {
+            error: true,
+            message: 'Technical error.'
+        }
+    }
+}
+
 exports.getCourses = async () => {
     try {
         

@@ -15,9 +15,7 @@ const {
  */
 exports.createToken = async (req, res) => {
 
-    const service = await createToken({
-        userid: req.auth.id
-    })
+    const service = await createToken(req.auth.id)
 
     if (service.error) {
         res.send(

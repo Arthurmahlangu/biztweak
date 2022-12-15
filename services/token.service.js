@@ -1,14 +1,33 @@
 const db = require("../models")
+const jwt = require('jsonwebtoken');
 
-exports.createToken = async (payload) => {
+exports.createToken = async (userid) => {
     try {
-        const token = await db.token.findOne({ where: { token: "" } })
+        const user = await db.user.findOne({ where: { id: userid } })
 
-        if (token) {
+        if (!user) {
             return {
                 error: true,
-                message: 'Token error.'
+                message: 'Profile not found.'
             }
+        }
+
+        const token = await jwt.sign({
+            id: user.id,
+            email: user.email,
+            fullname: user.fullname
+        }, process.env.TOKEN_SECRET, {
+            expiresIn: '7d'
+        })
+
+        const expiry = new Date();
+        expiry.setDate(expiry.getDate() + 7);
+
+        const payload = {
+            userid,
+            type: "Access-Token",
+            token,
+            expiry
         }
         
         const newToken = await db.token.create(payload)
@@ -16,7 +35,7 @@ exports.createToken = async (payload) => {
         if (!newToken) {
             return {
                 error: true,
-                message: 'Token registration failed.'
+                message: 'Error generating a token.'
             }
         }
 
@@ -110,7 +129,7 @@ exports.updateToken = async (id, payload = {}) => {
     }
 }
 
-exports.deleteRule = async (id) => {
+exports.deleteToken = async (id) => {
     try {
 
         const token = await db.token.findOne({ where: { id } })

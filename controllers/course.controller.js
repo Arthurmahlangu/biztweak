@@ -4,7 +4,9 @@ const {
     getCourses, 
     getCourse, 
     updateCourse, 
-    deleteCourse 
+    deleteCourse,
+    createCourseAudio,
+    createCourseVideo 
 } = require("../services/course.service")
 
 /**
@@ -46,6 +48,52 @@ exports.createCourse = async (req, res) => {
 
     res.send(
         successResponse("Course created", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createCourseAudio = async (req, res) => {
+
+    let service = null
+
+    const { id } = req.param
+    const { name, description, type, audio } = req.body
+    
+    if (req.files) {
+        
+        const { audio } = req.files
+
+        const now = new Date().getTime()
+        const filePath = "./storage/audio/" + now + "_" + audio.name
+
+        await audio.mv(filePath)
+
+        service = await createCourse({
+            userid: req.auth.id, courseid: id, name, description, type, file: filePath
+        })
+
+    } else {
+
+        service = await createCourse({
+            userid: req.auth.id, courseid: id, name, description, type, file: audio
+        })
+    }
+
+    if (service.error) {
+        res.send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Course audio added", {
             data: service.data
         })
     )

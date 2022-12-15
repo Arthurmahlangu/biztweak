@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const TokenService = require("./token.service")
 const bcrypt = require('bcrypt')
 const db = require("../models")
 
@@ -23,15 +23,18 @@ exports.emailAuth = async (email, password) => {
             }
         }
 
-        const token = await jwt.sign({
-            id: user.id,
-            email: user.email,
-            fullname: user.fullname
-        }, process.env.TOKEN_SECRET)
+        const token = await TokenService.createToken(user.id)
+
+        if (!token) {
+            return {
+                error: true,
+                message: token.message
+            }
+        }
 
         return {
             error: false,
-            data: token
+            data: token.data.token
         }
         
     } catch (error) {
