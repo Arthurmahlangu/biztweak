@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt")
 const db = require("../models")
 const { UserResource } = require("../resources/user.resource")
+const { UserCollection } = require("../collections/user.collection")
 
 exports.getUsers = async () => {
     try {
@@ -9,7 +10,7 @@ exports.getUsers = async () => {
 
         return {
             error: false,
-            data: users
+            data: UserCollection(users)
         }
 
     } catch (error) {

@@ -1,9 +1,9 @@
 const ExampleResource = require("../resources/example.resource")
 
-exports.ExampleResource = (model) => {
+exports.ExampleCollection = (model) => {
     if (Array.isArray(model)) {
         const collection = model.map((resource) => (
-            return ExampleResource(resource)
+            ExampleResource(resource)
         ))
 
         return collection
