@@ -8,7 +8,8 @@ exports.UserResource = (model) => {
         work_experience,
         work_experience2,
         location,
-        role
+        role,
+        createdAt
     } = model
 
     return {
@@ -20,6 +21,7 @@ exports.UserResource = (model) => {
         work_experience,
         work_experience2,
         location,
-        role
+        role,
+        registered: createdAt
     }
 }

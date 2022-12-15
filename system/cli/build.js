@@ -228,3 +228,42 @@ exports.buildResource = async (name) => {
         }
     })
 }
+
+/**
+ * Creates a repository file for the given repository name.
+ * @param {string} name - The name of the repository.
+ * @returns None
+ */
+exports.buildCollection = async (name) => {
+    let collDir = path.join(__dirname, "../../collections")
+
+    if (!fs.existsSync(collDir)) {
+        fs.mkdirSync(collDir, { recursive: true })
+    }
+
+    const filePath = path.join(collDir, `${name}.collection.js`)
+
+    if (fs.existsSync(filePath)) {
+        console.log(`Collection ${name} already exists.`)
+        return
+    }
+
+    const stub = fs.readFileSync(path.join(__dirname, "../stubs/collection.stubs"), "utf8")
+    const route = stub.replace(/collectionName/g, name)
+
+    let dirs = filePath.split("/")
+    dirs.pop()
+
+    const dir = dirs.join("/")
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true })
+    }
+
+    fs.writeFile(filePath, route, (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Collection ${name}.collection.js created successfully`)
+        }
+    })
+}

@@ -1,4 +1,12 @@
-const { buildController, buildRepository, buildRoute, buildService, buildValidations, buildResource } = require("./build")
+const { 
+    buildController, 
+    buildRepository, 
+    buildRoute, 
+    buildService, 
+    buildValidations, 
+    buildResource,
+    buildCollection 
+} = require("./build")
 
 /**
  * Initializes the program.
@@ -58,5 +66,14 @@ exports.init = async (program) => {
         .action(async (resourceName) => {
             console.log(`Building Resource: ${resourceName}`)
             await buildResource(resourceName)
+        })
+
+    program
+        .command("build:collection")
+        .description("Build Collection, Usage: node ebp build:collection <collection-name>")
+        .argument("<collectionName>", "Collection Name")
+        .action(async (collectionName) => {
+            console.log(`Building Collection: ${collectionName}`)
+            await buildCollection(collectionName)
         })
 }
