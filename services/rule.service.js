@@ -2,7 +2,7 @@ const db = require("../models")
 
 exports.createRule = async (payload) => {
     try {
-        const rule = await db.rule.findOne({ where: { role: payload.role, model: payload.model, method: payload.method } })
+        const rule = await db.rule.findOne({ where: { role: payload.role, path: payload.path, model: payload.model, method: payload.method } })
 
         if (rule) {
             return {
