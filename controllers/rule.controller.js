@@ -15,9 +15,9 @@ const {
  */
 exports.createRule = async (req, res) => {
 
-    const { role, model, method, owner, group, other } = req.body
+    const { role, path, model, method, owner, group, other } = req.body
     const service = await createRule({
-        role, model, method, owner, group, other
+        role, path, model, method, owner, group, other
     })
 
     if (service.error) {
@@ -81,9 +81,9 @@ exports.getRule = async (req, res) => {
  */
 exports.updateRule = async (req, res) => {
 
-    const { role, model, method, owner, group, other } = req.body
+    const { role, path, model, method, owner, group, other } = req.body
     const service = await updateRule(req.params.id, {
-        role, model, method, owner, group, other
+        role, path, model, method, owner, group, other
     })
 
     if (service.error) {
