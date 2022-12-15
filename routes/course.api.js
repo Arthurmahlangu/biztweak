@@ -14,5 +14,6 @@ router.get("/courses/:id", policyMiddleware, CourseController.getCourse)
 router.put("/courses/:id", policyMiddleware, CourseController.updateCourse)
 router.delete("/courses/:id", policyMiddleware, CourseController.deleteCourse)
 router.post("/courses/:id/audio", policyMiddleware, CourseController.createCourseAudio)
+router.post("/courses/:id/video", policyMiddleware, CourseController.createCourseVideo)
 
 module.exports = router

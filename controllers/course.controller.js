@@ -59,11 +59,57 @@ exports.createCourse = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
+exports.createCourseVideo = async (req, res) => {
+
+    let service = null
+
+    const { id } = req.params
+    const { name, description, type, video } = req.body
+    
+    if (req.files) {
+        
+        const { video } = req.files
+
+        const now = new Date().getTime()
+        const filePath = "./storage/videos/" + now + "_" + video.name
+
+        await video.mv(filePath)
+
+        service = await createCourseAudio({
+            userid: req.auth.id, courseid: id, name, description, type, file: filePath
+        })
+
+    } else {
+
+        service = await createCourseAudio({
+            userid: req.auth.id, courseid: id, name, description, type, file: video
+        })
+    }
+
+    if (service.error) {
+        res.send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Course video added", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 exports.createCourseAudio = async (req, res) => {
 
     let service = null
 
-    const { id } = req.param
+    const { id } = req.params
     const { name, description, type, audio } = req.body
     
     if (req.files) {
@@ -71,17 +117,17 @@ exports.createCourseAudio = async (req, res) => {
         const { audio } = req.files
 
         const now = new Date().getTime()
-        const filePath = "./storage/audio/" + now + "_" + audio.name
+        const filePath = "./storage/audios/" + now + "_" + audio.name
 
         await audio.mv(filePath)
 
-        service = await createCourse({
+        service = await createCourseAudio({
             userid: req.auth.id, courseid: id, name, description, type, file: filePath
         })
 
     } else {
 
-        service = await createCourse({
+        service = await createCourseAudio({
             userid: req.auth.id, courseid: id, name, description, type, file: audio
         })
     }
