@@ -26,6 +26,7 @@ exports.createCompany = async (payload) => {
         }
 
     } catch (error) {
+        console.log(error)
         return {
             error: true,
             message: 'Technical error.'

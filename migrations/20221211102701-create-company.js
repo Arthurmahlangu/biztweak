@@ -20,12 +20,27 @@ module.exports = {
       location: {
         type: Sequelize.STRING
       },
+      phase: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      registered: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       industry: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      phase: {
+      employers: {
         allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      turnover: {
+        allowNull: false,
+        type: Sequelize.FLOAT
+      },
+      rating: {
         type: Sequelize.STRING
       },
       createdAt: {

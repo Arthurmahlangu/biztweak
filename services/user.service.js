@@ -63,7 +63,7 @@ exports.updateUser = async (id, payload = {}) => {
         if (!newUser) {
             return {
                 error: true,
-                message: 'Profile update failed.'
+                message: 'Error updating.'
             }
         }
 
@@ -97,7 +97,7 @@ exports.updatePassword = async (id, password) => {
         if (valid) {
             return {
                 error: true,
-                message: 'You can not update the same password.'
+                message: 'Your old and new password look the same.'
             }
         }
 
@@ -108,7 +108,7 @@ exports.updatePassword = async (id, password) => {
         if (!newUser) {
             return {
                 error: true,
-                message: 'Password update failed.'
+                message: 'Error updating.'
             }
         }
 

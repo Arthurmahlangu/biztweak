@@ -186,7 +186,7 @@ module.exports = {
 
     {
       role: "ROOT",
-      path: "assessments",
+      path: "/assessments",
       model: "assessments",
       method: "GET",
       owner: 1,

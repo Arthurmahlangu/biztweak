@@ -15,9 +15,9 @@ const {
  */
 exports.createCompany = async (req, res) => {
 
-    const { name, location, education, industry, phase } = req.body
+    const { name, location, phase, registered, industry, employers, turnover } = req.body
     const service = await createCompany({
-        userid: req.auth.id, name, location, education, industry, phase
+        userid: req.auth.id, name, location, phase, registered, industry, employers, turnover
     })
 
     if (service.error) {
@@ -81,9 +81,9 @@ exports.getCompany = async (req, res) => {
  */
 exports.updateCompany = async (req, res) => {
 
-    const {name, location, education, industry, phase } = req.body
+    const { name, location, phase, registered, industry, employers, turnover } = req.body
     const service = await updateCompany(req.params.id, {
-        name, location, education, industry, phase
+        name, location, phase, registered, industry, employers, turnover
     })
 
     if (service.error) {

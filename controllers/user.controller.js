@@ -49,9 +49,22 @@ exports.getUser = async (req, res) => {
  */
 exports.updateProfile = async (req, res) => {
 
-    const { fullname, phone, education, work_experience, work_experience2, location } = req.body
+    const { 
+        fullname, 
+        phone, 
+        education, 
+        work_experience, 
+        work_experience2, 
+        location 
+    } = req.body
+
     const service = await updateUser(req.params.id, {
-        fullname, phone, education, work_experience, work_experience2, location
+        fullname, 
+        phone, 
+        education, 
+        work_experience, 
+        work_experience2, 
+        location
     })
 
     if (service.error) {
