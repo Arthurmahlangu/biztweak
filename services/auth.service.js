@@ -1,6 +1,7 @@
 const TokenService = require("./token.service")
 const bcrypt = require('bcrypt')
 const db = require("../models")
+const { UserResource } = require("../resources/user.resource")
 
 exports.emailAuth = async (email, password) => {
     try {
@@ -34,7 +35,10 @@ exports.emailAuth = async (email, password) => {
 
         return {
             error: false,
-            data: token.data.token
+            data: {
+                token: token.data.token,
+                user: UserResource(user)
+            }
         }
         
     } catch (error) {
