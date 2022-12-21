@@ -132,9 +132,9 @@ exports.deleteCompany = async (req, res) => {
 exports.createCompanyAssessments = async (req, res) => {
 
     const { id } = req.params
-    const { answer, assessment_id } = req.body
+    const { answers } = req.body
     const service = await createCompanyAssessments({
-        userid: req.auth.id, companyid: id, assessmentid: assessment_id, answer
+        userid: req.auth.id, companyid: id, answers
     })
 
     if (service.error) {
@@ -144,7 +144,7 @@ exports.createCompanyAssessments = async (req, res) => {
     }
 
     res.send(
-        successResponse("Assessment answered", {
+        successResponse("Assessment answers", {
             data: service.data
         })
     )

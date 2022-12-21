@@ -16,8 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   assessment_answer.init({
     userid: DataTypes.INTEGER,
     companyid: DataTypes.INTEGER,
-    assessmentid: DataTypes.INTEGER,
-    answer: DataTypes.TEXT
+    answers: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'assessment_answer',

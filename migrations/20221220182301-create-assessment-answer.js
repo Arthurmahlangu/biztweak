@@ -15,10 +15,7 @@ module.exports = {
       companyid: {
         type: Sequelize.INTEGER
       },
-      assessmentid: {
-        type: Sequelize.INTEGER
-      },
-      answer: {
+      answers: {
         type: Sequelize.TEXT
       },
       createdAt: {

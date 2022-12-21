@@ -150,20 +150,11 @@ exports.createCompanyAssessments = async (payload) => {
             }
         }
 
-        const assessment = await db.assessment.findOne({ where: { id: payload.assessmentid } })
-
-        if (!assessment) {
-            return {
-                error: true,
-                message: 'Assessment not found.'
-            }
-        }
-
         const answers = await db.assessment_answer.findOne({ 
             where: {
                 userid: payload.userid,
-                companyid: payload.companyid, 
-                assessmentid: payload.assessmentid } 
+                companyid: payload.companyid
+            } 
         })
 
         if (answers) {
@@ -178,13 +169,29 @@ exports.createCompanyAssessments = async (payload) => {
         if (!newAnswers) {
             return {
                 error: true,
-                message: 'Assessment answer not saved.'
+                message: 'Assessment not saved.'
+            }
+        }
+
+        const yesAnswers = payload.answers.match(/yes/gi).length
+        const questions = await db.assessment.count()
+        const rating = Math.round((parseInt(yesAnswers) / parseInt(questions)) * 10)
+
+        const newCompany = await db.company.update({ rating }, { where: { id: payload.companyid } })
+
+        if (!newCompany) {
+            return {
+                error: true,
+                message: 'Failed to update company rating.'
             }
         }
 
         return {
             error: false,
-            data: newAnswers
+            data: { 
+                "assessment": newAnswers,
+                "rating": rating
+            }
         }
 
     } catch (error) {

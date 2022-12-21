@@ -27,12 +27,8 @@ exports.companyAssessmentValidator = [
     param("id")
         .exists().withMessage("Company ID do not exists")
         .isNumeric().withMessage("Invalid company ID"),
-        
-    body("assessment_id")
-        .exists().withMessage("Assessment ID do not exists")
-        .isNumeric().withMessage("Invalid assessment ID"),
 
-    body("answer").exists().withMessage("Invalid answer")
+    body("answers").exists().withMessage("Invalid answer")
 ]
 
 /**
