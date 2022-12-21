@@ -137,3 +137,61 @@ exports.deleteCompany = async (id) => {
         }
     }
 }
+
+exports.createCompanyAssessments = async (payload) => {
+    try {
+
+        const company = await db.company.findOne({ where: { id: payload.companyid } })
+
+        if (!company) {
+            return {
+                error: true,
+                message: 'Company not found.'
+            }
+        }
+
+        const assessment = await db.assessment.findOne({ where: { id: payload.assessmentid } })
+
+        if (!assessment) {
+            return {
+                error: true,
+                message: 'Assessment not found.'
+            }
+        }
+
+        const answers = await db.assessment_answer.findOne({ 
+            where: {
+                userid: payload.userid,
+                companyid: payload.companyid, 
+                assessmentid: payload.assessmentid } 
+        })
+
+        if (answers) {
+            return {
+                error: true,
+                message: 'Assessment question already answered.'
+            }
+        }
+
+        const newAnswers = await db.assessment_answer.create(payload)
+
+        if (!newAnswers) {
+            return {
+                error: true,
+                message: 'Assessment answer not saved.'
+            }
+        }
+
+        return {
+            error: false,
+            data: newAnswers
+        }
+
+    } catch (error) {
+        console.log(error)
+        return {
+            error: true,
+            message: 'Technical error.'
+        }
+    }
+}

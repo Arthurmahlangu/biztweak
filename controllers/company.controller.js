@@ -4,7 +4,8 @@ const {
     getCompanies, 
     getCompany, 
     updateCompany, 
-    deleteCompany 
+    deleteCompany,
+    createCompanyAssessments
 } = require("../services/company.service")
 
 /**
@@ -118,6 +119,33 @@ exports.deleteCompany = async (req, res) => {
     res.send(
         successResponse("Delete company", {
             data: []
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createCompanyAssessments = async (req, res) => {
+
+    const { id } = req.params
+    const { answer, assessment_id } = req.body
+    const service = await createCompanyAssessments({
+        userid: req.auth.id, companyid: id, assessmentid: assessment_id, answer
+    })
+
+    if (service.error) {
+        res.send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Assessment answered", {
+            data: service.data
         })
     )
 }

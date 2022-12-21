@@ -4,7 +4,7 @@ const {
     getAssessments, 
     getAssessment, 
     updateAssessment, 
-    deleteAssessment 
+    deleteAssessment,
 } = require("../services/assessment.service")
 
 /**
