@@ -15,5 +15,7 @@ router.get("/companies/:id", policyMiddleware, CompanyController.getCompany)
 router.put("/companies/:id", policyMiddleware, validate(companyValidator), CompanyController.updateCompany)
 router.delete("/companies/:id", policyMiddleware, CompanyController.deleteCompany)
 router.post("/companies/:id/assessments", policyMiddleware, validate(companyAssessmentValidator), CompanyController.createCompanyAssessments)
+router.get("/companies/:cid/assessments/:aid", policyMiddleware, CompanyController.getCompanyAssessments)
+router.put("/companies/:cid/assessments/:aid", policyMiddleware, CompanyController.updateCompanyAssessments)
 
 module.exports = router
