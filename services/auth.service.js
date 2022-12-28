@@ -2,6 +2,10 @@ const TokenService = require("./token.service")
 const bcrypt = require('bcrypt')
 const db = require("../models")
 const { UserResource } = require("../resources/user.resource")
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 exports.emailAuth = async (email, password) => {
     try {
@@ -42,6 +46,7 @@ exports.emailAuth = async (email, password) => {
         }
         
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -81,6 +86,7 @@ exports.emailRegister = async (fullname, email, password) => {
         }
         
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'

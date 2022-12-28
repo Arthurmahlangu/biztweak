@@ -2,6 +2,10 @@ const bcrypt = require("bcrypt")
 const db = require("../models")
 const { UserResource } = require("../resources/user.resource")
 const { UserCollection } = require("../collections/user.collection")
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 exports.getUsers = async () => {
     try {
@@ -14,6 +18,7 @@ exports.getUsers = async () => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -39,6 +44,7 @@ exports.getUser = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -73,6 +79,7 @@ exports.updateUser = async (id, payload = {}) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -118,6 +125,7 @@ exports.updatePassword = async (id, password) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -145,6 +153,7 @@ exports.deleteUser = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'

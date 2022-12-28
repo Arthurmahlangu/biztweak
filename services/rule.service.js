@@ -1,4 +1,8 @@
 const db = require("../models")
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 exports.createRule = async (payload) => {
     try {
@@ -33,6 +37,7 @@ exports.createRule = async (payload) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -51,6 +56,7 @@ exports.getRules = async () => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -76,6 +82,7 @@ exports.getRule = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -110,6 +117,7 @@ exports.updateRule = async (id, payload = {}) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -137,6 +145,7 @@ exports.deleteRule = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'

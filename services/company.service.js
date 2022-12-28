@@ -1,4 +1,8 @@
 const db = require("../models")
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 exports.createCompany = async (payload) => {
     try {
@@ -26,7 +30,7 @@ exports.createCompany = async (payload) => {
         }
 
     } catch (error) {
-        console.log(error)
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -45,6 +49,7 @@ exports.getCompanies = async () => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -55,7 +60,7 @@ exports.getCompanies = async () => {
 exports.getCompany = async (id) => {
     try {
 
-        const company = await db.company.findOne({ where: { id } })
+        const company = await db.company.findOne({ where: { id }, include: 'assessment_answer' })
 
         if (!company) {
             return {
@@ -70,6 +75,7 @@ exports.getCompany = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -104,6 +110,7 @@ exports.updateCompany = async (id, payload = {}) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -131,6 +138,7 @@ exports.deleteCompany = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -195,6 +203,7 @@ exports.createCompanyAssessments = async (payload) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         console.log(error)
         return {
             error: true,
@@ -231,6 +240,7 @@ exports.getCompanyAssessments = async (companyid, assessmentid) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -278,6 +288,7 @@ exports.updateCompanyAssessments = async (companyid, assessmentid, payload = {})
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'

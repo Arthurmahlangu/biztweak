@@ -1,4 +1,8 @@
 const db = require("../models")
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 exports.createIncubator = async (payload) => {
     try {
@@ -26,6 +30,7 @@ exports.createIncubator = async (payload) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -44,6 +49,7 @@ exports.getIncubators = async () => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -69,6 +75,7 @@ exports.getIncubator = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -103,6 +110,7 @@ exports.updateIncubator = async (id, payload = {}) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -130,6 +138,7 @@ exports.deleteIncubator = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'

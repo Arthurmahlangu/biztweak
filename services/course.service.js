@@ -1,4 +1,8 @@
 const db = require("../models")
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 exports.createCourse = async (payload) => {
     try {
@@ -26,6 +30,7 @@ exports.createCourse = async (payload) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -51,6 +56,7 @@ exports.createCourseAudio = async (payload) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -76,6 +82,7 @@ exports.createCourseVideo = async (payload) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -94,6 +101,7 @@ exports.getCourses = async () => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -119,6 +127,7 @@ exports.getCourse = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -153,6 +162,7 @@ exports.updateCourse = async (id, payload = {}) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'
@@ -180,6 +190,7 @@ exports.deleteCourse = async (id) => {
         }
 
     } catch (error) {
+        errorLog.error("Technical error: " + error.message)
         return {
             error: true,
             message: 'Technical error.'

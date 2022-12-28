@@ -287,6 +287,36 @@ module.exports = {
       other: 1,
       createdAt: new Date,
       updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/companies/:id/assessments",
+      model: "companies",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/companies/:cid/assessments/:aid",
+      model: "companies",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/companies/:cid/assessments/:aid",
+      model: "companies",
+      method: "DELETE",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
     },
     
     
