@@ -20,15 +20,15 @@ exports.createCourse = async (req, res) => {
     let service = null
     const { title, description } = req.body
     
-    if (req.files) {
+    if (req.files && req.files.logo) {
         
         const { logo } = req.files
 
         const now = new Date().getTime()
         const filePath = "./storage/company/" + now + "_" + logo.name
 
-        if (logo.mimetype !== 'image/png' || logo.mimetype !== 'image/jpeg') {
-            res.status(400).send(
+        if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
+            return res.status(400).send(
                 failResponse("Invalid png|jpg|jpeg file.")
             )
         }
@@ -37,7 +37,9 @@ exports.createCourse = async (req, res) => {
             userid: req.auth.id, title, description, logo: filePath
         })
         
-        await logo.mv(filePath)
+        if (!service.error) {
+            await logo.mv(filePath)
+        }
 
     } else {
 
@@ -70,17 +72,17 @@ exports.createCourseVideo = async (req, res) => {
     let service = null
 
     const { id } = req.params
-    const { name, description, type, video } = req.body
+    const { name, description, type } = req.body
     
-    if (req.files) {
+    if (req.files && req.files.video) {
         
         const { video } = req.files
 
         const now = new Date().getTime()
         const filePath = "./storage/videos/" + now + "_" + video.name
 
-        if (audio.mimetype !== 'video/mp4' || audio.mimetype !== 'video/mpeg') {
-            res.status(400).send(
+        if (audio.mimetype !== 'video/mp4' && audio.mimetype !== 'video/mpeg') {
+            return res.status(400).send(
                 failResponse("Invalid mp4|mpeg file.")
             )
         }
@@ -89,13 +91,14 @@ exports.createCourseVideo = async (req, res) => {
             userid: req.auth.id, courseid: id, name, description, type, file: filePath
         })
 
-        await video.mv(filePath)
+        if (!service.error) {
+            await video.mv(filePath)
+        }
 
     } else {
-
-        service = await createCourseAudio({
-            userid: req.auth.id, courseid: id, name, description, type, file: video
-        })
+        return res.status(400).send(
+            failResponse("Invalid mp4|mpeg file.")
+        )
     }
 
     if (service.error) {
@@ -122,17 +125,17 @@ exports.createCourseAudio = async (req, res) => {
     let service = null
 
     const { id } = req.params
-    const { name, description, type, audio } = req.body
+    const { name, description, type } = req.body
     
-    if (req.files) {
+    if (req.files && req.files.audio) {
         
         const { audio } = req.files
 
         const now = new Date().getTime()
         const filePath = "./storage/audios/" + now + "_" + audio.name
 
-        if (audio.mimetype !== 'audio/mpeg' || audio.mimetype !== 'audio/wav') {
-            res.status(400).send(
+        if (audio.mimetype !== 'audio/mpeg' && audio.mimetype !== 'audio/wav') {
+            return res.status(400).send(
                 failResponse("Invalid mp3|wav file.")
             )
         }
@@ -141,13 +144,15 @@ exports.createCourseAudio = async (req, res) => {
             userid: req.auth.id, courseid: id, name, description, type, file: filePath
         })
 
-        await audio.mv(filePath)
+        if (!service.error) {
+            await audio.mv(filePath)
+        }
 
     } else {
 
-        service = await createCourseAudio({
-            userid: req.auth.id, courseid: id, name, description, type, file: audio
-        })
+        return res.status(400).send(
+            failResponse("Invalid mp3|wav file.")
+        )
     }
 
     if (service.error) {
@@ -214,18 +219,26 @@ exports.updateCourse = async (req, res) => {
     let service = null
     const { title, description } = req.body
     
-    if (req.files) {
+    if (req.files && req.files.logo) {
         
         const { logo } = req.files
 
         const now = new Date().getTime()
         const filePath = "./storage/company/" + now + "_" + logo.name
-
-        await logo.mv(filePath)
-
+        
+        if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
+            return res.status(400).send(
+                failResponse("Invalid png|jpg|jpeg file.")
+            )
+        }
+        
         service = await updateCourse(req.params.id, {
             title, description, logo: filePath
         })
+
+        if (!service.error) {
+            await logo.mv(filePath)
+        }
 
     } else {
 
