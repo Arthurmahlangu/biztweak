@@ -9,19 +9,13 @@ exports.createCourse = async (payload) => {
         const course = await db.course.findOne({ where: { title: payload.title } })
 
         if (course) {
-            return {
-                error: true,
-                message: 'Course title already been taken.'
-            }
+            throw new Error('Course title already taken.')
         }
         
         const newCourse = await db.course.create(payload)
 
         if (!newCourse) {
-            return {
-                error: true,
-                message: 'Course registration failed.'
-            }
+            throw new Error('Course creation failed.')
         }
 
         return {
@@ -30,10 +24,10 @@ exports.createCourse = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -44,10 +38,7 @@ exports.createCourseAudio = async (payload) => {
         const newCourse = await db.course_audio.create(payload)
 
         if (!newCourse) {
-            return {
-                error: true,
-                message: 'Error adding course audio.'
-            }
+            throw new Error('Failed adding course audio.')
         }
 
         return {
@@ -56,10 +47,10 @@ exports.createCourseAudio = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -70,10 +61,7 @@ exports.createCourseVideo = async (payload) => {
         const newCourse = await db.course_video.create(payload)
 
         if (!newCourse) {
-            return {
-                error: true,
-                message: 'Error adding course video.'
-            }
+            throw new Error('Failed adding course video.')
         }
 
         return {
@@ -82,10 +70,10 @@ exports.createCourseVideo = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -101,10 +89,10 @@ exports.getCourses = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -115,10 +103,7 @@ exports.getCourse = async (id) => {
         const course = await db.course.findOne({ where: { id } })
 
         if (!course) {
-            return {
-                error: true,
-                message: 'Course not found.'
-            }
+            throw new Error('Course not found.')
         }
 
         return {
@@ -127,10 +112,10 @@ exports.getCourse = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -141,19 +126,13 @@ exports.updateCourse = async (id, payload = {}) => {
         const course = await db.course.findOne({ where: { id } })
 
         if (!course) {
-            return {
-                error: true,
-                message: 'Course not found.'
-            }
+            throw new Error('Course not found.')
         }
 
         const newCourse = await db.course.update(payload, { where: { id } })
 
         if (!newCourse) {
-            return {
-                error: true,
-                message: 'Course update failed.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -162,10 +141,10 @@ exports.updateCourse = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -176,10 +155,7 @@ exports.deleteCourse = async (id) => {
         const course = await db.course.findOne({ where: { id } })
 
         if (!course) {
-            return {
-                error: true,
-                message: 'Course not found.'
-            }
+            throw new Error('Course not found.')
         }
 
         await db.course.destroy({ where: { id } })
@@ -190,10 +166,10 @@ exports.deleteCourse = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

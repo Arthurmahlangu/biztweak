@@ -24,13 +24,13 @@ exports.createCompany = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Company created", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -47,7 +47,7 @@ exports.getCompanies = async (req, res) => {
     const service = await getCompanies() 
     
     res.send(
-        successResponse("Companies.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -64,13 +64,13 @@ exports.getCompany = async (req, res) => {
     const service = await getCompany(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("company", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -96,7 +96,7 @@ exports.updateCompany = async (req, res) => {
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -113,13 +113,13 @@ exports.deleteCompany = async (req, res) => {
     const service = await deleteCompany(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Delete company", {
+        successResponse("Deleted.", {
             data: []
         })
     )
@@ -140,13 +140,13 @@ exports.createCompanyAssessments = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Assessment answers", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -162,13 +162,13 @@ exports.getCompanyAssessments = async (req, res) => {
     const service = await getCompanyAssessments(req.params.cid, req.params.aid)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Company assessments", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -187,13 +187,13 @@ exports.updateCompanyAssessments = async (req, res) => {
     const service = await updateCompanyAssessments(cid, aid, { answers })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )

@@ -21,13 +21,13 @@ exports.createAssessment = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Assessment created", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -44,7 +44,7 @@ exports.getAssessments = async (req, res) => {
     const service = await getAssessments() 
     
     res.send(
-        successResponse("Assessments.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -67,7 +67,7 @@ exports.getAssessment = async (req, res) => {
     }
 
     res.send(
-        successResponse("Assessment", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -87,13 +87,13 @@ exports.updateAssessment = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -110,13 +110,13 @@ exports.deleteAssessment = async (req, res) => {
     const service = await deleteAssessment(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Delete assessment", {
+        successResponse("Successful.", {
             data: []
         })
     )

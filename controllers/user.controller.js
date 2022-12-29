@@ -12,7 +12,7 @@ exports.getUsers = async (req, res) => {
     const service = await getUsers() 
     
     res.send(
-        successResponse("Users.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -29,13 +29,13 @@ exports.getUser = async (req, res) => {
     const service = await getUser(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("User", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -68,13 +68,13 @@ exports.updateProfile = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -92,13 +92,13 @@ exports.updateEmail = async (req, res) => {
     const service = await updateUser(req.params.id, { email })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -117,13 +117,13 @@ exports.updatePassword = async (req, res) => {
     const service = await updatePassword(req.params.id, password)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -142,13 +142,13 @@ exports.updateRole = async (req, res) => {
     const service = await updateUser(req.params.id, { role })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )

@@ -9,19 +9,13 @@ exports.createAssessment = async (payload) => {
         const assessment = await db.assessment.findOne({ where: { title: payload.title } })
 
         if (assessment) {
-            return {
-                error: true,
-                message: 'Assessment title already been used.'
-            }
+            throw new Error('Assessment title already taken.')
         }
         
         const newAssessment = await db.assessment.create(payload)
 
         if (!newAssessment) {
-            return {
-                error: true,
-                message: 'Assessment registration failed.'
-            }
+            throw new Error('Assessment creation failed.')
         }
 
         return {
@@ -30,10 +24,10 @@ exports.createAssessment = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -49,10 +43,10 @@ exports.getAssessments = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -63,10 +57,7 @@ exports.getAssessment = async (id) => {
         const assessment = await db.assessment.findOne({ where: { id } })
 
         if (!assessment) {
-            return {
-                error: true,
-                message: 'Assessment not found.'
-            }
+            throw new Error('Assessment not found.')
         }
 
         return {
@@ -75,10 +66,10 @@ exports.getAssessment = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -89,19 +80,13 @@ exports.updateAssessment = async (id, payload = {}) => {
         const assessment = await db.assessment.findOne({ where: { id } })
 
         if (!assessment) {
-            return {
-                error: true,
-                message: 'Assessment not found.'
-            }
+            throw new Error('Assessment not found.')
         }
 
         const newCompany = await db.assessment.update(payload, { where: { id } })
 
         if (!newCompany) {
-            return {
-                error: true,
-                message: 'Assessment update failed.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -110,10 +95,10 @@ exports.updateAssessment = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -124,10 +109,7 @@ exports.deleteAssessment = async (id) => {
         const assessment = await db.assessment.findOne({ where: { id } })
 
         if (!assessment) {
-            return {
-                error: true,
-                message: 'Assessment not found.'
-            }
+            throw new Error('Assessment not found.')
         }
 
         await db.assessment.destroy({ where: { id } })
@@ -138,10 +120,10 @@ exports.deleteAssessment = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

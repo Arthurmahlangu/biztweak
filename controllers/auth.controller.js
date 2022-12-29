@@ -13,13 +13,13 @@ exports.emailAuth = async (req, res) => {
     const service = await emailAuth(email, password)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
     
     res.send(
-        successResponse("Login.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -37,14 +37,14 @@ exports.emailRegister = async (req, res) => {
     const service = await emailRegister(fullname, email, password)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Register", {
-            data: "here comes your payload..."
+        successResponse("Successful.", {
+            data: service.data
         })
     )
 }

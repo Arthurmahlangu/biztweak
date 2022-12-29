@@ -9,19 +9,13 @@ exports.createIncubator = async (payload) => {
         const incubator = await db.incubator.findOne({ where: { name: payload.name } })
 
         if (incubator) {
-            return {
-                error: true,
-                message: 'Incubator name already been taken.'
-            }
+            throw new Error('Incubator name already in use.')
         }
         
         const newIncubator = await db.incubator.create(payload)
 
         if (!newIncubator) {
-            return {
-                error: true,
-                message: 'Incubator registration failed.'
-            }
+            throw new Error('Incubator not created.')
         }
 
         return {
@@ -30,10 +24,10 @@ exports.createIncubator = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -49,10 +43,10 @@ exports.getIncubators = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -63,10 +57,7 @@ exports.getIncubator = async (id) => {
         const incubator = await db.incubator.findOne({ where: { id } })
 
         if (!incubator) {
-            return {
-                error: true,
-                message: 'Incubator not found.'
-            }
+            throw new Error('Incubator not found.')
         }
 
         return {
@@ -75,10 +66,10 @@ exports.getIncubator = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -89,19 +80,13 @@ exports.updateIncubator = async (id, payload = {}) => {
         const incubator = await db.incubator.findOne({ where: { id } })
 
         if (!incubator) {
-            return {
-                error: true,
-                message: 'Incubator not found.'
-            }
+            throw new Error('Incubator not found.')
         }
 
         const newIncubator = await db.incubator.update(payload, { where: { id } })
 
         if (!newIncubator) {
-            return {
-                error: true,
-                message: 'Incubator update failed.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -110,10 +95,10 @@ exports.updateIncubator = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -124,10 +109,7 @@ exports.deleteIncubator = async (id) => {
         const incubator = await db.incubator.findOne({ where: { id } })
 
         if (!incubator) {
-            return {
-                error: true,
-                message: 'Incubator not found.'
-            }
+            throw new Error('Incubator not found.')
         }
 
         await db.incubator.destroy({ where: { id } })
@@ -138,10 +120,10 @@ exports.deleteIncubator = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

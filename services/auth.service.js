@@ -13,28 +13,19 @@ exports.emailAuth = async (email, password) => {
         const user = await db.user.findOne({ where: { email } })
 
         if (!user) {
-            return {
-                error: true,
-                message: 'Wrong email address or password.'
-            }
+            throw new Error('Wrong Email address or Password.')
         }
 
         const valid = await bcrypt.compare(password, user.password)
 
         if (!valid) {
-            return {
-                error: true,
-                message: 'Wrong email address or password.'
-            }
+            throw new Error('Wrong Email address or Password.')
         }
 
         const token = await TokenService.createToken(user.id)
 
         if (!token) {
-            return {
-                error: true,
-                message: token.message
-            }
+            throw new Error(token.message)
         }
 
         return {
@@ -46,10 +37,10 @@ exports.emailAuth = async (email, password) => {
         }
         
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -60,10 +51,7 @@ exports.emailRegister = async (fullname, email, password) => {
         const isUser = await db.user.findOne({ where: { email } })
 
         if (isUser) {
-            return {
-                error: true,
-                message: 'Account already exists.'
-            }
+            throw new Error('Account exists. Try logging in.')
         }
 
         const salt = await bcrypt.genSalt(10)
@@ -74,10 +62,7 @@ exports.emailRegister = async (fullname, email, password) => {
         })
 
         if (!newUser) {
-            return {
-                error: true,
-                message: 'Registration failed.'
-            }
+            throw new Error('Registration failed.')
         }
 
         return {
@@ -86,10 +71,10 @@ exports.emailRegister = async (fullname, email, password) => {
         }
         
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

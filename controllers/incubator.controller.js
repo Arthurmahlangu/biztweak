@@ -21,13 +21,13 @@ exports.createIncubator = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Incubator created", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -44,7 +44,7 @@ exports.getIncubators = async (req, res) => {
     const service = await getIncubators() 
     
     res.send(
-        successResponse("Incubators.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -61,13 +61,13 @@ exports.getIncubator = async (req, res) => {
     const service = await getIncubator(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Incubator", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -87,13 +87,13 @@ exports.updateIncubator = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -110,13 +110,13 @@ exports.deleteIncubator = async (req, res) => {
     const service = await deleteIncubator(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Delete incubator", {
+        successResponse("Deleted.", {
             data: []
         })
     )

@@ -10,10 +10,7 @@ exports.createToken = async (userid) => {
         const user = await db.user.findOne({ where: { id: userid } })
 
         if (!user) {
-            return {
-                error: true,
-                message: 'Profile not found.'
-            }
+            throw new Error('User not found.')
         }
 
         const token = await jwt.sign({
@@ -37,10 +34,7 @@ exports.createToken = async (userid) => {
         const newToken = await db.token.create(payload)
 
         if (!newToken) {
-            return {
-                error: true,
-                message: 'Error generating a token.'
-            }
+            throw new Error('Error generating a new token.')
         }
 
         return {
@@ -49,10 +43,10 @@ exports.createToken = async (userid) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -68,10 +62,10 @@ exports.getTokens = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -82,10 +76,7 @@ exports.getToken = async (id) => {
         const token = await db.token.findOne({ where: { id } })
 
         if (!token) {
-            return {
-                error: true,
-                message: 'Token not found.'
-            }
+            throw new Error('Token not found.')
         }
 
         return {
@@ -94,10 +85,10 @@ exports.getToken = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -108,19 +99,13 @@ exports.updateToken = async (id, payload = {}) => {
         const token = await db.token.findOne({ where: { id } })
 
         if (!token) {
-            return {
-                error: true,
-                message: 'Token not found.'
-            }
+            throw new Error('Token not found.')
         }
 
         const newToken = await db.token.update(payload, { where: { id } })
 
         if (!newToken) {
-            return {
-                error: true,
-                message: 'Token update failed.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -129,10 +114,10 @@ exports.updateToken = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -143,10 +128,7 @@ exports.deleteToken = async (id) => {
         const token = await db.token.findOne({ where: { id } })
 
         if (!token) {
-            return {
-                error: true,
-                message: 'Token not found.'
-            }
+            throw new Error('Token not found.')
         }
 
         await db.token.destroy({ where: { id } })
@@ -157,10 +139,10 @@ exports.deleteToken = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

@@ -18,13 +18,13 @@ exports.createToken = async (req, res) => {
     const service = await createToken(req.auth.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Token created", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -40,8 +40,8 @@ exports.getTokens = async (req, res) => {
 
     const service = await getTokens() 
     
-    res.send(
-        successResponse("Tokens.", {
+    res.status(400).send(
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -58,13 +58,13 @@ exports.getToken = async (req, res) => {
     const service = await getToken(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Token", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -81,13 +81,13 @@ exports.updateToken = async (req, res) => {
     const service = await updateToken(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -104,13 +104,13 @@ exports.deleteToken = async (req, res) => {
     const service = await deleteToken(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Delete token", {
+        successResponse("Deleted.", {
             data: []
         })
     )

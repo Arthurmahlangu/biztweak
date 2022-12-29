@@ -18,10 +18,10 @@ exports.getUsers = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -32,10 +32,7 @@ exports.getUser = async (id) => {
         const user = await db.user.findOne({ where: { id } })
 
         if (!user) {
-            return {
-                error: true,
-                message: 'Profile not found.'
-            }
+            throw new Error('User not found.')
         }
 
         return {
@@ -44,10 +41,10 @@ exports.getUser = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -58,19 +55,13 @@ exports.updateUser = async (id, payload = {}) => {
         const user = await db.user.findOne({ where: { id } })
 
         if (!user) {
-            return {
-                error: true,
-                message: 'Profile not found.'
-            }
+            throw new Error('User not found.')
         }
 
         const newUser = await db.user.update(payload, { where: { id } })
 
         if (!newUser) {
-            return {
-                error: true,
-                message: 'Error updating.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -79,10 +70,10 @@ exports.updateUser = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -93,19 +84,13 @@ exports.updatePassword = async (id, password) => {
         const user = await db.user.findOne({ where: { id } })
 
         if (!user) {
-            return {
-                error: true,
-                message: 'Profile not found.'
-            }
+            throw new Error('User not found.')
         }
 
         const valid = await bcrypt.compare(password, user.password)
 
         if (valid) {
-            return {
-                error: true,
-                message: 'Your old and new password look the same.'
-            }
+            throw new Error('New password cannot be the same as old password.')
         }
 
         const salt = await bcrypt.genSalt(10)
@@ -113,10 +98,7 @@ exports.updatePassword = async (id, password) => {
         const newUser = await db.user.update({ password: hashPassword }, { where: { id } })
 
         if (!newUser) {
-            return {
-                error: true,
-                message: 'Error updating.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -125,10 +107,10 @@ exports.updatePassword = async (id, password) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -139,10 +121,7 @@ exports.deleteUser = async (id) => {
         const user = await db.user.findOne({ where: { id } })
 
         if (!user) {
-            return {
-                error: true,
-                message: 'Profile not found.'
-            }
+            throw new Error('User not found.')
         }
 
         await db.user.destro({ where: { id } })
@@ -153,10 +132,10 @@ exports.deleteUser = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

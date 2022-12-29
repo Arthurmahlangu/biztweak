@@ -16,19 +16,13 @@ exports.createRule = async (payload) => {
         })
 
         if (rule) {
-            return {
-                error: true,
-                message: 'Rule already set.'
-            }
+            throw new Error('Rule already exists.')
         }
         
         const newRule = await db.rule.create(payload)
 
         if (!newRule) {
-            return {
-                error: true,
-                message: 'Rule registration failed.'
-            }
+            throw new Error('Rule not created.')
         }
 
         return {
@@ -37,10 +31,10 @@ exports.createRule = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -56,10 +50,10 @@ exports.getRules = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -70,10 +64,7 @@ exports.getRule = async (id) => {
         const rule = await db.rule.findOne({ where: { id } })
 
         if (!rule) {
-            return {
-                error: true,
-                message: 'Rule not found.'
-            }
+            throw new Error('Rule not found.')
         }
 
         return {
@@ -82,10 +73,10 @@ exports.getRule = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -96,19 +87,13 @@ exports.updateRule = async (id, payload = {}) => {
         const rule = await db.rule.findOne({ where: { id } })
 
         if (!rule) {
-            return {
-                error: true,
-                message: 'Rule not found.'
-            }
+            throw new Error('Rule not found.')
         }
 
         const newRule = await db.rule.update(payload, { where: { id } })
 
         if (!newRule) {
-            return {
-                error: true,
-                message: 'Rule update failed.'
-            }
+            throw new Error('Update failed.')
         }
 
         return {
@@ -117,10 +102,10 @@ exports.updateRule = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -131,10 +116,7 @@ exports.deleteRule = async (id) => {
         const rule = await db.rule.findOne({ where: { id } })
 
         if (!rule) {
-            return {
-                error: true,
-                message: 'Rule not found.'
-            }
+            throw new Error('Rule not found.')
         }
 
         await db.rule.destroy({ where: { id } })
@@ -145,10 +127,10 @@ exports.deleteRule = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

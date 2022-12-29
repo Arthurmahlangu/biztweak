@@ -9,19 +9,13 @@ exports.createCompany = async (payload) => {
         const company = await db.company.findOne({ where: { name: payload.name } })
 
         if (company) {
-            return {
-                error: true,
-                message: 'Company name already been taken.'
-            }
+            throw new Error('Company name already taken.')
         }
         
         const newCompany = await db.company.create(payload)
 
         if (!newCompany) {
-            return {
-                error: true,
-                message: 'Company registration failed.'
-            }
+            throw new Error('Company creation failed.')
         }
 
         return {
@@ -30,10 +24,10 @@ exports.createCompany = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -49,10 +43,10 @@ exports.getCompanies = async () => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -63,10 +57,7 @@ exports.getCompany = async (id) => {
         const company = await db.company.findOne({ where: { id }, include: 'assessment_answer' })
 
         if (!company) {
-            return {
-                error: true,
-                message: 'Company not found.'
-            }
+            throw new Error('Company not found.')
         }
 
         return {
@@ -75,10 +66,10 @@ exports.getCompany = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -89,19 +80,13 @@ exports.updateCompany = async (id, payload = {}) => {
         const company = await db.company.findOne({ where: { id } })
 
         if (!company) {
-            return {
-                error: true,
-                message: 'Company not found.'
-            }
+            throw new Error('Company not found.')
         }
 
         const newCompany = await db.company.update(payload, { where: { id } })
 
         if (!newCompany) {
-            return {
-                error: true,
-                message: 'Company update failed.'
-            }
+            throw new Error('UUpdate failed.')
         }
 
         return {
@@ -110,10 +95,10 @@ exports.updateCompany = async (id, payload = {}) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -124,10 +109,7 @@ exports.deleteCompany = async (id) => {
         const company = await db.company.findOne({ where: { id } })
 
         if (!company) {
-            return {
-                error: true,
-                message: 'Company not found.'
-            }
+            throw new Error('Company not found.')
         }
 
         await db.company.destroy({ where: { id } })
@@ -138,10 +120,10 @@ exports.deleteCompany = async (id) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -152,10 +134,7 @@ exports.createCompanyAssessments = async (payload) => {
         const company = await db.company.findOne({ where: { id: payload.companyid } })
 
         if (!company) {
-            return {
-                error: true,
-                message: 'Company not found.'
-            }
+            throw new Error('Company not found.')
         }
 
         const answers = await db.assessment_answer.findOne({ 
@@ -166,19 +145,13 @@ exports.createCompanyAssessments = async (payload) => {
         })
 
         if (answers) {
-            return {
-                error: true,
-                message: 'Assessment question already answered.'
-            }
+            throw new Error('Assessment questions already answered.')
         }
 
         const newAnswers = await db.assessment_answer.create(payload)
 
         if (!newAnswers) {
-            return {
-                error: true,
-                message: 'Assessment not saved.'
-            }
+            throw new Error('Company assessment failed.')
         }
 
         const questions = await db.assessment.count()
@@ -188,10 +161,7 @@ exports.createCompanyAssessments = async (payload) => {
         const newCompany = await db.company.update({ rating }, { where: { id: payload.companyid } })
 
         if (!newCompany) {
-            return {
-                error: true,
-                message: 'Failed to update company rating.'
-            }
+            throw new Error('Company rating failed.')
         }
 
         return {
@@ -203,11 +173,11 @@ exports.createCompanyAssessments = async (payload) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         console.log(error)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -219,19 +189,13 @@ exports.getCompanyAssessments = async (companyid, assessmentid) => {
         const company = await db.company.findOne({ where: { id: companyid } })
 
         if (!company) {
-            return {
-                error: true,
-                message: 'Company not found.'
-            }
+            throw new Error('Company not found.')
         }
 
         const answers = await db.assessment_answer.findOne({ where: { id: assessmentid } })
 
         if (!answers) {
-            return {
-                error: true,
-                message: 'Company assassments not found.'
-            }
+            throw new Error('Company assessment not found.')
         }
 
         return {
@@ -240,10 +204,10 @@ exports.getCompanyAssessments = async (companyid, assessmentid) => {
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }
@@ -254,19 +218,13 @@ exports.updateCompanyAssessments = async (companyid, assessmentid, payload = {})
         const company = await db.company.findOne({ where: { id: companyid } })
 
         if (!company) {
-            return {
-                error: true,
-                message: 'Company not found.'
-            }
+            throw new Error('company not found.')
         }
 
         const newAnswers = await db.assessment_answer.update(payload, { where: { id: assessmentid } })
 
         if (!newAnswers) {
-            return {
-                error: true,
-                message: 'Failed to update assessment.'
-            }
+            throw new Error('Update failed.')
         }
 
         const questions = await db.assessment.count()
@@ -276,10 +234,7 @@ exports.updateCompanyAssessments = async (companyid, assessmentid, payload = {})
         const newCompany = await db.company.update({ rating }, { where: { id: companyid } })
 
         if (!newCompany) {
-            return {
-                error: true,
-                message: 'Failed to update company rating.'
-            }
+            throw new Error('Company rating failed.')
         }
 
         return {
@@ -288,10 +243,10 @@ exports.updateCompanyAssessments = async (companyid, assessmentid, payload = {})
         }
 
     } catch (error) {
-        errorLog.error("Technical error: " + error.message)
+        errorLog.error(error.message)
         return {
             error: true,
-            message: 'Technical error.'
+            message: error.message
         }
     }
 }

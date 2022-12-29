@@ -44,7 +44,7 @@ exports.getRules = async (req, res) => {
     const service = await getRules() 
     
     res.send(
-        successResponse("Rules.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -61,13 +61,13 @@ exports.getRule = async (req, res) => {
     const service = await getRule(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Rule", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -87,13 +87,13 @@ exports.updateRule = async (req, res) => {
     })
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -110,13 +110,13 @@ exports.deleteRule = async (req, res) => {
     const service = await deleteRule(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Delete rule", {
+        successResponse("Deleted.", {
             data: []
         })
     )

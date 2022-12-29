@@ -41,13 +41,13 @@ exports.createCourse = async (req, res) => {
     }
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Course created", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -87,13 +87,13 @@ exports.createCourseVideo = async (req, res) => {
     }
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Course video added", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -133,13 +133,13 @@ exports.createCourseAudio = async (req, res) => {
     }
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Course audio added", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -156,7 +156,7 @@ exports.getCourses = async (req, res) => {
     const service = await getCourses() 
     
     res.send(
-        successResponse("Courses.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -173,13 +173,13 @@ exports.getCourse = async (req, res) => {
     const service = await getCourse(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Course", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -217,13 +217,13 @@ exports.updateCourse = async (req, res) => {
     }
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated", {
+        successResponse("Updated.", {
             data: service.data
         })
     )
@@ -240,13 +240,13 @@ exports.deleteCourse = async (req, res) => {
     const service = await deleteCourse(req.params.id)
 
     if (service.error) {
-        res.send(
+        res.status(400).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Delete Course", {
+        successResponse("Deleted.", {
             data: []
         })
     )
