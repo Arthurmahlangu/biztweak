@@ -1,7 +1,6 @@
 const TokenService = require("./token.service")
 const bcrypt = require('bcrypt')
 const db = require("../models")
-const { UserResource } = require("../resources/user.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -32,7 +31,17 @@ exports.emailAuth = async (email, password) => {
             error: false,
             data: {
                 token: token.data.token,
-                user: UserResource(user)
+                user: {
+                    id: user.id,
+                    fullname: user.fullname,
+                    email: user.email,
+                    phone: user.phone,
+                    education: user.education,
+                    work_experience: user.work_experience,
+                    location: user.location,
+                    role: user.role,
+                    registered: user.createdAt
+                }
             }
         }
         

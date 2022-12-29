@@ -5,15 +5,21 @@ const CourseController = require("../controllers/course.controller")
 
 const AuthMiddleware = require("../middlewares/auth.middleware")
 const { validate } = require("../middlewares/validators/wrapper.validator")
-const { passwordValidator } = require("../middlewares/validators/company.validations")
+const { 
+    getCourseValidator, 
+    updateCourseValidator, 
+    createCourseValidator,
+    createCourseAudioValidator,
+    createCourseVideoValidator
+} = require("../middlewares/validators/course.validations")
 
 
-router.post("/courses", AuthMiddleware, CourseController.createCourse)
+router.post("/courses", validate(createCourseValidator), AuthMiddleware, CourseController.createCourse)
 router.get("/courses", AuthMiddleware, CourseController.getCourses)
-router.get("/courses/:id", AuthMiddleware, CourseController.getCourse)
-router.put("/courses/:id", AuthMiddleware, CourseController.updateCourse)
-router.delete("/courses/:id", AuthMiddleware, CourseController.deleteCourse)
-router.post("/courses/:id/audio", AuthMiddleware, CourseController.createCourseAudio)
-router.post("/courses/:id/video", AuthMiddleware, CourseController.createCourseVideo)
+router.get("/courses/:id", validate(getCourseValidator), AuthMiddleware, CourseController.getCourse)
+router.put("/courses/:id", validate(updateCourseValidator), AuthMiddleware, CourseController.updateCourse)
+router.delete("/courses/:id", validate(getCourseValidator), AuthMiddleware, CourseController.deleteCourse)
+router.post("/courses/:id/audio", validate(createCourseAudioValidator), AuthMiddleware, CourseController.createCourseAudio)
+router.post("/courses/:id/video", validate(createCourseVideoValidator), AuthMiddleware, CourseController.createCourseVideo)
 
 module.exports = router

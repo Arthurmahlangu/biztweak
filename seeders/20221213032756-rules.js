@@ -88,49 +88,6 @@ module.exports = {
       updatedAt: new Date
     },
     
-
-    {
-      role: "ROOT",
-      path: "/tokens",
-      model: "tokens",
-      method: "GET",
-      owner: 1,
-      group: 1,
-      other: 1,
-      createdAt: new Date,
-      updatedAt: new Date
-    },{
-      role: "ROOT",
-      path: "/tokens/:id",
-      model: "tokens",
-      method: "GET",
-      owner: 1,
-      group: 1,
-      other: 1,
-      createdAt: new Date,
-      updatedAt: new Date
-    },{
-      role: "ROOT",
-      path: "/tokens/:id",
-      model: "tokens",
-      method: "DELETE",
-      owner: 1,
-      group: 1,
-      other: 1,
-      createdAt: new Date,
-      updatedAt: new Date
-    },{
-      role: "ROOT",
-      path: "/tokens/:id",
-      model: "tokens",
-      method: "PUT",
-      owner: 1,
-      group: 1,
-      other: 1,
-      createdAt: new Date,
-      updatedAt: new Date
-    },
-    
     {
       role: "ROOT",
       path: "/users",
@@ -175,6 +132,49 @@ module.exports = {
       role: "ROOT",
       path: "/users/:id",
       model: "users",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },
+    
+
+    {
+      role: "ROOT",
+      path: "/tokens",
+      model: "tokens",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/tokens/:id",
+      model: "tokens",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/tokens/:id",
+      model: "tokens",
+      method: "DELETE",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/tokens/:id",
+      model: "tokens",
       method: "PUT",
       owner: 1,
       group: 1,
@@ -363,6 +363,46 @@ module.exports = {
     },{
       role: "ROOT",
       path: "/courses/:id",
+      model: "courses",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:id/audio",
+      model: "courses",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:cid/audio/:aid",
+      model: "courses",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:id/video",
+      model: "courses",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:cid/video/:vid",
       model: "courses",
       method: "PUT",
       owner: 1,

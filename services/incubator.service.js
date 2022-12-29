@@ -1,4 +1,6 @@
 const db = require("../models")
+const UserResource = require("../resources/user.resource")
+const IncubatorResource = require("../resources/incubator.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -35,7 +37,15 @@ exports.createIncubator = async (payload) => {
 exports.getIncubators = async () => {
     try {
         
-        const incubators = await db.incubator.findAll()
+        const incubators = await db.incubator.findAll({ 
+            attributes: IncubatorResource,
+            include: [
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }
+            ]
+        })
 
         return {
             error: false,
@@ -54,7 +64,16 @@ exports.getIncubators = async () => {
 exports.getIncubator = async (id) => {
     try {
 
-        const incubator = await db.incubator.findOne({ where: { id } })
+        const incubator = await db.incubator.findOne({ 
+            where: { id },
+            attributes: IncubatorResource,
+            include: [
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }
+            ]
+        })
 
         if (!incubator) {
             throw new Error('Incubator not found.')

@@ -1,9 +1,4 @@
-exports.ExampleResource = (model) => {
-    const {
-        id
-    } = model
-
-    return {
-        id
-    }
-}
+module.exports = [
+    'id', 
+    'name'
+]

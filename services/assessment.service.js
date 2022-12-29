@@ -1,4 +1,5 @@
 const db = require("../models")
+const QuestionsResource = require("../resources/questions.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -35,7 +36,7 @@ exports.createAssessment = async (payload) => {
 exports.getAssessments = async () => {
     try {
         
-        const assessments = await db.assessment.findAll()
+        const assessments = await db.assessment.findAll({ attributes: QuestionsResource })
 
         return {
             error: false,
@@ -54,7 +55,7 @@ exports.getAssessments = async () => {
 exports.getAssessment = async (id) => {
     try {
 
-        const assessment = await db.assessment.findOne({ where: { id } })
+        const assessment = await db.assessment.findOne({ where: { id }, attributes: QuestionsResource })
 
         if (!assessment) {
             throw new Error('Assessment not found.')

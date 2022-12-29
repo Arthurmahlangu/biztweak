@@ -1,4 +1,8 @@
 const db = require("../models")
+const UserResource = require("../resources/user.resource")
+const AudioResource = require("../resources/audio.resource")
+const VideoResource = require("../resources/video.resource")
+const courseResource = require("../resources/course.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -34,6 +38,14 @@ exports.createCourse = async (payload) => {
 
 exports.createCourseAudio = async (payload) => {
     try {
+
+        const course = await db.course.findOne({ 
+            where: { id: payload.courseid }
+        })
+
+        if (!course) {
+            throw new Error('Course not found.')
+        }
         
         const newCourse = await db.course_audio.create(payload)
 
@@ -57,6 +69,14 @@ exports.createCourseAudio = async (payload) => {
 
 exports.createCourseVideo = async (payload) => {
     try {
+
+        const course = await db.course.findOne({ 
+            where: { id: payload.courseid }
+        })
+
+        if (!course) {
+            throw new Error('Course not found.')
+        }
         
         const newCourse = await db.course_video.create(payload)
 
@@ -81,7 +101,15 @@ exports.createCourseVideo = async (payload) => {
 exports.getCourses = async () => {
     try {
         
-        const courses = await db.course.findAll()
+        const courses = await db.course.findAll({ 
+            attributes: courseResource,
+            include: [
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }
+            ]
+        })
 
         return {
             error: false,
@@ -100,7 +128,26 @@ exports.getCourses = async () => {
 exports.getCourse = async (id) => {
     try {
 
-        const course = await db.course.findOne({ where: { id } })
+        const course = await db.course.findOne({ 
+            where: { id }, 
+            attributes: courseResource,
+            include: [
+                {
+                    model: db.course_audio,
+                    as: 'audios',
+                    attributes: AudioResource
+                },
+                {
+                    model: db.course_video,
+                    as: 'videos',
+                    attributes: VideoResource
+                },
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }
+            ]
+        })
 
         if (!course) {
             throw new Error('Course not found.')

@@ -5,14 +5,18 @@ const router = express.Router()
 const IncubatorController = require("../controllers/incubator.controller")
 
 const AuthMiddleware = require("../middlewares/auth.middleware")
-// const { validate } = require("../middlewares/validators/wrapper.validator")
-// const { indexValidator } = require("../middlewares/validators/incubator.validations")
+const { validate } = require("../middlewares/validators/wrapper.validator")
+const { 
+    getIncubatorValidator, 
+    createIncubatorValidator, 
+    updateIncubatorValidator
+} = require("../middlewares/validators/incubator.validations")
 
 
-router.post("/incubators", AuthMiddleware, IncubatorController.createIncubator)
+router.post("/incubators", validate(createIncubatorValidator), AuthMiddleware, IncubatorController.createIncubator)
 router.get("/incubators", AuthMiddleware, IncubatorController.getIncubators)
-router.get("/incubators/:id", AuthMiddleware, IncubatorController.getIncubator)
-router.put("/incubators/:id", AuthMiddleware, IncubatorController.updateIncubator)
-router.delete("/incubators/:id", AuthMiddleware, IncubatorController.deleteIncubator)
+router.get("/incubators/:id", validate(getIncubatorValidator), AuthMiddleware, IncubatorController.getIncubator)
+router.put("/incubators/:id", validate(updateIncubatorValidator), AuthMiddleware, IncubatorController.updateIncubator)
+router.delete("/incubators/:id", validate(getIncubatorValidator), AuthMiddleware, IncubatorController.deleteIncubator)
 
 module.exports = router

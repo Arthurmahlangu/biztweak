@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt")
 const db = require("../models")
-const { UserResource } = require("../resources/user.resource")
-const { UserCollection } = require("../collections/user.collection")
+const UserResource = require("../resources/user.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -10,11 +9,11 @@ const errorLog = require("simple-node-logger").createSimpleLogger({
 exports.getUsers = async () => {
     try {
         
-        const users = await db.user.findAll()
+        const users = await db.user.findAll({ attributes: UserResource })
 
         return {
             error: false,
-            data: UserCollection(users)
+            data: users
         }
 
     } catch (error) {
@@ -29,7 +28,7 @@ exports.getUsers = async () => {
 exports.getUser = async (id) => {
     try {
 
-        const user = await db.user.findOne({ where: { id } })
+        const user = await db.user.findOne({ where: { id }, attributes: UserResource })
 
         if (!user) {
             throw new Error('User not found.')
@@ -37,7 +36,7 @@ exports.getUser = async (id) => {
 
         return {
             error: false,
-            data: UserResource(user)
+            data: user
         }
 
     } catch (error) {

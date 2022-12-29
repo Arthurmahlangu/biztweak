@@ -119,11 +119,17 @@ exports.createCourseAudio = async (req, res) => {
         const now = new Date().getTime()
         const filePath = "./storage/audios/" + now + "_" + audio.name
 
-        await audio.mv(filePath)
+        if (audio.mimetype !== 'audio/mpeg') {
+            res.status(400).send(
+                failResponse("Invalid audio file.")
+            )
+        }
 
         service = await createCourseAudio({
             userid: req.auth.id, courseid: id, name, description, type, file: filePath
         })
+
+        await audio.mv(filePath)
 
     } else {
 

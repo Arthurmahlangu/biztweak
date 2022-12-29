@@ -1,4 +1,7 @@
 const db = require("../models")
+const UserResource = require("../resources/user.resource")
+const CompanyResource = require("../resources/company.resource")
+const AssessmentResource = require("../resources/assessment.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -35,7 +38,20 @@ exports.createCompany = async (payload) => {
 exports.getCompanies = async () => {
     try {
         
-        const companies = await db.company.findAll()
+        const companies = await db.company.findAll({
+            attributes: CompanyResource,
+            include: [
+                {
+                    model: db.assessment_answer,
+                    as: 'assessments',
+                    attributes: AssessmentResource
+                },
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }  
+            ]
+        })
 
         return {
             error: false,
@@ -54,7 +70,21 @@ exports.getCompanies = async () => {
 exports.getCompany = async (id) => {
     try {
 
-        const company = await db.company.findOne({ where: { id }, include: 'assessment_answer' })
+        const company = await db.company.findOne({ 
+            where: { id },
+            attributes: CompanyResource,
+            include: [
+                {
+                    model: db.assessment_answer,
+                    as: 'assessments',
+                    attributes: AssessmentResource
+                },
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }
+            ]
+        })
 
         if (!company) {
             throw new Error('Company not found.')
