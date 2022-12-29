@@ -59,7 +59,7 @@ const handler = async (auth, params, method, path, route) => {
                     where: { id: params.id }
                 })
 
-                if (found.userid) {
+                if (found) {
                     if (found.userid == self.id) {
                         if (rules.owner) {
                             return true
