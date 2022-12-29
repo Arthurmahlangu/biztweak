@@ -27,11 +27,17 @@ exports.createCourse = async (req, res) => {
         const now = new Date().getTime()
         const filePath = "./storage/company/" + now + "_" + logo.name
 
-        await logo.mv(filePath)
-
+        if (logo.mimetype !== 'image/png' || logo.mimetype !== 'image/jpeg') {
+            res.status(400).send(
+                failResponse("Invalid png|jpg|jpeg file.")
+            )
+        }
+        
         service = await createCourse({
             userid: req.auth.id, title, description, logo: filePath
         })
+        
+        await logo.mv(filePath)
 
     } else {
 
@@ -73,9 +79,9 @@ exports.createCourseVideo = async (req, res) => {
         const now = new Date().getTime()
         const filePath = "./storage/videos/" + now + "_" + video.name
 
-        if (audio.mimetype !== 'video/mp4') {
+        if (audio.mimetype !== 'video/mp4' || audio.mimetype !== 'video/mpeg') {
             res.status(400).send(
-                failResponse("Invalid mp4 file.")
+                failResponse("Invalid mp4|mpeg file.")
             )
         }
         
@@ -125,9 +131,9 @@ exports.createCourseAudio = async (req, res) => {
         const now = new Date().getTime()
         const filePath = "./storage/audios/" + now + "_" + audio.name
 
-        if (audio.mimetype !== 'audio/mpeg') {
+        if (audio.mimetype !== 'audio/mpeg' || audio.mimetype !== 'audio/wav') {
             res.status(400).send(
-                failResponse("Invalid mp3 file.")
+                failResponse("Invalid mp3|wav file.")
             )
         }
 
