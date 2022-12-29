@@ -4,15 +4,15 @@ const router = express.Router()
 // Add routes
 const AssessmentController = require("../controllers/assessment.controller")
 
-const policyMiddleware = require("../middlewares/policy.middleware")
+const AuthMiddleware = require("../middlewares/auth.middleware")
 const { validate } = require("../middlewares/validators/wrapper.validator")
 const { passwordValidator } = require("../middlewares/validators/company.validations")
 
 
-router.post("/assessments", policyMiddleware, AssessmentController.createAssessment)
-router.get("/assessments", policyMiddleware, AssessmentController.getAssessments)
-router.get("/assessments/:id", policyMiddleware, AssessmentController.getAssessment)
-router.put("/assessments/:id", policyMiddleware, AssessmentController.updateAssessment)
-router.delete("/assessments/:id", policyMiddleware, AssessmentController.deleteAssessment)
+router.post("/assessments", AuthMiddleware, AssessmentController.createAssessment)
+router.get("/assessments", AuthMiddleware, AssessmentController.getAssessments)
+router.get("/assessments/:id", AuthMiddleware, AssessmentController.getAssessment)
+router.put("/assessments/:id", AuthMiddleware, AssessmentController.updateAssessment)
+router.delete("/assessments/:id", AuthMiddleware, AssessmentController.deleteAssessment)
 
 module.exports = router

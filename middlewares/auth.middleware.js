@@ -100,7 +100,6 @@ const handler = async (auth, params, method, path, route) => {
 
 }
 
-
 /**
  *
  * @param req
@@ -108,48 +107,62 @@ const handler = async (auth, params, method, path, route) => {
  * @param next
  * @returns {*}
  */
- module.exports = async (req, res, next) => {
+module.exports = async (req, res, next) => {
     const { params, method, headers, path, route } = req
+
     const { authorization } = headers
 
-    try {
-        if (!authorization) {
-            return res.
-                status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
-                send(failResponse("Authentication failed."))
-        }
-    
-        const token = authorization.split(' ')[1]
-    
-        if (!token) {
-            return res.
-                status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
-                send(failResponse("Authrntication failed."))
-        }
-    
-        const verify = jwt.verify(token, process.env.TOKEN_SECRET)
-    
-        if (!verify) {
-            return res.
-                status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
-                send(failResponse("Authorization failed."))
-        }
-    
-        const auth = jwt.decode(token)
-        const isSuccess = await handler(auth, params, method, path, route)
-    
-        if (!isSuccess) {
-            return res.
-                status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
-                send(failResponse("Authorization failed."))
-        }
+    if (!authorization) {
+        return res.
+            status(403).
+            send(failResponse("Authentication failed."))
+    }
 
-        req.auth = auth
-    
-        next()
-    } catch (error) {
+    const token = authorization.split(' ')[1]
+
+    if (!token) {
+        return res.
+            status(403).
+            send(failResponse("Authentication failed."))
+    }
+
+    const verify = await jwt.verify(token, process.env.TOKEN_SECRET)
+
+    if (!verify) {
+        return res.
+            status(403).
+            send(failResponse("Authentication failed."))
+    }
+
+    const auth = await jwt.decode(token)
+
+    const tokenData = await db.token.findOne({ where: { token, userid: auth.id, type: "Access-Token" } })
+
+    if (!tokenData) {
+        return res.
+            status(403).
+            send(failResponse("Authentication failed."))
+    }
+
+    const now = new Date()
+
+    if (now > tokenData.expiry) {
+        await db.token.destroy({ where: { id: tokenData.id } })
+        
+        return res.
+            status(403).
+            send(failResponse("Token expired."))
+    }
+
+    const isSuccess = await handler(auth, params, method, path, route)
+
+    if (!isSuccess) {
         return res.
             status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
             send(failResponse("Authorization failed."))
     }
- }
+
+    req.auth = auth
+    
+    next()
+}
