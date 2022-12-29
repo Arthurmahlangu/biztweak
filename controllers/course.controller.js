@@ -73,11 +73,17 @@ exports.createCourseVideo = async (req, res) => {
         const now = new Date().getTime()
         const filePath = "./storage/videos/" + now + "_" + video.name
 
-        await video.mv(filePath)
-
-        service = await createCourseAudio({
+        if (audio.mimetype !== 'video/mp4') {
+            res.status(400).send(
+                failResponse("Invalid mp4 file.")
+            )
+        }
+        
+        service = await createCourseVideo({
             userid: req.auth.id, courseid: id, name, description, type, file: filePath
         })
+
+        await video.mv(filePath)
 
     } else {
 
@@ -121,7 +127,7 @@ exports.createCourseAudio = async (req, res) => {
 
         if (audio.mimetype !== 'audio/mpeg') {
             res.status(400).send(
-                failResponse("Invalid audio file.")
+                failResponse("Invalid mp3 file.")
             )
         }
 
