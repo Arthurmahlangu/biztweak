@@ -1,10 +1,113 @@
 const bcrypt = require("bcrypt")
+const bcrypt = require('bcrypt')
 const db = require("../models")
 const UserResource = require("../resources/user.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
 })
+
+exports.createSuperUser = async (fullname, email, password) => {
+    try {
+
+        const isUser = await db.user.findOne({ where: { email } })
+
+        if (isUser) {
+            throw new Error('Account exists. Try logging in.')
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hashPassword = await bcrypt.hash(password, salt)
+
+        const newUser = await db.user.create({
+            fullname, email, password: hashPassword, role: "ROOT"
+        })
+
+        if (!newUser) {
+            throw new Error('Registration failed.')
+        }
+
+        return {
+            error: false,
+            data: newUser
+        }
+        
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}
+
+exports.createAdminUser = async (fullname, email, password) => {
+    try {
+
+        const isUser = await db.user.findOne({ where: { email } })
+
+        if (isUser) {
+            throw new Error('Account exists. Try logging in.')
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hashPassword = await bcrypt.hash(password, salt)
+
+        const newUser = await db.user.create({
+            fullname, email, password: hashPassword, role: "ADMIN"
+        })
+
+        if (!newUser) {
+            throw new Error('Registration failed.')
+        }
+
+        return {
+            error: false,
+            data: newUser
+        }
+        
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}
+
+exports.createMentorUser = async (fullname, email, password) => {
+    try {
+
+        const isUser = await db.user.findOne({ where: { email } })
+
+        if (isUser) {
+            throw new Error('Account exists. Try logging in.')
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hashPassword = await bcrypt.hash(password, salt)
+
+        const newUser = await db.user.create({
+            fullname, email, password: hashPassword, role: "MENTOR"
+        })
+
+        if (!newUser) {
+            throw new Error('Registration failed.')
+        }
+
+        return {
+            error: false,
+            data: newUser
+        }
+        
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}
 
 exports.getUsers = async () => {
     try {

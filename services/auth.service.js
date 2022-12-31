@@ -67,7 +67,7 @@ exports.emailRegister = async (fullname, email, password) => {
         const hashPassword = await bcrypt.hash(password, salt)
 
         const newUser = await db.user.create({
-            fullname, email, password: hashPassword
+            fullname, email, password: hashPassword, role: "ENTREPRENEUR"
         })
 
         if (!newUser) {

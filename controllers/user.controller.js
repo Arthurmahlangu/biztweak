@@ -1,5 +1,85 @@
 const { successResponse, failResponse } = require("../helpers/methods")
-const { getUsers, getUser, updateUser, updatePassword } = require("../services/user.service")
+const { 
+    getUsers, 
+    getUser, 
+    updateUser, 
+    updatePassword, 
+    createSuperUser, 
+    createAdminUser,
+    createMentorUser
+} = require("../services/user.service")
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createSuperAccount = async (req, res) => {
+
+    const {fullname, email, password} = req.body
+    const service = await createSuperUser(fullname, email, password)
+
+    if (service.error) {
+        res.status(400).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createAdminAccount = async (req, res) => {
+
+    const {fullname, email, password} = req.body
+    const service = await createAdminUser(fullname, email, password)
+
+    if (service.error) {
+        res.status(400).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createMentorAccount = async (req, res) => {
+
+    const {fullname, email, password} = req.body
+    const service = await createMentorUser(fullname, email, password)
+
+    if (service.error) {
+        res.status(400).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
 
 /**
  *

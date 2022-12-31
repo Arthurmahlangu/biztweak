@@ -67,59 +67,6 @@ exports.createCourse = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.createCourseVideo = async (req, res) => {
-
-    let service = null
-
-    const { id } = req.params
-    const { name, description, type } = req.body
-    
-    if (req.files && req.files.video) {
-        
-        const { video } = req.files
-
-        const now = new Date().getTime()
-        const filePath = "./storage/videos/" + now + "_" + video.name
-
-        if (audio.mimetype !== 'video/mp4' && audio.mimetype !== 'video/mpeg') {
-            return res.status(400).send(
-                failResponse("Invalid mp4|mpeg file.")
-            )
-        }
-        
-        service = await createCourseVideo({
-            userid: req.auth.id, courseid: id, name, description, type, file: filePath
-        })
-
-        if (!service.error) {
-            await video.mv(filePath)
-        }
-
-    } else {
-        return res.status(400).send(
-            failResponse("Invalid mp4|mpeg file.")
-        )
-    }
-
-    if (service.error) {
-        res.status(400).send(
-            failResponse(service.message)
-        )
-    }
-
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
 exports.createCourseAudio = async (req, res) => {
 
     let service = null
@@ -152,6 +99,59 @@ exports.createCourseAudio = async (req, res) => {
 
         return res.status(400).send(
             failResponse("Invalid mp3|wav file.")
+        )
+    }
+
+    if (service.error) {
+        res.status(400).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createCourseVideo = async (req, res) => {
+
+    let service = null
+
+    const { id } = req.params
+    const { name, description, type } = req.body
+    
+    if (req.files && req.files.video) {
+        
+        const { video } = req.files
+
+        const now = new Date().getTime()
+        const filePath = "./storage/videos/" + now + "_" + video.name
+
+        if (video.mimetype !== 'video/mp4' && video.mimetype !== 'video/mpeg') {
+            return res.status(400).send(
+                failResponse("Invalid mp4|mpeg file.")
+            )
+        }
+        
+        service = await createCourseVideo({
+            userid: req.auth.id, courseid: id, name, description, type, file: filePath
+        })
+
+        if (!service.error) {
+            await video.mv(filePath)
+        }
+
+    } else {
+        return res.status(400).send(
+            failResponse("Invalid mp4|mpeg file.")
         )
     }
 
