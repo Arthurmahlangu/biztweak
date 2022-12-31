@@ -1,4 +1,3 @@
-const bcrypt = require("bcrypt")
 const bcrypt = require('bcrypt')
 const db = require("../models")
 const UserResource = require("../resources/user.resource")
