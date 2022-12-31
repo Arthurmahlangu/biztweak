@@ -87,6 +87,38 @@ module.exports = {
       createdAt: new Date,
       updatedAt: new Date
     },
+
+    {
+      role: "ROOT",
+      path: "/users/super",
+      model: "users",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/users/admin",
+      model: "users",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/users/mentor",
+      model: "users",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },
     
     {
       role: "ROOT",
