@@ -220,3 +220,33 @@ exports.deleteCourse = async (id) => {
         }
     }
 }
+
+
+exports.getMyCourses = async (userid) => {
+    try {
+        
+        const courses = await db.course.findAll({
+            where: { userid }
+        }, { 
+            attributes: courseResource,
+            include: [
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }
+            ]
+        })
+
+        return {
+            error: false,
+            data: courses
+        }
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}

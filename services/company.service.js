@@ -280,3 +280,38 @@ exports.updateCompanyAssessments = async (companyid, assessmentid, payload = {})
         }
     }
 }
+
+
+exports.getMyCompanies = async (userid) => {
+    try {
+        
+        const companies = await db.company.findAll({
+            where: { userid }
+        }, {
+            attributes: CompanyResource,
+            include: [
+                {
+                    model: db.assessment_answer,
+                    as: 'assessments',
+                    attributes: AssessmentResource
+                },
+                {
+                    model: db.user,
+                    attributes: UserResource
+                }  
+            ]
+        })
+
+        return {
+            error: false,
+            data: companies
+        }
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}

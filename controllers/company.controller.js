@@ -7,7 +7,8 @@ const {
     deleteCompany,
     createCompanyAssessments,
     updateCompanyAssessments,
-    getCompanyAssessments
+    getCompanyAssessments,
+    getMyCompanies
 } = require("../services/company.service")
 
 /**
@@ -194,6 +195,23 @@ exports.updateCompanyAssessments = async (req, res) => {
 
     res.send(
         successResponse("Updated.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.getCompanies = async (req, res) => {
+
+    const service = await getMyCompanies(req.auth.id) 
+    
+    res.send(
+        successResponse("Successful.", {
             data: service.data
         })
     )

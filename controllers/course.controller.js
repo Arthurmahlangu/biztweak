@@ -6,7 +6,8 @@ const {
     updateCourse, 
     deleteCourse,
     createCourseAudio,
-    createCourseVideo 
+    createCourseVideo, 
+    getMyCourses
 } = require("../services/course.service")
 
 /**
@@ -177,6 +178,23 @@ exports.createCourseVideo = async (req, res) => {
 exports.getCourses = async (req, res) => {
 
     const service = await getCourses() 
+    
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.getMyCourses = async (req, res) => {
+
+    const service = await getMyCourses(req.auth.id) 
     
     res.send(
         successResponse("Successful.", {
