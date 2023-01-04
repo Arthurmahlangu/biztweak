@@ -496,6 +496,132 @@ module.exports = {
       createdAt: new Date,
       updatedAt: new Date
     },
+
+    
+    {
+      role: "ROOT",
+      path: "/events",
+      model: "events",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events/:id",
+      model: "events",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events",
+      model: "events",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events/:id",
+      model: "events",
+      method: "DELETE",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events/:id",
+      model: "events",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events/:id/invite",
+      model: "events",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events/:id/invite",
+      model: "events",
+      method: "DELETE",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },
+
+    
+    {
+      role: "ROOT",
+      path: "/attendances",
+      model: "attendances",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/attendances/:id",
+      model: "attendances",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/attendances",
+      model: "attendances",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/attendances/:id",
+      model: "attendances",
+      method: "DELETE",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/attendances/:id",
+      model: "attendances",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },
     
 
     {

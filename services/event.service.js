@@ -22,7 +22,7 @@ exports.createEvent = async (payload) => {
 
         const newInvite = await db.invite.create({
             userid: payload.userid,
-            eventid: newCalendarEvent.id
+            eventid: newEvent.id
         })
 
         if (!newInvite) {
