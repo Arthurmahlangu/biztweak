@@ -85,6 +85,9 @@
                 <li class="scroll-to-link" data-target="users">
                     <a>USERS</a>
                 </li>
+                <li class="scroll-to-link" data-target="assessments">
+                    <a>ASSESSMENT QUESTIONS</a>
+                </li>
                 <li class="scroll-to-link" data-target="content-errors">
                     <a>Errors</a>
                 </li>
@@ -877,6 +880,324 @@ DELETE http://146.190.224.144/api/v1/users/1
                 <p>
                     Delete a specific registered user :<br>
                     <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": []
+    }
+  }
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="assessments">
+                <h2>Create assessment question</h2>
+                <pre><code class="bash">
+# Endpoint
+POST http://146.190.224.144/api/v1/assessments
+                </code></pre>
+                <p>
+                    Create assessment question :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": {
+        "id": 130,
+        "category": "Category example",
+        "label": "Question example",
+        "answer": "Answer example",
+        "updatedAt": "2023-01-05T16:38:21.642Z",
+        "createdAt": "2023-01-05T16:38:21.642Z"
+      }
+    }
+  }
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>category</td>
+                            <td>String</td>
+                            <td>Category of the question.</td>
+                        </tr>
+                        <tr>
+                            <td>label</td>
+                            <td>String</td>
+                            <td>Question</td>
+                        </tr>
+                        <tr>
+                            <td>answer</td>
+                            <td>String</td>
+                            <td>
+                                Possible answer
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Get assessments</h2>
+                <pre><code class="bash">
+# Endpoint
+GET http://146.190.224.144/api/v1/assessments
+                </code></pre>
+                <p>
+                    Get all assessment questions :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": [
+      {
+        "id": 1,
+        "category": "Customer relations",
+        "label": "Do you know the types of relationships you need to establish with your customer segments?",
+        "answer": "yes|no",
+        "date": "2023-01-05T04:07:35.000Z"
+      },
+        ...
+      ]
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Get assessment</h2>
+                <pre><code class="bash">
+# Endpoint
+GET http://146.190.224.144/api/v1/assessments/1
+                </code></pre>
+                <p>
+                    Get a specific assessment question :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": {
+        "id": 1,
+        "category": "Customer relations",
+        "label": "Do you know the types of relationships you need to establish with your customer segments?",
+        "answer": "yes|no",
+        "date": "2023-01-05T04:07:35.000Z"
+      }
+    }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Update assessment question</h2>
+                <pre><code class="bash">
+# Endpoint
+PUT http://146.190.224.144/api/v1/assessments/1
+                </code></pre>
+                <p>
+                    Update a specific assessment question :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Updated.",
+    "package": {
+      "data": []
+    }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>category</td>
+                            <td>String</td>
+                            <td>Category of the question.</td>
+                        </tr>
+                        <tr>
+                            <td>label</td>
+                            <td>String</td>
+                            <td>Question</td>
+                        </tr>
+                        <tr>
+                            <td>answer</td>
+                            <td>String</td>
+                            <td>
+                                Possible answer
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Delete user</h2>
+                <pre><code class="bash">
+# Endpoint
+DELETE http://146.190.224.144/api/v1/assessments/1
+                </code></pre>
+                <p>
+                    Delete a specific assessment question :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments/1</code>
                 </p>
                 <br>
                 <pre><code class="json">

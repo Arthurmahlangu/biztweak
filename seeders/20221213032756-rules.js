@@ -58,7 +58,7 @@ module.exports = {
 
     {
       role: "ROOT",
-      path: "/users/role/:id",
+      path: "/users/:id/role",
       model: "users",
       method: "PUT",
       owner: 1,
@@ -68,7 +68,7 @@ module.exports = {
       updatedAt: new Date
     },{
       role: "ROOT",
-      path: "/users/email/:id",
+      path: "/users/:id/email",
       model: "users",
       method: "PUT",
       owner: 1,
@@ -78,7 +78,7 @@ module.exports = {
       updatedAt: new Date
     },{
       role: "ROOT",
-      path: "/users/password/:id",
+      path: "/users/:id/password",
       model: "users",
       method: "PUT",
       owner: 1,

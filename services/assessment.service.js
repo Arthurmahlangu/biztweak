@@ -7,10 +7,10 @@ const errorLog = require("simple-node-logger").createSimpleLogger({
 
 exports.createAssessment = async (payload) => {
     try {
-        const assessment = await db.assessment.findOne({ where: { title: payload.title } })
+        const assessment = await db.assessment.findOne({ where: { label: payload.label } })
 
         if (assessment) {
-            throw new Error('Assessment title already taken.')
+            throw new Error('Assessment label already taken.')
         }
         
         const newAssessment = await db.assessment.create(payload)
