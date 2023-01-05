@@ -18,6 +18,8 @@ app.use(fileUpload());
 // Req and Res logger.
 app.use(accessLogMiddleware)
 
+app.use(express.static(__dirname + '/public'));
+
 app.use("/", routes)
 
 module.exports = app

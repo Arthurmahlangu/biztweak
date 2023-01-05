@@ -14,6 +14,7 @@ const AttendanceApi = require("./attendance.api")
 
 
 router.get("/", IndexController.index)
+router.get("/documentation", IndexController.documentation)
 
 router.use("/api/v1", UserApi)
 router.use("/api/v1", AuthApi)
