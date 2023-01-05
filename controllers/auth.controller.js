@@ -9,7 +9,7 @@ const { emailAuth, emailRegister } = require("../services/auth.service")
  */
 exports.emailAuth = async (req, res) => {
 
-    const {email, password} = req.body
+    const { email, password } = req.body
     const service = await emailAuth(email, password)
 
     if (service.error) {

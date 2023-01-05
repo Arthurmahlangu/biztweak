@@ -51,15 +51,18 @@
         <div class="mobile-menu-closer"></div>
         <div class="content-menu">
             <div class="content-infos">
-                <div class="info"><b>Version:</b> 1.0.5</div>
-                <div class="info"><b>Last Updated:</b> 15th Sep, 2021</div>
+                <div class="info"><b>Version:</b> 1.0.0</div>
+                <div class="info"><b>Last Updated:</b> 5th Jan, 2023</div>
             </div>
             <ul>
                 <li class="scroll-to-link active" data-target="content-get-started">
                     <a>GET STARTED</a>
                 </li>
-                <li class="scroll-to-link" data-target="content-get-characters">
-                    <a>Get Characters</a>
+                <li class="scroll-to-link" data-target="register">
+                    <a>REGISTER</a>
+                </li>
+                <li class="scroll-to-link" data-target="login">
+                    <a>LOGIN</a>
                 </li>
                 <li class="scroll-to-link" data-target="content-errors">
                     <a>Errors</a>
@@ -74,7 +77,7 @@
                 <h1>Get started</h1>
                 <pre>
 API Endpoint
-    https://api.westeros.com/
+    http://146.190.224.144/api/v1/
                 </pre>
                 <p>
                     The Westeros API provides programmatic access to read Game of Thrones data. Retrieve a character,
@@ -85,89 +88,28 @@ API Endpoint
                         href="mailto:jon.snow@nightswatch.wes">jon.snow@nightswatch.wes</a> to get your own API key.
                 </p>
             </div>
-            <div class="overflow-hidden content-section" id="content-get-characters">
-                <h2>get characters</h2>
+            <div class="overflow-hidden content-section" id="register">
+                <h2>Register</h2>
                 <pre><code class="bash">
-# Here is a curl example
-curl \
--X POST http://api.westeros.com/character/get \
--F 'secret_key=your_api_key' \
--F 'house=Stark,Bolton' \
--F 'offset=0' \
--F 'limit=50'
+# Endpoint
+POST http://146.190.224.144/api/v1/email-register
                 </code></pre>
                 <p>
-                    To get characters you need to make a POST call to the following url :<br>
-                    <code class="higlighted break-word">http://api.westeros.com/character/get</code>
+                    Register biz account :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/email-register</code>
                 </p>
                 <br>
                 <pre><code class="json">
-Result example :
-
+# SUCCESS 200
 {
-  query:{
-    offset: 0,
-    limit: 50,
-    house: [
-      "Stark",
-      "Bolton"
-    ],
-  }
-  result: [
-    {
-      id: 1,
-      first_name: "Jon",
-      last_name: "Snow",
-      alive: true,
-      house: "Stark",
-      gender: "m",
-      age: 14,
-      location: "Winterfell"
-    },
-    {
-      id: 2,
-      first_name: "Eddard",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "m",
-      age: 35,
-      location: 'Winterfell'
-    },
-    {
-      id: 3,
-      first_name: "Catelyn",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "f",
-      age: 33,
-      location: "Winterfell"
-    },
-    {
-      id: 4,
-      first_name: "Roose",
-      last_name: "Bolton",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 40,
-      location: "Dreadfort"
-    },
-    {
-      id: 5,
-      first_name: "Ramsay",
-      last_name: "Snow",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 15,
-      location: "Dreadfort"
-    },
-  ]
+    "status": true,
+    "message": "Successful.",
+    "package": {
+        "data": []
+    }
 }
                 </code></pre>
-                <h4>QUERY PARAMETERS</h4>
+                <h4>BODY PARAMETERS</h4>
                 <table class="central-overflow-x">
                     <thead>
                         <tr>
@@ -178,49 +120,80 @@ Result example :
                     </thead>
                     <tbody>
                         <tr>
-                            <td>secret_key</td>
+                            <td>fullname</td>
                             <td>String</td>
-                            <td>Your API key.</td>
+                            <td>Valid name and surname.</td>
                         </tr>
                         <tr>
-                            <td>search</td>
+                            <td>email</td>
                             <td>String</td>
-                            <td>(optional) A search word to find character by name.</td>
+                            <td>Valid email address</td>
                         </tr>
                         <tr>
-                            <td>house</td>
-                            <td>String</td>
-                            <td>
-                                (optional) a string array of houses:
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>alive</td>
-                            <td>Boolean</td>
-                            <td>
-                                (optional) a boolean to filter alived characters
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>gender</td>
+                            <td>password</td>
                             <td>String</td>
                             <td>
-                                (optional) a string to filter character by gender:<br>
-                                m: male<br>
-                                f: female
+                                Strong password
                             </td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="login">
+                <h2>Login</h2>
+                <pre><code class="bash">
+# Endpoint
+POST http://146.190.224.144/api/v1/email-auth
+                </code></pre>
+                <p>
+                    Login to biz account :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/email-auth</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": {
+        "token": "eyJhbGciOi9.eyJNDUzOH0.QswFwg6K_cyIyvudLRbuzU",
+        "user": {
+          "id": 2,
+          "fullname": "Lebohang Mokoena",
+          "email": "lebohang@gmail.com",
+          "phone": null,
+          "education": null,
+          "work_experience": null,
+          "location": null,
+          "role": "ENTREPRENEUR",
+          "registered": "2023-01-05T09:01:35.000Z"
+        }
+      }
+    }
+  }
+                </code></pre>
+                <h4>BODY PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
                         <tr>
-                            <td>offset</td>
-                            <td>Integer</td>
-                            <td>(optional - default: 0) A cursor for use in pagination. Pagination starts offset the
-                                specified offset.</td>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>email</td>
+                            <td>String</td>
+                            <td>Valid email address</td>
                         </tr>
                         <tr>
-                            <td>limit</td>
-                            <td>Integer</td>
-                            <td>(optional - default: 10) A limit on the number of objects to be returned, between 1 and
-                                100.</td>
+                            <td>password</td>
+                            <td>String</td>
+                            <td>
+                                Strong password
+                            </td>
                         </tr>
                     </tbody>
                 </table>
