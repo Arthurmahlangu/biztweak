@@ -1,6 +1,7 @@
 const TokenService = require("./token.service")
 const bcrypt = require('bcrypt')
 const db = require("../models")
+const mailer = require("../helpers/mailer")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -72,6 +73,12 @@ exports.emailRegister = async (fullname, email, password) => {
 
         if (!newUser) {
             throw new Error('Registration failed.')
+        }
+
+        const emailRes = await mailer(email, "Biztweak Registration", "Biztweak account registered.")
+
+        if (emailRes.error) {
+            throw new Error('Registration email failed.')
         }
 
         return {
