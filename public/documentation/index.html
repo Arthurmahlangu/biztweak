@@ -88,6 +88,9 @@
                 <li class="scroll-to-link" data-target="assessments">
                     <a>ASSESSMENT QUESTIONS</a>
                 </li>
+                <li class="scroll-to-link" data-target="company">
+                    <a>COMPANY</a>
+                </li>
                 <li class="scroll-to-link" data-target="content-errors">
                     <a>Errors</a>
                 </li>
@@ -1103,7 +1106,7 @@ GET http://146.190.224.144/api/v1/assessments/1
                         <tr>
                             <td>id</td>
                             <td>Integer</td>
-                            <td>Valid user id.</td>
+                            <td>Valid assessment id.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1157,7 +1160,7 @@ PUT http://146.190.224.144/api/v1/assessments/1
                         <tr>
                             <td>id</td>
                             <td>Integer</td>
-                            <td>Valid user id.</td>
+                            <td>Valid assessment id.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1240,7 +1243,415 @@ DELETE http://146.190.224.144/api/v1/assessments/1
                         <tr>
                             <td>id</td>
                             <td>Integer</td>
-                            <td>Valid user id.</td>
+                            <td>Valid assessment id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="company">
+                <h2>Create company</h2>
+                <pre><code class="bash">
+# Endpoint
+POST http://146.190.224.144/api/v1/companies
+                </code></pre>
+                <p>
+                    Create company :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": {
+        "id": 1,
+        "userid": 3,
+        "name": "Example name",
+        "location": "Example location",
+        "phase": "Startup",
+        "registered": false,
+        "industry": "Information Technology",
+        "employers": 10,
+        "turnover": 7000,
+        "updatedAt": "2023-01-05T17:23:53.335Z",
+        "createdAt": "2023-01-05T17:23:53.335Z"
+      }
+    }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>name</td>
+                            <td>String</td>
+                            <td>Company name.</td>
+                        </tr>
+                        <tr>
+                            <td>location</td>
+                            <td>String</td>
+                            <td>Company location</td>
+                        </tr>
+                        <tr>
+                            <td>phase</td>
+                            <td>String</td>
+                            <td>
+                                Phase of the company
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>registered</td>
+                            <td>boolean</td>
+                            <td>
+                                Company registered
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>registration_number</td>
+                            <td>boolean</td>
+                            <td>
+                                (Optional) company reigstration number
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>industry</td>
+                            <td>String</td>
+                            <td>
+                                Company industry
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>employers</td>
+                            <td>Integer</td>
+                            <td>
+                                Company employers
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>turnover</td>
+                            <td>Decimal</td>
+                            <td>
+                                Company turnover in rands
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Get companies</h2>
+                <pre><code class="bash">
+# Endpoint
+GET http://146.190.224.144/api/v1/companies
+                </code></pre>
+                <p>
+                    Get all companies :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": [
+        {
+          "id": 1,
+          "userid": 3,
+          "name": "Example name",
+          "location": "Example location",
+          "phase": "Startup",
+          "registered": "0",
+          "industry": "Information Technology",
+          "employers": 10,
+          "turnover": 7000,
+          "rating": null,
+          "createdAt": "2023-01-05T17:23:53.000Z",
+          "updatedAt": "2023-01-05T17:23:53.000Z",
+          "userId": 3
+        }
+      ]
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Get company</h2>
+                <pre><code class="bash">
+# Endpoint
+GET http://146.190.224.144/api/v1/companies/1
+                </code></pre>
+                <p>
+                    Get a specific company :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": {
+        "id": 1,
+        "name": "Example name",
+        "location": "Example location",
+        "phase": "Startup",
+        "registered": "0",
+        "industry": "Information Technology",
+        "employers": 10,
+        "turnover": 7000,
+        "rating": null,
+        "assessments": null,
+        "user": {
+          "id": 3,
+          "fullname": "Root Administrator",
+          "email": "root@admin.com",
+          "phone": null,
+          "education": null,
+          "work_experience": null,
+          "work_experience2": null,
+          "location": null,
+          "role": "ROOT",
+          "registered": "2022-12-31T05:20:18.000Z"
+        }
+      }
+    }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid company id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Update company</h2>
+                <pre><code class="bash">
+# Endpoint
+PUT http://146.190.224.144/api/v1/companies/1
+                </code></pre>
+                <p>
+                    Update a specific company :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Updated.",
+    "package": {
+      "data": []
+    }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid company id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>String</td>
+                        <td>Company name.</td>
+                    </tr>
+                    <tr>
+                        <td>location</td>
+                        <td>String</td>
+                        <td>Company location</td>
+                    </tr>
+                    <tr>
+                        <td>phase</td>
+                        <td>String</td>
+                        <td>
+                            Phase of the company
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>registered</td>
+                        <td>boolean</td>
+                        <td>
+                            Company registered
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>registration_number</td>
+                        <td>boolean</td>
+                        <td>
+                            (Optional) company reigstration number
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>industry</td>
+                        <td>String</td>
+                        <td>
+                            Company industry
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>employers</td>
+                        <td>Integer</td>
+                        <td>
+                            Company employers
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>turnover</td>
+                        <td>Decimal</td>
+                        <td>
+                            Company turnover in rands
+                        </td>
+                    </tr>
+                </tbody>
+                <h2>Delete user</h2>
+                <pre><code class="bash">
+# Endpoint
+DELETE http://146.190.224.144/api/v1/companies/1
+                </code></pre>
+                <p>
+                    Delete a specific company :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": []
+    }
+  }
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid company id.</td>
                         </tr>
                     </tbody>
                 </table>
