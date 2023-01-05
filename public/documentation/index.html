@@ -64,6 +64,27 @@
                 <li class="scroll-to-link" data-target="login">
                     <a>LOGIN</a>
                 </li>
+                <li class="scroll-to-link" data-target="register-mentor">
+                    <a>REGISTER MENTOR</a>
+                </li>
+                <li class="scroll-to-link" data-target="register-admin">
+                    <a>REGISTER ADMIN</a>
+                </li>
+                <li class="scroll-to-link" data-target="register-super">
+                    <a>REGISTER SUPER ADMIN</a>
+                </li>
+                <li class="scroll-to-link" data-target="update-email">
+                    <a>UPDATE EMAIL</a>
+                </li>
+                <li class="scroll-to-link" data-target="update-password">
+                    <a>UPDATE PASSWORD</a>
+                </li>
+                <li class="scroll-to-link" data-target="update-role">
+                    <a>UPDATE ROLE</a>
+                </li>
+                <li class="scroll-to-link" data-target="users">
+                    <a>USERS</a>
+                </li>
                 <li class="scroll-to-link" data-target="content-errors">
                     <a>Errors</a>
                 </li>
@@ -109,7 +130,7 @@ POST http://146.190.224.144/api/v1/email-register
     }
 }
                 </code></pre>
-                <h4>BODY PARAMETERS</h4>
+                <h4>BODY</h4>
                 <table class="central-overflow-x">
                     <thead>
                         <tr>
@@ -173,7 +194,7 @@ POST http://146.190.224.144/api/v1/email-auth
     }
   }
                 </code></pre>
-                <h4>BODY PARAMETERS</h4>
+                <h4>BODY</h4>
                 <table class="central-overflow-x">
                     <thead>
                         <tr>
@@ -194,6 +215,711 @@ POST http://146.190.224.144/api/v1/email-auth
                             <td>
                                 Strong password
                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="register-mentor">
+                <h2>Register mentor</h2>
+                <pre><code class="bash">
+# Endpoint
+POST http://146.190.224.144/api/v1/users/mentor
+                </code></pre>
+                <p>
+                    Register mentor account :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/mentor</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+        "data": []
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>fullname</td>
+                            <td>String</td>
+                            <td>Valid name and surname.</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>String</td>
+                            <td>Valid email address</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td>String</td>
+                            <td>
+                                Strong password
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="register-admin">
+                <h2>Register admin</h2>
+                <pre><code class="bash">
+# Endpoint
+POST http://146.190.224.144/api/v1/users/admin
+                </code></pre>
+                <p>
+                    Register admin account :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/admin</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+        "data": []
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>fullname</td>
+                            <td>String</td>
+                            <td>Valid name and surname.</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>String</td>
+                            <td>Valid email address</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td>String</td>
+                            <td>
+                                Strong password
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="register-super">
+                <h2>Register super admin</h2>
+                <pre><code class="bash">
+# Endpoint
+POST http://146.190.224.144/api/v1/users/super
+                </code></pre>
+                <p>
+                    Register super account :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/super</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+        "data": []
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>fullname</td>
+                            <td>String</td>
+                            <td>Valid name and surname.</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>String</td>
+                            <td>Valid email address</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td>String</td>
+                            <td>
+                                Strong password
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="update-email">
+                <h2>Update email</h2>
+                <pre><code class="bash">
+# Endpoint
+PUT http://146.190.224.144/api/v1/users/1/email
+                </code></pre>
+                <p>
+                    Update account email :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1/email</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Updated.",
+    "package": {
+        "data": []
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>email</td>
+                            <td>String</td>
+                            <td>
+                                Valid email address
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="update-password">
+                <h2>Update password</h2>
+                <pre><code class="bash">
+# Endpoint
+PUT http://146.190.224.144/api/v1/users/1/password
+                </code></pre>
+                <p>
+                    Update account password :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1/password</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Updated.",
+    "package": {
+        "data": []
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>password</td>
+                            <td>String</td>
+                            <td>
+                                Strong password
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="update-role">
+                <h2>Update role</h2>
+                <pre><code class="bash">
+# Endpoint
+PUT http://146.190.224.144/api/v1/users/1/role
+                </code></pre>
+                <p>
+                    Update account role :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1/role</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Updated.",
+    "package": {
+        "data": []
+    }
+}
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>role</td>
+                            <td>String</td>
+                            <td>
+                                Valid role name
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="overflow-hidden content-section" id="users">
+                <h2>Get users</h2>
+                <pre><code class="bash">
+# Endpoint
+GET http://146.190.224.144/api/v1/users
+                </code></pre>
+                <p>
+                    Get all registered users :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": [
+        {
+          "id": 1,
+          "fullname": "Root Administrator",
+          "email": "root@admin.com",
+          "phone": null,
+          "education": null,
+          "work_experience": null,
+          "work_experience2": null,
+          "location": null,
+          "role": "ROOT",
+          "registered": "2023-01-05T04:07:36.000Z"
+        },
+        ...
+      ]
+    }
+  }
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Get user</h2>
+                <pre><code class="bash">
+# Endpoint
+GET http://146.190.224.144/api/v1/users/1
+                </code></pre>
+                <p>
+                    Get a specific registered users :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+  "status": true,
+  "message": "Successful.",
+  "package": {
+    "data": {
+      "id": 1,
+      "fullname": "Root Administrator",
+      "email": "root@admin.com",
+      "phone": null,
+      "education": null,
+      "work_experience": null,
+      "work_experience2": null,
+      "location": null,
+      "role": "ROOT",
+      "registered": "2023-01-05T04:07:36.000Z"
+    }
+  }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Update user</h2>
+                <pre><code class="bash">
+# Endpoint
+PUT http://146.190.224.144/api/v1/users/1
+                </code></pre>
+                <p>
+                    Update a specific registered users :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Updated.",
+    "package": {
+      "data": []
+    }
+}
+            </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>BODY</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>fullname</td>
+                            <td>String</td>
+                            <td>Valid name and surname.</td>
+                        </tr>
+                        <tr>
+                            <td>phone</td>
+                            <td>String</td>
+                            <td>(Optional) Valid mobile number</td>
+                        </tr>
+                        <tr>
+                            <td>education</td>
+                            <td>String</td>
+                            <td>
+                                (Optional) Highest qualification
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>work_experience</td>
+                            <td>String</td>
+                            <td>
+                                (Optional) Previously aquired work experience
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>work_experience2</td>
+                            <td>String</td>
+                            <td>
+                                (Optional) More work experience
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>location</td>
+                            <td>String</td>
+                            <td>
+                                (Optional) Valid physical location
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Delete user</h2>
+                <pre><code class="bash">
+# Endpoint
+DELETE http://146.190.224.144/api/v1/users/1
+                </code></pre>
+                <p>
+                    Delete a specific registered user :<br>
+                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/1</code>
+                </p>
+                <br>
+                <pre><code class="json">
+# SUCCESS 200
+{
+    "status": true,
+    "message": "Successful.",
+    "package": {
+      "data": []
+    }
+  }
+                </code></pre>
+                <h4>HEADERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bearer Token</td>
+                            <td>String</td>
+                            <td>Valid Bearer Token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>PARAMETERS</h4>
+                <table class="central-overflow-x">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>Integer</td>
+                            <td>Valid user id.</td>
                         </tr>
                     </tbody>
                 </table>

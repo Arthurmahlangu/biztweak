@@ -17,7 +17,7 @@ const {
  */
 exports.createSuperAccount = async (req, res) => {
 
-    const {fullname, email, password} = req.body
+    const { fullname, email, password } = req.body
     const service = await createSuperUser(fullname, email, password)
 
     if (service.error) {
@@ -41,7 +41,7 @@ exports.createSuperAccount = async (req, res) => {
  */
 exports.createAdminAccount = async (req, res) => {
 
-    const {fullname, email, password} = req.body
+    const { fullname, email, password } = req.body
     const service = await createAdminUser(fullname, email, password)
 
     if (service.error) {
@@ -65,7 +65,7 @@ exports.createAdminAccount = async (req, res) => {
  */
 exports.createMentorAccount = async (req, res) => {
 
-    const {fullname, email, password} = req.body
+    const { fullname, email, password } = req.body
     const service = await createMentorUser(fullname, email, password)
 
     if (service.error) {

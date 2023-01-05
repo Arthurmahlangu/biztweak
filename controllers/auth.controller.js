@@ -33,7 +33,7 @@ exports.emailAuth = async (req, res) => {
  */
 exports.emailRegister = async (req, res) => {
 
-    const {fullname, email, password} = req.body
+    const { fullname, email, password } = req.body
     const service = await emailRegister(fullname, email, password)
 
     if (service.error) {
