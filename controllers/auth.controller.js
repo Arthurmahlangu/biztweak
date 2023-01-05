@@ -13,7 +13,7 @@ exports.emailAuth = async (req, res) => {
     const service = await emailAuth(email, password)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -37,7 +37,7 @@ exports.emailRegister = async (req, res) => {
     const service = await emailRegister(fullname, email, password)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

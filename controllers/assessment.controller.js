@@ -21,7 +21,7 @@ exports.createAssessment = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -87,7 +87,7 @@ exports.updateAssessment = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -110,7 +110,7 @@ exports.deleteAssessment = async (req, res) => {
     const service = await deleteAssessment(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

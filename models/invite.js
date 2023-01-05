@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     attending: DataTypes.BOOLEAN
   }, {
     sequelize,
-    modelName: 'invites',
+    modelName: 'invite',
   });
   return invites;
 };

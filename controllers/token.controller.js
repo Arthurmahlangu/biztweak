@@ -18,7 +18,7 @@ exports.createToken = async (req, res) => {
     const service = await createToken(req.auth.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -40,7 +40,7 @@ exports.getTokens = async (req, res) => {
 
     const service = await getTokens() 
     
-    res.status(400).send(
+    res.status(parseInt(process.env.EXCEPTION_CODE)).send(
         successResponse("Successful.", {
             data: service.data
         })
@@ -58,7 +58,7 @@ exports.getToken = async (req, res) => {
     const service = await getToken(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -81,7 +81,7 @@ exports.updateToken = async (req, res) => {
     const service = await updateToken(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -104,7 +104,7 @@ exports.deleteToken = async (req, res) => {
     const service = await deleteToken(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

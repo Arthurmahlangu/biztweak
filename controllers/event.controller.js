@@ -23,7 +23,7 @@ exports.createEvent = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -63,7 +63,7 @@ exports.getEvent = async (req, res) => {
     const service = await getEvent(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -89,7 +89,7 @@ exports.updateEvent = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -112,7 +112,7 @@ exports.deleteEvent = async (req, res) => {
     const service = await deleteEvent(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -138,7 +138,7 @@ exports.createEventInvite = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -161,7 +161,7 @@ exports.deleteEventInvite = async (req, res) => {
     const service = await deleteEventInvite(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

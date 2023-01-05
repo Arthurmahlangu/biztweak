@@ -21,7 +21,7 @@ exports.createAttendance = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -61,7 +61,7 @@ exports.getAttendance = async (req, res) => {
     const service = await getAttendance(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -87,7 +87,7 @@ exports.updateAttendance = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -110,7 +110,7 @@ exports.deleteAttendance = async (req, res) => {
     const service = await deleteAttendance(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

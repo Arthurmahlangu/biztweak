@@ -29,7 +29,7 @@ exports.createCourse = async (req, res) => {
         const filePath = "./storage/company/" + now + "_" + logo.name
 
         if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
-            return res.status(400).send(
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
                 failResponse("Invalid png|jpg|jpeg file.")
             )
         }
@@ -50,7 +50,7 @@ exports.createCourse = async (req, res) => {
     }
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -83,7 +83,7 @@ exports.createCourseAudio = async (req, res) => {
         const filePath = "./storage/audios/" + now + "_" + audio.name
 
         if (audio.mimetype !== 'audio/mpeg' && audio.mimetype !== 'audio/wav') {
-            return res.status(400).send(
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
                 failResponse("Invalid mp3|wav file.")
             )
         }
@@ -98,13 +98,13 @@ exports.createCourseAudio = async (req, res) => {
 
     } else {
 
-        return res.status(400).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse("Invalid mp3|wav file.")
         )
     }
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -137,7 +137,7 @@ exports.createCourseVideo = async (req, res) => {
         const filePath = "./storage/videos/" + now + "_" + video.name
 
         if (video.mimetype !== 'video/mp4' && video.mimetype !== 'video/mpeg') {
-            return res.status(400).send(
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
                 failResponse("Invalid mp4|mpeg file.")
             )
         }
@@ -151,13 +151,13 @@ exports.createCourseVideo = async (req, res) => {
         }
 
     } else {
-        return res.status(400).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse("Invalid mp4|mpeg file.")
         )
     }
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -214,7 +214,7 @@ exports.getCourse = async (req, res) => {
     const service = await getCourse(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -245,7 +245,7 @@ exports.updateCourse = async (req, res) => {
         const filePath = "./storage/company/" + now + "_" + logo.name
         
         if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
-            return res.status(400).send(
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
                 failResponse("Invalid png|jpg|jpeg file.")
             )
         }
@@ -266,7 +266,7 @@ exports.updateCourse = async (req, res) => {
     }
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -289,7 +289,7 @@ exports.deleteCourse = async (req, res) => {
     const service = await deleteCourse(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

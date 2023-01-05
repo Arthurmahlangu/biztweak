@@ -186,7 +186,7 @@ exports.createCompanyAssessments = async (payload) => {
 
         const questions = await db.assessment.count()
         const yesAnswers = payload.answers.match(/yes/gi).length
-        const rating = Math.round((parseInt(yesAnswers) / parseInt(questions)) * 10)
+        const rating = Math.round((parseInt(yesAnswers) / parseInt(questions)) * 100)
 
         const newCompany = await db.company.update({ rating }, { where: { id: payload.companyid } })
 

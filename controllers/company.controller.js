@@ -25,7 +25,7 @@ exports.createCompany = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -65,7 +65,7 @@ exports.getCompany = async (req, res) => {
     const service = await getCompany(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -114,7 +114,7 @@ exports.deleteCompany = async (req, res) => {
     const service = await deleteCompany(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -141,7 +141,7 @@ exports.createCompanyAssessments = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -163,7 +163,7 @@ exports.getCompanyAssessments = async (req, res) => {
     const service = await getCompanyAssessments(req.params.cid, req.params.aid)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -188,7 +188,7 @@ exports.updateCompanyAssessments = async (req, res) => {
     const service = await updateCompanyAssessments(cid, aid, { answers })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

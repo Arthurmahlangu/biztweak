@@ -21,7 +21,7 @@ exports.createSuperAccount = async (req, res) => {
     const service = await createSuperUser(fullname, email, password)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -45,7 +45,7 @@ exports.createAdminAccount = async (req, res) => {
     const service = await createAdminUser(fullname, email, password)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -69,7 +69,7 @@ exports.createMentorAccount = async (req, res) => {
     const service = await createMentorUser(fullname, email, password)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -109,7 +109,7 @@ exports.getUser = async (req, res) => {
     const service = await getUser(req.params.id)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -148,7 +148,7 @@ exports.updateProfile = async (req, res) => {
     })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -172,7 +172,7 @@ exports.updateEmail = async (req, res) => {
     const service = await updateUser(req.params.id, { email })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -197,7 +197,7 @@ exports.updatePassword = async (req, res) => {
     const service = await updatePassword(req.params.id, password)
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -222,7 +222,7 @@ exports.updateRole = async (req, res) => {
     const service = await updateUser(req.params.id, { role })
 
     if (service.error) {
-        res.status(400).send(
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
