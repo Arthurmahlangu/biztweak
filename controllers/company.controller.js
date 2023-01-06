@@ -1,8 +1,8 @@
 const { successResponse, failResponse } = require("../helpers/methods")
 const { 
     createCompany, 
-    getCompanies, 
     getCompany, 
+    getCompanies,
     updateCompany, 
     deleteCompany,
     createCompanyAssessments,
@@ -206,7 +206,7 @@ exports.updateCompanyAssessments = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.getCompanies = async (req, res) => {
+exports.getMyCompanies = async (req, res) => {
 
     const service = await getMyCompanies(req.auth.id) 
     

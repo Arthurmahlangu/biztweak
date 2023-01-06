@@ -343,7 +343,7 @@ module.exports = {
       role: "ROOT",
       path: "/companies/:cid/assessments/:aid",
       model: "companies",
-      method: "DELETE",
+      method: "GET",
       owner: 1,
       group: 1,
       other: 1,
@@ -616,6 +616,19 @@ module.exports = {
       path: "/attendances/:id",
       model: "attendances",
       method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },
+
+    
+    {
+      role: "ROOT",
+      path: "/user/companies",
+      model: "companies",
+      method: "GET",
       owner: 1,
       group: 1,
       other: 1,
