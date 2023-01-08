@@ -1314,9 +1314,19 @@ POST http://146.190.224.144/api/v1/companies
                             <td>Company name.</td>
                         </tr>
                         <tr>
+                            <td>logo</td>
+                            <td>String</td>
+                            <td>Company logo.</td>
+                        </tr>
+                        <tr>
                             <td>location</td>
                             <td>String</td>
                             <td>Company location</td>
+                        </tr>
+                        <tr>
+                            <td>logo</td>
+                            <td>String</td>
+                            <td>JPG, JPEG, or  files</td>
                         </tr>
                         <tr>
                             <td>phase</td>
@@ -1347,17 +1357,24 @@ POST http://146.190.224.144/api/v1/companies
                             </td>
                         </tr>
                         <tr>
-                            <td>employers</td>
+                            <td>employees</td>
                             <td>Integer</td>
                             <td>
-                                Company employers
+                                Company employees
                             </td>
                         </tr>
                         <tr>
-                            <td>turnover</td>
+                            <td>monthly_turnover</td>
                             <td>Decimal</td>
                             <td>
-                                Company turnover in rands
+                                Company monthly turnover in rands
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>annual_turnover</td>
+                            <td>Decimal</td>
+                            <td>
+                                Company annual turnover in rands
                             </td>
                         </tr>
                     </tbody>
@@ -1382,22 +1399,33 @@ GET http://146.190.224.144/api/v1/companies
       "data": [
         {
           "id": 1,
-          "userid": 3,
-          "name": "Example name",
-          "location": "Example location",
-          "phase": "Startup",
-          "registered": "0",
-          "industry": "Information Technology",
-          "employers": 10,
-          "turnover": 7000,
+          "name": "example",
+          "logo": null,
+          "location": "example",
+          "phase": "example",
+          "registered": false,
+          "industry": "example",
+          "employees": 2,
+          "monthly_turnover": 3000,
+          "annual_turnover": 500000,
           "rating": null,
-          "createdAt": "2023-01-05T17:23:53.000Z",
-          "updatedAt": "2023-01-05T17:23:53.000Z",
-          "userId": 3
+          "date": "2023-01-08T04:05:29.000Z",
+          "user": {
+            "id": 1,
+            "fullname": "Root Administrator",
+            "email": "root@admin.com",
+            "phone": null,
+            "education": null,
+            "work_experience": null,
+            "work_experience2": null,
+            "location": null,
+            "role": "ROOT",
+            "registered": "2023-01-08T04:01:03.000Z"
+          }
         }
       ]
     }
-}
+  }
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -1420,7 +1448,7 @@ GET http://146.190.224.144/api/v1/companies
                 <h2>Get my companies</h2>
                 <pre><code class="bash">
 # Endpoint
-GET http://146.190.224.144/api/v1/user/companies
+GET http://146.190.224.144/api/v1/companies/my-companies
                 </code></pre>
                 <p>
                     Get all companies that belong to the logged in user :<br>
@@ -1490,17 +1518,60 @@ GET http://146.190.224.144/api/v1/companies/:id
     "package": {
       "data": {
         "id": 1,
-        "name": "Example name",
-        "location": "Example location",
-        "phase": "Startup",
-        "registered": "0",
-        "industry": "Information Technology",
-        "employers": 10,
-        "turnover": 7000,
-        "rating": null,
-        "assessments": null,
+        "name": "example",
+        "logo": null,
+        "location": "example",
+        "phase": "example",
+        "registered": false,
+        "industry": "example",
+        "employees": 2,
+        "monthly_turnover": 3000,
+        "annual_turnover": 500000,
+        "rating": "16",
+        "date": "2023-01-08T04:05:29.000Z",
+        "assessments": {
+          "id": 4,
+          "answers": [
+            {
+              "id": 1,
+              "question": "Ques",
+              "answer": "YES"
+            },
+            {
+              "id": 2,
+              "question": "Ques",
+              "answer": "YES"
+            },
+            {
+              "id": 3,
+              "question": "Ques",
+              "answer": "YES"
+            },
+            {
+              "id": 1,
+              "question": "Ques",
+              "answer": "YES"
+            },
+            {
+              "id": 4,
+              "question": "Ques",
+              "answer": "YES"
+            },
+            {
+              "id": 21,
+              "question": "Ques",
+              "answer": "YES"
+            },
+            {
+              "id": 22,
+              "question": "Ques",
+              "answer": "YES"
+            }
+          ],
+          "date": "2023-01-08T06:03:46.000Z"
+        },
         "user": {
-          "id": 3,
+          "id": 1,
           "fullname": "Root Administrator",
           "email": "root@admin.com",
           "phone": null,
@@ -1509,11 +1580,53 @@ GET http://146.190.224.144/api/v1/companies/:id
           "work_experience2": null,
           "location": null,
           "role": "ROOT",
-          "registered": "2022-12-31T05:20:18.000Z"
+          "registered": "2023-01-08T04:01:03.000Z"
+        },
+        "report": {
+          "id": 3,
+          "scores": [
+            {
+              "category": "Customer relations",
+              "percentage": 80
+            },
+            {
+              "category": "Channels",
+              "percentage": 0
+            },
+            {
+              "category": "E-commerce",
+              "percentage": 0
+            },
+            {
+              "category": "Functional Capability",
+              "percentage": 0
+            },
+            {
+              "category": "Customer segments",
+              "percentage": 22
+            },
+            {
+              "category": "Business and customers",
+              "percentage": 0
+            },
+            {
+              "category": "Marketing and sales",
+              "percentage": 0
+            },
+            {
+              "category": "Revenue Streams",
+              "percentage": 0
+            },
+            {
+              "category": "Ownership and mindset",
+              "percentage": 0
+            }
+          ],
+          "date": "2023-01-08T06:03:46.000Z"
         }
       }
     }
-}
+  }
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -1620,9 +1733,19 @@ PUT http://146.190.224.144/api/v1/companies/:id
                             <td>Company name.</td>
                         </tr>
                         <tr>
+                            <td>logo</td>
+                            <td>String</td>
+                            <td>Company logo.</td>
+                        </tr>
+                        <tr>
                             <td>location</td>
                             <td>String</td>
                             <td>Company location</td>
+                        </tr>
+                        <tr>
+                            <td>logo</td>
+                            <td>String</td>
+                            <td>JPG, JPEG, or  files</td>
                         </tr>
                         <tr>
                             <td>phase</td>
@@ -1653,17 +1776,24 @@ PUT http://146.190.224.144/api/v1/companies/:id
                             </td>
                         </tr>
                         <tr>
-                            <td>employers</td>
+                            <td>employees</td>
                             <td>Integer</td>
                             <td>
-                                Company employers
+                                Company employees
                             </td>
                         </tr>
                         <tr>
-                            <td>turnover</td>
+                            <td>monthly_turnover</td>
                             <td>Decimal</td>
                             <td>
-                                Company turnover in rands
+                                Company monthly turnover in rands
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>annual_turnover</td>
+                            <td>Decimal</td>
+                            <td>
+                                Company annual turnover in rands
                             </td>
                         </tr>
                     </tbody>

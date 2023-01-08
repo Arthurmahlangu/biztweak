@@ -17,6 +17,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      logo: {
+        type: Sequelize.STRING
+      },
       location: {
         type: Sequelize.STRING
       },
@@ -26,17 +29,27 @@ module.exports = {
       },
       registered: {
         allowNull: false,
+        type: Sequelize.BOOLEAN
+      },
+      registered: {
+        type: Sequelize.BOOLEAN
+      },
+      registration_number: {
         type: Sequelize.STRING
       },
       industry: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      employers: {
+      employees: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      turnover: {
+      monthly_turnover: {
+        allowNull: false,
+        type: Sequelize.FLOAT
+      },
+      annual_turnover: {
         allowNull: false,
         type: Sequelize.FLOAT
       },

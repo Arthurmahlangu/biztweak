@@ -19,22 +19,58 @@ const {
  */
 exports.createCompany = async (req, res) => {
 
-    const { name, location, phase, registered, industry, employers, turnover } = req.body
-    const service = await createCompany({
-        userid: req.auth.id, name, location, phase, registered, industry, employers, turnover
-    })
+    const { name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover } = req.body
 
-    if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    if (req.files && req.files.logo) {
+
+        const { logo } = req.files
+
+        const now = new Date().getTime()
+        const filePath = "./storage/company/" + now + "_" + logo.name
+
+        if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                failResponse("Invalid png|jpg|jpeg file.")
+            )
+        }
+
+        const service = await createCompany({
+            userid: req.auth.id, name, logo: filePath, location, phase, registered, industry, employees, monthly_turnover, annual_turnover
+        })
+
+        if (service.error) {
+            res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                failResponse(service.message)
+            )
+        }
+
+        if (!service.error) {
+            await logo.mv(filePath)
+        }
+
+        res.send(
+            successResponse("Successful.", {
+                data: service.data
+            })
+        )
+        
+    } else {
+        const service = await createCompany({
+            userid: req.auth.id, name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover
+        })
+
+        if (service.error) {
+            res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                failResponse(service.message)
+            )
+        }
+
+        res.send(
+            successResponse("Successful.", {
+                data: service.data
+            })
         )
     }
-
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
 }
 
 /**
@@ -85,9 +121,9 @@ exports.getCompany = async (req, res) => {
  */
 exports.updateCompany = async (req, res) => {
 
-    const { name, location, phase, registered, industry, employers, turnover } = req.body
+    const { name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover } = req.body
     const service = await updateCompany(req.params.id, {
-        name, location, phase, registered, industry, employers, turnover
+        name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover
     })
 
     if (service.error) {

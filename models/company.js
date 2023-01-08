@@ -15,17 +15,23 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'companyid',
         as: 'assessments'
       })
+      this.hasOne(models.report, {
+        foreignKey: 'companyid',
+      })
     }
   }
   company.init({
     userid: DataTypes.INTEGER,
     name: DataTypes.STRING,
+    logo: DataTypes.STRING,
     location: DataTypes.STRING,
     phase: DataTypes.STRING,
-    registered: DataTypes.STRING,
+    registered: DataTypes.BOOLEAN,
+    registration_number: DataTypes.STRING,
     industry: DataTypes.STRING,
-    employers: DataTypes.INTEGER,
-    turnover: DataTypes.FLOAT,
+    employees: DataTypes.INTEGER,
+    monthly_turnover: DataTypes.FLOAT,
+    annual_turnover: DataTypes.FLOAT,
     rating: DataTypes.STRING
   }, {
     sequelize,

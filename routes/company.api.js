@@ -11,7 +11,7 @@ const { companyValidator, companyAssessmentValidator } = require("../middlewares
 
 router.post("/companies", validate(companyValidator), AuthMiddleware, CompanyController.createCompany)
 router.get("/companies", AuthMiddleware, CompanyController.getCompanies)
-router.get("/user/companies", AuthMiddleware, CompanyController.getMyCompanies)
+router.get("/companies/my-companies", AuthMiddleware, CompanyController.getMyCompanies)
 router.get("/companies/:id", AuthMiddleware, CompanyController.getCompany)
 router.put("/companies/:id", validate(companyValidator), AuthMiddleware, CompanyController.updateCompany)
 router.delete("/companies/:id", AuthMiddleware, CompanyController.deleteCompany)

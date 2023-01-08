@@ -626,7 +626,7 @@ module.exports = {
     
     {
       role: "ROOT",
-      path: "/user/companies",
+      path: "/companies/my-companies",
       model: "companies",
       method: "GET",
       owner: 1,

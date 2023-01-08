@@ -1,5 +1,6 @@
 const db = require("../models")
 const UserResource = require("../resources/user.resource")
+const ReportResource = require("../resources/report.resource")
 const CompanyResource = require("../resources/company.resource")
 const AssessmentResource = require("../resources/assessment.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
@@ -42,14 +43,13 @@ exports.getCompanies = async () => {
             attributes: CompanyResource,
             include: [
                 {
-                    model: db.assessment_answer,
-                    as: 'assessments',
-                    attributes: AssessmentResource
-                },
-                {
                     model: db.user,
                     attributes: UserResource
-                }  
+                },
+                {
+                    model: db.report,
+                    attributes: ReportResource
+                }   
             ]
         })
 
@@ -82,6 +82,10 @@ exports.getCompany = async (id) => {
                 {
                     model: db.user,
                     attributes: UserResource
+                },
+                {
+                    model: db.report,
+                    attributes: ReportResource
                 }
             ]
         })
@@ -89,6 +93,9 @@ exports.getCompany = async (id) => {
         if (!company) {
             throw new Error('Company not found.')
         }
+
+        company.assessments.answers = JSON.parse(company.assessments.answers)
+        company.report.scores = JSON.parse(company.report.scores)
 
         return {
             error: false,
@@ -181,17 +188,67 @@ exports.createCompanyAssessments = async (payload) => {
         const newAnswers = await db.assessment_answer.create(payload)
 
         if (!newAnswers) {
-            throw new Error('Company assessment failed.')
+            throw new Error('Assessment answers not saved.')
         }
 
-        const questions = await db.assessment.count()
+        const questionsCount = await db.assessment.count()
         const yesAnswers = payload.answers.match(/yes/gi).length
-        const rating = Math.round((parseInt(yesAnswers) / parseInt(questions)) * 100)
+        const rating = Math.round((parseInt(yesAnswers) / parseInt(questionsCount)) * 100)
 
+        const results = []
+        const categories = []
+        const computedResults = []
+        const payloadAnswers = JSON.parse(payload.answers)
+        const questions = await db.assessment.findAll()
+        
+        questions.forEach((question) => {
+            if (categories[question.category]) {
+                categories[question.category] += 1
+            } else {
+                categories[question.category] = 1
+            }
+            if (result = payloadAnswers.find((answer) => answer.id == question.id)) {
+                if (result.answer.match(/yes/gi)) {
+                    if (results[question.category]) {
+                        results[question.category] += 1
+                    } else {
+                        results[question.category] = 1
+                    }
+                }
+            }
+        });
+
+        for (var category in categories) {
+            const total = categories[category]
+            if (results[category]) {
+                const percentage = Math.round((results[category] / total) * 100)
+                computedResults.push({
+                    category,
+                    percentage
+                }) 
+            } else {
+                const percentage = 0
+                computedResults.push({
+                    category,
+                    percentage
+                }) 
+            }
+        };
+        
         const newCompany = await db.company.update({ rating }, { where: { id: payload.companyid } })
 
         if (!newCompany) {
             throw new Error('Company rating failed.')
+        }
+
+        const newReport = await db.report.create({
+            companyid: company.id,
+            scores: JSON.stringify(computedResults)
+        })
+
+
+        if (!newReport) {
+            throw new Error('Assessment report failed.')
         }
 
         return {
@@ -222,11 +279,16 @@ exports.getCompanyAssessments = async (companyid, assessmentid) => {
             throw new Error('Company not found.')
         }
 
-        const answers = await db.assessment_answer.findOne({ where: { id: assessmentid } })
+        const answers = await db.assessment_answer.findOne({ 
+            where: { id: assessmentid },
+            attributes: AssessmentResource 
+        })
 
         if (!answers) {
             throw new Error('Company assessment not found.')
         }
+
+        answers.answers = JSON.parse(answers.answers)
 
         return {
             error: false,
@@ -286,8 +348,7 @@ exports.getMyCompanies = async (userid) => {
     try {
         
         const companies = await db.company.findAll({
-            where: { userid }
-        }, {
+            where: { userid },
             attributes: CompanyResource,
             include: [
                 {
@@ -296,8 +357,8 @@ exports.getMyCompanies = async (userid) => {
                     attributes: AssessmentResource
                 },
                 {
-                    model: db.user,
-                    attributes: UserResource
+                    model: db.report,
+                    attributes: ReportResource
                 }  
             ]
         })
