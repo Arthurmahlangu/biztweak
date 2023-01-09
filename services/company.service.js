@@ -94,8 +94,13 @@ exports.getCompany = async (id) => {
             throw new Error('Company not found.')
         }
 
-        company.assessments.answers = JSON.parse(company.assessments.answers)
-        company.report.scores = JSON.parse(company.report.scores)
+        if (company.assessments) {
+            company.assessments.answers = JSON.parse(company.assessments.answers)
+        }
+
+        if (company.report) {
+            company.report.scores = JSON.parse(company.report.scores)
+        }
 
         return {
             error: false,
@@ -288,7 +293,9 @@ exports.getCompanyAssessments = async (companyid, assessmentid) => {
             throw new Error('Company assessment not found.')
         }
 
-        answers.answers = JSON.parse(answers.answers)
+        if (answers.answers) {
+            answers.answers = JSON.parse(answers.answers)
+        }
 
         return {
             error: false,
