@@ -28,6 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     phase: DataTypes.STRING,
     registered: DataTypes.BOOLEAN,
     registration_number: DataTypes.STRING,
+    registration_date: DataTypes.DATE,
+    products_or_services: DataTypes.STRING,
     industry: DataTypes.STRING,
     employees: DataTypes.INTEGER,
     monthly_turnover: DataTypes.FLOAT,

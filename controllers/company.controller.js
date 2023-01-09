@@ -19,7 +19,7 @@ const {
  */
 exports.createCompany = async (req, res) => {
 
-    const { name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover } = req.body
+    const { name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover } = req.body
 
     if (req.files && req.files.logo) {
 
@@ -35,7 +35,7 @@ exports.createCompany = async (req, res) => {
         }
 
         const service = await createCompany({
-            userid: req.auth.id, name, logo: filePath, location, phase, registered, industry, employees, monthly_turnover, annual_turnover
+            userid: req.auth.id, name, logo: filePath, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover
         })
 
         if (service.error) {
@@ -53,10 +53,10 @@ exports.createCompany = async (req, res) => {
                 data: service.data
             })
         )
-        
+
     } else {
         const service = await createCompany({
-            userid: req.auth.id, name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover
+            userid: req.auth.id, name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover
         })
 
         if (service.error) {
@@ -121,9 +121,9 @@ exports.getCompany = async (req, res) => {
  */
 exports.updateCompany = async (req, res) => {
 
-    const { name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover } = req.body
+    const { name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover } = req.body
     const service = await updateCompany(req.params.id, {
-        name, location, phase, registered, industry, employees, monthly_turnover, annual_turnover
+        name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover
     })
 
     if (service.error) {

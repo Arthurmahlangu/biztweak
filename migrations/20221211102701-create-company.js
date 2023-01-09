@@ -37,6 +37,12 @@ module.exports = {
       registration_number: {
         type: Sequelize.STRING
       },
+      registration_date: {
+        type: Sequelize.DATE
+      },
+      products_or_services: {
+        type: Sequelize.STRING
+      },
       industry: {
         allowNull: false,
         type: Sequelize.STRING
