@@ -1,4 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
+const uploader = require("../helpers/uploader")
 const { 
     getUsers, 
     getUser, 
@@ -18,10 +19,11 @@ const {
 exports.createSuperAccount = async (req, res) => {
 
     const { fullname, email, password } = req.body
+
     const service = await createSuperUser(fullname, email, password)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -42,10 +44,11 @@ exports.createSuperAccount = async (req, res) => {
 exports.createAdminAccount = async (req, res) => {
 
     const { fullname, email, password } = req.body
+
     const service = await createAdminUser(fullname, email, password)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -66,10 +69,11 @@ exports.createAdminAccount = async (req, res) => {
 exports.createMentorAccount = async (req, res) => {
 
     const { fullname, email, password } = req.body
+
     const service = await createMentorUser(fullname, email, password)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -109,7 +113,7 @@ exports.getUser = async (req, res) => {
     const service = await getUser(req.params.id)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -129,26 +133,57 @@ exports.getUser = async (req, res) => {
  */
 exports.updateProfile = async (req, res) => {
 
+    let service = null
+
     const { 
         fullname, 
         phone, 
         education, 
         work_experience, 
         work_experience2, 
-        location 
+        location,
+        registered,
+        market_newsletter,
+        product_updates_and_community_announcements
     } = req.body
 
-    const service = await updateUser(req.params.id, {
-        fullname, 
-        phone, 
-        education, 
-        work_experience, 
-        work_experience2, 
-        location
-    })
+    if (req.files && req.files.photo) {
+
+        const upload = await uploader(req.files.photo, "profiles", [
+            "image/png", "image/jpg", "image/jpeg"
+        ])
+
+        if (upload.error) {
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                failResponse(upload.message)
+            )
+        }
+
+        service = await updateUser(req.params.id, {
+            fullname, 
+            phone, 
+            education, 
+            work_experience, 
+            work_experience2, 
+            location,
+            registered,
+            photo: upload.data,
+            market_newsletter,
+            product_updates_and_community_announcements
+        })
+    } else {
+        service = await updateUser(req.params.id, {
+            fullname, 
+            phone, 
+            education, 
+            work_experience, 
+            work_experience2, 
+            location
+        })
+    }
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -172,7 +207,7 @@ exports.updateEmail = async (req, res) => {
     const service = await updateUser(req.params.id, { email })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -197,7 +232,7 @@ exports.updatePassword = async (req, res) => {
     const service = await updatePassword(req.params.id, password)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -222,7 +257,7 @@ exports.updateRole = async (req, res) => {
     const service = await updateUser(req.params.id, { role })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

@@ -1,4 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
+const uploader = require("../helpers/uploader")
 const { 
     createCourse, 
     getCourses, 
@@ -7,7 +8,8 @@ const {
     deleteCourse,
     createCourseAudio,
     createCourseVideo, 
-    getMyCourses
+    getMyCourses,
+    createCourseText
 } = require("../services/course.service")
 
 /**
@@ -19,38 +21,33 @@ const {
 exports.createCourse = async (req, res) => {
 
     let service = null
-    const { title, description } = req.body
+
+    const { title, description, category, score } = req.body
     
     if (req.files && req.files.logo) {
-        
-        const { logo } = req.files
 
-        const now = new Date().getTime()
-        const filePath = "./storage/company/" + now + "_" + logo.name
+        const upload = await uploader(req.files.logo, "courses", [
+            "image/png", "image/jpg", "image/jpeg"
+        ])
 
-        if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
+        if (upload.error) {
             return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse("Invalid png|jpg|jpeg file.")
+                failResponse(upload.message)
             )
         }
         
         service = await createCourse({
-            userid: req.auth.id, title, description, logo: filePath
+            userid: req.auth.id, title, description, logo: upload.data, category, score
         })
-        
-        if (!service.error) {
-            await logo.mv(filePath)
-        }
 
     } else {
-
         service = await createCourse({
-            userid: req.auth.id, title, description
+            userid: req.auth.id, title, description, category, score
         })
     }
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -72,39 +69,117 @@ exports.createCourseAudio = async (req, res) => {
 
     let service = null
 
-    const { id } = req.params
-    const { name, description, type } = req.body
+    const { name, description, type, category, score, audio } = req.body
     
     if (req.files && req.files.audio) {
-        
-        const { audio } = req.files
 
-        const now = new Date().getTime()
-        const filePath = "./storage/audios/" + now + "_" + audio.name
+        const upload = await uploader(req.files.audio, "courses", [
+            "audio/mpeg", "audio/wav"
+        ])
 
-        if (audio.mimetype !== 'audio/mpeg' && audio.mimetype !== 'audio/wav') {
+        if (upload.error) {
             return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse("Invalid mp3|wav file.")
+                failResponse(upload.message)
             )
         }
 
         service = await createCourseAudio({
-            userid: req.auth.id, courseid: id, name, description, type, file: filePath
+            userid: req.auth.id, 
+            courseid: req.params.id, 
+            name, 
+            description, 
+            type, 
+            file: upload.data,
+            category, 
+            score
         })
 
-        if (!service.error) {
-            await audio.mv(filePath)
-        }
-
     } else {
-
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse("Invalid mp3|wav file.")
-        )
+        service = await createCourseAudio({
+            userid: req.auth.id, 
+            courseid: req.params.id, 
+            name, 
+            description, 
+            type, 
+            file: audio,
+            category, 
+            score
+        })
     }
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createCourseText = async (req, res) => {
+
+    let service = null
+
+    const { name, description, type, category, score, file } = req.body
+    
+    if (req.files && req.files.file) {
+
+        const upload = await uploader(req.files.file, "courses", [
+            "application/pdf", 
+            "application/msword", 
+            "application/msword", 
+            "text/plain", 
+            "application/vnd.ms-excel", 
+            "application/vnd.ms-excel", 
+            "application/vnd.ms-excel",
+            "application/vnd.ms-powerpoint",
+            "application/vnd.ms-powerpoint",
+            "application/vnd.ms-powerpoint",
+            "application/vnd.ms-powerpoint"
+        ])
+
+        if (upload.error) {
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                failResponse(upload.message)
+            )
+        }
+        
+        service = await createCourseText({
+            userid: req.auth.id, 
+            courseid: req.params.id, 
+            name, 
+            description, 
+            type, 
+            file: upload.data,
+            category, 
+            score
+        })
+
+    } else {
+        service = await createCourseText({
+            userid: req.auth.id, 
+            courseid: req.params.id, 
+            name, 
+            description, 
+            type, 
+            file,
+            category, 
+            score
+        })
+    }
+
+    if (service.error) {
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -126,38 +201,46 @@ exports.createCourseVideo = async (req, res) => {
 
     let service = null
 
-    const { id } = req.params
-    const { name, description, type } = req.body
+    const { name, description, type, category, score, video } = req.body
     
     if (req.files && req.files.video) {
-        
-        const { video } = req.files
 
-        const now = new Date().getTime()
-        const filePath = "./storage/videos/" + now + "_" + video.name
+        const upload = await uploader(req.files.video, "courses", [
+            "video/mp4", "video/mpeg"
+        ])
 
-        if (video.mimetype !== 'video/mp4' && video.mimetype !== 'video/mpeg') {
+        if (upload.error) {
             return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse("Invalid mp4|mpeg file.")
+                failResponse(upload.message)
             )
         }
         
         service = await createCourseVideo({
-            userid: req.auth.id, courseid: id, name, description, type, file: filePath
+            userid: req.auth.id, 
+            courseid: req.params.id, 
+            name, 
+            description, 
+            type, 
+            file: upload.data,
+            category, 
+            score
         })
 
-        if (!service.error) {
-            await video.mv(filePath)
-        }
-
     } else {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse("Invalid mp4|mpeg file.")
-        )
+        service = await createCourseVideo({
+            userid: req.auth.id, 
+            courseid: req.params.id, 
+            name, 
+            description, 
+            type, 
+            file: video,
+            category, 
+            score
+        })
     }
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -235,38 +318,33 @@ exports.getCourse = async (req, res) => {
 exports.updateCourse = async (req, res) => {
 
     let service = null
-    const { title, description } = req.body
+
+    const { title, description, category, score } = req.body
     
     if (req.files && req.files.logo) {
-        
-        const { logo } = req.files
 
-        const now = new Date().getTime()
-        const filePath = "./storage/company/" + now + "_" + logo.name
-        
-        if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
+        const upload = await uploader(req.files.logo, "courses", [
+            "image/png", "image/jpg", "image/jpeg"
+        ])
+
+        if (upload.error) {
             return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse("Invalid png|jpg|jpeg file.")
+                failResponse(upload.message)
             )
         }
-        
+
         service = await updateCourse(req.params.id, {
-            title, description, logo: filePath
+            title, description, logo: upload.data, category, score
         })
 
-        if (!service.error) {
-            await logo.mv(filePath)
-        }
-
     } else {
-
         service = await updateCourse(req.params.id, {
-            title, description
+            title, description, category, score
         })
     }
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -289,7 +367,7 @@ exports.deleteCourse = async (req, res) => {
     const service = await deleteCourse(req.params.id)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

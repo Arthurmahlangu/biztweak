@@ -28,7 +28,8 @@
         "nodemailer": "^6.8.0",
         "pluralize": "^8.0.0",
         "sequelize": "^6.26.0",
-        "simple-node-logger": "^21.8.12"
+        "simple-node-logger": "^21.8.12",
+        "uuid": "^9.0.0"
     },
     "devDependencies": {
         "husky": "^8.0.0",

@@ -442,6 +442,36 @@ module.exports = {
       other: 1,
       createdAt: new Date,
       updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:id/text",
+      model: "courses",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:cid/text/:tid",
+      model: "courses",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/my-courses",
+      model: "courses",
+      method: "GET",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
     },
 
     

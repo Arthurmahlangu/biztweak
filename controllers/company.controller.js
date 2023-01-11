@@ -1,4 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
+const uploader = require("../helpers/uploader")
 const { 
     createCompany, 
     getCompany, 
@@ -19,58 +20,77 @@ const {
  */
 exports.createCompany = async (req, res) => {
 
-    const { name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover } = req.body
+    let service = null
+
+    const { 
+        name, 
+        location, 
+        phase, 
+        registered, 
+        registration_number, 
+        registration_date, 
+        products_or_services, 
+        industry, employees, 
+        monthly_turnover, 
+        annual_turnover 
+    } = req.body
 
     if (req.files && req.files.logo) {
 
-        const { logo } = req.files
+        const upload = await uploader(req.files.logo, "companies", [
+            "image/png", "image/jpg", "image/jpeg"
+        ])
 
-        const now = new Date().getTime()
-        const filePath = "./storage/company/" + now + "_" + logo.name
-
-        if (logo.mimetype !== 'image/png' && logo.mimetype !== 'image/jpeg') {
+        if (upload.error) {
             return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse("Invalid png|jpg|jpeg file.")
+                failResponse(upload.message)
             )
         }
 
-        const service = await createCompany({
-            userid: req.auth.id, name, logo: filePath, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover
+        service = await createCompany({
+            userid: req.auth.id, 
+            name, 
+            logo: upload.data, 
+            location, 
+            phase, 
+            registered, 
+            registration_number, 
+            registration_date, 
+            products_or_services, 
+            industry, 
+            employees, 
+            monthly_turnover, 
+            annual_turnover
         })
-
-        if (service.error) {
-            res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse(service.message)
-            )
-        }
-
-        if (!service.error) {
-            await logo.mv(filePath)
-        }
-
-        res.send(
-            successResponse("Successful.", {
-                data: service.data
-            })
-        )
 
     } else {
-        const service = await createCompany({
-            userid: req.auth.id, name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover
+        service = await createCompany({
+            userid: req.auth.id, 
+            name, 
+            location, 
+            phase, 
+            registered, 
+            registration_number, 
+            registration_date, 
+            products_or_services, 
+            industry, 
+            employees, 
+            monthly_turnover, 
+            annual_turnover
         })
+    }
 
-        if (service.error) {
-            res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse(service.message)
-            )
-        }
-
-        res.send(
-            successResponse("Successful.", {
-                data: service.data
-            })
+    if (service.error) {
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+            failResponse(service.message)
         )
     }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
 }
 
 /**
@@ -121,19 +141,72 @@ exports.getCompany = async (req, res) => {
  */
 exports.updateCompany = async (req, res) => {
 
-    const { name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover } = req.body
-    const service = await updateCompany(req.params.id, {
-        name, location, phase, registered, registration_number, registration_date, products_or_services, industry, employees, monthly_turnover, annual_turnover
-    })
+    let service = null
+
+    const { 
+        name, 
+        location, 
+        phase, 
+        registered, 
+        registration_number, 
+        registration_date, 
+        products_or_services, 
+        industry, employees, 
+        monthly_turnover, 
+        annual_turnover 
+    } = req.body
+
+    if (req.files && req.files.logo) {
+
+        const upload = uploader(req.files.logo, "companies", [
+            "image/png", "image/jpg", "image/jpeg"
+        ])
+
+        if (upload.error) {
+            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                failResponse(upload.message)
+            )
+        }
+
+        service = await updateCompany(req.auth.id, {
+            name,
+            logo: upload.data, 
+            location, 
+            phase, 
+            registered, 
+            registration_number, 
+            registration_date, 
+            products_or_services, 
+            industry, 
+            employees, 
+            monthly_turnover, 
+            annual_turnover
+        })
+
+    } else {
+        service = await updateCompany(req.auth.id, {
+            name,
+            location, 
+            phase, 
+            registered, 
+            registration_number, 
+            registration_date, 
+            products_or_services, 
+            industry, 
+            employees, 
+            monthly_turnover, 
+            annual_turnover
+        })
+    }
 
     if (service.error) {
-        res.send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
 
     res.send(
-        successResponse("Updated.", {
+        successResponse("Successful.", {
             data: service.data
         })
     )
@@ -170,14 +243,14 @@ exports.deleteCompany = async (req, res) => {
  */
 exports.createCompanyAssessments = async (req, res) => {
 
-    const { id } = req.params
     const { answers } = req.body
+
     const service = await createCompanyAssessments({
-        userid: req.auth.id, companyid: id, answers
+        userid: req.auth.id, companyid: req.params.id, answers
     })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -199,7 +272,7 @@ exports.getCompanyAssessments = async (req, res) => {
     const service = await getCompanyAssessments(req.params.cid, req.params.aid)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -221,10 +294,11 @@ exports.updateCompanyAssessments = async (req, res) => {
 
     const { answers } = req.body
     const { cid, aid } = req.params
+    
     const service = await updateCompanyAssessments(cid, aid, { answers })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

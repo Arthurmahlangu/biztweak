@@ -2,35 +2,20 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('course_videos', {
+    await queryInterface.createTable('recomended_courses', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userid: {
+      companyid: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
       courseid: {
         allowNull: false,
         type: Sequelize.INTEGER
-      },
-      name: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      description: {
-        allowNull: false,
-        type: Sequelize.TEXT
-      },
-      type: {
-        type: Sequelize.STRING
-      },
-      file: {
-        allowNull: false,
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -43,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('course_videos');
+    await queryInterface.dropTable('recomended_courses');
   }
 };

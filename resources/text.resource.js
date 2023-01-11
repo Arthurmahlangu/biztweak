@@ -1,9 +1,8 @@
 module.exports = [
     'id', 
-    'title',
+    'name',
     'description',
-    'logo',
-    'category',
-    'score',
+    'type',
+    'file',
     ['createdAt', 'date']
 ]

@@ -10,21 +10,26 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userid: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       courseid: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       description: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       type: {
         type: Sequelize.STRING
       },
       file: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

@@ -115,6 +115,7 @@ API Endpoint
                         href="mailto:jon.snow@nightswatch.wes">jon.snow@nightswatch.wes</a> to get your own API key.
                 </p>
             </div>
+
             <div class="overflow-hidden content-section" id="register">
                 <h2>Register</h2>
                 <pre><code class="bash">
@@ -166,6 +167,7 @@ POST http://146.190.224.144/api/v1/email-register
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="login">
                 <h2>Login</h2>
                 <pre><code class="bash">
@@ -225,6 +227,7 @@ POST http://146.190.224.144/api/v1/email-auth
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="register-mentor">
                 <h2>Register mentor</h2>
                 <pre><code class="bash">
@@ -293,6 +296,7 @@ POST http://146.190.224.144/api/v1/users/mentor
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="register-admin">
                 <h2>Register admin</h2>
                 <pre><code class="bash">
@@ -361,6 +365,7 @@ POST http://146.190.224.144/api/v1/users/admin
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="register-super">
                 <h2>Register super admin</h2>
                 <pre><code class="bash">
@@ -429,6 +434,7 @@ POST http://146.190.224.144/api/v1/users/super
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="update-email">
                 <h2>Update email</h2>
                 <pre><code class="bash">
@@ -504,6 +510,7 @@ PUT http://146.190.224.144/api/v1/users/:id/email
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="update-password">
                 <h2>Update password</h2>
                 <pre><code class="bash">
@@ -579,6 +586,7 @@ PUT http://146.190.224.144/api/v1/users/:id/password
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="update-role">
                 <h2>Update role</h2>
                 <pre><code class="bash">
@@ -654,6 +662,7 @@ PUT http://146.190.224.144/api/v1/users/:id/role
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="users">
                 <h2>Get users</h2>
                 <pre><code class="bash">
@@ -736,7 +745,7 @@ GET http://146.190.224.144/api/v1/users/:id
     }
   }
 }
-            </code></pre>
+                </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
                     <thead>
@@ -771,6 +780,7 @@ GET http://146.190.224.144/api/v1/users/:id
                         </tr>
                     </tbody>
                 </table>
+
                 <h2>Update user</h2>
                 <pre><code class="bash">
 # Endpoint
@@ -790,7 +800,7 @@ PUT http://146.190.224.144/api/v1/users/:id
       "data": []
     }
 }
-            </code></pre>
+                </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
                     <thead>
@@ -930,6 +940,7 @@ DELETE http://146.190.224.144/api/v1/users/:id
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="assessments">
                 <h2>Create assessment question</h2>
                 <pre><code class="bash">
@@ -957,7 +968,7 @@ POST http://146.190.224.144/api/v1/assessments
       }
     }
   }
-            </code></pre>
+                </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
                     <thead>
@@ -1004,6 +1015,7 @@ POST http://146.190.224.144/api/v1/assessments
                         </tr>
                     </tbody>
                 </table>
+
                 <h2>Get assessments</h2>
                 <pre><code class="bash">
 # Endpoint
@@ -1050,6 +1062,7 @@ GET http://146.190.224.144/api/v1/assessments
                         </tr>
                     </tbody>
                 </table>
+
                 <h2>Get assessment</h2>
                 <pre><code class="bash">
 # Endpoint
@@ -1075,7 +1088,7 @@ GET http://146.190.224.144/api/v1/assessments/:id
       }
     }
 }
-            </code></pre>
+                </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
                     <thead>
@@ -1110,6 +1123,7 @@ GET http://146.190.224.144/api/v1/assessments/:id
                         </tr>
                     </tbody>
                 </table>
+
                 <h2>Update assessment question</h2>
                 <pre><code class="bash">
 # Endpoint
@@ -1129,7 +1143,7 @@ PUT http://146.190.224.144/api/v1/assessments/:id
       "data": []
     }
 }
-            </code></pre>
+                </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
                     <thead>
@@ -1248,6 +1262,7 @@ DELETE http://146.190.224.144/api/v1/assessments/:id
                     </tbody>
                 </table>
             </div>
+
             <div class="overflow-hidden content-section" id="company">
                 <h2>Create company</h2>
                 <pre><code class="bash">
@@ -1266,20 +1281,24 @@ POST http://146.190.224.144/api/v1/companies
     "message": "Successful.",
     "package": {
       "data": {
-            "id": 1,
-            "userid": 3,
-            "name": "Example name",
-            "location": "Example location",
-            "phase": "Startup",
-            "registered": false,
-            "industry": "Information Technology",
-            "employers": 10,
-            "turnover": 7000,
-            "updatedAt": "2023-01-05T17:23:53.335Z",
-            "createdAt": "2023-01-05T17:23:53.335Z"
-        }
+        "id": 1,
+        "userid": 1,
+        "name": "Example name",
+        "location": "Example location",
+        "phase": "Example phase",
+        "registered": true,
+        "registration_number": "Example reg number",
+        "registration_date": "2022-08-08T13:00:00.000Z",
+        "products_or_services": "Example",
+        "industry": "Example",
+        "employees": 50,
+        "monthly_turnover": 3000,
+        "annual_turnover": 6000000,
+        "updatedAt": "2023-01-11T08:39:15.203Z",
+        "createdAt": "2023-01-11T08:39:15.203Z"
+      }
     }
-}
+  }
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -1316,17 +1335,12 @@ POST http://146.190.224.144/api/v1/companies
                         <tr>
                             <td>logo</td>
                             <td>String</td>
-                            <td>Company logo.</td>
+                            <td>(Optional Company logo. JPG, JPEG, or PNG files</td>
                         </tr>
                         <tr>
                             <td>location</td>
                             <td>String</td>
                             <td>Company location</td>
-                        </tr>
-                        <tr>
-                            <td>logo</td>
-                            <td>String</td>
-                            <td>JPG, JPEG, or  files</td>
                         </tr>
                         <tr>
                             <td>phase</td>
@@ -1413,20 +1427,20 @@ GET http://146.190.224.144/api/v1/companies
       "data": [
         {
           "id": 1,
-          "name": "example3",
+          "name": "Example name",
           "logo": null,
-          "location": "example",
-          "phase": "example",
-          "registered": false,
-          "registration_number": "1234",
-          "registration_date": null,
-          "products_or_services": null,
-          "industry": "example",
-          "employees": 2,
+          "location": "Example location",
+          "phase": "Example phase",
+          "registered": true,
+          "registration_number": "Example reg number",
+          "registration_date": "2022-08-08T13:00:00.000Z",
+          "products_or_services": "Example",
+          "industry": "Example",
+          "employees": 50,
           "monthly_turnover": 3000,
-          "annual_turnover": 500000,
+          "annual_turnover": 6000000,
           "rating": null,
-          "date": "2023-01-09T17:41:09.000Z",
+          "date": "2023-01-11T08:39:15.000Z",
           "user": {
             "id": 1,
             "fullname": "Root Administrator",
@@ -1436,14 +1450,18 @@ GET http://146.190.224.144/api/v1/companies
             "work_experience": null,
             "work_experience2": null,
             "location": null,
+            "photo": null,
+            "market_newsletter": true,
+            "product_updates_and_community_announcements": true,
             "role": "ROOT",
-            "registered": "2023-01-09T09:01:17.000Z"
+            "registered": "2023-01-11T08:31:01.000Z"
           },
           "report": null
-        }
+        },
+        ...
       ]
     }
-}
+  }
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -1482,27 +1500,27 @@ GET http://146.190.224.144/api/v1/companies/my-companies
       "data": [
         {
           "id": 1,
-          "name": "example3",
+          "name": "Example name",
           "logo": null,
-          "location": "example",
-          "phase": "example",
-          "registered": false,
-          "registration_number": "1234",
-          "registration_date": null,
-          "products_or_services": null,
-          "industry": "example",
-          "employees": 2,
+          "location": "Example location",
+          "phase": "Example phase",
+          "registered": true,
+          "registration_number": "Example reg number",
+          "registration_date": "2022-08-08T13:00:00.000Z",
+          "products_or_services": "Example",
+          "industry": "Example",
+          "employees": 50,
           "monthly_turnover": 3000,
-          "annual_turnover": 500000,
+          "annual_turnover": 6000000,
           "rating": null,
-          "date": "2023-01-09T17:41:09.000Z",
+          "date": "2023-01-11T08:39:15.000Z",
           "assessments": null,
           "report": null
         },
         ...
       ]
     }
-  }
+}
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -1539,120 +1557,128 @@ GET http://146.190.224.144/api/v1/companies/:id
     "message": "Successful.",
     "package": {
       "data": {
-        "id": 1,
-        "name": "example3",
-        "logo": null,
-        "location": "example",
-        "phase": "example",
-        "registered": false,
-        "registration_number": "1234",
-        "registration_date": null,
-        "products_or_services": null,
-        "industry": "example",
-        "employees": 2,
-        "monthly_turnover": 3000,
-        "annual_turnover": 500000,
-        "rating": null,
-        "date": "2023-01-09T17:41:09.000Z",
-        "assessments": null,
-        "assessments": {
-          "id": 4,
-          "answers": [
-            {
-              "id": 1,
-              "question": "Ques",
-              "answer": "YES"
-            },
+        "error": false,
+        "data": {
+          "id": 1,
+          "name": "Example name",
+          "logo": null,
+          "location": "Example location",
+          "phase": "Example phase",
+          "registered": true,
+          "registration_number": "Example reg number",
+          "registration_date": "2022-08-08T13:00:00.000Z",
+          "products_or_services": "Example",
+          "industry": "Example",
+          "employees": 50,
+          "monthly_turnover": 3000,
+          "annual_turnover": 6000000,
+          "rating": "2",
+          "date": "2023-01-11T13:27:19.000Z",
+          "assessments": {
+            "id": 12,
+            "answers": [
+              {
+                "id": 1,
+                "question": "Example question",
+                "category": "Customer relations",
+                "answer": "YES"
+              }
+            ],
+            "date": "2023-01-11T14:44:18.000Z"
+          },
+          "user": {
+            "id": 1,
+            "fullname": "Root Administrator",
+            "email": "root@admin.com",
+            "phone": null,
+            "education": null,
+            "work_experience": null,
+            "work_experience2": null,
+            "location": null,
+            "photo": null,
+            "market_newsletter": true,
+            "product_updates_and_community_announcements": true,
+            "role": "ROOT",
+            "registered": "2023-01-11T13:21:03.000Z"
+          },
+          "report": {
+            "id": 1,
+            "scores": [
+              {
+                "category": "Customer relations",
+                "percentage": 20
+              },
+              {
+                "category": "Channels",
+                "percentage": 0
+              },
+              {
+                "category": "E-commerce",
+                "percentage": 0
+              },
+              {
+                "category": "Functional Capability",
+                "percentage": 0
+              },
+              {
+                "category": "Customer segments",
+                "percentage": 0
+              },
+              {
+                "category": "Business and customers",
+                "percentage": 0
+              },
+              {
+                "category": "Marketing and sales",
+                "percentage": 0
+              },
+              {
+                "category": "Revenue Streams",
+                "percentage": 0
+              },
+              {
+                "category": "Ownership and mindset",
+                "percentage": 0
+              }
+            ],
+            "date": "2023-01-11T13:42:09.000Z"
+          },
+          "courses": [
             {
               "id": 2,
-              "question": "Ques",
-              "answer": "YES"
+              "title": "Example course",
+              "description": "Example description",
+              "logo": "127.0.0.1:5000/storage/courses/1673444159752_a669e72e-cf80-49fb-8109-47932dccbad2.jpg",
+              "category": "Customer relations",
+              "score": 80,
+              "date": "2023-01-11T13:35:59.000Z",
+              "recomended_course": {
+                "companyid": 1,
+                "courseid": 2,
+                "createdAt": "2023-01-11T14:44:18.000Z",
+                "updatedAt": "2023-01-11T14:44:18.000Z"
+              }
             },
             {
               "id": 3,
-              "question": "Ques",
-              "answer": "YES"
-            },
-            {
-              "id": 1,
-              "question": "Ques",
-              "answer": "YES"
-            },
-            {
-              "id": 4,
-              "question": "Ques",
-              "answer": "YES"
-            },
-            {
-              "id": 21,
-              "question": "Ques",
-              "answer": "YES"
-            },
-            {
-              "id": 22,
-              "question": "Ques",
-              "answer": "YES"
-            }
-          ],
-          "date": "2023-01-08T06:03:46.000Z"
-        },
-        "user": {
-          "id": 1,
-          "fullname": "Root Administrator",
-          "email": "root@admin.com",
-          "phone": null,
-          "education": null,
-          "work_experience": null,
-          "work_experience2": null,
-          "location": null,
-          "role": "ROOT",
-          "registered": "2023-01-08T04:01:03.000Z"
-        },
-        "report": {
-          "id": 3,
-          "scores": [
-            {
+              "title": "Example course 2",
+              "description": "Example description 2",
+              "logo": "127.0.0.1:5000/storage/courses/1673448149069_38cf0b75-3016-4a13-8da7-ff49891dc7c2.jpg",
               "category": "Customer relations",
-              "percentage": 80
-            },
-            {
-              "category": "Channels",
-              "percentage": 0
-            },
-            {
-              "category": "E-commerce",
-              "percentage": 0
-            },
-            {
-              "category": "Functional Capability",
-              "percentage": 0
-            },
-            {
-              "category": "Customer segments",
-              "percentage": 22
-            },
-            {
-              "category": "Business and customers",
-              "percentage": 0
-            },
-            {
-              "category": "Marketing and sales",
-              "percentage": 0
-            },
-            {
-              "category": "Revenue Streams",
-              "percentage": 0
-            },
-            {
-              "category": "Ownership and mindset",
-              "percentage": 0
+              "score": 80,
+              "date": "2023-01-11T14:42:29.000Z",
+              "recomended_course": {
+                "companyid": 1,
+                "courseid": 3,
+                "createdAt": "2023-01-11T14:44:18.000Z",
+                "updatedAt": "2023-01-11T14:44:18.000Z"
+              }
             }
-          ],
-          "date": "2023-01-08T06:03:46.000Z"
+          ]
         }
       }
     }
-  }
+}
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -1911,18 +1937,128 @@ POST http://146.190.224.144/api/v1/companies/:id/assessments
     "message": "Successful.",
     "package": {
       "data": {
-        "assessment": {
+        "error": false,
+        "data": {
           "id": 1,
-          "userid": 3,
-          "companyid": "1",
-          "answers": "{\"id\": 1, \"question\": \"Example question\", \"category\": \"Example category\", \"answer\": \"YES\"}",
-          "updatedAt": "2023-01-06T02:29:13.588Z",
-          "createdAt": "2023-01-06T02:29:13.588Z"
-        },
-        "rating": 2
+          "name": "Example name",
+          "logo": null,
+          "location": "Example location",
+          "phase": "Example phase",
+          "registered": true,
+          "registration_number": "Example reg number",
+          "registration_date": "2022-08-08T13:00:00.000Z",
+          "products_or_services": "Example",
+          "industry": "Example",
+          "employees": 50,
+          "monthly_turnover": 3000,
+          "annual_turnover": 6000000,
+          "rating": "2",
+          "date": "2023-01-11T13:27:19.000Z",
+          "assessments": {
+            "id": 12,
+            "answers": [
+              {
+                "id": 1,
+                "question": "Example question",
+                "category": "Customer relations",
+                "answer": "YES"
+              }
+            ],
+            "date": "2023-01-11T14:44:18.000Z"
+          },
+          "user": {
+            "id": 1,
+            "fullname": "Root Administrator",
+            "email": "root@admin.com",
+            "phone": null,
+            "education": null,
+            "work_experience": null,
+            "work_experience2": null,
+            "location": null,
+            "photo": null,
+            "market_newsletter": true,
+            "product_updates_and_community_announcements": true,
+            "role": "ROOT",
+            "registered": "2023-01-11T13:21:03.000Z"
+          },
+          "report": {
+            "id": 1,
+            "scores": [
+              {
+                "category": "Customer relations",
+                "percentage": 20
+              },
+              {
+                "category": "Channels",
+                "percentage": 0
+              },
+              {
+                "category": "E-commerce",
+                "percentage": 0
+              },
+              {
+                "category": "Functional Capability",
+                "percentage": 0
+              },
+              {
+                "category": "Customer segments",
+                "percentage": 0
+              },
+              {
+                "category": "Business and customers",
+                "percentage": 0
+              },
+              {
+                "category": "Marketing and sales",
+                "percentage": 0
+              },
+              {
+                "category": "Revenue Streams",
+                "percentage": 0
+              },
+              {
+                "category": "Ownership and mindset",
+                "percentage": 0
+              }
+            ],
+            "date": "2023-01-11T13:42:09.000Z"
+          },
+          "courses": [
+            {
+              "id": 2,
+              "title": "Example course",
+              "description": "Example description",
+              "logo": "127.0.0.1:5000/storage/courses/1673444159752_a669e72e-cf80-49fb-8109-47932dccbad2.jpg",
+              "category": "Customer relations",
+              "score": 80,
+              "date": "2023-01-11T13:35:59.000Z",
+              "recomended_course": {
+                "companyid": 1,
+                "courseid": 2,
+                "createdAt": "2023-01-11T14:44:18.000Z",
+                "updatedAt": "2023-01-11T14:44:18.000Z"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Example course 2",
+              "description": "Example description 2",
+              "logo": "127.0.0.1:5000/storage/courses/1673448149069_38cf0b75-3016-4a13-8da7-ff49891dc7c2.jpg",
+              "category": "Customer relations",
+              "score": 80,
+              "date": "2023-01-11T14:42:29.000Z",
+              "recomended_course": {
+                "companyid": 1,
+                "courseid": 3,
+                "createdAt": "2023-01-11T14:44:18.000Z",
+                "updatedAt": "2023-01-11T14:44:18.000Z"
+              }
+            }
+          ]
+        }
       }
     }
-  }
+}
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">
@@ -2001,14 +2137,18 @@ GET http://146.190.224.144/api/v1/companies/:cid/assessments/:aid
     "package": {
       "data": {
         "id": 1,
-        "userid": 3,
-        "companyid": 1,
-        "answers": "{\"id\": 1, \"question\": \"Example question\", \"category\": \"Example category\", \"answer\": \"YES\"}",
-        "createdAt": "2023-01-06T02:29:13.000Z",
-        "updatedAt": "2023-01-06T02:29:13.000Z"
+        "answers": [
+          {
+            "id": 1,
+            "question": "Example question",
+            "category": "Example category",
+            "answer": "YES"
+          }
+        ],
+        "date": "2023-01-11T08:50:26.000Z"
       }
     }
-}
+  }
                 </code></pre>
                 <h4>HEADERS</h4>
                 <table class="central-overflow-x">

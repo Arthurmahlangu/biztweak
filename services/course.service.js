@@ -2,6 +2,7 @@ const db = require("../models")
 const UserResource = require("../resources/user.resource")
 const AudioResource = require("../resources/audio.resource")
 const VideoResource = require("../resources/video.resource")
+const TextResource = require("../resources/text.resource")
 const courseResource = require("../resources/course.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
@@ -98,6 +99,37 @@ exports.createCourseVideo = async (payload) => {
     }
 }
 
+exports.createCourseText = async (payload) => {
+    try {
+
+        const course = await db.course.findOne({ 
+            where: { id: payload.courseid }
+        })
+
+        if (!course) {
+            throw new Error('Course not found.')
+        }
+        
+        const newText = await db.course_text.create(payload)
+
+        if (!newText) {
+            throw new Error('Failed adding course text.')
+        }
+
+        return {
+            error: false,
+            data: newText
+        }
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}
+
 exports.getCourses = async () => {
     try {
         
@@ -141,6 +173,11 @@ exports.getCourse = async (id) => {
                     model: db.course_video,
                     as: 'videos',
                     attributes: VideoResource
+                },
+                {
+                    model: db.course_text,
+                    as: 'texts',
+                    attributes: TextResource
                 },
                 {
                     model: db.user,

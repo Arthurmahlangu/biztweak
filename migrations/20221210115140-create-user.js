@@ -32,6 +32,17 @@ module.exports = {
       location: {
         type: Sequelize.STRING
       },
+      photo: {
+        type: Sequelize.STRING
+      },
+      market_newsletter: {
+        defaultValue: true,
+        type: Sequelize.BOOLEAN
+      },
+      product_updates_and_community_announcements: {
+        defaultValue: true,
+        type: Sequelize.BOOLEAN
+      },
       role: {
         type: Sequelize.STRING
       },

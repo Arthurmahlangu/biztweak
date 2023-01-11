@@ -16,12 +16,13 @@ const {
 exports.createAttendance = async (req, res) => {
 
     const { category, type, date, attended } = req.body
+
     const service = await createAttendance({
         userid: req.auth.id, category, type, date, attended
     })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -61,7 +62,7 @@ exports.getAttendance = async (req, res) => {
     const service = await getAttendance(req.params.id)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -82,12 +83,13 @@ exports.getAttendance = async (req, res) => {
 exports.updateAttendance = async (req, res) => {
 
     const { category, type, date, attended } = req.body
+
     const service = await updateAttendance(req.params.id, {
         category, type, date, attended
     })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -110,7 +112,7 @@ exports.deleteAttendance = async (req, res) => {
     const service = await deleteAttendance(req.params.id)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

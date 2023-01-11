@@ -3,6 +3,7 @@ const UserResource = require("../resources/user.resource")
 const ReportResource = require("../resources/report.resource")
 const CompanyResource = require("../resources/company.resource")
 const AssessmentResource = require("../resources/assessment.resource")
+const CourseResource = require("../resources/course.resource")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -24,7 +25,7 @@ exports.createCompany = async (payload) => {
 
         return {
             error: false,
-            data: newCompany
+            data: this.getCompany(newCompany.id)
         }
 
     } catch (error) {
@@ -86,6 +87,10 @@ exports.getCompany = async (id) => {
                 {
                     model: db.report,
                     attributes: ReportResource
+                },
+                {
+                    model: db.course,
+                    attributes: CourseResource
                 }
             ]
         })
@@ -205,7 +210,7 @@ exports.createCompanyAssessments = async (payload) => {
         const computedResults = []
         const payloadAnswers = JSON.parse(payload.answers)
         const questions = await db.assessment.findAll()
-        
+
         questions.forEach((question) => {
             if (categories[question.category]) {
                 categories[question.category] += 1
@@ -221,7 +226,7 @@ exports.createCompanyAssessments = async (payload) => {
                     }
                 }
             }
-        });
+        })
 
         for (var category in categories) {
             const total = categories[category]
@@ -238,7 +243,7 @@ exports.createCompanyAssessments = async (payload) => {
                     percentage
                 }) 
             }
-        };
+        }
         
         const newCompany = await db.company.update({ rating }, { where: { id: payload.companyid } })
 
@@ -256,12 +261,46 @@ exports.createCompanyAssessments = async (payload) => {
             throw new Error('Assessment report failed.')
         }
 
+        let categoryList = []
+        let recomendedCourses = []
+        let recomendedCoursIDs = []
+
+        computedResults.forEach((result) => {
+            categoryList.push(result.category)
+        })
+
+        const courses = await db.course.findAll({
+            where: {
+                category: categoryList
+            }
+        })
+
+        courses.forEach((course) => {
+            computedResults.forEach((result) => {
+                if (result.category == course.category) {
+                    if (result.percentage <= course.score) {
+                        if (!recomendedCoursIDs.includes(course.id)) {
+                            recomendedCoursIDs.push(course.id)
+                            recomendedCourses.push({
+                                courseid: course.id,
+                                companyid: company.id
+                            })
+                            return
+                        }
+                    }
+                }
+            })
+        })
+
+        if (recomendedCourses.length > 0) {
+            await db.recomended_course.bulkCreate(recomendedCourses)
+        }
+
+        const data = await this.getCompany(company.id)
+
         return {
             error: false,
-            data: { 
-                "assessment": newAnswers,
-                "rating": rating
-            }
+            data
         }
 
     } catch (error) {
@@ -273,7 +312,6 @@ exports.createCompanyAssessments = async (payload) => {
         }
     }
 }
-
 
 exports.getCompanyAssessments = async (companyid, assessmentid) => {
     try {
@@ -349,7 +387,6 @@ exports.updateCompanyAssessments = async (companyid, assessmentid, payload = {})
         }
     }
 }
-
 
 exports.getMyCompanies = async (userid) => {
     try {

@@ -21,6 +21,12 @@ module.exports = {
       logo: {
         type: Sequelize.STRING
       },
+      category: {
+        type: Sequelize.STRING
+      },
+      score: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

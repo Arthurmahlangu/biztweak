@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.report, {
         foreignKey: 'companyid',
       })
+      this.belongsToMany(models.course, {
+        through: models.recomended_course,
+        foreignKey: 'companyid'
+      })
     }
   }
   company.init({

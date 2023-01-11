@@ -18,6 +18,7 @@ const {
 exports.createEvent = async (req, res) => {
 
     const { title, description, type, startDate, endDate, frequency } = req.body
+    
     const service = await createEvent({
         userid: req.auth.id, title, description, type, startDate, endDate, frequency
     })
@@ -84,6 +85,7 @@ exports.getEvent = async (req, res) => {
 exports.updateEvent = async (req, res) => {
 
     const { title, description, type, startDate, endDate, frequency } = req.body
+
     const service = await updateEvent(req.params.id, {
         title, description, type, startDate, endDate, frequency
     })
@@ -133,6 +135,7 @@ exports.deleteEvent = async (req, res) => {
 exports.createEventInvite = async (req, res) => {
 
     const { userid } = req.body
+
     const service = await createEventInvite(req.params.id, {
         userid
     })

@@ -16,12 +16,13 @@ const {
 exports.createAssessment = async (req, res) => {
 
     const { category, label, answer } = req.body
+
     const service = await createAssessment({
         category, label, answer
     })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -61,7 +62,7 @@ exports.getAssessment = async (req, res) => {
     const service = await getAssessment(req.params.id)
 
     if (service.error) {
-        res.send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -82,12 +83,13 @@ exports.getAssessment = async (req, res) => {
 exports.updateAssessment = async (req, res) => {
 
     const { category, label, answer } = req.body
+    
     const service = await updateAssessment(req.params.id, {
         category, label, answer
     })
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }
@@ -110,7 +112,7 @@ exports.deleteAssessment = async (req, res) => {
     const service = await deleteAssessment(req.params.id)
 
     if (service.error) {
-        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
             failResponse(service.message)
         )
     }

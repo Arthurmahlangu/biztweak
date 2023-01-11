@@ -19,13 +19,23 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'courseid',
         as: 'videos'
       })
+      this.hasMany(models.course_text, {
+        foreignKey: 'courseid',
+        as: 'texts'
+      })
+      this.belongsToMany(models.company, {
+        through: models.recomended_course,
+        foreignKey: 'courseid'
+      })
     }
   }
   course.init({
     userid: DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.STRING,
-    logo: DataTypes.STRING
+    logo: DataTypes.STRING,
+    category: DataTypes.STRING,
+    score: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'course',
