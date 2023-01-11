@@ -2,6 +2,7 @@ const TokenService = require("./token.service")
 const bcrypt = require('bcrypt')
 const db = require("../models")
 const mailer = require("../helpers/mailer")
+const { getUser } = require("./user.service")
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -28,21 +29,17 @@ exports.emailAuth = async (email, password) => {
             throw new Error(token.message)
         }
 
+        const service = await getUser(user.id)
+
+        if (service.error) {
+            throw new Error(service.message)
+        }
+
         return {
             error: false,
             data: {
                 token: token.data.token,
-                user: {
-                    id: user.id,
-                    fullname: user.fullname,
-                    email: user.email,
-                    phone: user.phone,
-                    education: user.education,
-                    work_experience: user.work_experience,
-                    location: user.location,
-                    role: user.role,
-                    registered: user.createdAt
-                }
+                user: service.data
             }
         }
         
@@ -81,9 +78,15 @@ exports.emailRegister = async (fullname, email, password) => {
             throw new Error('Registration email failed.')
         }
 
+        const service = await getUser(newUser.id)
+
+        if (service.error) {
+            throw new Error(service.message)
+        }
+
         return {
             error: false,
-            data: newUser
+            data: service.data
         }
         
     } catch (error) {
