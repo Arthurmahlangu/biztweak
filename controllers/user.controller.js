@@ -7,7 +7,8 @@ const {
     updatePassword, 
     createSuperUser, 
     createAdminUser,
-    createMentorUser
+    createMentorUser,
+    deleteUser
 } = require("../services/user.service")
 
 /**
@@ -265,6 +266,29 @@ exports.updateRole = async (req, res) => {
     res.send(
         successResponse("Updated.", {
             data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.deleteUser = async (req, res) => {
+
+    const service = await deleteUser(req.params.id)
+
+    if (service.error) {
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Deleted.", {
+            data: []
         })
     )
 }

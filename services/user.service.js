@@ -225,7 +225,7 @@ exports.deleteUser = async (id) => {
             throw new Error('User not found.')
         }
 
-        await db.user.destro({ where: { id } })
+        await db.user.destroy({ where: { id } })
 
         return {
             error: false,

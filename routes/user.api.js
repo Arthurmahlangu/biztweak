@@ -10,7 +10,8 @@ const { emailValidator } = require("../middlewares/validators/email.validations"
 const { 
     getUserValidator, 
     updateUserRoleValidator, 
-    createAccountValidator 
+    createAccountValidator, 
+    deleteUserValidator
 } = require("../middlewares/validators/user.validations")
 
 router.get("/users", AuthMiddleware, UserController.getUsers)
@@ -22,5 +23,6 @@ router.put("/users/:id/password", validate(passwordValidator), AuthMiddleware, U
 router.post("/users/super", validate(createAccountValidator), AuthMiddleware, UserController.createSuperAccount)
 router.post("/users/admin", validate(createAccountValidator), AuthMiddleware, UserController.createAdminAccount)
 router.post("/users/mentor", validate(createAccountValidator), AuthMiddleware, UserController.createMentorAccount)
+router.delete("/users/:id", validate(deleteUserValidator), AuthMiddleware, UserController.deleteUser)
 
 module.exports = router
