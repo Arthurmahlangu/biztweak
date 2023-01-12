@@ -25,7 +25,7 @@ exports.createCompany = async (payload) => {
 
         return {
             error: false,
-            data: this.getCompany(newCompany.id)
+            data: newCompany
         }
 
     } catch (error) {
