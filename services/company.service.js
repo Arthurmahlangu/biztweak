@@ -296,7 +296,7 @@ exports.createCompanyAssessments = async (payload) => {
             await db.recomended_course.bulkCreate(recomendedCourses)
         }
 
-        const data = await this.getCompany(company.id)
+        const { data } = await this.getCompany(company.id)
 
         return {
             error: false,
