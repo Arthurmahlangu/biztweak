@@ -1,2386 +1,1880 @@
-<!--
- API Documentation HTML Template  - 1.0.1
- Copyright © 2016 Florian Nicolas
- Licensed under the MIT license.
- https://github.com/ticlekiwi/API-Documentation-HTML-Template
- !-->
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>API - Documentation</title>
-    <meta name="description" content="">
-    <meta name="author" content="ticlekiwi">
-
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/hightlightjs-dark.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" media="all">
-    <script>hljs.initHighlightingOnLoad();</script>
-</head>
-
-<body>
-    <div class="left-menu">
-        <div class="content-logo">
-            <div class="logo">
-                <img alt="platform by Emily van den Heever from the Noun Project"
-                    title="platform by Emily van den Heever from the Noun Project" src="images/logo.png" height="32" />
-                <span>API Documentation</span>
-            </div>
-            <button class="burger-menu-icon" id="button-menu-mobile">
-                <svg width="34" height="34" viewBox="0 0 100 100">
-                    <path class="line line1"
-                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058">
-                    </path>
-                    <path class="line line2" d="M 20,50 H 80"></path>
-                    <path class="line line3"
-                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942">
-                    </path>
-                </svg>
-            </button>
-        </div>
-        <div class="mobile-menu-closer"></div>
-        <div class="content-menu">
-            <div class="content-infos">
-                <div class="info"><b>Version:</b> 1.0.0</div>
-                <div class="info"><b>Last Updated:</b> 5th Jan, 2023</div>
-            </div>
-            <ul>
-                <li class="scroll-to-link active" data-target="content-get-started">
-                    <a>GET STARTED</a>
-                </li>
-                <li class="scroll-to-link" data-target="register">
-                    <a>REGISTER</a>
-                </li>
-                <li class="scroll-to-link" data-target="login">
-                    <a>LOGIN</a>
-                </li>
-                <li class="scroll-to-link" data-target="register-mentor">
-                    <a>REGISTER MENTOR</a>
-                </li>
-                <li class="scroll-to-link" data-target="register-admin">
-                    <a>REGISTER ADMIN</a>
-                </li>
-                <li class="scroll-to-link" data-target="register-super">
-                    <a>REGISTER SUPER ADMIN</a>
-                </li>
-                <li class="scroll-to-link" data-target="update-email">
-                    <a>UPDATE EMAIL</a>
-                </li>
-                <li class="scroll-to-link" data-target="update-password">
-                    <a>UPDATE PASSWORD</a>
-                </li>
-                <li class="scroll-to-link" data-target="update-role">
-                    <a>UPDATE ROLE</a>
-                </li>
-                <li class="scroll-to-link" data-target="users">
-                    <a>USERS</a>
-                </li>
-                <li class="scroll-to-link" data-target="assessments">
-                    <a>ASSESSMENT QUESTIONS</a>
-                </li>
-                <li class="scroll-to-link" data-target="company">
-                    <a>COMPANY</a>
-                </li>
-                <li class="scroll-to-link" data-target="content-errors">
-                    <a>Errors</a>
-                </li>
-            </ul>
-        </div>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=11' />
+    <title>Biztweak API Documentation</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='css/base.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/railscasts.css' rel='stylesheet' />
+  </head>
+  <body>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="-1232012556"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#biztweak-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">Biztweak API</a><div class="small pad0x quiet space-top1" data-reactid="8">Auth</div><a href="#auth-1" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Auth</a><div class="small pad0x quiet space-top1" data-reactid="10">User</div><a href="#user-1" class="line-height15 pad0x pad00y quiet block " data-reactid="11">User</a><div class="small pad0x quiet space-top1" data-reactid="12">Company</div><a href="#company-1" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Company</a><div class="small pad0x quiet space-top1" data-reactid="14">Assessment</div><a href="#assessment-1" class="line-height15 pad0x pad00y quiet block " data-reactid="15">Assessment</a><div class="small pad0x quiet space-top1" data-reactid="16">Course</div><a href="#course-1" class="line-height15 pad0x pad00y quiet block " data-reactid="17">Course</a></div></div><div class="space-left16" data-reactid="18"><div class="" data-reactid="19"><div class="clearfix" data-reactid="20"><div data-title="Biztweak API" class="keyline-top section contain clearfix " data-reactid="21"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="22"><h2 id="biztweak-api">Biztweak API</h2>
+<p>Welcome to biztweak backend-api.</p>
+</div></div><div data-title="Auth" class="keyline-top section contain clearfix " data-reactid="23"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="24"><h2 id="auth-1">Auth</h2>
+<p>This is our high-quality auth API. You can use this API to request resources.</p>
+</div></div><div data-title="Create biz account" class="keyline-top section contain clearfix " data-reactid="25"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="26"><h3 id="create-biz-account">Create biz account</h3>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="27"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/email-auth</div>
     </div>
-    <div class="content-page">
-        <div class="content-code"></div>
-        <div class="content">
-            <div class="overflow-hidden content-section" id="content-get-started">
-                <h1>Get started</h1>
-                <pre>
-API Endpoint
-    http://146.190.224.144/api/v1/
-                </pre>
-                <p>
-                    The Westeros API provides programmatic access to read Game of Thrones data. Retrieve a character,
-                    provide an oauth connexion, retrieve a familly, filter them, etc.
-                </p>
-                <p>
-                    To use this API, you need an <strong>API key</strong>. Please contact us at <a
-                        href="mailto:jon.snow@nightswatch.wes">jon.snow@nightswatch.wes</a> to get your own API key.
-                </p>
-            </div>
-
-            <div class="overflow-hidden content-section" id="register">
-                <h2>Register</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/email-register
-                </code></pre>
-                <p>
-                    Register biz account :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/email-register</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-        "data": []
+<h4 id="response-200">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+      <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-13T10:12:32.000Z"</span>
     }
-}
-                </code></pre>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>fullname</td>
-                            <td>String</td>
-                            <td>Valid name and surname.</td>
-                        </tr>
-                        <tr>
-                            <td>email</td>
-                            <td>String</td>
-                            <td>Valid email address</td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td>String</td>
-                            <td>
-                                Strong password
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="login">
-                <h2>Login</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/email-auth
-                </code></pre>
-                <p>
-                    Login to biz account :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/email-auth</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "token": "eyJhbGciOi9.eyJNDUzOH0.QswFwg6K_cyIyvudLRbuzU",
-        "user": {
-          "id": 2,
-          "fullname": "Lebohang Mokoena",
-          "email": "lebohang@gmail.com",
-          "phone": null,
-          "education": null,
-          "work_experience": null,
-          "location": null,
-          "role": "ENTREPRENEUR",
-          "registered": "2023-01-05T09:01:35.000Z"
-        }
+  }
+}</pre>
+</div></div><div data-title="Login to account" class="keyline-top section contain clearfix " data-reactid="28"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="29"><h3 id="login-to-account">Login to account</h3>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="30"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/email-auth</div>
+    </div>
+<h4 id="response-200-1">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9I"</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-13T10:12:32.000Z"</span>
       }
     }
   }
-                </code></pre>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>email</td>
-                            <td>String</td>
-                            <td>Valid email address</td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td>String</td>
-                            <td>
-                                Strong password
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="register-mentor">
-                <h2>Register mentor</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/users/mentor
-                </code></pre>
-                <p>
-                    Register mentor account :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/mentor</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-        "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>fullname</td>
-                            <td>String</td>
-                            <td>Valid name and surname.</td>
-                        </tr>
-                        <tr>
-                            <td>email</td>
-                            <td>String</td>
-                            <td>Valid email address</td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td>String</td>
-                            <td>
-                                Strong password
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="register-admin">
-                <h2>Register admin</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/users/admin
-                </code></pre>
-                <p>
-                    Register admin account :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/admin</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-        "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>fullname</td>
-                            <td>String</td>
-                            <td>Valid name and surname.</td>
-                        </tr>
-                        <tr>
-                            <td>email</td>
-                            <td>String</td>
-                            <td>Valid email address</td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td>String</td>
-                            <td>
-                                Strong password
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="register-super">
-                <h2>Register super admin</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/users/super
-                </code></pre>
-                <p>
-                    Register super account :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/super</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-        "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>fullname</td>
-                            <td>String</td>
-                            <td>Valid name and surname.</td>
-                        </tr>
-                        <tr>
-                            <td>email</td>
-                            <td>String</td>
-                            <td>Valid email address</td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td>String</td>
-                            <td>
-                                Strong password
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="update-email">
-                <h2>Update email</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/users/:id/email
-                </code></pre>
-                <p>
-                    Update account email :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/:id/email</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Updated.",
-    "package": {
-        "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid user id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>email</td>
-                            <td>String</td>
-                            <td>
-                                Valid email address
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="update-password">
-                <h2>Update password</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/users/:id/password
-                </code></pre>
-                <p>
-                    Update account password :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/:id/password</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Updated.",
-    "package": {
-        "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid user id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>password</td>
-                            <td>String</td>
-                            <td>
-                                Strong password
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="update-role">
-                <h2>Update role</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/users/:id/role
-                </code></pre>
-                <p>
-                    Update account role :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/:id/role</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Updated.",
-    "package": {
-        "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid user id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>role</td>
-                            <td>String</td>
-                            <td>
-                                Valid role name
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="users">
-                <h2>Get users</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/users
-                </code></pre>
-                <p>
-                    Get all registered users :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": [
-        {
-          "id": 1,
-          "fullname": "Root Administrator",
-          "email": "root@admin.com",
-          "phone": null,
-          "education": null,
-          "work_experience": null,
-          "work_experience2": null,
-          "location": null,
-          "role": "ROOT",
-          "registered": "2023-01-05T04:07:36.000Z"
-        },
-        ...
-      ]
+}</pre>
+</div></div><div data-title="User" class="keyline-top section contain clearfix " data-reactid="31"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="32"><h2 id="user-1">User</h2>
+<p>This is our high-quality users API. You can use this API to request resources.</p>
+</div></div><div data-title="Create admin user" class="keyline-top section contain clearfix " data-reactid="33"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="34"><h3 id="create-admin-user">Create admin user</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="35"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/admin</div>
+    </div>
+<h4 id="response-200-2">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ADMIN"</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
     }
   }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>Get user</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/users/:id
-                </code></pre>
-                <p>
-                    Get a specific registered users :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-  "status": true,
-  "message": "Successful.",
-  "package": {
-    "data": {
-      "id": 1,
-      "fullname": "Root Administrator",
-      "email": "root@admin.com",
-      "phone": null,
-      "education": null,
-      "work_experience": null,
-      "work_experience2": null,
-      "location": null,
-      "role": "ROOT",
-      "registered": "2023-01-05T04:07:36.000Z"
+}</pre>
+</div></div><div data-title="Create super user" class="keyline-top section contain clearfix " data-reactid="36"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="37"><h3 id="create-super-user">Create super user</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="38"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/super</div>
+    </div>
+<h4 id="response-200-3">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"super@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"super@gmail.com"</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
     }
   }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid user id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Update user</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/users/:id
-                </code></pre>
-                <p>
-                    Update a specific registered users :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Updated.",
-    "package": {
-      "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid user id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>fullname</td>
-                            <td>String</td>
-                            <td>Valid name and surname.</td>
-                        </tr>
-                        <tr>
-                            <td>phone</td>
-                            <td>String</td>
-                            <td>(Optional) Valid mobile number</td>
-                        </tr>
-                        <tr>
-                            <td>education</td>
-                            <td>String</td>
-                            <td>
-                                (Optional) Highest qualification
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>work_experience</td>
-                            <td>String</td>
-                            <td>
-                                (Optional) Previously aquired work experience
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>work_experience2</td>
-                            <td>String</td>
-                            <td>
-                                (Optional) More work experience
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>location</td>
-                            <td>String</td>
-                            <td>
-                                (Optional) Valid physical location
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>Delete user</h2>
-                <pre><code class="bash">
-# Endpoint
-DELETE http://146.190.224.144/api/v1/users/:id
-                </code></pre>
-                <p>
-                    Delete a specific registered user :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/users/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": []
+}</pre>
+</div></div><div data-title="Create mentor user" class="keyline-top section contain clearfix " data-reactid="39"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="40"><h3 id="create-mentor-user">Create mentor user</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="41"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/mentor</div>
+    </div>
+<h4 id="response-200-4">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"mentor@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"mentor@gmail.com"</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"MENTOR"</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
     }
   }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid user id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="assessments">
-                <h2>Create assessment question</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/assessments
-                </code></pre>
-                <p>
-                    Create assessment question :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "id": 130,
-        "category": "Category example",
-        "label": "Question example",
-        "answer": "Answer example",
-        "updatedAt": "2023-01-05T16:38:21.642Z",
-        "createdAt": "2023-01-05T16:38:21.642Z"
-      }
-    }
+}</pre>
+</div></div><div data-title="Update user" class="keyline-top section contain clearfix " data-reactid="42"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="43"><h3 id="update-user">Update user</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) User ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) first name and last name</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>String</td>
+<td>(required) valid phone number</td>
+</tr>
+<tr>
+<td><code>work_experience</code></td>
+<td>String</td>
+<td>(required) past work experience</td>
+</tr>
+<tr>
+<td><code>work_experience2</code></td>
+<td>String</td>
+<td>(required) past work experience</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>String</td>
+<td>(required) valid physical address</td>
+</tr>
+<tr>
+<td><code>market_newsletter</code></td>
+<td>Boolean</td>
+<td>(required) opt in/out of newsletter</td>
+</tr>
+<tr>
+<td><code>product_updates_and_community_announcements</code></td>
+<td>Boolean</td>
+<td>(required) opt in/out of announcements</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="44"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-5">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
   }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>category</td>
-                            <td>String</td>
-                            <td>Category of the question.</td>
-                        </tr>
-                        <tr>
-                            <td>label</td>
-                            <td>String</td>
-                            <td>Question</td>
-                        </tr>
-                        <tr>
-                            <td>answer</td>
-                            <td>String</td>
-                            <td>
-                                Possible answer
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Get assessments</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/assessments
-                </code></pre>
-                <p>
-                    Get all assessment questions :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": [
+}</pre>
+</div></div><div data-title="Update email" class="keyline-top section contain clearfix " data-reactid="45"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="46"><h3 id="update-email">Update email</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) User ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="47"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span>/email</div>
+    </div>
+<h4 id="response-200-6">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Update password" class="keyline-top section contain clearfix " data-reactid="48"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="49"><h3 id="update-password">Update password</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) User ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="50"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span>/password</div>
+    </div>
+<h4 id="response-200-7">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Update role" class="keyline-top section contain clearfix " data-reactid="51"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="52"><h3 id="update-role">Update role</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) User ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>role</code></td>
+<td>String</td>
+<td>(required) valid role</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="53"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span>/role</div>
+    </div>
+<h4 id="response-200-8">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="List all users" class="keyline-top section contain clearfix " data-reactid="54"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="55"><h3 id="list-all-users">List all users</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="56"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users</div>
+    </div>
+<h4 id="response-200-9">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
       {
-        "id": 1,
-        "category": "Customer relations",
-        "label": "Do you know the types of relationships you need to establish with your customer segments?",
-        "answer": "yes|no",
-        "date": "2023-01-05T04:07:35.000Z"
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@gamil.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Jozi"</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T14:55:50.000Z"</span>
       },
-        ...
-      ]
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Get assessment</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/assessments/:id
-                </code></pre>
-                <p>
-                    Get a specific assessment question :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "id": 1,
-        "category": "Customer relations",
-        "label": "Do you know the types of relationships you need to establish with your customer segments?",
-        "answer": "yes|no",
-        "date": "2023-01-05T04:07:35.000Z"
-      }
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid assessment id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Update assessment question</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/assessments/:id
-                </code></pre>
-                <p>
-                    Update a specific assessment question :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Updated.",
-    "package": {
-      "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid assessment id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>category</td>
-                            <td>String</td>
-                            <td>Category of the question.</td>
-                        </tr>
-                        <tr>
-                            <td>label</td>
-                            <td>String</td>
-                            <td>Question</td>
-                        </tr>
-                        <tr>
-                            <td>answer</td>
-                            <td>String</td>
-                            <td>
-                                Possible answer
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2>Delete user</h2>
-                <pre><code class="bash">
-# Endpoint
-DELETE http://146.190.224.144/api/v1/assessments/:id
-                </code></pre>
-                <p>
-                    Delete a specific assessment question :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/assessments/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": []
-    }
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"entrep@gmail.com"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"entrep@gmail.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-string">"http://146.190.224.144/storage/profiles/1673507525795_90f28214-a034-4c17-82df-ee44635792dc.jpg"</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T22:57:58.000Z"</span>
+      },
+    ]
   }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid assessment id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="overflow-hidden content-section" id="company">
-                <h2>Create company</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/companies
-                </code></pre>
-                <p>
-                    Create company :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "id": 1,
-        "userid": 1,
-        "name": "Example name",
-        "location": "Example location",
-        "phase": "Example phase",
-        "registered": true,
-        "registration_number": "Example reg number",
-        "registration_date": "2022-08-08T13:00:00.000Z",
-        "products_or_services": "Example",
-        "industry": "Example",
-        "employees": 50,
-        "monthly_turnover": 3000,
-        "annual_turnover": 6000000,
-        "updatedAt": "2023-01-11T08:39:15.203Z",
-        "createdAt": "2023-01-11T08:39:15.203Z"
-      }
-    }
-  }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>name</td>
-                            <td>String</td>
-                            <td>Company name.</td>
-                        </tr>
-                        <tr>
-                            <td>logo</td>
-                            <td>String</td>
-                            <td>(Optional Company logo. JPG, JPEG, or PNG files</td>
-                        </tr>
-                        <tr>
-                            <td>location</td>
-                            <td>String</td>
-                            <td>Company location</td>
-                        </tr>
-                        <tr>
-                            <td>phase</td>
-                            <td>String</td>
-                            <td>
-                                Phase of the company
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>registered</td>
-                            <td>boolean</td>
-                            <td>
-                                Company registered
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>registration_number</td>
-                            <td>boolean</td>
-                            <td>
-                                (Optional) company reigstration number
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>registration_date</td>
-                            <td>Date</td>
-                            <td>
-                                (Optional) company reigstration date
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>products_or_services</td>
-                            <td>string</td>
-                            <td>
-                                (Optional) Products or services (e.g cleaning, washing,...)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>industry</td>
-                            <td>String</td>
-                            <td>
-                                Company industry
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>employees</td>
-                            <td>Integer</td>
-                            <td>
-                                Company employees
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>monthly_turnover</td>
-                            <td>Decimal</td>
-                            <td>
-                                Company monthly turnover in rands
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>annual_turnover</td>
-                            <td>Decimal</td>
-                            <td>
-                                Company annual turnover in rands
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Get companies</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/companies
-                </code></pre>
-                <p>
-                    Get all companies :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": [
-        {
-          "id": 1,
-          "name": "Example name",
-          "logo": null,
-          "location": "Example location",
-          "phase": "Example phase",
-          "registered": true,
-          "registration_number": "Example reg number",
-          "registration_date": "2022-08-08T13:00:00.000Z",
-          "products_or_services": "Example",
-          "industry": "Example",
-          "employees": 50,
-          "monthly_turnover": 3000,
-          "annual_turnover": 6000000,
-          "rating": null,
-          "date": "2023-01-11T08:39:15.000Z",
-          "user": {
-            "id": 1,
-            "fullname": "Root Administrator",
-            "email": "root@admin.com",
-            "phone": null,
-            "education": null,
-            "work_experience": null,
-            "work_experience2": null,
-            "location": null,
-            "photo": null,
-            "market_newsletter": true,
-            "product_updates_and_community_announcements": true,
-            "role": "ROOT",
-            "registered": "2023-01-11T08:31:01.000Z"
-          },
-          "report": null
-        },
-        ...
-      ]
-    }
-  }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Get my companies</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/companies/my-companies
-                </code></pre>
-                <p>
-                    Get all companies that belong to the logged in user :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/user/companies</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": [
-        {
-          "id": 1,
-          "name": "Example name",
-          "logo": null,
-          "location": "Example location",
-          "phase": "Example phase",
-          "registered": true,
-          "registration_number": "Example reg number",
-          "registration_date": "2022-08-08T13:00:00.000Z",
-          "products_or_services": "Example",
-          "industry": "Example",
-          "employees": 50,
-          "monthly_turnover": 3000,
-          "annual_turnover": 6000000,
-          "rating": null,
-          "date": "2023-01-11T08:39:15.000Z",
-          "assessments": null,
-          "report": null
-        },
-        ...
-      ]
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Get company</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/companies/:id
-                </code></pre>
-                <p>
-                    Get a specific company :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "error": false,
-        "data": {
-          "id": 1,
-          "name": "Example name",
-          "logo": null,
-          "location": "Example location",
-          "phase": "Example phase",
-          "registered": true,
-          "registration_number": "Example reg number",
-          "registration_date": "2022-08-08T13:00:00.000Z",
-          "products_or_services": "Example",
-          "industry": "Example",
-          "employees": 50,
-          "monthly_turnover": 3000,
-          "annual_turnover": 6000000,
-          "rating": "2",
-          "date": "2023-01-11T13:27:19.000Z",
-          "assessments": {
-            "id": 12,
-            "answers": [
-              {
-                "id": 1,
-                "question": "Example question",
-                "category": "Customer relations",
-                "answer": "YES"
-              }
-            ],
-            "date": "2023-01-11T14:44:18.000Z"
-          },
-          "user": {
-            "id": 1,
-            "fullname": "Root Administrator",
-            "email": "root@admin.com",
-            "phone": null,
-            "education": null,
-            "work_experience": null,
-            "work_experience2": null,
-            "location": null,
-            "photo": null,
-            "market_newsletter": true,
-            "product_updates_and_community_announcements": true,
-            "role": "ROOT",
-            "registered": "2023-01-11T13:21:03.000Z"
-          },
-          "report": {
-            "id": 1,
-            "scores": [
-              {
-                "category": "Customer relations",
-                "percentage": 20
-              },
-              {
-                "category": "Channels",
-                "percentage": 0
-              },
-              {
-                "category": "E-commerce",
-                "percentage": 0
-              },
-              {
-                "category": "Functional Capability",
-                "percentage": 0
-              },
-              {
-                "category": "Customer segments",
-                "percentage": 0
-              },
-              {
-                "category": "Business and customers",
-                "percentage": 0
-              },
-              {
-                "category": "Marketing and sales",
-                "percentage": 0
-              },
-              {
-                "category": "Revenue Streams",
-                "percentage": 0
-              },
-              {
-                "category": "Ownership and mindset",
-                "percentage": 0
-              }
-            ],
-            "date": "2023-01-11T13:42:09.000Z"
-          },
-          "courses": [
-            {
-              "id": 2,
-              "title": "Example course",
-              "description": "Example description",
-              "logo": "127.0.0.1:5000/storage/courses/1673444159752_a669e72e-cf80-49fb-8109-47932dccbad2.jpg",
-              "category": "Customer relations",
-              "score": 80,
-              "date": "2023-01-11T13:35:59.000Z",
-              "recomended_course": {
-                "companyid": 1,
-                "courseid": 2,
-                "createdAt": "2023-01-11T14:44:18.000Z",
-                "updatedAt": "2023-01-11T14:44:18.000Z"
-              }
-            },
-            {
-              "id": 3,
-              "title": "Example course 2",
-              "description": "Example description 2",
-              "logo": "127.0.0.1:5000/storage/courses/1673448149069_38cf0b75-3016-4a13-8da7-ff49891dc7c2.jpg",
-              "category": "Customer relations",
-              "score": 80,
-              "date": "2023-01-11T14:42:29.000Z",
-              "recomended_course": {
-                "companyid": 1,
-                "courseid": 3,
-                "createdAt": "2023-01-11T14:44:18.000Z",
-                "updatedAt": "2023-01-11T14:44:18.000Z"
-              }
-            }
-          ]
-        }
-      }
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid company id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Update company</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/companies/:id
-                </code></pre>
-                <p>
-                    Update a specific company :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Updated.",
-    "package": {
-      "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid company id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>name</td>
-                            <td>String</td>
-                            <td>Company name.</td>
-                        </tr>
-                        <tr>
-                            <td>logo</td>
-                            <td>String</td>
-                            <td>Company logo.</td>
-                        </tr>
-                        <tr>
-                            <td>location</td>
-                            <td>String</td>
-                            <td>Company location</td>
-                        </tr>
-                        <tr>
-                            <td>logo</td>
-                            <td>String</td>
-                            <td>JPG, JPEG, or  files</td>
-                        </tr>
-                        <tr>
-                            <td>phase</td>
-                            <td>String</td>
-                            <td>
-                                Phase of the company
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>registered</td>
-                            <td>boolean</td>
-                            <td>
-                                Company registered
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>registration_number</td>
-                            <td>boolean</td>
-                            <td>
-                                (Optional) company reigstration number
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>registration_date</td>
-                            <td>Date</td>
-                            <td>
-                                (Optional) company reigstration date
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>products_or_services</td>
-                            <td>string</td>
-                            <td>
-                                (Optional) Products or services (e.g cleaning, washing,...)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>industry</td>
-                            <td>String</td>
-                            <td>
-                                Company industry
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>employees</td>
-                            <td>Integer</td>
-                            <td>
-                                Company employees
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>monthly_turnover</td>
-                            <td>Decimal</td>
-                            <td>
-                                Company monthly turnover in rands
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>annual_turnover</td>
-                            <td>Decimal</td>
-                            <td>
-                                Company annual turnover in rands
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Delete company</h2>
-                <pre><code class="bash">
-# Endpoint
-DELETE http://146.190.224.144/api/v1/companies/:id
-                </code></pre>
-                <p>
-                    Delete a specific company :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/:id</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": []
-    }
-  }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid company id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Company assessment</h2>
-                <pre><code class="bash">
-# Endpoint
-POST http://146.190.224.144/api/v1/companies/:id/assessments
-                </code></pre>
-                <p>
-                    Answer company assessments :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/:id/assessments</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "error": false,
-        "data": {
-          "id": 1,
-          "name": "Example name",
-          "logo": null,
-          "location": "Example location",
-          "phase": "Example phase",
-          "registered": true,
-          "registration_number": "Example reg number",
-          "registration_date": "2022-08-08T13:00:00.000Z",
-          "products_or_services": "Example",
-          "industry": "Example",
-          "employees": 50,
-          "monthly_turnover": 3000,
-          "annual_turnover": 6000000,
-          "rating": "2",
-          "date": "2023-01-11T13:27:19.000Z",
-          "assessments": {
-            "id": 12,
-            "answers": [
-              {
-                "id": 1,
-                "question": "Example question",
-                "category": "Customer relations",
-                "answer": "YES"
-              }
-            ],
-            "date": "2023-01-11T14:44:18.000Z"
-          },
-          "user": {
-            "id": 1,
-            "fullname": "Root Administrator",
-            "email": "root@admin.com",
-            "phone": null,
-            "education": null,
-            "work_experience": null,
-            "work_experience2": null,
-            "location": null,
-            "photo": null,
-            "market_newsletter": true,
-            "product_updates_and_community_announcements": true,
-            "role": "ROOT",
-            "registered": "2023-01-11T13:21:03.000Z"
-          },
-          "report": {
-            "id": 1,
-            "scores": [
-              {
-                "category": "Customer relations",
-                "percentage": 20
-              },
-              {
-                "category": "Channels",
-                "percentage": 0
-              },
-              {
-                "category": "E-commerce",
-                "percentage": 0
-              },
-              {
-                "category": "Functional Capability",
-                "percentage": 0
-              },
-              {
-                "category": "Customer segments",
-                "percentage": 0
-              },
-              {
-                "category": "Business and customers",
-                "percentage": 0
-              },
-              {
-                "category": "Marketing and sales",
-                "percentage": 0
-              },
-              {
-                "category": "Revenue Streams",
-                "percentage": 0
-              },
-              {
-                "category": "Ownership and mindset",
-                "percentage": 0
-              }
-            ],
-            "date": "2023-01-11T13:42:09.000Z"
-          },
-          "courses": [
-            {
-              "id": 2,
-              "title": "Example course",
-              "description": "Example description",
-              "logo": "127.0.0.1:5000/storage/courses/1673444159752_a669e72e-cf80-49fb-8109-47932dccbad2.jpg",
-              "category": "Customer relations",
-              "score": 80,
-              "date": "2023-01-11T13:35:59.000Z",
-              "recomended_course": {
-                "companyid": 1,
-                "courseid": 2,
-                "createdAt": "2023-01-11T14:44:18.000Z",
-                "updatedAt": "2023-01-11T14:44:18.000Z"
-              }
-            },
-            {
-              "id": 3,
-              "title": "Example course 2",
-              "description": "Example description 2",
-              "logo": "127.0.0.1:5000/storage/courses/1673448149069_38cf0b75-3016-4a13-8da7-ff49891dc7c2.jpg",
-              "category": "Customer relations",
-              "score": 80,
-              "date": "2023-01-11T14:42:29.000Z",
-              "recomended_course": {
-                "companyid": 1,
-                "courseid": 3,
-                "createdAt": "2023-01-11T14:44:18.000Z",
-                "updatedAt": "2023-01-11T14:44:18.000Z"
-              }
-            }
-          ]
-        }
-      }
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>id</td>
-                            <td>Integer</td>
-                            <td>Valid company id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>answers</td>
-                            <td>String</td>
-                            <td>
-                                {
-                                    "id": 1,
-                                    "question": "Example question",
-                                    "category": "Example category",
-                                    "answer": "YES"
-                                }
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Get company assessments</h2>
-                <pre><code class="bash">
-# Endpoint
-GET http://146.190.224.144/api/v1/companies/:cid/assessments/:aid
-                </code></pre>
-                <p>
-                    Get a particular answered company assessment :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/:cid/assessments/:aid</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": {
-        "id": 1,
-        "answers": [
-          {
-            "id": 1,
-            "question": "Example question",
-            "category": "Example category",
-            "answer": "YES"
-          }
-        ],
-        "date": "2023-01-11T08:50:26.000Z"
-      }
-    }
-  }
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>cid</td>
-                            <td>Integer</td>
-                            <td>Valid company id.</td>
-                        </tr>
-                        <tr>
-                            <td>aid</td>
-                            <td>Integer</td>
-                            <td>Valid assessment id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>Update company assessments</h2>
-                <pre><code class="bash">
-# Endpoint
-PUT http://146.190.224.144/api/v1/companies/:cid/assessments/:aid
-                </code></pre>
-                <p>
-                    Update answered company assessments :<br>
-                    <code class="higlighted break-word">http://146.190.224.144/api/v1/companies/:cid/assessments/:aid</code>
-                </p>
-                <br>
-                <pre><code class="json">
-# SUCCESS 200
-{
-    "status": true,
-    "message": "Successful.",
-    "package": {
-      "data": []
-    }
-}
-                </code></pre>
-                <h4>HEADERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bearer Token</td>
-                            <td>String</td>
-                            <td>Valid Bearer Token.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>PARAMETERS</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>cid</td>
-                            <td>Integer</td>
-                            <td>Valid company id.</td>
-                        </tr>
-                        <tr>
-                            <td>aid</td>
-                            <td>Integer</td>
-                            <td>Valid assessment id.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>BODY</h4>
-                <table class="central-overflow-x">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>answers</td>
-                            <td>String</td>
-                            <td>
-                                {
-                                    "id": 1,
-                                    "question": "Example question",
-                                    "category": "Example category",
-                                    "answer": "YES"
-                                }
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-            <div class="overflow-hidden content-section" id="content-errors">
-                <h2>Errors</h2>
-                <p>
-                    The Westeros API uses the following error codes:
-                </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Error Code</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>X000</td>
-                            <td>
-                                Some parameters are missing. This error appears when you don't pass every mandatory
-                                parameters.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>X001</td>
-                            <td>
-                                Unknown or unvalid <code class="higlighted">secret_key</code>. This error appears if you
-                                use an unknow API key or if your API key expired.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>X002</td>
-                            <td>
-                                Unvalid <code class="higlighted">secret_key</code> for this domain. This error appears
-                                if you use an API key non specified for your domain. Developper or Universal API keys
-                                doesn't have domain checker.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>X003</td>
-                            <td>
-                                Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you
-                                use an unknow user <code class="higlighted">token</code> or if the user <code
-                                    class="higlighted">token</code> expired.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="content-code"></div>
+}</pre>
+</div></div><div data-title="Find user" class="keyline-top section contain clearfix " data-reactid="57"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="58"><h3 id="find-user">Find user</h3>
+<p>Find a specific user.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) User ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="59"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span></div>
     </div>
-    <!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
-    <a href="https://github.com/ticlekiwi/API-Documentation-HTML-Template" class="github-corner"
-        aria-label="View source on Github" title="View source on Github"><svg width="80" height="80"
-            viewBox="0 0 250 250"
-            style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;"
-            aria-hidden="true">
-            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-            <path
-                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-            <path
-                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-                fill="currentColor" class="octo-body"></path>
-        </svg></a>
-    <style>
-        .github-corner:hover .octo-arm {
-            animation: octocat-wave 560ms ease-in-out
-        }
-
-        @keyframes octocat-wave {
-
-            0%,
-            100% {
-                transform: rotate(0)
+<h4 id="response-200-10">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Jozi"</span>,
+      <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+      <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T14:55:50.000Z"</span>
+    }
+  }
+}</pre>
+</div></div><div data-title="Delete user" class="keyline-top section contain clearfix " data-reactid="60"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="61"><h3 id="delete-user">Delete user</h3>
+<p>Delete a specific user.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) User ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="62"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-11">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Company" class="keyline-top section contain clearfix " data-reactid="63"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="64"><h2 id="company-1">Company</h2>
+<p>This is our high-quality companies API. You can use this API to request resources.</p>
+</div></div><div data-title="Create company" class="keyline-top section contain clearfix " data-reactid="65"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="66"><h3 id="create-company">Create company</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>logo</code></td>
+<td>File</td>
+<td>(optional) PNG, JPEG, JPG</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>String</td>
+<td>(required) company physical address</td>
+</tr>
+<tr>
+<td><code>phase</code></td>
+<td>String</td>
+<td>(required) business phase</td>
+</tr>
+<tr>
+<td><code>registered</code></td>
+<td>Boolean</td>
+<td>(required) start of the company</td>
+</tr>
+<tr>
+<td><code>registration_number</code></td>
+<td>Datetime</td>
+<td>(optional) company registration number</td>
+</tr>
+<tr>
+<td><code>registration_date</code></td>
+<td>Datetime</td>
+<td>(optional) registration date</td>
+</tr>
+<tr>
+<td><code>products_or_services</code></td>
+<td>String</td>
+<td>(required) company products or services</td>
+</tr>
+<tr>
+<td><code>industry</code></td>
+<td>String</td>
+<td>(required) company industry</td>
+</tr>
+<tr>
+<td><code>employees</code></td>
+<td>String</td>
+<td>(required) number of employees in a company</td>
+</tr>
+<tr>
+<td><code>monthly_turnover</code></td>
+<td>String</td>
+<td>(required) monthly turnover</td>
+</tr>
+<tr>
+<td><code>annual_turnover</code></td>
+<td>String</td>
+<td>(required) annual turnover</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="67"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies</div>
+    </div>
+<h4 id="response-200-12">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"userid"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
+      <span class="hljs-attr">"phase"</span>: <span class="hljs-string">"Example phase"</span>,
+      <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"Example reg number"</span>,
+      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"2022-08-08T13:00:00.000Z"</span>,
+      <span class="hljs-attr">"products_or_services"</span>: <span class="hljs-string">"Example"</span>,
+      <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example"</span>,
+      <span class="hljs-attr">"employees"</span>: <span class="hljs-number">50</span>,
+      <span class="hljs-attr">"monthly_turnover"</span>: <span class="hljs-number">3000</span>,
+      <span class="hljs-attr">"annual_turnover"</span>: <span class="hljs-number">6000000</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-11T08:39:15.203Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-11T08:39:15.203Z"</span>
+    }
+  }
+}</pre>
+</div></div><div data-title="Update company" class="keyline-top section contain clearfix " data-reactid="68"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="69"><h3 id="update-company">Update company</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Company ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>logo</code></td>
+<td>File</td>
+<td>(optional) PNG, JPEG, JPG</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>String</td>
+<td>(required) company physical address</td>
+</tr>
+<tr>
+<td><code>phase</code></td>
+<td>String</td>
+<td>(required) business phase</td>
+</tr>
+<tr>
+<td><code>registered</code></td>
+<td>Boolean</td>
+<td>(required) start of the company</td>
+</tr>
+<tr>
+<td><code>registration_number</code></td>
+<td>Datetime</td>
+<td>(optional) company registration number</td>
+</tr>
+<tr>
+<td><code>registration_date</code></td>
+<td>Datetime</td>
+<td>(optional) registration date</td>
+</tr>
+<tr>
+<td><code>products_or_services</code></td>
+<td>String</td>
+<td>(required) company products or services</td>
+</tr>
+<tr>
+<td><code>industry</code></td>
+<td>String</td>
+<td>(required) company industry</td>
+</tr>
+<tr>
+<td><code>employees</code></td>
+<td>String</td>
+<td>(required) number of employees in a company</td>
+</tr>
+<tr>
+<td><code>monthly_turnover</code></td>
+<td>String</td>
+<td>(required) monthly turnover</td>
+</tr>
+<tr>
+<td><code>annual_turnover</code></td>
+<td>String</td>
+<td>(required) annual turnover</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="70"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-13">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="List all companies" class="keyline-top section contain clearfix " data-reactid="71"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="72"><h3 id="list-all-companies">List all companies</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="73"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies</div>
+    </div>
+<h4 id="response-200-14">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
+        <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
+        <span class="hljs-attr">"phase"</span>: <span class="hljs-string">"Example phase"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"Example reg number"</span>,
+        <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"2022-08-08T13:00:00.000Z"</span>,
+        <span class="hljs-attr">"products_or_services"</span>: <span class="hljs-string">"Example"</span>,
+        <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example"</span>,
+        <span class="hljs-attr">"employees"</span>: <span class="hljs-number">50</span>,
+        <span class="hljs-attr">"monthly_turnover"</span>: <span class="hljs-number">3000</span>,
+        <span class="hljs-attr">"annual_turnover"</span>: <span class="hljs-number">6000000</span>,
+        <span class="hljs-attr">"rating"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T08:39:15.000Z"</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T08:31:01.000Z"</span>
+        },
+        <span class="hljs-attr">"report"</span>: <span class="hljs-literal">null</span>
+      },
+    ]
+  }
+}</pre>
+</div></div><div data-title="Find company" class="keyline-top section contain clearfix " data-reactid="74"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="75"><h3 id="find-company">Find company</h3>
+<p>Find a specific company.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Company ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="76"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-15">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"error"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
+        <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
+        <span class="hljs-attr">"phase"</span>: <span class="hljs-string">"Example phase"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"Example reg number"</span>,
+        <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"2022-08-08T13:00:00.000Z"</span>,
+        <span class="hljs-attr">"products_or_services"</span>: <span class="hljs-string">"Example"</span>,
+        <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example"</span>,
+        <span class="hljs-attr">"employees"</span>: <span class="hljs-number">50</span>,
+        <span class="hljs-attr">"monthly_turnover"</span>: <span class="hljs-number">3000</span>,
+        <span class="hljs-attr">"annual_turnover"</span>: <span class="hljs-number">6000000</span>,
+        <span class="hljs-attr">"rating"</span>: <span class="hljs-string">"2"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T13:27:19.000Z"</span>,
+        <span class="hljs-attr">"assessments"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">12</span>,
+          <span class="hljs-attr">"answers"</span>: [
+            {
+              <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+              <span class="hljs-attr">"question"</span>: <span class="hljs-string">"Example question"</span>,
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
+              <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"YES"</span>
             }
-
-            20%,
-            60% {
-                transform: rotate(-25deg)
+          ],
+          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>
+        },
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T13:21:03.000Z"</span>
+        },
+        <span class="hljs-attr">"report"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"scores"</span>: [
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">20</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Channels"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"E-commerce"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Functional Capability"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer segments"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Business and customers"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Marketing and sales"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
+            },
+            {
+              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and mindset"</span>,
+              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
             }
-
-            40%,
-            80% {
-                transform: rotate(10deg)
+          ],
+          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T13:42:09.000Z"</span>
+        },
+        <span class="hljs-attr">"courses"</span>: [
+          {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Example course"</span>,
+            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Example description"</span>,
+            <span class="hljs-attr">"logo"</span>: <span class="hljs-string">"127.0.0.1:5000/storage/courses/1673444159752_a669e72e-cf80-49fb-8109-47932dccbad2.jpg"</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
+            <span class="hljs-attr">"score"</span>: <span class="hljs-number">80</span>,
+            <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T13:35:59.000Z"</span>,
+            <span class="hljs-attr">"recomended_course"</span>: {
+              <span class="hljs-attr">"companyid"</span>: <span class="hljs-number">1</span>,
+              <span class="hljs-attr">"courseid"</span>: <span class="hljs-number">2</span>,
+              <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>,
+              <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>
             }
-        }
-
-        @media (max-width:500px) {
-            .github-corner:hover .octo-arm {
-                animation: none
+          },
+          {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Example course 2"</span>,
+            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Example description 2"</span>,
+            <span class="hljs-attr">"logo"</span>: <span class="hljs-string">"127.0.0.1:5000/storage/courses/1673448149069_38cf0b75-3016-4a13-8da7-ff49891dc7c2.jpg"</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
+            <span class="hljs-attr">"score"</span>: <span class="hljs-number">80</span>,
+            <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T14:42:29.000Z"</span>,
+            <span class="hljs-attr">"recomended_course"</span>: {
+              <span class="hljs-attr">"companyid"</span>: <span class="hljs-number">1</span>,
+              <span class="hljs-attr">"courseid"</span>: <span class="hljs-number">3</span>,
+              <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>,
+              <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>
             }
-
-            .github-corner .octo-arm {
-                animation: octocat-wave 560ms ease-in-out
-            }
-        }
-
-        @media only screen and (max-width:680px) {
-            .github-corner>svg {
-                right: auto !important;
-                left: 0 !important;
-                transform: rotate(270deg) !important;
-            }
-        }
-    </style>
-    <!-- END Github Corner Ribbon - to remove -->
-    <script src="js/script.js"></script>
-</body>
-
+          }
+        ]
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Delete company" class="keyline-top section contain clearfix " data-reactid="77"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="78"><h3 id="delete-company">Delete company</h3>
+<p>Delete a specific company.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Company ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="79"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-16">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Assessment" class="keyline-top section contain clearfix " data-reactid="80"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="81"><h2 id="assessment-1">Assessment</h2>
+<p>This is our high-quality assessments API. You can use this API to request resources.</p>
+</div></div><div data-title="Create assessment" class="keyline-top section contain clearfix " data-reactid="82"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="83"><h3 id="create-assessment">Create assessment</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>(optional) the name of the wobble</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>(optional) a description of the wobble</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="84"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/assessments</div>
+    </div>
+<h4 id="response-200-17">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+}</pre>
+</div></div><div data-title="Update assessment" class="keyline-top section contain clearfix " data-reactid="85"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="86"><h3 id="update-assessment">Update assessment</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>(required) Assessment ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>(optional) the name of the wobble</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>(optional) a description of the wobble</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="87"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/assessments/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-18">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+}</pre>
+</div></div><div data-title="List all assessments" class="keyline-top section contain clearfix " data-reactid="88"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="89"><h3 id="list-all-assessments">List all assessments</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="90"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/assessments</div>
+    </div>
+<h4 id="response-200-19">Response (200)</h4>
+<pre class='hljs'>[
+  {
+    <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
+    <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+    <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+  },
+  {
+    <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
+    <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+    <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+  }
+]</pre>
+</div></div><div data-title="Find assessment" class="keyline-top section contain clearfix " data-reactid="91"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="92"><h3 id="find-assessment">Find assessment</h3>
+<p>Find a specific assessment.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>(required) Assessment ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="93"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/assessments/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-20">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
+  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+}</pre>
+</div></div><div data-title="Delete assessment" class="keyline-top section contain clearfix " data-reactid="94"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="95"><h3 id="delete-assessment">Delete assessment</h3>
+<p>Delete a specific assessment.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>(required) Assessment ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="96"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/assessments/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-21">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+}</pre>
+</div></div><div data-title="Course" class="keyline-top section contain clearfix " data-reactid="97"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="98"><h2 id="course-1">Course</h2>
+<p>This is our high-quality courses API. You can use this API to request resources.</p>
+</div></div><div data-title="Create course" class="keyline-top section contain clearfix " data-reactid="99"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="100"><h3 id="create-course">Create course</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+<tr>
+<td><code>intro_video</code></td>
+<td>File</td>
+<td>(required) Mp4 file</td>
+</tr>
+<tr>
+<td><code>start_datetime</code></td>
+<td>Datetime</td>
+<td>(required) start of the course</td>
+</tr>
+<tr>
+<td><code>expiry_datetime</code></td>
+<td>Datetime</td>
+<td>(required) expery date of the course</td>
+</tr>
+<tr>
+<td><code>business_phase</code></td>
+<td>String</td>
+<td>(required) business phase</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="101"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses</div>
+    </div>
+<h4 id="response-200-22">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ADMIN"</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
+    }
+  }
+}</pre>
+</div></div><div data-title="Update course" class="keyline-top section contain clearfix " data-reactid="102"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="103"><h3 id="update-course">Update course</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+<tr>
+<td><code>intro_video</code></td>
+<td>File</td>
+<td>(required) Mp4 file</td>
+</tr>
+<tr>
+<td><code>start_datetime</code></td>
+<td>Datetime</td>
+<td>(required) start of the course</td>
+</tr>
+<tr>
+<td><code>expiry_datetime</code></td>
+<td>Datetime</td>
+<td>(required) expery date of the course</td>
+</tr>
+<tr>
+<td><code>business_phase</code></td>
+<td>String</td>
+<td>(required) business phase</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="104"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-23">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="List all courses" class="keyline-top section contain clearfix " data-reactid="105"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="106"><h3 id="list-all-courses">List all courses</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="107"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses</div>
+    </div>
+<h4 id="response-200-24">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@gamil.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Jozi"</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T14:55:50.000Z"</span>
+      },
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"entrep@gmail.com"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"entrep@gmail.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-string">"http://146.190.224.144/storage/profiles/1673507525795_90f28214-a034-4c17-82df-ee44635792dc.jpg"</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T22:57:58.000Z"</span>
+      },
+    ]
+  }
+}</pre>
+</div></div><div data-title="Find course" class="keyline-top section contain clearfix " data-reactid="108"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="109"><h3 id="find-course">Find course</h3>
+<p>Find a specific course.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="110"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-25">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Jozi"</span>,
+      <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+      <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T14:55:50.000Z"</span>
+    }
+  }
+}</pre>
+</div></div><div data-title="Delete course" class="keyline-top section contain clearfix " data-reactid="111"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="112"><h3 id="delete-course">Delete course</h3>
+<p>Delete a specific course.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="113"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-26">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="114"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="115"><div class="space-right1 small quiet inline" data-reactid="116">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="117"><a class="strong active" data-reactid="118">cURL</a><a class="strong " data-reactid="119">cli</a><a class="strong " data-reactid="120">Python</a><a class="strong " data-reactid="121">JS</a><a class="strong " data-reactid="122">Java</a><a class="strong " data-reactid="123">ObjC</a><a class="strong " data-reactid="124">Swift</a></div><div class="fr pad0" data-reactid="125"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="126"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="127"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-red" data-reactid="128"></a><div class="strong small pad0
+          
+          space-left4 line-height15" data-reactid="129">Biztweak API Documentation</div></div></div></div><!--STOP-->
+    <script src='bundle.js'></script>
+  </body>
 </html>
