@@ -24,6 +24,9 @@ exports.createCourseValidator = [
     body("category")
         .exists().withMessage("Assessment category is required")
         .notEmpty().withMessage('Category can not be empty'),
+    body("business_phase")
+        .exists().withMessage("Business phase is required")
+        .notEmpty().withMessage('Business phase can not be empty'),
     body("score")
         .exists().withMessage("Assessment minimum score is required")
         .notEmpty().withMessage('Score can not be empty')
@@ -47,6 +50,9 @@ exports.updateCourseValidator = [
     body("category")
         .exists().withMessage("Assessment category is required")
         .notEmpty().withMessage('Category can not be empty'),
+    body("business_phase")
+        .exists().withMessage("Business phase is required")
+        .notEmpty().withMessage('Business phase can not be empty'),
     body("score")
         .exists().withMessage("Assessment minimum score is required")
         .notEmpty().withMessage('Score can not be empty')

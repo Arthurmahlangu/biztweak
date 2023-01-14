@@ -22,27 +22,72 @@ exports.createCourse = async (req, res) => {
 
     let service = null
 
-    const { title, description, category, score } = req.body
+    const { 
+        title, 
+        description, 
+        category, 
+        start_datetime, 
+        expiry_datetime, 
+        business_phase, 
+        score 
+    } = req.body
     
-    if (req.files && req.files.logo) {
+    if (req.files) {
 
-        const upload = await uploader(req.files.logo, "courses", [
-            "image/png", "image/jpg", "image/jpeg"
-        ])
+        let logo = null
+        let intro_video = null
 
-        if (upload.error) {
-            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse(upload.message)
-            )
+        if (req.files.logo) {
+            const upload = await uploader(req.files.logo, "courses", [
+                "image/png", "image/jpg", "image/jpeg"
+            ])
+    
+            if (upload.error) {
+                return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                    failResponse(upload.message)
+                )
+            }
+
+            logo = upload.data
+        }
+
+        if (req.files.intro_video) {
+            const upload = await uploader(req.files.intro_video, "courses", [
+                "video/mp4", "video/mpeg"
+            ])
+    
+            if (upload.error) {
+                return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                    failResponse(upload.message)
+                )
+            }
+
+            intro_video = upload.data
         }
         
         service = await createCourse({
-            userid: req.auth.id, title, description, logo: upload.data, category, score
+            userid: req.auth.id, 
+            title, 
+            description, 
+            category,
+            logo, 
+            intro_video,
+            start_datetime, 
+            expiry_datetime, 
+            business_phase, 
+            score
         })
 
     } else {
         service = await createCourse({
-            userid: req.auth.id, title, description, category, score
+            userid: req.auth.id, 
+            title, 
+            description, 
+            category, 
+            start_datetime, 
+            expiry_datetime, 
+            business_phase, 
+            score
         })
     }
 
@@ -69,7 +114,12 @@ exports.createCourseAudio = async (req, res) => {
 
     let service = null
 
-    const { name, description, type, category, score, audio } = req.body
+    const { 
+        name, 
+        description, 
+        type,
+        audio 
+    } = req.body
     
     if (req.files && req.files.audio) {
 
@@ -89,9 +139,7 @@ exports.createCourseAudio = async (req, res) => {
             name, 
             description, 
             type, 
-            file: upload.data,
-            category, 
-            score
+            file: upload.data
         })
 
     } else {
@@ -101,9 +149,7 @@ exports.createCourseAudio = async (req, res) => {
             name, 
             description, 
             type, 
-            file: audio,
-            category, 
-            score
+            file: audio
         })
     }
 
@@ -130,7 +176,12 @@ exports.createCourseText = async (req, res) => {
 
     let service = null
 
-    const { name, description, type, category, score, file } = req.body
+    const { 
+        name, 
+        description, 
+        type,
+        file 
+    } = req.body
     
     if (req.files && req.files.file) {
 
@@ -160,9 +211,7 @@ exports.createCourseText = async (req, res) => {
             name, 
             description, 
             type, 
-            file: upload.data,
-            category, 
-            score
+            file: upload.data
         })
 
     } else {
@@ -172,9 +221,7 @@ exports.createCourseText = async (req, res) => {
             name, 
             description, 
             type, 
-            file,
-            category, 
-            score
+            file
         })
     }
 
@@ -201,7 +248,12 @@ exports.createCourseVideo = async (req, res) => {
 
     let service = null
 
-    const { name, description, type, category, score, video } = req.body
+    const { 
+        name, 
+        description, 
+        type,
+        video 
+    } = req.body
     
     if (req.files && req.files.video) {
 
@@ -221,9 +273,7 @@ exports.createCourseVideo = async (req, res) => {
             name, 
             description, 
             type, 
-            file: upload.data,
-            category, 
-            score
+            file: upload.data
         })
 
     } else {
@@ -233,9 +283,7 @@ exports.createCourseVideo = async (req, res) => {
             name, 
             description, 
             type, 
-            file: video,
-            category, 
-            score
+            file: video
         })
     }
 
@@ -319,27 +367,70 @@ exports.updateCourse = async (req, res) => {
 
     let service = null
 
-    const { title, description, category, score } = req.body
+    const { 
+        title, 
+        description, 
+        category, 
+        start_datetime, 
+        expiry_datetime, 
+        business_phase, 
+        score 
+    } = req.body
     
-    if (req.files && req.files.logo) {
+    if (req.files) {
 
-        const upload = await uploader(req.files.logo, "courses", [
-            "image/png", "image/jpg", "image/jpeg"
-        ])
+        let logo = null
+        let intro_video = null
 
-        if (upload.error) {
-            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse(upload.message)
-            )
+        if (req.files.logo) {
+            const upload = await uploader(req.files.logo, "courses", [
+                "image/png", "image/jpg", "image/jpeg"
+            ])
+    
+            if (upload.error) {
+                return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                    failResponse(upload.message)
+                )
+            }
+
+            logo = upload.data
+        }
+
+        if (req.files.intro_video) {
+            const upload = await uploader(req.files.intro_video, "courses", [
+                "video/mp4", "video/mpeg"
+            ])
+    
+            if (upload.error) {
+                return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+                    failResponse(upload.message)
+                )
+            }
+
+            intro_video = upload.data
         }
 
         service = await updateCourse(req.params.id, {
-            title, description, logo: upload.data, category, score
+            title, 
+            description, 
+            category,
+            logo, 
+            intro_video,
+            start_datetime, 
+            expiry_datetime, 
+            business_phase, 
+            score
         })
 
     } else {
         service = await updateCourse(req.params.id, {
-            title, description, category, score
+            title, 
+            description, 
+            category, 
+            start_datetime, 
+            expiry_datetime, 
+            business_phase, 
+            score
         })
     }
 

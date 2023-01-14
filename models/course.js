@@ -33,8 +33,12 @@ module.exports = (sequelize, DataTypes) => {
     userid: DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.STRING,
-    logo: DataTypes.STRING,
     category: DataTypes.STRING,
+    logo: DataTypes.STRING,
+    intro_video: DataTypes.STRING,
+    start_datetime: DataTypes.DATE,
+    expiry_datetime: DataTypes.DATE,
+    business_phase: DataTypes.STRING,
     score: DataTypes.INTEGER
   }, {
     sequelize,

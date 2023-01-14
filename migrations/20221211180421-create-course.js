@@ -13,18 +13,35 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       description: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      category: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       logo: {
         type: Sequelize.STRING
       },
-      category: {
+      intro_video: {
+        type: Sequelize.STRING
+      },
+      start_datetime: {
+        type: Sequelize.DATE
+      },
+      expiry_datetime: {
+        type: Sequelize.DATE
+      },
+      business_phase: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       score: {
+        defaultValue: 0,
         type: Sequelize.INTEGER
       },
       createdAt: {
