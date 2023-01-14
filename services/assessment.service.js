@@ -19,9 +19,11 @@ exports.createAssessment = async (payload) => {
             throw new Error('Assessment creation failed.')
         }
 
+        const { data } = await this.getAssessment(newAssessment.id)
+
         return {
             error: false,
-            data: newAssessment
+            data
         }
 
     } catch (error) {
