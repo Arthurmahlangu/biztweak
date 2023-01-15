@@ -174,6 +174,8 @@ exports.forgotPassword = async (email) => {
 exports.updateForgotPassword = async (url, password) => {
     try {
 
+        const now = new Date()
+
         const forgotPassword = await db.forgot_password.findOne({
             where: {
                 url,
