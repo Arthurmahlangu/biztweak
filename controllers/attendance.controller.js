@@ -15,10 +15,19 @@ const {
  */
 exports.createAttendance = async (req, res) => {
 
-    const { category, type, date, attended } = req.body
+    const { 
+        category, 
+        type, 
+        date, 
+        attended 
+    } = req.body
 
     const service = await createAttendance({
-        userid: req.auth.id, category, type, date, attended
+        userid: req.auth.id, 
+        category, 
+        type, 
+        date, 
+        attended
     })
 
     if (service.error) {
@@ -82,10 +91,18 @@ exports.getAttendance = async (req, res) => {
  */
 exports.updateAttendance = async (req, res) => {
 
-    const { category, type, date, attended } = req.body
+    const { 
+        category, 
+        type, 
+        date, 
+        attended 
+    } = req.body
 
     const service = await updateAttendance(req.params.id, {
-        category, type, date, attended
+        category, 
+        type, 
+        date, 
+        attended
     })
 
     if (service.error) {

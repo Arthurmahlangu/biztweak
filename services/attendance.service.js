@@ -8,11 +8,6 @@ const errorLog = require("simple-node-logger").createSimpleLogger({
 
 exports.createAttendance = async (payload) => {
     try {
-        const attendance = await db.attendance.findOne({ where: { name: payload.name } })
-
-        if (attendance) {
-            throw new Error('Attendance name already in use.')
-        }
         
         const newAttendance = await db.attendance.create(payload)
 
@@ -20,9 +15,11 @@ exports.createAttendance = async (payload) => {
             throw new Error('Attendance not created.')
         }
 
+        const { data } = await this.getAttendance(newAttendance.id)
+
         return {
             error: false,
-            data: newAttendance
+            data
         }
 
     } catch (error) {
