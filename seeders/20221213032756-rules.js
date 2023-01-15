@@ -464,6 +464,26 @@ module.exports = {
       updatedAt: new Date
     },{
       role: "ROOT",
+      path: "/courses/:id/test",
+      model: "courses",
+      method: "POST",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/courses/:cid/test/:tid",
+      model: "courses",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
       path: "/courses/my-courses",
       model: "courses",
       method: "GET",
@@ -590,7 +610,17 @@ module.exports = {
       updatedAt: new Date
     },{
       role: "ROOT",
-      path: "/events/:id/invite",
+      path: "/events/:eid/invite/:iid",
+      model: "events",
+      method: "PUT",
+      owner: 1,
+      group: 1,
+      other: 1,
+      createdAt: new Date,
+      updatedAt: new Date
+    },{
+      role: "ROOT",
+      path: "/events/:eid/invite/:iid",
       model: "events",
       method: "DELETE",
       owner: 1,

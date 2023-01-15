@@ -10,9 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.user)
-      this.hasMany(models.invite, {
-        foreignKey: 'eventid'
+      this.belongsTo(models.user, {
+        foreignKey: 'userid',
+        as: 'host'
+      })
+      this.belongsToMany(models.user, {
+        through: models.invite,
+        foreignKey: 'eventid',
+        as: 'invites'
       })
     }
   }
@@ -21,8 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     type: DataTypes.STRING,
-    startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE,
+    start_date: DataTypes.DATE,
+    end_date: DataTypes.DATE,
     frequency: DataTypes.STRING
   }, {
     sequelize,

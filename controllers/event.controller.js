@@ -6,7 +6,8 @@ const {
     updateEvent, 
     deleteEvent, 
     deleteEventInvite,
-    createEventInvite
+    createEventInvite,
+    updateAttendence
 } = require("../services/event.service")
 
 /**
@@ -17,10 +18,23 @@ const {
  */
 exports.createEvent = async (req, res) => {
 
-    const { title, description, type, startDate, endDate, frequency } = req.body
+    const { 
+        title, 
+        description, 
+        type, 
+        start_date, 
+        end_date, 
+        frequency 
+    } = req.body
     
     const service = await createEvent({
-        userid: req.auth.id, title, description, type, startDate, endDate, frequency
+        userid: req.auth.id, 
+        title, 
+        description, 
+        type, 
+        start_date,
+        end_date,
+        frequency
     })
 
     if (service.error) {
@@ -84,10 +98,22 @@ exports.getEvent = async (req, res) => {
  */
 exports.updateEvent = async (req, res) => {
 
-    const { title, description, type, startDate, endDate, frequency } = req.body
+    const { 
+        title, 
+        description, 
+        type, 
+        start_date, 
+        end_date, 
+        frequency 
+    } = req.body
 
     const service = await updateEvent(req.params.id, {
-        title, description, type, startDate, endDate, frequency
+        title, 
+        description, 
+        type, 
+        start_date,
+        end_date,
+        frequency
     })
 
     if (service.error) {
@@ -134,10 +160,10 @@ exports.deleteEvent = async (req, res) => {
  */
 exports.createEventInvite = async (req, res) => {
 
-    const { userid } = req.body
+    const { email } = req.body
 
     const service = await createEventInvite(req.params.id, {
-        userid
+        email
     })
 
     if (service.error) {
@@ -159,9 +185,34 @@ exports.createEventInvite = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
+exports.updateInvitation = async (req, res) => {
+
+    const { attending } = req.body
+
+    const service = await updateAttendence(req.params.iid, { attending })
+
+    if (service.error) {
+        res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Deleted.", {
+            data: []
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 exports.deleteEventInvite = async (req, res) => {
 
-    const service = await deleteEventInvite(req.params.id)
+    const service = await deleteEventInvite(req.params.iid)
 
     if (service.error) {
         res.status(parseInt(process.env.EXCEPTION_CODE)).send(

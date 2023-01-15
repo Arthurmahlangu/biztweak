@@ -10,7 +10,8 @@ const {
     updateEventValidator,
     createEventValidator,
     deleteInviteValidator,
-    createInviteValidator
+    createInviteValidator,
+    updateInviteValidator
 } = require("../middlewares/validators/event.validations")
 
 
@@ -20,6 +21,7 @@ router.get("/events/:id", validate(getEventValidator), AuthMiddleware, EventCont
 router.put("/events/:id", validate(updateEventValidator), AuthMiddleware, EventController.updateEvent)
 router.delete("/events/:id", validate(getEventValidator), AuthMiddleware, EventController.deleteEvent)
 router.post("/events/:id/invite", validate(createInviteValidator), AuthMiddleware, EventController.createEventInvite)
-router.delete("/events/:id/invite", validate(deleteInviteValidator), AuthMiddleware, EventController.deleteEventInvite)
+router.put("/events/:eid/invite/:iid", validate(updateInviteValidator), AuthMiddleware, EventController.updateInvitation)
+router.delete("/events/:eid/invite/:iid", validate(deleteInviteValidator), AuthMiddleware, EventController.deleteEventInvite)
 
 module.exports = router

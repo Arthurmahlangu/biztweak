@@ -21,10 +21,10 @@ module.exports = {
       type: {
         type: Sequelize.STRING
       },
-      startDate: {
+      start_date: {
         type: Sequelize.DATE
       },
-      endDate: {
+      end_date: {
         type: Sequelize.DATE
       },
       frequency: {

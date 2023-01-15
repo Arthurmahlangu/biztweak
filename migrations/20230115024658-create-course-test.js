@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('calendars', {
+    await queryInterface.createTable('course_tests', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,23 +12,17 @@ module.exports = {
       userid: {
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
+      courseid: {
+        type: Sequelize.INTEGER
       },
-      description: {
+      question: {
         type: Sequelize.TEXT
       },
-      type: {
-        type: Sequelize.STRING
+      answer: {
+        type: Sequelize.TEXT
       },
-      startDate: {
-        type: Sequelize.DATE
-      },
-      endDate: {
-        type: Sequelize.DATE
-      },
-      frequency: {
-        type: Sequelize.STRING
+      correct_answer: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('calendars');
+    await queryInterface.dropTable('course_tests');
   }
 };

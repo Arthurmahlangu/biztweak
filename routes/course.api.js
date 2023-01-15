@@ -11,7 +11,8 @@ const {
     createCourseValidator,
     createCourseAudioValidator,
     createCourseVideoValidator,
-    createCourseTextValidator
+    createCourseTextValidator,
+    createCourseTestValidator
 } = require("../middlewares/validators/course.validations")
 
 
@@ -24,5 +25,6 @@ router.delete("/courses/:id", validate(getCourseValidator), AuthMiddleware, Cour
 router.post("/courses/:id/audio", validate(createCourseAudioValidator), AuthMiddleware, CourseController.createCourseAudio)
 router.post("/courses/:id/video", validate(createCourseVideoValidator), AuthMiddleware, CourseController.createCourseVideo)
 router.post("/courses/:id/text", validate(createCourseTextValidator), AuthMiddleware, CourseController.createCourseText)
+router.post("/courses/:id/test", validate(createCourseTestValidator), AuthMiddleware, CourseController.createCourseTest)
 
 module.exports = router

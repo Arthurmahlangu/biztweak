@@ -11,6 +11,7 @@ const IncubatorApi = require("./incubator.api")
 const TokenApi = require("./token.api")
 const RuleApi = require("./rule.api")
 const AttendanceApi = require("./attendance.api")
+const EventApi = require("./event.api")
 
 
 router.get("/", IndexController.index)
@@ -26,5 +27,6 @@ router.use("/api/v1", IncubatorApi)
 router.use("/api/v1", TokenApi)
 router.use("/api/v1", RuleApi)
 router.use("/api/v1", AttendanceApi)
+router.use("/api/v1", EventApi)
 
 module.exports = router

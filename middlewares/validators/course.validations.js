@@ -133,7 +133,6 @@ exports.updateCourseVideoValidator = [
         .exists().withMessage("Type is required")
 ]
 
-
 /**
  *
  *name, description, type, audio
@@ -169,4 +168,44 @@ exports.updateCourseTextValidator = [
         .exists().withMessage("Description is required"),
     body("type")
         .exists().withMessage("Type is required")
+]
+
+/**
+ *
+ *name, description, type, audio
+ * @type {ValidationChain[]}
+ */
+ exports.createCourseTestValidator = [
+    param("id")
+        .exists().withMessage("Course ID is required")
+        .isNumeric().withMessage("Course ID must be numeric")
+        .notEmpty().withMessage('Course ID can not be empty'),
+    body("question")
+        .exists().withMessage("Name is required")
+        .notEmpty().withMessage('Question can not be empty'),
+    body("answer")
+        .exists().withMessage("Description is required")
+        .notEmpty().withMessage('Answer can not be empty')
+]
+
+/**
+ *
+ *name, description, type, audio
+ * @type {ValidationChain[]}
+ */
+exports.updateCourseTestValidator = [
+    param("cid")
+        .exists().withMessage("Course ID is required")
+        .isNumeric().withMessage("Course ID must be numeric")
+        .notEmpty().withMessage('Course ID can not be empty'),
+    param("tid")
+        .exists().withMessage("Test ID is required")
+        .isNumeric().withMessage("Test ID must be numeric")
+        .notEmpty().withMessage('Test ID can not be empty'),
+    body("question")
+        .exists().withMessage("Name is required")
+        .notEmpty().withMessage('Question can not be empty'),
+    body("answer")
+        .exists().withMessage("Description is required")
+        .notEmpty().withMessage('Answer can not be empty')
 ]

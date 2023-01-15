@@ -9,7 +9,8 @@ const {
     createCourseAudio,
     createCourseVideo, 
     getMyCourses,
-    createCourseText
+    createCourseText,
+    createCourseTest
 } = require("../services/course.service")
 
 /**
@@ -288,6 +289,41 @@ exports.createCourseVideo = async (req, res) => {
             file: video
         })
     }
+
+    if (service.error) {
+        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
+            failResponse(service.message)
+        )
+    }
+
+    res.send(
+        successResponse("Successful.", {
+            data: service.data
+        })
+    )
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createCourseTest = async (req, res) => {
+
+    const { 
+        question, 
+        answer, 
+        correct_answer
+    } = req.body
+    
+    const service = await createCourseTest({
+        userid: req.auth.id, 
+        courseid: req.params.id,
+        question, 
+        answer, 
+        correct_answer
+    })
 
     if (service.error) {
         return res.status(parseInt(process.env.EXCEPTION_CODE)).send(

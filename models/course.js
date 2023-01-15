@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'courseid',
         as: 'texts'
       })
+      this.hasMany(models.course_test, {
+        foreignKey: 'courseid',
+        as: 'tests'
+      })
       this.belongsToMany(models.company, {
         through: models.recomended_course,
         foreignKey: 'courseid'

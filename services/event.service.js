@@ -29,9 +29,11 @@ exports.createEvent = async (payload) => {
             throw new Error('Event not attached to the creator.')
         }
 
+        const { data } = await this.getEvent(newEvent.id)
+
         return {
             error: false,
-            data: newEvent
+            data
         }
 
     } catch (error) {
@@ -51,6 +53,7 @@ exports.getEvents = async () => {
             include: [
                 {
                     model: db.user,
+                    as: 'host',
                     attributes: UserResource
                 },
             ]
@@ -79,6 +82,12 @@ exports.getEvent = async (id) => {
             include: [
                 {
                     model: db.user,
+                    as: 'host',
+                    attributes: UserResource
+                },
+                {
+                    model: db.user,
+                    as: 'invites',
                     attributes: UserResource
                 }
             ]
@@ -158,15 +167,31 @@ exports.deleteEvent = async (id) => {
 
 exports.createEventInvite = async (id, payload = {}) => {
     try {
+        
         const event = await db.event.findOne({ where: { id } })
 
         if (!event) {
             throw new Error('Event not found.')
         }
 
+        const user = await db.user.findOne({ where: { email: payload.email } })
+
+        if (!user) {
+            throw new Error('User not found.')
+        }
+
+        const isInvited = await db.invite.findOne({ where: {
+            userid: user.id,
+            eventid: event.id
+         } })
+
+        if (isInvited) {
+            throw new Error('User already invited to the event.')
+        }
+
         const newInvite = await db.invite.create({
-            userid: payload.userid,
-            eventid: newCalendarEvent.id
+            userid: user.id,
+            eventid: event.id
         })
 
         if (!newInvite) {
@@ -193,10 +218,35 @@ exports.deleteEventInvite = async (id) => {
         const event = await db.invite.findOne({ where: { id } })
 
         if (!event) {
-            throw new Error('Invite not found.')
+            throw new Error('Invitation not found.')
         }
 
-        await db.event.destroy({ where: { id } })
+        await db.invite.destroy({ where: { id } })
+
+        return {
+            error: false,
+            data: []
+        }
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}
+
+exports.updateAttendence = async (id, payload) => {
+    try {
+
+        const event = await db.invite.findOne({ where: { id } })
+
+        if (!event) {
+            throw new Error('Invitation not found.')
+        }
+
+        await db.invite.update(payload, { where: { id } })
 
         return {
             error: false,

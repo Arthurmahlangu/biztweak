@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userid: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       eventid: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       attending: {
+        defaultValue: 0,
         type: Sequelize.BOOLEAN
       },
       createdAt: {
