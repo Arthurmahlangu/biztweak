@@ -42,7 +42,8 @@ exports.forgotpasswordValidator = [
  * @type {ValidationChain[]}
  */
 exports.passwordValidator = [
-    param("id").exists().isInt().withMessage("Invalid ID"),
-    body("password").exists().isStrongPassword().withMessage("Password not meeting minimum requirements")
+    body("password")
+        .exists().withMessage("Password not meeting minimum requirements")
+        .isStrongPassword().withMessage("Password not meeting minimum requirements")
 ]
 
