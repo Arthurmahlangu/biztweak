@@ -118,7 +118,7 @@ exports.forgotPassword = async (email) => {
                 email,
                 updated: false,
                 expiry_date: {
-                    [Op.lt]: now
+                    [Op.gt]: now
                 }
             }
         })
@@ -181,7 +181,7 @@ exports.updateForgotPassword = async (url, password) => {
                 url,
                 updated: false,
                 expiry_date: {
-                    [Op.lt]: now
+                    [Op.gt]: now
                 }
             }
         })
