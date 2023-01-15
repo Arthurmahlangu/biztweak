@@ -1,8 +1,10 @@
 const TokenService = require("./token.service")
+const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt')
 const db = require("../models")
 const mailer = require("../helpers/mailer")
-const { getUser } = require("./user.service")
+const { getUser, updatePassword } = require("./user.service");
+const { Op } = require("sequelize");
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
     timestampFormat: "YYYY-MM-DD HH:mm:ss"
@@ -96,4 +98,121 @@ exports.emailRegister = async (fullname, email, password) => {
             message: error.message
         }
     }
+}
+
+exports.forgotPassword = async (email) => {
+    try {
+
+        let url = null
+
+        const now = new Date()
+
+        const isUser = await db.user.findOne({ where: { email } })
+
+        if (!isUser) {
+            throw new Error('User not found.')
+        }
+
+        const forgotPassword = await db.forgot_password.findOne({
+            where: {
+                email,
+                updated: false,
+                expiry_date: {
+                    [Op.lt]: now
+                }
+            }
+        })
+
+        if (forgotPassword) {
+
+            url = forgotPassword.url
+
+        } else {
+
+            const random = uuidv4()
+            const updated = false
+            const expiry_date = new Date();
+
+            expiry_date.setDate(expiry_date.getDate() + 1);
+
+            url = `${process.env.UPLOAD_URL}forgot-password/${random}`
+    
+            const newForgotPassword = await db.forgot_password.create({
+                email,
+                url,
+                updated,
+                expiry_date
+            })
+
+            if (!newForgotPassword) {
+                throw new Error('Forgot password request failed.')
+            }
+        }
+    
+        const body = `Click the link to set a new password ${url}`
+        
+        const emailRes = await mailer(email, "Biztweak forgot password", body)
+
+        if (emailRes.error) {
+            throw new Error('Forgot password email failed.')
+        }
+
+        return {
+            error: false,
+            data: []
+        }
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+}
+
+exports.updateForgotPassword = async (url, password) => {
+    try {
+
+        const forgotPassword = await db.forgot_password.findOne({
+            where: {
+                url,
+                updated: false,
+                expiry_date: {
+                    [Op.lt]: now
+                }
+            }
+        })
+
+        if (!forgotPassword) {
+            throw new Error('Forgot password URL no longer valid.')
+        }
+
+        const isUser = await db.user.findOne({ where: { email: forgotPassword.email } })
+
+        if (!isUser) {
+            throw new Error('User not found.')
+        }
+        
+        const service = await updatePassword(isUser.id, password)
+        
+        if (service.error) {
+            throw new Error(service.message)
+        }
+
+        await db.forgot_password.destroy({ where: { id: forgotPassword.id } })
+
+        return {
+            error: false,
+            data: []
+        }
+        
+    } catch (error) {
+        errorLog.error(error.message)
+        return {
+            error: true,
+            message: error.message
+        }
+    }
+
 }

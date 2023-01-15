@@ -26,3 +26,23 @@ exports.loginValidator = [
     body("password")
         .exists().withMessage("Password required")
 ]
+
+/**
+ *
+ * @type {ValidationChain[]}
+ */
+exports.forgotpasswordValidator = [
+    body("email")
+        .exists().withMessage("Invalid Email")
+        .isEmail().withMessage("Invalid Email")
+]
+
+/**
+ *
+ * @type {ValidationChain[]}
+ */
+exports.passwordValidator = [
+    param("id").exists().isInt().withMessage("Invalid ID"),
+    body("password").exists().isStrongPassword().withMessage("Password not meeting minimum requirements")
+]
+
