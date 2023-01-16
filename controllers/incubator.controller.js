@@ -15,9 +15,23 @@ const {
  */
 exports.createIncubator = async (req, res) => {
 
-    const { name, industry, location, type, sponsors, experience } = req.body
+    const { 
+        name, 
+        industry, 
+        location, 
+        type, 
+        sponsors, 
+        experience 
+    } = req.body
+
     const service = await createIncubator({
-        userid: req.auth.id, name, industry, location, type, sponsors, experience
+        userid: req.auth.id, 
+        name, 
+        industry, 
+        location, 
+        type, 
+        sponsors, 
+        experience
     })
 
     if (service.error) {
@@ -81,9 +95,22 @@ exports.getIncubator = async (req, res) => {
  */
 exports.updateIncubator = async (req, res) => {
 
-    const { name, industry, location, type, sponsors, experience } = req.body
+    const { 
+        name, 
+        industry, 
+        location, 
+        type, 
+        sponsors, 
+        experience 
+    } = req.body
+
     const service = await updateIncubator(req.params.id, {
-        name, industry, location, type, sponsors, experience
+        name, 
+        industry, 
+        location, 
+        type, 
+        sponsors, 
+        experience
     })
 
     if (service.error) {

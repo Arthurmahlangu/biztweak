@@ -20,9 +20,11 @@ exports.createIncubator = async (payload) => {
             throw new Error('Incubator not created.')
         }
 
+        const { data } = await this.getIncubator(newIncubator.id)
+
         return {
             error: false,
-            data: newIncubator
+            data
         }
 
     } catch (error) {
