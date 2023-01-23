@@ -1,15 +1,10 @@
 const { successResponse, failResponse } = require("../helpers/methods")
-const uploader = require("../helpers/uploader")
-const { 
-    getUsers, 
-    getUser, 
-    updateUser, 
-    updatePassword, 
-    createSuperUser, 
-    createAdminUser,
-    createMentorUser,
-    deleteUser
-} = require("../services/user.service")
+const { createUser, updateUserProfile, updateEmail, updatePassword, deleteUserAccount, getUsers, findUser } = require("../services/user.service")
+
+const errorLog = require("simple-node-logger").createSimpleLogger({
+    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
+    timestampFormat: "YYYY-MM-DD HH:mm:ss"
+})
 
 /**
  *
@@ -17,90 +12,27 @@ const {
  * @param res
  * @returns {Promise<void>}
  */
-exports.createSuperAccount = async (req, res) => {
+exports.createRootUser = async (req, res) => {
+    try {
 
-    const { fullname, email, password } = req.body
-
-    const service = await createSuperUser(fullname, email, password)
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
-        )
-    }
-
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
-exports.createAdminAccount = async (req, res) => {
-
-    const { fullname, email, password } = req.body
-
-    const service = await createAdminUser(fullname, email, password)
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
-        )
-    }
-
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
-exports.createMentorAccount = async (req, res) => {
-
-    const { fullname, email, password } = req.body
-
-    const service = await createMentorUser(fullname, email, password)
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
-        )
-    }
-
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
-}
-
-/**
- *
- * @param req
- * @param res
- * @returns {Promise<void>}
- */
-exports.getUsers = async (req, res) => {
-
-    const service = await getUsers() 
+        const { 
+            fullNames, email
+        } = req.body
     
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
+        const { data } = await createUser(fullNames, email, 'ROOT')
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
 }
 
 /**
@@ -109,21 +41,27 @@ exports.getUsers = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.getUser = async (req, res) => {
+exports.createAdminUser = async (req, res) => {
+    try {
 
-    const service = await getUser(req.params.id)
+        const { 
+            fullNames, email
+        } = req.body
+    
+        const { data } = await createUser(fullNames, email, 'ADMIN')
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
         )
     }
-
-    res.send(
-        successResponse("Successful.", {
-            data: service.data
-        })
-    )
 }
 
 /**
@@ -132,68 +70,54 @@ exports.getUser = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.updateProfile = async (req, res) => {
+exports.createEntrepreneurUser = async (req, res) => {
+    try {
 
-    let service = null
+        const { 
+            fullNames, email
+        } = req.body
+    
+        const { data } = await createUser(fullNames, email, 'ENTREPRENEUR')
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    const { 
-        fullname, 
-        phone, 
-        education, 
-        work_experience, 
-        work_experience2, 
-        location,
-        registered,
-        market_newsletter,
-        product_updates_and_community_announcements
-    } = req.body
-
-    if (req.files && req.files.photo) {
-
-        const upload = await uploader(req.files.photo, "profiles", [
-            "image/png", "image/jpg", "image/jpeg"
-        ])
-
-        if (upload.error) {
-            return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-                failResponse(upload.message)
-            )
-        }
-
-        service = await updateUser(req.params.id, {
-            fullname, 
-            phone, 
-            education, 
-            work_experience, 
-            work_experience2, 
-            location,
-            registered,
-            photo: upload.data,
-            market_newsletter,
-            product_updates_and_community_announcements
-        })
-    } else {
-        service = await updateUser(req.params.id, {
-            fullname, 
-            phone, 
-            education, 
-            work_experience, 
-            work_experience2, 
-            location
-        })
-    }
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
         )
     }
+}
 
-    res.send(
-        successResponse("Updated.", {
-            data: service.data
-        })
-    )
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.updateUserProfile = async (req, res) => {
+    try {
+
+        const payload = req.body
+
+        const { data } = await updateUserProfile(req.params.id, payload, req.files)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
 }
 
 /**
@@ -203,21 +127,22 @@ exports.updateProfile = async (req, res) => {
  * @returns {Promise<void>}
  */
 exports.updateEmail = async (req, res) => {
+    try {
+    
+        const { data } = await updateEmail(req.params.id, req.body.email)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    const { email } = req.body
-    const service = await updateUser(req.params.id, { email })
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
         )
     }
-
-    res.send(
-        successResponse("Updated.", {
-            data: service.data
-        })
-    )
 }
 
 /**
@@ -227,22 +152,22 @@ exports.updateEmail = async (req, res) => {
  * @returns {Promise<void>}
  */
 exports.updatePassword = async (req, res) => {
+    try {
+    
+        const { data } = await updatePassword(req.params.id, req.body.password)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    const { password } = req.body
-
-    const service = await updatePassword(req.params.id, password)
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
         )
     }
-
-    res.send(
-        successResponse("Updated.", {
-            data: service.data
-        })
-    )
 }
 
 /**
@@ -251,44 +176,69 @@ exports.updatePassword = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.updateRole = async (req, res) => {
+exports.deleteUserAccount = async (req, res) => {
+    try {
+    
+        const { data } = await deleteUserAccount(req.params.id)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    const { role } = req.body
-
-    const service = await updateUser(req.params.id, { role })
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
         )
     }
-
-    res.send(
-        successResponse("Updated.", {
-            data: service.data
-        })
-    )
 }
-
 /**
  *
  * @param req
  * @param res
  * @returns {Promise<void>}
  */
-exports.deleteUser = async (req, res) => {
+exports.getUsers = async (req, res) => {
+    try {
+    
+        const { data } = await getUsers()
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    const service = await deleteUser(req.params.id)
-
-    if (service.error) {
-        return res.status(parseInt(process.env.EXCEPTION_CODE)).send(
-            failResponse(service.message)
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
         )
     }
+}
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.findUser = async (req, res) => {
+    try {
+    
+        const { data } = await findUser(req.params.id)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
 
-    res.send(
-        successResponse("Deleted.", {
-            data: []
-        })
-    )
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
 }

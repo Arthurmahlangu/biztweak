@@ -1,5 +1,11 @@
-const db = require("../models")
+const userRepository = require("../repositories/user.repository")
 
-exports.Example = async (param) => {
-    return param
+exports.createUser = async (fullNames, email, role) => {
+    const password = ''
+
+    const user = await userRepository.createUser({
+        fullNames, email, role, password
+    })
+
+    return user
 }

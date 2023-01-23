@@ -1,242 +1,98 @@
-const bcrypt = require('bcrypt')
-const db = require("../models")
-const UserResource = require("../resources/user.resource")
-const errorLog = require("simple-node-logger").createSimpleLogger({
-    logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
-    timestampFormat: "YYYY-MM-DD HH:mm:ss"
-})
+const userRepository = require("../repositories/user.repository")
+const uploader = require("../helpers/uploader")
+const mailer = require("../helpers/mailer")
 
-exports.createSuperUser = async (fullname, email, password) => {
-    try {
+exports.createUser = async (fullNames, email, role) => {
+    const password = ''
 
-        const isUser = await db.user.findOne({ where: { email } })
+    const user = await userRepository.createUser({
+        fullNames, email, role, password
+    })
 
-        if (isUser) {
-            throw new Error('Account exists. Try logging in.')
-        }
+    const mail = await mailer(email, 'New registration', `
+        <h1>New registration</h1>
+        <p>Welcome to your new account. to set your password, use the link below</p>
+    `)
 
-        const salt = await bcrypt.genSalt(10)
-        const hashPassword = await bcrypt.hash(password, salt)
-
-        const newUser = await db.user.create({
-            fullname, email, password: hashPassword, role: "ROOT"
-        })
-
-        if (!newUser) {
-            throw new Error('Registration failed.')
-        }
-
-        return {
-            error: false,
-            data: newUser
-        }
-        
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
+    if (mail.error) {
+        throw new Error(mail.message)
     }
+
+    return user
 }
 
-exports.createAdminUser = async (fullname, email, password) => {
-    try {
+exports.updateUserProfile = async (id, payload, files) => {
 
-        const isUser = await db.user.findOne({ where: { email } })
+    const {
+        fullNames, 
+        phone, 
+        education, 
+        workExperience, 
+        workExperience2,
+        location,
+        marketNewsletter,
+        productUpdatesAndCommunityAnnouncements
+    } = payload
 
-        if (isUser) {
-            throw new Error('Account exists. Try logging in.')
-        }
+    if (files) {
+        if (files.photo) {
+            const upload = await uploader(files.photo, "profiles", [
+                "image/png", "image/jpg", "image/jpeg"
+            ])
 
-        const salt = await bcrypt.genSalt(10)
-        const hashPassword = await bcrypt.hash(password, salt)
+            if (upload.error) {
+                throw new Error(upload.message)
+            }
 
-        const newUser = await db.user.create({
-            fullname, email, password: hashPassword, role: "ADMIN"
-        })
-
-        if (!newUser) {
-            throw new Error('Registration failed.')
-        }
-
-        return {
-            error: false,
-            data: newUser
-        }
-        
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
+            payload.photo = upload.data
         }
     }
+
+    const user = await userRepository.updateUser(id, {
+        fullNames, 
+        phone, 
+        education, 
+        workExperience, 
+        workExperience2,
+        location,
+        photo: payload.photo,
+        marketNewsletter,
+        productUpdatesAndCommunityAnnouncements
+    })
+
+    return user
 }
 
-exports.createMentorUser = async (fullname, email, password) => {
-    try {
+exports.updateEmail = async (id, email) => {
+    const user = await userRepository.updateUser(id, {
+        email
+    })
 
-        const isUser = await db.user.findOne({ where: { email } })
-
-        if (isUser) {
-            throw new Error('Account exists. Try logging in.')
-        }
-
-        const salt = await bcrypt.genSalt(10)
-        const hashPassword = await bcrypt.hash(password, salt)
-
-        const newUser = await db.user.create({
-            fullname, email, password: hashPassword, role: "MENTOR"
-        })
-
-        if (!newUser) {
-            throw new Error('Registration failed.')
-        }
-
-        return {
-            error: false,
-            data: newUser
-        }
-        
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
-    }
-}
-
-exports.getUsers = async () => {
-    try {
-        
-        const users = await db.user.findAll({ attributes: UserResource })
-
-        return {
-            error: false,
-            data: users
-        }
-
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
-    }
-}
-
-exports.getUser = async (id) => {
-    try {
-
-        const user = await db.user.findOne({ where: { id }, attributes: UserResource })
-
-        if (!user) {
-            throw new Error('User not found.')
-        }
-
-        return {
-            error: false,
-            data: user
-        }
-
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
-    }
-}
-
-exports.updateUser = async (id, payload = {}) => {
-    try {
-
-        const user = await db.user.findOne({ where: { id } })
-
-        if (!user) {
-            throw new Error('User not found.')
-        }
-
-        const newUser = await db.user.update(payload, { where: { id } })
-
-        if (!newUser) {
-            throw new Error('Update failed.')
-        }
-
-        return {
-            error: false,
-            data: []
-        }
-
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
-    }
+    return user
 }
 
 exports.updatePassword = async (id, password) => {
-    try {
+    const user = await userRepository.updateUser(id, {
+        password
+    })
 
-        const user = await db.user.findOne({ where: { id } })
-
-        if (!user) {
-            throw new Error('User not found.')
-        }
-
-        const valid = await bcrypt.compare(password, user.password)
-
-        if (valid) {
-            throw new Error('New password cannot be the same as old password.')
-        }
-
-        const salt = await bcrypt.genSalt(10)
-        const hashPassword = await bcrypt.hash(password, salt)
-        const newUser = await db.user.update({ password: hashPassword }, { where: { id } })
-
-        if (!newUser) {
-            throw new Error('Update failed.')
-        }
-
-        return {
-            error: false,
-            data: []
-        }
-
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
-    }
+    return user
 }
 
-exports.deleteUser = async (id) => {
-    try {
+exports.deleteUserAccount = async (id) => {
+    const user = await userRepository.deleteUser(id)
 
-        const user = await db.user.findOne({ where: { id } })
+    return user
+}
 
-        if (!user) {
-            throw new Error('User not found.')
-        }
+exports.getUsers = async () => {
+    const user = await userRepository.getUsers()
 
-        await db.user.destroy({ where: { id } })
+    return user
+}
 
-        return {
-            error: false,
-            data: []
-        }
+exports.findUser = async (id) => {
+    const user = await userRepository.findUser(id)
 
-    } catch (error) {
-        errorLog.error(error.message)
-        return {
-            error: true,
-            message: error.message
-        }
-    }
+    return user
 }

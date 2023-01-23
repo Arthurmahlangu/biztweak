@@ -3,7 +3,7 @@ const {
     buildRepository, 
     buildRoute, 
     buildService, 
-    buildValidations, 
+    buildValidator, 
     buildResource,
     buildCollection 
 } = require("./build")
@@ -51,12 +51,12 @@ exports.init = async (program) => {
         })
 
     program
-        .command("build:validations")
-        .description("Build Validations, Usage: node ebp build:validations <validations-name>")
-        .argument("<validationsName>", "Validations Name")
-        .action(async (validationsName) => {
-            console.log(`Building Validations: ${validationsName}`)
-            await buildValidations(validationsName)
+        .command("build:validator")
+        .description("Build Validator, Usage: node ebp build:validator <validator-name>")
+        .argument("<validatorName>", "Validator Name")
+        .action(async (validatorName) => {
+            console.log(`Building Validator: ${validatorName}`)
+            await buildValidator(validatorName)
         })
 
     program

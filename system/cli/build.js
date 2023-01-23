@@ -156,21 +156,21 @@ exports.buildService = async (name) => {
  * @param {string} name - The name of the repository.
  * @returns None
  */
-exports.buildValidations = async (name) => {
+exports.buildValidator = async (name) => {
     let valDir = path.join(__dirname, "../../middlewares/validators")
 
     if (!fs.existsSync(valDir)) {
         fs.mkdirSync(valDir, { recursive: true })
     }
 
-    const filePath = path.join(valDir, `${name}.validations.js`)
+    const filePath = path.join(valDir, `${name}.validator.js`)
 
     if (fs.existsSync(filePath)) {
-        console.log(`Validations ${name} already exists.`)
+        console.log(`Validator ${name} already exists.`)
         return
     }
 
-    const stub = fs.readFileSync(path.join(__dirname, "../stubs/validations.stubs"), "utf8")
+    const stub = fs.readFileSync(path.join(__dirname, "../stubs/validator.stubs"), "utf8")
     const route = stub.replace(/validationsName/g, name)
 
     let dirs = filePath.split("/")
@@ -185,7 +185,7 @@ exports.buildValidations = async (name) => {
         if (err) {
             console.log(err)
         } else {
-            console.log(`Validations ${name}.validations.js created successfully`)
+            console.log(`Validator ${name}.validator.js created successfully`)
         }
     })
 }

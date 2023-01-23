@@ -1,15 +1,13 @@
 module.exports = [
-    'id',
-    'fullname',
+    'id', 
+    'fullNames',
     'email',
     'phone',
     'education',
-    'work_experience',
-    'work_experience2',
+    'workExperience',
+    'workExperience2',
     'location',
-    'photo',
-    'market_newsletter',
-    'product_updates_and_community_announcements',
-    'role',
-    ['createdAt', 'registered']
+    'marketNewsletter',
+    'productUpdatesAndCommunityAnnouncements',
+    ['createdAt', 'registrationDate']
 ]
