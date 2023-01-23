@@ -52,7 +52,7 @@ exports.findUser = async (id) => {
     }
 }
 
-exports.getUsers = async (param) => {
+exports.getUsers = async () => {
     const user = await db.user.findAll({
         attributes: userResource
     })
