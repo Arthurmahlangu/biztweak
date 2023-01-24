@@ -61,7 +61,6 @@ exports.updateCompany = async (id, payload, files) => {
         numberOfEmployees, 
         monthlyTurnover, 
         annualTurnover, 
-        userId, 
         companyPhaseId, 
         companyIndustryId
     } = payload
@@ -91,7 +90,6 @@ exports.updateCompany = async (id, payload, files) => {
         numberOfEmployees, 
         monthlyTurnover, 
         annualTurnover, 
-        userId, 
         companyPhaseId, 
         companyIndustryId
     })

@@ -1,5 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
-const companyService = require("../services/company.service")
+const assessmentService = require("../services/assessment.service")
 
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
@@ -12,14 +12,14 @@ const errorLog = require("simple-node-logger").createSimpleLogger({
  * @param res
  * @returns {Promise<void>}
  */
-exports.createCompany = async (req, res) => {
+exports.createAssessment = async (req, res) => {
     try {
     
         const payload = req.body
 
         payload.userId = req.user.id
 
-        const { data } = await companyService.createCompany(payload, req.files)
+        const { data } = await assessmentService.createAssessment(payload)
     
         return res.send(
             successResponse("Success", {
@@ -41,10 +41,10 @@ exports.createCompany = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.updateCompany = async (req, res) => {
+exports.updateAssessment = async (req, res) => {
     try {
     
-        const { data } = await companyService.updateCompany(req.params.id, req.body, req.files)
+        const { data } = await assessmentService.updateAssessment(req.params.id, req.body)
     
         return res.send(
             successResponse("Success", {
@@ -66,10 +66,10 @@ exports.updateCompany = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.deleteCompany = async (req, res) => {
+exports.deleteAssessment = async (req, res) => {
     try {
     
-        const { data } = await companyService.deleteCompany(req.params.id)
+        const { data } = await assessmentService.deleteAssessment(req.params.id)
     
         return res.send(
             successResponse("Success", {
@@ -91,10 +91,10 @@ exports.deleteCompany = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.getCompanies = async (req, res) => {
+exports.getAssessments = async (req, res) => {
     try {
     
-        const { data } = await companyService.getCompanies()
+        const { data } = await assessmentService.getAssessments()
     
         return res.send(
             successResponse("Success", {
@@ -116,10 +116,35 @@ exports.getCompanies = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
-exports.findCompany = async (req, res) => {
+exports.findAssessment = async (req, res) => {
     try {
     
-        const { data } = await companyService.findCompany(req.params.id)
+        const { data } = await assessmentService.findAssessment(req.params.id)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.getAssessmentQuestions = async (req, res) => {
+    try {
+    
+        const { data } = await assessmentService.getAssessmentQuestionsByPhase(req.params.id)
     
         return res.send(
             successResponse("Success", {

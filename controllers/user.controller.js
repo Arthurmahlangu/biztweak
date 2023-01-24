@@ -1,5 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
-const { createUser, updateUserProfile, updateEmail, updatePassword, deleteUserAccount, getUsers, findUser } = require("../services/user.service")
+const userService = require("../services/user.service")
 
 const errorLog = require("simple-node-logger").createSimpleLogger({
     logFilePath: "./log/error/" + new Date().toLocaleDateString().split("/").join("-") + ".log",
@@ -19,7 +19,7 @@ exports.createRootUser = async (req, res) => {
             fullNames, email
         } = req.body
     
-        const { data } = await createUser(fullNames, email, 'ROOT')
+        const { data } = await userService.createUser(fullNames, email, 'ROOT')
     
         return res.send(
             successResponse("Success", {
@@ -48,7 +48,7 @@ exports.createAdminUser = async (req, res) => {
             fullNames, email
         } = req.body
     
-        const { data } = await createUser(fullNames, email, 'ADMIN')
+        const { data } = await userService.createUser(fullNames, email, 'ADMIN')
     
         return res.send(
             successResponse("Success", {
@@ -77,7 +77,7 @@ exports.createEntrepreneurUser = async (req, res) => {
             fullNames, email
         } = req.body
     
-        const { data } = await createUser(fullNames, email, 'ENTREPRENEUR')
+        const { data } = await userService.createUser(fullNames, email, 'ENTREPRENEUR')
     
         return res.send(
             successResponse("Success", {
@@ -104,7 +104,7 @@ exports.updateUserProfile = async (req, res) => {
 
         const payload = req.body
 
-        const { data } = await updateUserProfile(req.params.id, payload, req.files)
+        const { data } = await userService.updateUserProfile(req.params.id, payload, req.files)
     
         return res.send(
             successResponse("Success", {
@@ -129,7 +129,7 @@ exports.updateUserProfile = async (req, res) => {
 exports.updateEmail = async (req, res) => {
     try {
     
-        const { data } = await updateEmail(req.params.id, req.body.email)
+        const { data } = await userService.updateEmail(req.params.id, req.body.email)
     
         return res.send(
             successResponse("Success", {
@@ -154,7 +154,7 @@ exports.updateEmail = async (req, res) => {
 exports.updatePassword = async (req, res) => {
     try {
     
-        const { data } = await updatePassword(req.params.id, req.body.password)
+        const { data } = await userService.updatePassword(req.params.id, req.body.password)
     
         return res.send(
             successResponse("Success", {
@@ -179,7 +179,7 @@ exports.updatePassword = async (req, res) => {
 exports.deleteUserAccount = async (req, res) => {
     try {
     
-        const { data } = await deleteUserAccount(req.params.id)
+        const { data } = await userService.deleteUserAccount(req.params.id)
     
         return res.send(
             successResponse("Success", {
@@ -203,7 +203,7 @@ exports.deleteUserAccount = async (req, res) => {
 exports.getUsers = async (req, res) => {
     try {
     
-        const { data } = await getUsers()
+        const { data } = await userService.getUsers()
     
         return res.send(
             successResponse("Success", {
@@ -227,7 +227,7 @@ exports.getUsers = async (req, res) => {
 exports.findUser = async (req, res) => {
     try {
     
-        const { data } = await findUser(req.params.id)
+        const { data } = await userService.findUser(req.params.id)
     
         return res.send(
             successResponse("Success", {
