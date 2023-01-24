@@ -144,7 +144,7 @@ exports.findAssessment = async (req, res) => {
 exports.getAssessmentQuestions = async (req, res) => {
     try {
     
-        const { data } = await assessmentService.getAssessmentQuestionsByPhase(req.params.id)
+        const { data } = await assessmentService.getAssessmentQuestionsByPhase(req.params.companyPhaseId)
     
         return res.send(
             successResponse("Success", {

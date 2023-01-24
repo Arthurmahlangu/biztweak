@@ -35,19 +35,19 @@ exports.updateAssessment = async (id, payload) => {
 
 
 exports.deleteAssessment = async (id) => {
-    const assessment = await companyRepository.deleteAssessment(id)
+    const assessment = await assessmentRepository.deleteAssessment(id)
 
     return assessment
 }
 
 exports.getAssessments = async () => {
-    const assessment = await companyRepository.getAssessments()
+    const assessment = await assessmentRepository.getAssessments()
 
     return assessment
 }
 
 exports.findAssessment = async (id) => {
-    const assessment = await companyRepository.findAssessment(id)
+    const assessment = await assessmentRepository.findAssessment(id)
 
     return assessment
 }

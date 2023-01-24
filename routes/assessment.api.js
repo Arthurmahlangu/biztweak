@@ -11,6 +11,6 @@ router.get('/assessments/:id', assessmentController.findAssessment)
 router.get('/assessments', assessmentController.getAssessments)
 
 // Questions
-router.get('/assessments/questions', assessmentController.getAssessmentQuestions)
+router.get('/assessments/questions/:companyPhaseId', assessmentController.getAssessmentQuestions)
 
 module.exports = router

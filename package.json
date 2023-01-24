@@ -6,7 +6,10 @@
     "scripts": {
         "test": "jest",
         "start": "nodemon server.js",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "db": "npx sequelize-cli db:drop && npx sequelize-cli db:create",
+        "migrate": "npx sequelize-cli db:migrate",
+        "seed": "npx sequelize-cli db:seed:all"
     },
     "repository": {
         "type": "git",
