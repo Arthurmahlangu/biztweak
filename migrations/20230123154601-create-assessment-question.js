@@ -23,13 +23,20 @@ module.exports = {
         type: DataTypes.STRING(255),
         field: 'noAnswer'
       },
+      category: {
+        type: DataTypes.STRING(100),
+        field: 'category',
+        allowNull: false
+      },
       createdAt: {
         type: DataTypes.DATE,
-        field: 'createdAt'
+        field: 'createdAt',
+        defaultValue: Sequelize.literal('NOW()')
       },
       updatedAt: {
         type: DataTypes.DATE,
-        field: 'updatedAt'
+        field: 'updatedAt',
+        defaultValue: Sequelize.literal('NOW()')
       },
       companyPhaseId: {
         type: DataTypes.INTEGER.UNSIGNED,

@@ -1,5 +1,5 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+const DataTypes = require('sequelize').DataTypes
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('phases', {
@@ -9,16 +9,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
-        type: Sequelize.STRING
+      label: {
+        type: DataTypes.STRING(100),
+        field: 'label',
+        allowNull: false
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('NOW()')
       },
       updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('NOW()')
       }
     });
   },

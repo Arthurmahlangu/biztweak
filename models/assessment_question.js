@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     noAnswer: {
       type: DataTypes.STRING(255)
     },
+    category: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    },
     createdAt: {
       type: DataTypes.DATE
     },

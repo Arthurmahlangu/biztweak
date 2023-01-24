@@ -12,12 +12,12 @@ module.exports = {
       },
       title: {
         type: DataTypes.STRING(100),
-        field: 'name',
+        field: 'title',
         allowNull: false
       },
       description: {
         type: DataTypes.TEXT,
-        field: 'answers',
+        field: 'description',
         allowNull: false
       },
       createdAt: {

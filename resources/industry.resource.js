@@ -1,5 +1,4 @@
 module.exports = [
     'id', 
-    'question',
-    'category'
+    'label'
 ]

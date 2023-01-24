@@ -63,8 +63,9 @@ exports.getQuestions = async () => {
 }
 
 exports.getQuestionsByPhase = async (companyPhaseId) => {
-    const question = await db.assessment_question.findAll({ where: { companyPhaseId } }, {
-        attributes: assementQuestionResource
+    const question = await db.assessment_question.findAll({ 
+        where: { companyPhaseId }, 
+        attributes: assementQuestionResource 
     })
 
     return {
