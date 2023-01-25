@@ -11,7 +11,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a valid BBBEEE Sworn Affidavit/certificate?',
@@ -19,7 +19,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a valid Tax Clearance Certificate?',
@@ -27,7 +27,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a business bank account?',
@@ -35,7 +35,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -46,14 +46,14 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'Competitor analysis',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },{
       question: 'Do you know how to set up an online shop?',
       yesAnswer: '',
       noAnswer: '',
       category: 'e-Commerce',
       module: 'eCommerce',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know how to set up an online presence for your business?',
@@ -61,7 +61,7 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'eCommerce',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a designated E-Commerce specialist?',
@@ -69,7 +69,7 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'JOB/JOB|eCommerce officer/specialist',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -80,7 +80,7 @@ module.exports = {
       noAnswer: 'Customer profile not determined',
       category: 'Customer Segments',
       module: 'Market Research',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know who is your target market/audience?',
@@ -88,7 +88,7 @@ module.exports = {
       noAnswer: 'Target audience has not been selected',
       category: 'Customer Segments',
       module: 'Market Intelligence',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know where they are located?',
@@ -96,7 +96,7 @@ module.exports = {
       noAnswer: 'Target audience has not been located geographically',
       category: 'Customer Segments',
       module: 'Market research',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know the Total market size?',
@@ -104,7 +104,7 @@ module.exports = {
       noAnswer: 'Target audience has not been segmented.',
       category: 'Customer Segments',
       module: 'SAM SOM TAM',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know how much of your market is accessible?',
@@ -112,7 +112,7 @@ module.exports = {
       noAnswer: 'Total accessible market has not been determined',
       category: 'Customer Segments',
       module: 'Total Addressable market',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know how much of your market is in your region/locality?',
@@ -120,7 +120,7 @@ module.exports = {
       noAnswer: 'Total observable market has not been determined.',
       category: 'Customer Segments',
       module: 'Market research',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a profile for your ideal customer?',
@@ -128,7 +128,7 @@ module.exports = {
       noAnswer: 'Ideal customer profile has not been determined.',
       category: 'Customer Segments',
       module: 'Ideal customer profile',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know who your most important customers are?',
@@ -136,7 +136,7 @@ module.exports = {
       noAnswer: 'Most important customers not determined',
       category: 'Customer Segments',
       module: 'Market Research',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a designated Customer Researcher Specialist for this?',
@@ -144,7 +144,7 @@ module.exports = {
       noAnswer: '',
       category: 'Customer Segments',
       module: 'JOB/JOB|Business Research Officer',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -155,7 +155,7 @@ module.exports = {
       noAnswer: '',
       category: 'Business and Customers',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Is the company executing the business plan?',
@@ -163,7 +163,7 @@ module.exports = {
       noAnswer: '',
       category: 'Business and Customers',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Does the company measure client/customer satisfaction?',
@@ -171,7 +171,7 @@ module.exports = {
       noAnswer: '',
       category: 'Business and Customers',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Can you rate the effectiveness of client/customer engagement?',
@@ -179,7 +179,7 @@ module.exports = {
       noAnswer: '',
       category: 'Business and Customers',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -190,7 +190,7 @@ module.exports = {
       noAnswer: '',
       category: 'Ownership and Mindset',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'The owners or management of the company are spending most of their time in the company?',
@@ -198,7 +198,7 @@ module.exports = {
       noAnswer: '',
       category: 'Ownership and Mindset',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Are the educational qualifications or background experience sufficient to support the delivery of products or services offered?',
@@ -206,7 +206,7 @@ module.exports = {
       noAnswer: '',
       category: 'Ownership and Mindset',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -217,7 +217,7 @@ module.exports = {
       noAnswer: '',
       category: 'Marketing and Sales',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Is the company’s advertising effective?',
@@ -225,7 +225,7 @@ module.exports = {
       noAnswer: '',
       category: 'Marketing and Sales',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Does the company conduct sales planning and developed targets?',
@@ -233,7 +233,7 @@ module.exports = {
       noAnswer: '',
       category: 'Marketing and Sales',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a price strategy in place?',
@@ -241,7 +241,7 @@ module.exports = {
       noAnswer: '',
       category: 'Marketing and Sales',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you review your pricing strategy often',
@@ -249,7 +249,7 @@ module.exports = {
       noAnswer: '',
       category: 'Marketing and Sales',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have a designated employee appointed for Marketing & Sales?',
@@ -257,7 +257,7 @@ module.exports = {
       noAnswer: '',
       category: 'Marketing and Sales',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -268,7 +268,7 @@ module.exports = {
       noAnswer: '',
       category: 'Market Intelligence',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Has the company actively identified a competitor in the market?',
@@ -276,7 +276,7 @@ module.exports = {
       noAnswer: '',
       category: 'Market Intelligence',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Has the company identified a key competitive advantage?',
@@ -284,7 +284,7 @@ module.exports = {
       noAnswer: '',
       category: 'Market Intelligence',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know the company’s product or service differentiation?',
@@ -292,14 +292,14 @@ module.exports = {
       noAnswer: '',
       category: 'Market Intelligence',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },{
       question: 'Do you have a designated Market Researcher Specialist?',
       yesAnswer: '',
       noAnswer: '',
       category: 'Market Intelligence',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -310,14 +310,14 @@ module.exports = {
       noAnswer: '',
       category: 'Delivery Expertise',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },{
       question: 'Does the company have the appropriate technical infrastructure to provide core business offerings?',
       yesAnswer: '',
       noAnswer: '',
       category: 'Delivery Expertise',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Can the company show its experience in delivering the service or product?',
@@ -325,7 +325,7 @@ module.exports = {
       noAnswer: '',
       category: 'Delivery Expertise',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Does the company provide the required product training to employees?',
@@ -333,7 +333,7 @@ module.exports = {
       noAnswer: '',
       category: 'Delivery Expertise',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Can you rank the employees’ level of skill to deliver the products or services?',
@@ -341,7 +341,7 @@ module.exports = {
       noAnswer: '',
       category: 'Delivery Expertise',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Does the company have dedicated and qualified people to deliver the products and services?',
@@ -349,7 +349,7 @@ module.exports = {
       noAnswer: '',
       category: 'Delivery Expertise',
       module: '',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -360,14 +360,14 @@ module.exports = {
       noAnswer: 'Problem being solved not determined',
       category: 'Value Proposition',
       module: 'Value proposition canvas',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },{
       question: 'Do you know what value you deliver to the customer?',
       yesAnswer: 'Value being delivered has been determined.',
       noAnswer: 'Value being delivered not determined.',
       category: 'Value Proposition',
       module: 'Business model canvas',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Are you aware of which customer needs you are satisfying?',
@@ -375,7 +375,7 @@ module.exports = {
       noAnswer: 'Customer needs have not been determined.',
       category: 'Value Proposition',
       module: 'Value proposition canvas',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Can you describe the uniqueness of your product, and show key differences from existing alternatives?',
@@ -383,7 +383,7 @@ module.exports = {
       noAnswer: 'Uniques selling point not determined.',
       category: 'Value Proposition',
       module: 'Value proposition canvas',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you have an elevator pitch?',
@@ -391,7 +391,7 @@ module.exports = {
       noAnswer: 'No elevator pitch',
       category: 'Value Proposition',
       module: 'Elevator pitch template',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -402,7 +402,7 @@ module.exports = {
       noAnswer: '',
       category: 'Key Activities',
       module: 'Process development',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     
     
@@ -413,7 +413,7 @@ module.exports = {
       noAnswer: 'The business is not aware of current solutions',
       category: 'Current Alternatives',
       module: 'Competitor analysis',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     {
       question: 'Do you know who are the people currently solving this problem?',
@@ -421,7 +421,7 @@ module.exports = {
       noAnswer: 'The business is not aware of its competitors',
       category: 'Current Alternatives',
       module: 'Competitor analysis',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
     
 
@@ -432,14 +432,14 @@ module.exports = {
       noAnswer: 'Strategic partners have not been determined.',
       category: 'Key Partners',
       module: 'Boot Strapping Stratgey',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },{
       question: 'Have you determined how each partnership will help the business?',
       yesAnswer: 'The value of strategic partnerships has been determined',
       noAnswer: 'Value of strategic partnerships not determined',
       category: 'Key Partners',
       module: 'Boot Strapping Stratgey',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     },
 
 
@@ -451,7 +451,7 @@ module.exports = {
       noAnswer: 'Key resources needed have not been determined',
       category: 'Key Resources',
       module: 'organizational design and development',
-      companyPhaseId: phase.id
+      phaseId: phase.id
     }
 
     ], {});

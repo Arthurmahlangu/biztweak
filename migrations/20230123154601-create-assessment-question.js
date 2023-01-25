@@ -42,9 +42,9 @@ module.exports = {
         field: 'updatedAt',
         defaultValue: Sequelize.literal('NOW()')
       },
-      companyPhaseId: {
+      phaseId: {
         type: DataTypes.INTEGER.UNSIGNED,
-        field: 'companyPhaseId',
+        field: 'phaseId',
         allowNull: false
       },
     })

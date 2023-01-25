@@ -1,5 +1,7 @@
 const db = require("../models")
+const phaseResource = require("../resources/phase.resource")
 const assementQuestionResource = require("../resources/question.resource")
+const allAssementQuestionResource = require("../resources/all_question.resource")
 
 exports.createQuestion = async (payload) => {
     const question = await db.assessment_question.create(payload)
@@ -52,9 +54,48 @@ exports.findQuestion = async (id) => {
     }
 }
 
+exports.findQuestionWithPhaseInfo = async (id) => {
+    const question = await db.assessment_question.findAll({
+        where: { id },
+        attributes: allAssementQuestionResource,
+        include: [
+            {
+                model: db.phase,
+                attributes: phaseResource
+            }
+        ]
+    })
+
+    if (!question) {
+        throw new Error('Question not found.')
+    }
+
+    return {
+        data: question
+    }
+}
+
 exports.getQuestions = async () => {
     const question = await db.assessment_question.findAll({
         attributes: assementQuestionResource
+    })
+
+    return {
+        data: question
+    }
+}
+
+exports.getQuestionsAllInfo = async () => {
+    const question = await db.assessment_question.findAll({
+        attributes: [
+            'id', 
+            'question',
+            'yesAnswer',
+            'noAnswer',
+            'category',
+            'module',
+            'phaseId'
+        ]
     })
 
     return {

@@ -17,7 +17,7 @@ exports.createAssessment = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = 1 || req.user.id
 
         const { data } = await assessmentService.createAssessment(payload)
     

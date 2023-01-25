@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.company_phase)
+      this.belongsTo(models.phase)
     }
   }
   assessment_question.init({
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     updatedAt: {
       type: DataTypes.DATE
     },
-    companyPhaseId: {
+    phaseId: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }
