@@ -8,6 +8,14 @@ const courseApi = require("./course.api")
 const phaseApi = require("./phase.api")
 const industryApi = require("./industry.api")
 
+router.get("/documentation", async (req, res) => {
+    res.render("../public/documentation/index.html")
+})
+
+router.get("/", async (req, res) => {
+    res.render("../public/index.html")
+})
+
 router.use("/api/v1", userApi)
 router.use("/api/v1", companyApi)
 router.use("/api/v1", assessmentApi)
