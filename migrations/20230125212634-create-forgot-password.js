@@ -2,37 +2,40 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tokens', {
+    await queryInterface.createTable('forgot_passwords', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-        type: Sequelize.INTEGER
-      },
-      type: {
+      email: {
+        allowNull: false,
         type: Sequelize.STRING
       },
-      data: {
-        type: Sequelize.TEXT
+      url: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
-      token: {
-        type: Sequelize.TEXT
+      updated: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
-      expiry: {
+      expiryDate: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       createdAt: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
+        allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('tokens');
+    await queryInterface.dropTable('forgot_passwords');
   }
 };

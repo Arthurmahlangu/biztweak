@@ -3,24 +3,24 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class token extends Model {
+  class forgot_password extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      // define association here
     }
   }
-  token.init({
-    userId: DataTypes.INTEGER,
-    type: DataTypes.STRING,
-    data: DataTypes.TEXT,
-    token: DataTypes.TEXT,
-    expiry: DataTypes.DATE
+  forgot_password.init({
+    email: DataTypes.STRING,
+    url: DataTypes.STRING,
+    updated: DataTypes.STRING,
+    expiryDate: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'token',
+    modelName: 'forgot_password',
   });
-  return token;
+  return forgot_password;
 };

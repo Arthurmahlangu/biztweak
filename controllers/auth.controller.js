@@ -63,3 +63,58 @@ exports.emailRegister = async (req, res) => {
         )
     }
 }
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.requestForgotPassword = async (req, res) => {
+    try {
+
+        const { data } = await authService.requestForgotPassword(req.body.email)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.updateForgotPassword = async (req, res) => {
+    try {
+    
+        const { 
+            url, 
+            email, 
+        } = req.body
+
+        const { data } = await authService.updateForgotPassword(url, email)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}

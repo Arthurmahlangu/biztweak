@@ -1,6 +1,7 @@
 const userRepository = require("../repositories/user.repository")
 const uploader = require("../helpers/uploader")
 const mailer = require("../helpers/mailer")
+const bcrypt = require('bcrypt')
 
 exports.createUser = async (fullNames, email, role) => {
     const password = ''
@@ -72,8 +73,12 @@ exports.updateEmail = async (id, email) => {
 }
 
 exports.updatePassword = async (id, password) => {
+    const salt = await bcrypt.genSalt(10)
+
+    const hashPassword = await bcrypt.hash(password, salt)
+
     const user = await userRepository.updateUser(id, {
-        password
+        password: hashPassword
     })
 
     return user
