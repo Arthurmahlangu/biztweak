@@ -52,6 +52,34 @@ exports.findUser = async (id) => {
     }
 }
 
+exports.findUserByEmail = async (email) => {
+    const user = await db.user.findOne({
+        where: { email },
+        attributes: [
+            'id', 
+            'fullNames',
+            'email',
+            'phone',
+            'education',
+            'workExperience',
+            'workExperience2',
+            'location',
+            'password',
+            'marketNewsletter',
+            'productUpdatesAndCommunityAnnouncements',
+            ['createdAt', 'registrationDate']
+        ]
+    })
+
+    if (!user) {
+        throw new Error('User not found.')
+    }
+
+    return {
+        data: user
+    }
+}
+
 exports.getUsers = async (param) => {
     const user = await db.user.findAll({
         attributes: userResource
