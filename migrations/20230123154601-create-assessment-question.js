@@ -28,6 +28,10 @@ module.exports = {
         field: 'category',
         allowNull: false
       },
+      module: {
+        type: DataTypes.TEXT,
+        field: 'module'
+      },
       createdAt: {
         type: DataTypes.DATE,
         field: 'createdAt',

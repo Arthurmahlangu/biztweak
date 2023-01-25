@@ -8,29 +8,33 @@ module.exports = {
     await queryInterface.bulkInsert('assessment_questions', [
       {
         question: 'Do you know how you are going to reach your customers?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Channels to reach customers are developed',
+        noAnswer: 'Channels to reach customers not developed',
         category: 'Channels',
+        module: '',
         companyPhaseId: phase.id
       },{
         question: 'Do you have a marketing plan in place?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Strategies to reach customers has been determined.',
+        noAnswer: 'Strategies to reach customers not determined',
         category: 'Channels',
+        module: '',
         companyPhaseId: phase.id
       },
       {
         question: 'Have you developed a network to reach your target audience?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Network to reach target audience has been determined.',
+        noAnswer: 'Network to to reach target audience not determined.',
         category: 'Channels',
+        module: '',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you provide post-sales customer support?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Post sales support has been provided.',
+        noAnswer: 'No post sales support provided',
         category: 'Channels',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -38,6 +42,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Channels',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -48,6 +53,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Functional Capability',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -55,6 +61,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Functional Capability',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -62,43 +69,66 @@ module.exports = {
 
       {
         question: 'Do you know who your product is for?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Customer profile has been determined.',
+        noAnswer: 'Customer profile not determined',
         category: 'Customer Segments',
+        module: 'Market Research',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know who is your target market/audience?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Target audience has been determined.',
+        noAnswer: 'Target audience has not been selected',
         category: 'Customer Segments',
+        module: 'Market Intelligence',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know where they are located?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Target audience has been located geographically.',
+        noAnswer: 'Target audience has not been located geographically',
         category: 'Customer Segments',
+        module: 'Market research',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know the Total market size?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Target audience has been segmented.',
+        noAnswer: 'Target audience has not been segmented.',
         category: 'Customer Segments',
+        module: 'SAM SOM TAM',
         companyPhaseId: phase.id
-      },{
-        question: 'Do you know how much of your market is in your region/locality?',
-        yesAnswer: '',
-        noAnswer: '',
+      },
+      {
+        question: 'Do you know how much of your market is accessible?',
+        yesAnswer: 'Total accessible market has been determined.',
+        noAnswer: 'Total accessible market has not been determined',
         category: 'Customer Segments',
+        module: 'Total Addressable market',
+        companyPhaseId: phase.id
+      },
+      {
+        question: 'Do you know how much of your market is in your region/locality?',
+        yesAnswer: 'Total observable market has been determined.',
+        noAnswer: 'Total observable market has not been determined.',
+        category: 'Customer Segments',
+        module: 'Market research',
+        companyPhaseId: phase.id
+      },
+      {
+        question: 'Do you have a profile for your ideal customer?',
+        yesAnswer: 'Ideal customer profile has been determined.',
+        noAnswer: 'Ideal customer profile has not been determined.',
+        category: 'Customer Segments',
+        module: 'Ideal customer profile',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know who your most important customers are?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Most important not determined.',
+        noAnswer: 'Most important customers not determined',
         category: 'Customer Segments',
+        module: 'Market Research',
         companyPhaseId: phase.id
       },
       {
@@ -106,6 +136,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Customer Segments',
+        module: 'JOB/JOB|Business Research Officer',
         companyPhaseId: phase.id
       },
 
@@ -116,6 +147,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business and Customers',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -123,6 +155,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business and Customers',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -130,6 +163,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business and Customers',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -137,6 +171,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business and Customers',
+        module: '',
         companyPhaseId: phase.id
       },
     
@@ -147,26 +182,30 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Revenue Streams',
+        module: 'Revenue models',
         companyPhaseId: phase.id
       },{
         question: 'Do you know the value that your customers are willing to pay for?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Value customers are willing to pay for has been determined',
+        noAnswer: 'Value customers are willing to pay fpr not determined',
         category: 'Revenue Streams',
+        module: 'Proof of concept',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know how your customers are currently paying?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Current payment trends of customers are known',
+        noAnswer: 'Current payment trends of customers not known',
         category: 'Revenue Streams',
+        module: 'Competitor analysis',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know how your customers prefer to pay?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Preferred paymet method of customers has been determined.',
+        noAnswer: 'Preferred paymet method of customers not determined.',
         category: 'Revenue Streams',
+        module: 'Market research, competitor analysis',
         companyPhaseId: phase.id
       },
       {
@@ -174,6 +213,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Revenue Streams',
+        module: 'JOB/JOB|Business Strategist',
         companyPhaseId: phase.id
       },
 
@@ -181,36 +221,41 @@ module.exports = {
 
       {
         question: 'Do you know the problem you are solving?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Problem being solved has been determined.',
+        noAnswer: 'Problem being solved not determined',
         category: 'Value Proposition',
+        module: 'Value proposition canvas',
         companyPhaseId: phase.id
       },{
         question: 'Do you know what value you deliver to the customer?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Value being delivered has been determined.',
+        noAnswer: 'Value being delivered not determined.',
         category: 'Value Proposition',
+        module: 'Business model canvas',
         companyPhaseId: phase.id
       },
       {
         question: 'Are you aware of which customer needs you are satisfying?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Customer needs have been determined.',
+        noAnswer: 'Customer needs have not been determined.',
         category: 'Value Proposition',
+        module: 'Value proposition canvas',
         companyPhaseId: phase.id
       },
       {
         question: 'Can you describe the uniqueness of your product, and show key differences from existing alternatives?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'uniques selling point has been determined.',
+        noAnswer: 'Uniques selling point not determined.',
         category: 'Value Proposition',
+        module: 'Value proposition canvas',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you have an elevator pitch?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'An elevator pitch has been prepared.',
+        noAnswer: 'No elevator pitch',
         category: 'Value Proposition',
+        module: 'Elevator pitch template',
         companyPhaseId: phase.id
       },
     
@@ -218,16 +263,18 @@ module.exports = {
     
       {
         question: 'Do you know how the problem you are solving is currently being addressed?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'The business is aware of current solutions from competitors.',
+        noAnswer: 'The business is not aware of current solutions',
         category: 'Current Alternatives',
+        module: 'Competitor analysis',
         companyPhaseId: phase.id
       },
       {
         question: 'Do you know who are the people currently solving this problem?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'The business is aware of its competitors',
+        noAnswer: 'The business is not aware of its competitors',
         category: 'Current Alternatives',
+        module: 'Competitor analysis',
         companyPhaseId: phase.id
       },
 
@@ -238,6 +285,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Ownership and Mindset',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -245,6 +293,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Ownership and Mindset',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -252,6 +301,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Ownership and Mindset',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -259,15 +309,17 @@ module.exports = {
 
       {
         question: 'Do you know what strategic partnerships the company needs to form, to increase the scalability and efficiency of the business?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Strategic partners have been determined.',
+        noAnswer: 'Strategic partners have not been determined.',
         category: 'Key Partners',
+        module: 'Boot Strapping Stratgey',
         companyPhaseId: phase.id
       },{
         question: 'Have you determined how each partnership will help the business?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'The value of strategic partnerships has been determined',
+        noAnswer: 'Value of strategic partnerships not determined',
         category: 'Key Partners',
+        module: 'Boot Strapping Stratgey',
         companyPhaseId: phase.id
       },
 
@@ -278,6 +330,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -285,6 +338,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -292,6 +346,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -299,6 +354,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -309,6 +365,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
+        module: 'Sales Funnel',
         companyPhaseId: phase.id
       },
       {
@@ -316,6 +373,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -323,6 +381,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -333,6 +392,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -340,6 +400,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -347,6 +408,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -354,6 +416,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -361,6 +424,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -368,6 +432,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -378,6 +443,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
+        module: 'Costing, product & service pricing',
         companyPhaseId: phase.id
       },
       {
@@ -385,6 +451,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
+        module: 'Costing, product & service pricing',
         companyPhaseId: phase.id
       },
       {
@@ -392,6 +459,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
+        module: 'Costing, product & service pricing',
         companyPhaseId: phase.id
       },
       {
@@ -399,6 +467,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
+        module: 'Costing, product & service pricing',
         companyPhaseId: phase.id
       },
       {
@@ -406,6 +475,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -416,6 +486,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Growth Strategy',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -423,6 +494,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Growth Strategy',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -433,6 +505,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business Process Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -440,6 +513,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business Process Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -447,6 +521,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business Process Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -454,6 +529,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business Process Management',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -461,6 +537,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business Process Management',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -471,6 +548,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Employee Satisfaction',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -478,6 +556,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Employee Satisfaction',
+        module: '',
         companyPhaseId: phase.id
       },
 
@@ -485,9 +564,10 @@ module.exports = {
 
       {
         question: 'Do you know what infrastructure and resources you need in order to deliver the key activities?',
-        yesAnswer: '',
-        noAnswer: '',
+        yesAnswer: 'Key resources needed have been determined.',
+        noAnswer: 'Key resources needed have not been determined',
         category: 'Key Resources',
+        module: 'organizational design and development',
         companyPhaseId: phase.id
       },
 
@@ -498,6 +578,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -505,6 +586,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -512,6 +594,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
+        module: '',
         companyPhaseId: phase.id
       },
       {
@@ -519,6 +602,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
+        module: '',
         companyPhaseId: phase.id
       },
 
