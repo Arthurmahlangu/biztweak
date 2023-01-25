@@ -9,8 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
+      userId: {
+        type: Sequelize.INTEGER
+      },
+      category: {
         type: Sequelize.STRING
+      },
+      type: {
+        type: Sequelize.STRING
+      },
+      date: {
+        type: Sequelize.DATE
+      },
+      attended: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

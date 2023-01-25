@@ -9,8 +9,29 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
+      role: {
         type: Sequelize.STRING
+      },
+      path: {
+        type: Sequelize.STRING
+      },
+      model: {
+        type: Sequelize.STRING
+      },
+      method: {
+        type: Sequelize.STRING
+      },
+      owner: {
+        default: false,
+        type: Sequelize.BOOLEAN
+      },
+      group: {
+        default: false,
+        type: Sequelize.BOOLEAN
+      },
+      other: {
+        default: false,
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

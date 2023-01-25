@@ -9,8 +9,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
-        type: Sequelize.STRING
+      userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      eventId: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      attending: {
+        defaultValue: 0,
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

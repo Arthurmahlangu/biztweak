@@ -10,11 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.user)
     }
   }
   incubator.init({
-    firstName: DataTypes.STRING
+    userId: DataTypes.INTEGER,
+    name: DataTypes.STRING,
+    industry: DataTypes.STRING,
+    location: DataTypes.STRING,
+    type: DataTypes.STRING,
+    sponsors: DataTypes.STRING,
+    experience: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'incubator',
