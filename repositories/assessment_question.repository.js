@@ -103,9 +103,9 @@ exports.getQuestionsAllInfo = async () => {
     }
 }
 
-exports.getQuestionsByPhase = async (companyPhaseId) => {
+exports.getQuestionsByPhase = async (phaseId) => {
     const question = await db.assessment_question.findAll({ 
-        where: { companyPhaseId }, 
+        where: { phaseId }, 
         attributes: assementQuestionResource 
     })
 
