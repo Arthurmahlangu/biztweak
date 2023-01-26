@@ -16,7 +16,7 @@ exports.createCourse = async (payload, files) => {
         startDatetime, 
         expiryDatetime, 
         userId, 
-        companyPhaseId
+        phaseId
     } = payload
 
     if (files) {
@@ -54,7 +54,7 @@ exports.createCourse = async (payload, files) => {
         startDatetime, 
         expiryDatetime, 
         userId, 
-        companyPhaseId
+        phaseId
     })
 
     return course
@@ -133,7 +133,7 @@ exports.createCourseVideo = async (payload, files) => {
     const {
         name, 
         description, 
-        companyId 
+        courseId 
     } = payload
 
     if (files) {
@@ -154,7 +154,7 @@ exports.createCourseVideo = async (payload, files) => {
         name,
         description,
         file: payload.file,
-        companyId
+        courseId
     })
 
     return courseVideo
@@ -164,7 +164,7 @@ exports.updateCourseVideo = async (id, payload, files) => {
     const {
         name,
         description,
-        companyId
+        courseId
     } = payload
 
     if (files) {
@@ -185,7 +185,7 @@ exports.updateCourseVideo = async (id, payload, files) => {
         name,
         description,
         file: payload.file,
-        companyId
+        courseId
     })
 
     return courseVideo
@@ -215,7 +215,7 @@ exports.createCourseAudio = async (payload, files) => {
     const {
         name,
         description,
-        companyId
+        courseId
     } = payload
 
     if (files) {
@@ -236,7 +236,7 @@ exports.createCourseAudio = async (payload, files) => {
         name,
         description,
         file: payload.file,
-        companyId
+        courseId
     })
 
     return courseAudio
@@ -246,7 +246,7 @@ exports.updateCourseAudio = async (id, payload, files) => {
     const {
         name,
         description,
-        companyId
+        courseId
     } = payload
 
     if (files) {
@@ -267,7 +267,7 @@ exports.updateCourseAudio = async (id, payload, files) => {
         name,
         description,
         file: payload.file,
-        companyId
+        courseId
     })
 
     return courseAudio
@@ -297,13 +297,13 @@ exports.createCourseText = async (payload) => {
     const {
         title, 
         description, 
-        companyId
+        courseId
     } = payload
 
     const courseText = await courseTextRepository.createCourseText({
         title, 
         description, 
-        companyId
+        courseId
     })
 
     return courseText
@@ -349,7 +349,7 @@ exports.createCourseTest = async (payload) => {
         answers, 
         correctAnswer, 
         status, 
-        companyId 
+        courseId 
     } = payload
 
     const courseTest = await courseTestRepository.createCourseTest({
@@ -357,7 +357,7 @@ exports.createCourseTest = async (payload) => {
         answers, 
         correctAnswer, 
         status, 
-        companyId
+        courseId
     })
 
     return courseTest
@@ -407,7 +407,7 @@ exports.createCourseQuiz = async (payload) => {
         answers, 
         correctAnswer, 
         status, 
-        companyId 
+        courseId 
     } = payload
 
     const courseQuiz = await courseQuizRepository.createCourseQuiz({
@@ -415,7 +415,7 @@ exports.createCourseQuiz = async (payload) => {
         answers, 
         correctAnswer, 
         status, 
-        companyId 
+        courseId 
     })
 
     return courseQuiz
@@ -463,7 +463,7 @@ exports.createCourseDocument = async (payload, files) => {
     const {
         name,
         description,
-        companyId
+        courseId
     } = payload
 
     if (files) {
@@ -494,7 +494,7 @@ exports.createCourseDocument = async (payload, files) => {
         name,
         description,
         file: payload.file,
-        companyId
+        courseId
     })
 
     return courseDocument
@@ -504,7 +504,7 @@ exports.updateCourseDocument = async (id, payload, files) => {
     const {
         name,
         description,
-        companyId
+        courseId
     } = payload
 
     if (files) {
@@ -535,7 +535,7 @@ exports.updateCourseDocument = async (id, payload, files) => {
         name,
         description,
         file: payload.file,
-        companyId
+        courseId
     })
 
     return courseDocument

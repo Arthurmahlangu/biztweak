@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     updatedAt: {
       type: DataTypes.DATE
     },
-    companyId: {
+    courseId: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }

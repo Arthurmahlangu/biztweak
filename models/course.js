@@ -11,7 +11,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.user)
-      this.belongsTo(models.company_phase)
+      this.belongsTo(models.phase)
+      this.hasMany(models.course_document, {
+        as: 'documents'
+      })
+      this.hasMany(models.course_audio, {
+        as: 'audios'
+      })
+      this.hasMany(models.course_video, {
+        as: 'videos'
+      })
+      this.hasMany(models.course_text, {
+        as: 'texts'
+      })
+      this.hasMany(models.course_test, {
+        as: 'tests'
+      })
+      this.hasMany(models.course_quiz, {
+        as: 'quizzes'
+      })
     }
   }
   course.init({
@@ -59,7 +77,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
-    companyPhaseId: {
+    phaseId: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }

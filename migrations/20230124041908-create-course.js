@@ -58,9 +58,9 @@ module.exports = {
         type: DataTypes.INTEGER.UNSIGNED,
         field: 'userId'
       },
-      companyPhaseId: {
+      phaseId: {
         type: DataTypes.INTEGER.UNSIGNED,
-        field: 'companyPhaseId'
+        field: 'phaseId'
       }
     })
   },

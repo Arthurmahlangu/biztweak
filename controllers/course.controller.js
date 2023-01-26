@@ -149,6 +149,7 @@ exports.createCourseVideo = async (req, res) => {
         const payload = req.body
 
         payload.userId = req.auth.id
+        payload.courseId = req.params.id
 
         const { data } = await courseService.createCourseVideo(payload, req.files)
     
@@ -174,8 +175,12 @@ exports.createCourseVideo = async (req, res) => {
  */
 exports.updateCourseVideo = async (req, res) => {
     try {
-    
-        const { data } = await courseService.updateCourseVideo(req.params.videoId, req.body, req.files)
+
+        const payload = req.body
+
+        payload.courseId = req.params.id
+
+        const { data } = await courseService.updateCourseVideo(req.params.videoId, payload, req.files)
     
         return res.send(
             successResponse("Success", {
@@ -280,6 +285,7 @@ exports.createCourseAudio = async (req, res) => {
         const payload = req.body
 
         payload.userId = req.auth.id
+        payload.courseId = req.params.id
 
         const { data } = await courseService.createCourseAudio(payload, req.files)
     
@@ -305,8 +311,12 @@ exports.createCourseAudio = async (req, res) => {
  */
 exports.updateCourseAudio = async (req, res) => {
     try {
+
+        const payload = req.body
+
+        payload.courseId = req.params.id
     
-        const { data } = await courseService.updateCourseAudio(req.params.audioId, req.body, req.files)
+        const { data } = await courseService.updateCourseAudio(req.params.audioId, payload, req.files)
     
         return res.send(
             successResponse("Success", {
@@ -411,6 +421,7 @@ exports.createCourseDocument = async (req, res) => {
         const payload = req.body
 
         payload.userId = req.auth.id
+        payload.courseId = req.params.id
 
         const { data } = await courseService.createCourseDocument(payload, req.files)
     
@@ -436,8 +447,12 @@ exports.createCourseDocument = async (req, res) => {
  */
 exports.updateCourseDocument = async (req, res) => {
     try {
+
+        const payload = req.body
+
+        payload.courseId = req.params.id
     
-        const { data } = await courseService.updateCourseDocument(req.params.documentId, req.body, req.files)
+        const { data } = await courseService.updateCourseDocument(req.params.documentId, payload, req.files)
     
         return res.send(
             successResponse("Success", {
@@ -542,6 +557,7 @@ exports.createCourseText = async (req, res) => {
         const payload = req.body
 
         payload.userId = req.auth.id
+        payload.courseId = req.params.id
 
         const { data } = await courseService.createCourseText(payload, req.files)
     
@@ -567,8 +583,12 @@ exports.createCourseText = async (req, res) => {
  */
 exports.updateCourseText = async (req, res) => {
     try {
+
+        const payload = req.body
+
+        payload.courseId = req.params.id
     
-        const { data } = await courseService.updateCourseText(req.params.textId, req.body, req.files)
+        const { data } = await courseService.updateCourseText(req.params.textId, payload, req.files)
     
         return res.send(
             successResponse("Success", {
@@ -673,6 +693,7 @@ exports.createCourseTest = async (req, res) => {
         const payload = req.body
 
         payload.userId = req.auth.id
+        payload.courseId = req.params.id
 
         const { data } = await courseService.createCourseTest(payload, req.files)
     
@@ -698,8 +719,12 @@ exports.createCourseTest = async (req, res) => {
  */
 exports.updateCourseTest = async (req, res) => {
     try {
+
+        const payload = req.body
+
+        payload.courseId = req.params.id
     
-        const { data } = await courseService.updateCourseTest(req.params.testId, req.body, req.files)
+        const { data } = await courseService.updateCourseTest(req.params.testId, payload, req.files)
     
         return res.send(
             successResponse("Success", {
@@ -804,6 +829,7 @@ exports.createCourseQuiz = async (req, res) => {
         const payload = req.body
 
         payload.userId = req.auth.id
+        payload.courseId = req.params.id
 
         const { data } = await courseService.createCourseQuiz(payload, req.files)
     
@@ -829,8 +855,12 @@ exports.createCourseQuiz = async (req, res) => {
  */
 exports.updateCourseQuiz = async (req, res) => {
     try {
+
+        const payload = req.body
+
+        payload.courseId = req.params.id
     
-        const { data } = await courseService.updateCourseQuiz(req.params.quizId, req.body, req.files)
+        const { data } = await courseService.updateCourseQuiz(req.params.quizId, payload, req.files)
     
         return res.send(
             successResponse("Success", {
