@@ -9,7 +9,7 @@ exports.createCompany = async (payload) => {
     }
 
     return {
-        data: null
+        data: await this.findCompany(company.id)
     }
 }
 

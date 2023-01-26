@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   industry.init({
-    firstName: DataTypes.STRING
+    label: {
+      type: DataTypes.STRING(100),
+      field: 'label',
+    },
   }, {
     sequelize,
     modelName: 'industry',

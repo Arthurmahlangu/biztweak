@@ -17,7 +17,7 @@ exports.createIncubator = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await incubatorService.createIncubator(payload)
     

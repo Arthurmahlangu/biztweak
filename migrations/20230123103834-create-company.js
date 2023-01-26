@@ -70,14 +70,14 @@ module.exports = {
         field: 'userId',
         allowNull: false
       },
-      companyPhaseId: {
+      phaseId: {
         type: DataTypes.INTEGER.UNSIGNED,
-        field: 'companyPhaseId',
+        field: 'phaseId',
         allowNull: false
       },
-      companyIndustryId: {
+      industryId: {
         type: DataTypes.INTEGER.UNSIGNED,
-        field: 'companyIndustryId',
+        field: 'industryId',
         allowNull: false
       }
     })

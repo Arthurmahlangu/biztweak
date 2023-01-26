@@ -13,8 +13,8 @@ exports.createCompany = async (payload, files) => {
         monthlyTurnover, 
         annualTurnover, 
         userId, 
-        companyPhaseId, 
-        companyIndustryId
+        phaseId, 
+        industryId
     } = payload
 
     if (files) {
@@ -43,8 +43,8 @@ exports.createCompany = async (payload, files) => {
         monthlyTurnover, 
         annualTurnover, 
         userId, 
-        companyPhaseId, 
-        companyIndustryId
+        phaseId, 
+        industryId
     })
 
     return company
@@ -61,8 +61,8 @@ exports.updateCompany = async (id, payload, files) => {
         numberOfEmployees, 
         monthlyTurnover, 
         annualTurnover, 
-        companyPhaseId, 
-        companyIndustryId
+        phaseId, 
+        industryId
     } = payload
 
     if (files) {
@@ -90,8 +90,8 @@ exports.updateCompany = async (id, payload, files) => {
         numberOfEmployees, 
         monthlyTurnover, 
         annualTurnover, 
-        companyPhaseId, 
-        companyIndustryId
+        phaseId, 
+        industryId
     })
 
     return company

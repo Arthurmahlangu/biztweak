@@ -69,11 +69,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
-    companyPhaseId: {
+    phaseId: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
-    companyIndustryId: {
+    industryId: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     }

@@ -17,7 +17,7 @@ exports.createCourse = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourse(payload, req.files)
     
@@ -148,7 +148,7 @@ exports.createCourseVideo = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourseVideo(payload, req.files)
     
@@ -279,7 +279,7 @@ exports.createCourseAudio = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourseAudio(payload, req.files)
     
@@ -410,7 +410,7 @@ exports.createCourseDocument = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourseDocument(payload, req.files)
     
@@ -541,7 +541,7 @@ exports.createCourseText = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourseText(payload, req.files)
     
@@ -672,7 +672,7 @@ exports.createCourseTest = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourseTest(payload, req.files)
     
@@ -803,7 +803,7 @@ exports.createCourseQuiz = async (req, res) => {
     
         const payload = req.body
 
-        payload.userId = req.user.id
+        payload.userId = req.auth.id
 
         const { data } = await courseService.createCourseQuiz(payload, req.files)
     

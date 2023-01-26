@@ -60,7 +60,7 @@ const handler = async (auth, params, method, path, route) => {
                 })
 
                 if (found) {
-                    if (found.userid == self.id) {
+                    if (found.userId == self.id) {
                         if (rules.owner) {
                             return true
                         }
@@ -71,7 +71,7 @@ const handler = async (auth, params, method, path, route) => {
 
                         if (rules.group) {
                             const user = await db.user.findOne({ 
-                                where: { id: found.userid }
+                                where: { id: found.userId }
                             })
     
                             const userRole = await db.role.findOne({ 
@@ -136,7 +136,7 @@ module.exports = async (req, res, next) => {
 
     const auth = await jwt.decode(token)
 
-    const tokenData = await db.token.findOne({ where: { token, userid: auth.id, type: "Access-Token" } })
+    const tokenData = await db.token.findOne({ where: { token, userId: auth.id, type: "Access-Token" } })
 
     if (!tokenData) {
         return res.

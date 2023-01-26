@@ -14,7 +14,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   rule.init({
-    firstName: DataTypes.STRING
+    role: {
+      type: DataTypes.STRING
+    },
+    path: {
+      type: DataTypes.STRING
+    },
+    model: {
+      type: DataTypes.STRING
+    },
+    method: {
+      type: DataTypes.STRING
+    },
+    owner: {
+      default: false,
+      type: DataTypes.BOOLEAN
+    },
+    group: {
+      default: false,
+      type: DataTypes.BOOLEAN
+    },
+    other: {
+      default: false,
+      type: DataTypes.BOOLEAN
+    },
   }, {
     sequelize,
     modelName: 'rule',

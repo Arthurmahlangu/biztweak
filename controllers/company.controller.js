@@ -16,8 +16,8 @@ exports.createCompany = async (req, res) => {
     try {
     
         const payload = req.body
-
-        payload.userId = req.user.id
+        
+        payload.userId = req.auth.id
 
         const { data } = await companyService.createCompany(payload, req.files)
     
