@@ -37,8 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     registrationNumber: {
-      type: DataTypes.STRING(55),
-      unique: true
+      type: DataTypes.STRING(55)
     },
     registrationDate: {
       type: DataTypes.DATEONLY,
