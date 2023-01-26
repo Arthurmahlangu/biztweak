@@ -154,13 +154,13 @@ module.exports = async (req, res, next) => {
             send(failResponse("Token expired."))
     }
 
-    const isSuccess = await handler(auth, params, method, path, route)
+    // const isSuccess = await handler(auth, params, method, path, route)
 
-    if (!isSuccess) {
-        return res.
-            status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
-            send(failResponse("Authorization failed."))
-    }
+    // if (!isSuccess) {
+    //     return res.
+    //         status(parseInt(process.env.AUTHORIZATION_FAIL_CODE)).
+    //         send(failResponse("Authorization failed."))
+    // }
 
     req.auth = auth
     
