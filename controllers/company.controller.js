@@ -134,3 +134,28 @@ exports.findCompany = async (req, res) => {
         )
     }
 }
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.getMyCompanies = async (req, res) => {
+    try {
+    
+        const { data } = await companyService.getMyCompanies(req.auth.id)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}

@@ -98,19 +98,26 @@ exports.updateCompany = async (id, payload, files) => {
 }
 
 exports.deleteCompany = async (id) => {
-    const user = await companyRepository.deleteCompany(id)
+    const company = await companyRepository.deleteCompany(id)
 
-    return user
+    return company
 }
 
 exports.getCompanies = async () => {
-    const user = await companyRepository.getCompanies()
+    const company = await companyRepository.getCompanies()
 
-    return user
+    return company
 }
 
 exports.findCompany = async (id) => {
-    const user = await companyRepository.findCompany(id)
+    const company = await companyRepository.findCompany(id)
 
-    return user
+    return company
+}
+
+
+exports.getMyCompanies = async (id) => {
+    const company = await companyRepository.getMyCompanies(id)
+
+    return company
 }

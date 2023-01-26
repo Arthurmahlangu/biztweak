@@ -9,5 +9,6 @@ router.put('/companies/:id', AuthMiddleware, companyController.updateCompany)
 router.delete('/companies/:id', AuthMiddleware, companyController.deleteCompany)
 router.get('/companies/:id', AuthMiddleware, companyController.findCompany)
 router.get('/companies', AuthMiddleware, companyController.getCompanies)
+router.get('/companies/my-companies', AuthMiddleware, companyController.getMyCompanies)
 
 module.exports = router

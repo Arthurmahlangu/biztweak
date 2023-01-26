@@ -61,3 +61,14 @@ exports.getCompanies = async () => {
         data: company
     }
 }
+
+exports.getMyCompanies = async (userId) => {
+    const company = await db.company.findAll({
+        where: { userId },
+        attributes: companyResource
+    })
+
+    return {
+        data: company
+    }
+}
