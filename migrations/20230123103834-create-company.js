@@ -30,8 +30,7 @@ module.exports = {
       },
       registrationNumber: {
         type: DataTypes.STRING(55),
-        field: 'registrationNumber',
-        unique: true
+        field: 'registrationNumber'
       },
       registrationDate: {
         type: DataTypes.DATEONLY,
