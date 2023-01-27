@@ -1,4 +1,8 @@
 module.exports = [
     'id', 
-    'name'
+    'title',
+    'description',
+    'startDate',
+    'endDate',
+    'frequency'
 ]

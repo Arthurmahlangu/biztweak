@@ -29,7 +29,7 @@ exports.createAssessment = async (payload) => {
     const assessmentQuestion = await assessmentQuestionRepository.findQuestionWithPhaseInfo(questionsId)
 
     let n = 0
-    assessmentQuestion.data.forEach(({ question, phase, category, module, yesAnswer, noAnswer }) => {
+    assessmentQuestion.data.forEach(({ question, phase, category, module, yesAnswer, noAnswer, type }) => {
         const answer = answerResponse[n]
 
         if (answer.match(/yes/i)) {
@@ -39,6 +39,7 @@ exports.createAssessment = async (payload) => {
                 module, 
                 question,
                 answer,
+                type,
                 recommendation: yesAnswer
             })
         } else {
@@ -48,6 +49,7 @@ exports.createAssessment = async (payload) => {
                 module, 
                 question,
                 answer,
+                type,
                 recommendation: noAnswer
             })
         }
@@ -81,14 +83,15 @@ exports.createAssessment = async (payload) => {
         })
 
         let count = 0
-        responses.forEach(({ question, category, answer, module, recommendation }) => {
+        responses.forEach(({ question, category, answer, module, recommendation, type }) => {
             if (category == uniqueCategory) {
                 if (answer.match(/yes/i) ) {
                     count++
                     modules.push(module)
                     recommendations.push({
                         question,
-                        recommendation
+                        recommendation,
+                        type
                     })
                     if (!recommendedModules.includes(module)) {
                         recommendedModules.push(module)
@@ -96,7 +99,8 @@ exports.createAssessment = async (payload) => {
                 } else {
                     recommendations.push({
                         question,
-                        recommendation
+                        recommendation,
+                        type
                     })
                 }
             }
@@ -142,7 +146,6 @@ exports.updateAssessment = async (id, payload) => {
 
     return assessment
 }
-
 
 exports.deleteAssessment = async (id) => {
     const assessment = await assessmentRepository.deleteAssessment(id)

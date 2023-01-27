@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.user)
-      this.belongsTo(models.company_phase)
-      this.belongsTo(models.company_industry)
+      this.belongsTo(models.phase)
+      this.belongsTo(models.industry)
     }
   }
   company.init({

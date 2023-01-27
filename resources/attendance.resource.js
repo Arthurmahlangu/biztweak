@@ -1,4 +1,7 @@
 module.exports = [
     'id', 
-    'name'
+    'category',
+    'type',
+    'date',
+    'attended'
 ]

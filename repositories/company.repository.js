@@ -1,4 +1,7 @@
 const db = require("../models")
+const userResource = require("../resources/user.resource")
+const phaseResource = require("../resources/phase.resource")
+const industryResource = require("../resources/industry.resource")
 const companyResource = require("../resources/company.resource")
 
 exports.createCompany = async (payload) => {
@@ -40,7 +43,21 @@ exports.deleteCompany = async (id) => {
 exports.findCompany = async (id) => {
     const company = await db.company.findOne({
         where: { id },
-        attributes: companyResource
+        attributes: companyResource,
+        include: [
+            {
+                model: db.user,
+                attributes: userResource
+            },
+            {
+                model: db.phase,
+                attributes: phaseResource
+            },
+            {
+                model: db.industry,
+                attributes: industryResource
+            }
+        ]
     })
 
     if (!company) {
@@ -65,7 +82,21 @@ exports.getCompanies = async () => {
 exports.getMyCompanies = async (userId) => {
     const company = await db.company.findAll({
         where: { userId },
-        attributes: companyResource
+        attributes: companyResource,
+        include: [
+            {
+                model: db.user,
+                attributes: userResource
+            },
+            {
+                model: db.phase,
+                attributes: phaseResource
+            },
+            {
+                model: db.industry,
+                attributes: industryResource
+            }
+        ]
     })
 
     return {
