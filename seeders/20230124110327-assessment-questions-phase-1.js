@@ -11,6 +11,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -19,6 +20,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -27,6 +29,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -35,6 +38,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -46,6 +50,7 @@ module.exports = {
       noAnswer: '',
       category: 'Prototype',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -54,6 +59,7 @@ module.exports = {
       noAnswer: '',
       category: 'Prototype',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -65,6 +71,7 @@ module.exports = {
       noAnswer: '',
       category: 'Functional Capability',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -73,6 +80,7 @@ module.exports = {
       noAnswer: '',
       category: 'Functional Capability',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -84,6 +92,7 @@ module.exports = {
       noAnswer: 'Customer profile not determined',
       category: 'Customer Segments',
       module: 'Market Research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -92,6 +101,7 @@ module.exports = {
       noAnswer: 'Target audience has not been selected',
       category: 'Customer Segments',
       module: 'Market Intelligence',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -100,6 +110,7 @@ module.exports = {
       noAnswer: 'Target audience has not been located geographically',
       category: 'Customer Segments',
       module: 'Market research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -108,6 +119,7 @@ module.exports = {
       noAnswer: 'Target audience has not been segmented.',
       category: 'Customer Segments',
       module: 'SAM SOM TAM',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -116,6 +128,7 @@ module.exports = {
       noAnswer: 'Total accessible market has not been determined',
       category: 'Customer Segments',
       module: 'Total Addressable market',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -124,6 +137,7 @@ module.exports = {
       noAnswer: 'Total observable market has not been determined.',
       category: 'Customer Segments',
       module: 'Market research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -132,6 +146,7 @@ module.exports = {
       noAnswer: 'Ideal customer profile has not been determined.',
       category: 'Customer Segments',
       module: 'Ideal customer profile',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -140,6 +155,7 @@ module.exports = {
       noAnswer: 'Most important customers not determined',
       category: 'Customer Segments',
       module: 'Market Research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -148,6 +164,7 @@ module.exports = {
       noAnswer: '',
       category: 'Customer Segments',
       module: 'JOB/JOB|Business Research Officer',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -159,6 +176,7 @@ module.exports = {
       noAnswer: '',
       category: 'Revenue Streams',
       module: 'Revenue models',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -167,6 +185,7 @@ module.exports = {
       noAnswer: 'Value customers are willing to pay fpr not determined',
       category: 'Revenue Streams',
       module: 'Proof of concept',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -175,6 +194,7 @@ module.exports = {
       noAnswer: 'Current payment trends of customers not known',
       category: 'Revenue Streams',
       module: 'Competitor analysis',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -183,6 +203,7 @@ module.exports = {
       noAnswer: 'Preferred paymet method of customers not determined.',
       category: 'Revenue Streams',
       module: 'Market research, competitor analysis',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -191,6 +212,7 @@ module.exports = {
       noAnswer: '',
       category: 'Revenue Streams',
       module: 'JOB/JOB|Business Strategist',
+      type: 'Business concept',
       phaseId: phase.id
     },
 
@@ -202,6 +224,7 @@ module.exports = {
       noAnswer: 'Problem being solved not determined',
       category: 'Value Proposition',
       module: 'Value proposition canvas',
+      type: 'Business concept',
       phaseId: phase.id
     },{
       question: 'Do you know what value you deliver to the customer?',
@@ -209,6 +232,7 @@ module.exports = {
       noAnswer: 'Value being delivered not determined.',
       category: 'Value Proposition',
       module: 'Business model canvas',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -217,6 +241,7 @@ module.exports = {
       noAnswer: 'Customer needs have not been determined.',
       category: 'Value Proposition',
       module: 'Value proposition canvas',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -225,6 +250,7 @@ module.exports = {
       noAnswer: 'Uniques selling point not determined.',
       category: 'Value Proposition',
       module: 'Value proposition canvas',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -233,6 +259,7 @@ module.exports = {
       noAnswer: 'No elevator pitch',
       category: 'Value Proposition',
       module: 'Elevator pitch template',
+      type: 'Business concept',
       phaseId: phase.id
     },
 
@@ -244,6 +271,7 @@ module.exports = {
       noAnswer: 'Cost of sales not determined',
       category: 'Cost Structure',
       module: 'Costing, product & service pricing',
+      type: 'Business concept',
       phaseId: phase.id
     },{
       question: 'Have the costs involved in acquiring the key resources been determined?',
@@ -251,6 +279,7 @@ module.exports = {
       noAnswer: 'Cost of sales not determined',
       category: 'Cost Structure',
       module: 'Costing, product & service pricing',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -259,6 +288,7 @@ module.exports = {
       noAnswer: 'Cost of customer retention not determined',
       category: 'Cost Structure',
       module: 'Costing, product & service pricing',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -267,6 +297,7 @@ module.exports = {
       noAnswer: 'Cost of market penetration not determined',
       category: 'Cost Structure',
       module: 'Costing, product & service pricing',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -275,6 +306,7 @@ module.exports = {
       noAnswer: '',
       category: 'Cost Structure',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -286,6 +318,7 @@ module.exports = {
       noAnswer: '',
       category: 'Proof of Concept',
       module: 'Proof of Concept',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -296,6 +329,7 @@ module.exports = {
       noAnswer: 'Key resources needed have not been determined',
       category: 'Key Resources',
       module: 'organizational design and development',
+      type: 'Business concept',
       phaseId: phase.id
     }
 

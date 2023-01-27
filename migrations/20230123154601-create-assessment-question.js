@@ -32,6 +32,10 @@ module.exports = {
         type: DataTypes.TEXT,
         field: 'module'
       },
+      type: {
+        type: DataTypes.STRING(255),
+        field: 'type'
+      },
       createdAt: {
         type: DataTypes.DATE,
         field: 'createdAt',

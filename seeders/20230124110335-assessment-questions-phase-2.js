@@ -10,6 +10,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -18,6 +19,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -26,6 +28,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
@@ -34,6 +37,7 @@ module.exports = {
       noAnswer: '',
       category: 'Compliance and Certification',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -41,18 +45,20 @@ module.exports = {
 
     {
       question: 'Do you know the types of relationships you need to establish with your customer segments?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Customer relationship management has been established.',
+      noAnswer: 'Customer relationship management not established.',
       category: 'Customer relations',
       module: 'CRM',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
       question: 'Do you have a process for retaining your customer base?',
-      yesAnswer: '',
-      noAnswer: 'Sales Funnel',
+      yesAnswer: 'Processes for acquiring customers are established.',
+      noAnswer: 'Processes for acquiring customers are not established.',
       category: 'Customer relations',
-      module: '',
+      module: 'Sales funel',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -61,21 +67,24 @@ module.exports = {
       noAnswer: '',
       category: 'Customer relations',
       module: 'CRM',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
       question: 'Do you have a process for getting your customer base?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Processes in place for retaining customers.',
+      noAnswer: 'No processes in place for retaining customers',
       category: 'Customer relations',
       module: 'Sales planning, Customer acquistion plan',
+      type: 'Business concept',
       phaseId: phase.id
     },{
       question: 'Do you have a designated Customer Researcher Specialist for this?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'No systems in place for  growing customers.',
+      noAnswer: 'No systems in place for growing customers',
       category: 'Customer relations',
       module: '',
+      type: 'Business concept',
       phaseId: phase.id
     },
 
@@ -87,6 +96,7 @@ module.exports = {
       noAnswer: 'Channels to reach customers not developed',
       category: 'Channels',
       module: 'Social media marketing, marketing plan, marketing startegy, sales funnel, customer acquisition plan',
+      type: 'Business concept',
       phaseId: phase.id
     },{
       question: 'Do you have a marketing plan in place?',
@@ -94,6 +104,7 @@ module.exports = {
       noAnswer: 'Strategies to reach customers not determined',
       category: 'Channels',
       module: 'marketing plan',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -102,6 +113,7 @@ module.exports = {
       noAnswer: 'Network to to reach target audience not determined.',
       category: 'Channels',
       module: 'Sales funnel',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -110,6 +122,7 @@ module.exports = {
       noAnswer: 'No post sales support provided',
       category: 'Channels',
       module: 'Sales personnel',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -118,6 +131,7 @@ module.exports = {
       noAnswer: '',
       category: 'Channels',
       module: '',
+      type: 'Business concept',
       phaseId: phase.id
     },
 
@@ -129,6 +143,7 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'Competitor analysis',
+      type: '',
       phaseId: phase.id
     },{
       question: 'Do you know how to set up an online shop?',
@@ -136,6 +151,7 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'eCommerce',
+      type: '',
       phaseId: phase.id
     },
     {
@@ -144,6 +160,7 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'eCommerce',
+      type: '',
       phaseId: phase.id
     },
     {
@@ -152,6 +169,7 @@ module.exports = {
       noAnswer: '',
       category: 'e-Commerce',
       module: 'JOB/JOB|eCommerce officer/specialist',
+      type: '',
       phaseId: phase.id
     },
 
@@ -159,17 +177,19 @@ module.exports = {
 
     {
       question: 'Is there sufficient administration systems in place to help the company’s processes?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: "There is an administration system that's in use in the company.",
+      noAnswer: 'No administration systems in place.',
       category: 'Functional Capability',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },{
       question: 'Is the company’s organizational structure sufficient to support the delivery of products or services offered?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Organizational structure is sufficient to deliver on product/service',
+      noAnswer: 'Organizational structure not sufficient.',
       category: 'Functional Capability',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -181,6 +201,7 @@ module.exports = {
       noAnswer: 'Customer profile not determined',
       category: 'Customer Segments',
       module: 'Market Research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -189,6 +210,7 @@ module.exports = {
       noAnswer: 'Target audience has not been selected',
       category: 'Customer Segments',
       module: 'Market Intelligence',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -197,6 +219,7 @@ module.exports = {
       noAnswer: 'Target audience has not been located geographically',
       category: 'Customer Segments',
       module: 'Market research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -205,6 +228,7 @@ module.exports = {
       noAnswer: 'Target audience has not been segmented.',
       category: 'Customer Segments',
       module: 'SAM SOM TAM',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -213,6 +237,7 @@ module.exports = {
       noAnswer: 'Total accessible market has not been determined',
       category: 'Customer Segments',
       module: 'Total Addressable market',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -221,6 +246,7 @@ module.exports = {
       noAnswer: 'Total observable market has not been determined.',
       category: 'Customer Segments',
       module: 'Market research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -229,6 +255,7 @@ module.exports = {
       noAnswer: 'Ideal customer profile has not been determined.',
       category: 'Customer Segments',
       module: 'Ideal customer profile',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -237,6 +264,7 @@ module.exports = {
       noAnswer: 'Most important customers not determined',
       category: 'Customer Segments',
       module: 'Market Research',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -245,6 +273,7 @@ module.exports = {
       noAnswer: '',
       category: 'Customer Segments',
       module: 'JOB/JOB|Business Research Officer',
+      type: 'Business concept',
       phaseId: phase.id
     },
 
@@ -252,34 +281,38 @@ module.exports = {
 
     {
       question: 'Does the company have a defined business plan?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'There is a business plan that has been drafted. ',
+      noAnswer: 'No defined business plan.',
       category: 'Business and Customers',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Is the company executing the business plan?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'The company is currently executing the business plan.',
+      noAnswer: 'No defined business plan.',
       category: 'Business and Customers',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Does the company measure client/customer satisfaction?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Client satisfaction measured by the company',
+      noAnswer: 'Client satisfaction not measured.',
       category: 'Business and Customers',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Can you rate the effectiveness of client/customer engagement?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Customer engagement is measured',
+      noAnswer: 'Effectiveness of customer engagement not measured.',
       category: 'Business and Customers',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 
@@ -287,50 +320,56 @@ module.exports = {
 
     {
       question: 'Does the company advertise?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'The company does advertise',
+      noAnswer: "The company doesn't advertise",
       category: 'Marketing and Sales',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Is the company’s advertising effective?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Data on effectiveness of advertising is available.',
+      noAnswer: 'Effectiveness of advertising not measured.',
       category: 'Marketing and Sales',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Does the company conduct sales planning and developed targets?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Sales planning and targets are established.',
+      noAnswer: 'Sales planning and targets not established.',
       category: 'Marketing and Sales',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Do you have a price strategy in place?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'There is a pricing strategy that is in place.',
+      noAnswer: 'No price strategy in place',
       category: 'Marketing and Sales',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Do you review your pricing strategy often',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Pricing reviews done periodically.',
+      noAnswer: 'Pricing review not done.',
       category: 'Marketing and Sales',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Do you have a designated employee appointed for Marketing & Sales?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'A dedicated person for sales has been appointed.',
+      noAnswer: 'No dedicated person for sales',
       category: 'Marketing and Sales',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     
@@ -342,6 +381,7 @@ module.exports = {
       noAnswer: '',
       category: 'Revenue Streams',
       module: 'Revenue models',
+      type: 'Business concept',
       phaseId: phase.id
     },{
       question: 'Do you know the value that your customers are willing to pay for?',
@@ -349,6 +389,7 @@ module.exports = {
       noAnswer: 'Value customers are willing to pay fpr not determined',
       category: 'Revenue Streams',
       module: 'Proof of concept',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -357,6 +398,7 @@ module.exports = {
       noAnswer: 'Current payment trends of customers not known',
       category: 'Revenue Streams',
       module: 'Competitor analysis',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -365,6 +407,7 @@ module.exports = {
       noAnswer: 'Preferred paymet method of customers not determined.',
       category: 'Revenue Streams',
       module: 'Market research, competitor analysis',
+      type: 'Business concept',
       phaseId: phase.id
     },
     {
@@ -373,6 +416,7 @@ module.exports = {
       noAnswer: '',
       category: 'Revenue Streams',
       module: 'JOB/JOB|Business Strategist',
+      type: 'Business concept',
       phaseId: phase.id
     },
 
@@ -380,26 +424,29 @@ module.exports = {
 
     {
       question: 'Do the owners/executive management have sufficient experience in providing the product or service?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Owners have the required experience.',
+      noAnswer: "Owners don't have required experience.",
       category: 'Ownership and Mindset',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'The owners or management of the company are spending most of their time in the company?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Owners work fulltime in the business.',
+      noAnswer: 'Owners work part-time in the business.',
       category: 'Ownership and Mindset',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
     {
       question: 'Are the educational qualifications or background experience sufficient to support the delivery of products or services offered?',
-      yesAnswer: '',
-      noAnswer: '',
+      yesAnswer: 'Expertise are enough to deliver on the product/service',
+      noAnswer: 'Not enough expertise to deliver on products/service.',
       category: 'Ownership and Mindset',
       module: '',
+      type: 'Business structure',
       phaseId: phase.id
     },
 

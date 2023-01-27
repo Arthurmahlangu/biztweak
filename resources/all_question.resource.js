@@ -5,5 +5,6 @@ module.exports = [
     'noAnswer',
     'category',
     'module',
+    'type',
     ['createdAt','date']
 ]
