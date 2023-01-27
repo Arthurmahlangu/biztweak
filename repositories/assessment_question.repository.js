@@ -94,6 +94,7 @@ exports.getQuestionsAllInfo = async () => {
             'noAnswer',
             'category',
             'module',
+            'type',
             'phaseId'
         ]
     })

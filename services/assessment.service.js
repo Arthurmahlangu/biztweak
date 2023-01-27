@@ -7,7 +7,7 @@ exports.createAssessment = async (payload) => {
         companyId,
         questionsAndAnswers,
     } = payload
-
+    
     const questionsAndAnswersArray = JSON.parse(questionsAndAnswers)
 
     if (!Array.isArray(questionsAndAnswersArray)) {
