@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.user)
       this.belongsTo(models.phase)
       this.belongsTo(models.industry)
+      this.hasOne(models.assessment)
     }
   }
   company.init({

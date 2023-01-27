@@ -2,6 +2,7 @@ const db = require("../models")
 const userResource = require("../resources/user.resource")
 const phaseResource = require("../resources/phase.resource")
 const industryResource = require("../resources/industry.resource")
+const assessmentResource = require("../resources/assessment.resource")
 const companyResource = require("../resources/company.resource")
 
 exports.createCompany = async (payload) => {
@@ -56,12 +57,26 @@ exports.findCompany = async (id) => {
             {
                 model: db.industry,
                 attributes: industryResource
+            },
+            {
+                model: db.assessment,
+                attributes: assessmentResource
             }
         ]
     })
 
     if (!company) {
         throw new Error('Company not found.')
+    }
+
+    if (company.assessment) {
+        if (company.assessment.questionsAndAnswers) {
+            company.assessment.questionsAndAnswers = JSON.parse(company.assessment.questionsAndAnswers)
+        }
+        
+        if (company.assessment.report) {
+            company.assessment.report = JSON.parse(company.assessment.report)
+        }
     }
 
     return {

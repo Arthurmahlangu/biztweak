@@ -1,4 +1,6 @@
 module.exports = [
     'id', 
-    'questionsAndAnswers'
+    'questionsAndAnswers',
+    'report',
+    'recommendedModules'
 ]
