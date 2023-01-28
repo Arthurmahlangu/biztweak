@@ -47,6 +47,18 @@ exports.findAssessment = async (id) => {
         throw new Error('Assessment not found.')
     }
 
+    if (assessment) {
+        if (assessment.report) {
+            assessment.report = JSON.parse(assessment.report)
+        }
+        if (assessment.recommendedModules) {
+            assessment.recommendedModules = JSON.parse(assessment.recommendedModules)
+        }
+        if (assessment.questionsAndAnswers) {
+            assessment.questionsAndAnswers = JSON.parse(assessment.questionsAndAnswers)
+        }
+    }
+
     return {
         data: assessment
     }

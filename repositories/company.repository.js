@@ -73,7 +73,9 @@ exports.findCompany = async (id) => {
         if (company.assessment.questionsAndAnswers) {
             company.assessment.questionsAndAnswers = JSON.parse(company.assessment.questionsAndAnswers)
         }
-        
+        if (company.assessment.recommendedModules) {
+            company.assessment.recommendedModules = JSON.parse(company.assessment.recommendedModules)
+        }
         if (company.assessment.report) {
             company.assessment.report = JSON.parse(company.assessment.report)
         }
