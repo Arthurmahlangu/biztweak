@@ -28,9 +28,13 @@ module.exports = {
         field: 'category',
         allowNull: false
       },
-      module: {
+      modules: {
         type: DataTypes.TEXT,
-        field: 'module'
+        field: 'modules'
+      },
+      topics: {
+        type: DataTypes.TEXT,
+        field: 'topics'
       },
       type: {
         type: DataTypes.STRING(255),

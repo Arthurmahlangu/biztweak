@@ -114,3 +114,24 @@ exports.getQuestionsByPhase = async (phaseId) => {
         data: question
     }
 }
+
+exports.getQuestionsByPhaseForSystem = async (phaseId) => {
+    const question = await db.assessment_question.findAll({ 
+        where: { phaseId }, 
+        attributes: [
+            'id', 
+            'question',
+            'yesAnswer',
+            'noAnswer',
+            'category',
+            'modules',
+            'topics',
+            'type',
+            'phaseId'
+        ] 
+    })
+
+    return {
+        data: question
+    }
+}

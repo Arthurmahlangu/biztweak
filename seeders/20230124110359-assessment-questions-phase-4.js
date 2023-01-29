@@ -11,7 +11,8 @@ module.exports = {
         yesAnswer: 'Channels to reach customers are developed',
         noAnswer: 'Channels to reach customers not developed',
         category: 'Channels',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },{
@@ -19,7 +20,8 @@ module.exports = {
         yesAnswer: 'Strategies to reach customers has been determined.',
         noAnswer: 'Strategies to reach customers not determined',
         category: 'Channels',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -28,7 +30,8 @@ module.exports = {
         yesAnswer: 'Network to reach target audience has been determined.',
         noAnswer: 'Network to to reach target audience not determined.',
         category: 'Channels',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -37,7 +40,8 @@ module.exports = {
         yesAnswer: 'Post sales support has been provided.',
         noAnswer: 'No post sales support provided',
         category: 'Channels',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -46,7 +50,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Channels',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -58,7 +63,8 @@ module.exports = {
         yesAnswer: "There is an administration system that's in use in the company.",
         noAnswer: 'No administration systems in place.',
         category: 'Functional Capability',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -67,7 +73,8 @@ module.exports = {
         yesAnswer: 'Organizational structure is sufficient to deliver on product/service',
         noAnswer: 'Organizational structure not sufficient.',
         category: 'Functional Capability',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -79,7 +86,8 @@ module.exports = {
         yesAnswer: 'Customer profile has been determined.',
         noAnswer: 'Customer profile not determined',
         category: 'Customer Segments',
-        module: 'Market Research',
+        modules: '',
+        topics: 'Market Research',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -88,7 +96,8 @@ module.exports = {
         yesAnswer: 'Target audience has been determined.',
         noAnswer: 'Target audience has not been selected',
         category: 'Customer Segments',
-        module: 'Market Intelligence',
+        modules: '',
+        topics: 'Market Intelligence',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -97,7 +106,8 @@ module.exports = {
         yesAnswer: 'Target audience has been located geographically.',
         noAnswer: 'Target audience has not been located geographically',
         category: 'Customer Segments',
-        module: 'Market research',
+        modules: '',
+        topics: 'Market research',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -106,7 +116,8 @@ module.exports = {
         yesAnswer: 'Target audience has been segmented.',
         noAnswer: 'Target audience has not been segmented.',
         category: 'Customer Segments',
-        module: 'SAM SOM TAM',
+        modules: '',
+        topics: 'SAM SOM TAM',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -115,7 +126,8 @@ module.exports = {
         yesAnswer: 'Total accessible market has been determined.',
         noAnswer: 'Total accessible market has not been determined',
         category: 'Customer Segments',
-        module: 'Total Addressable market',
+        modules: '',
+        topics: 'Total Addressable market',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -124,7 +136,8 @@ module.exports = {
         yesAnswer: 'Total observable market has been determined.',
         noAnswer: 'Total observable market has not been determined.',
         category: 'Customer Segments',
-        module: 'Market research',
+        modules: '',
+        topics: 'Market research',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -133,7 +146,8 @@ module.exports = {
         yesAnswer: 'Ideal customer profile has been determined.',
         noAnswer: 'Ideal customer profile has not been determined.',
         category: 'Customer Segments',
-        module: 'Ideal customer profile',
+        modules: '',
+        topics: 'Ideal customer profile',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -142,7 +156,8 @@ module.exports = {
         yesAnswer: 'Most important not determined.',
         noAnswer: 'Most important customers not determined',
         category: 'Customer Segments',
-        module: 'Market Research',
+        modules: '',
+        topics: 'Market Research',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -151,7 +166,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Customer Segments',
-        module: 'JOB/JOB|Business Research Officer',
+        modules: '',
+        topics: 'JOB/JOB|Business Research Officer',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -163,7 +179,8 @@ module.exports = {
         yesAnswer: 'There is a business plan that has been drafted. ',
         noAnswer: 'No defined business plan.',
         category: 'Business and Customers',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -172,7 +189,8 @@ module.exports = {
         yesAnswer: 'The company is currently executing the business plan.',
         noAnswer: 'No defined business plan.',
         category: 'Business and Customers',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -181,7 +199,8 @@ module.exports = {
         yesAnswer: 'Client satisfaction measured by the company',
         noAnswer: 'Client satisfaction not measured.',
         category: 'Business and Customers',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -190,7 +209,8 @@ module.exports = {
         yesAnswer: 'Customer engagement is measured',
         noAnswer: 'Effectiveness of customer engagement not measured.',
         category: 'Business and Customers',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -202,7 +222,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Revenue Streams',
-        module: 'Revenue models',
+        modules: '',
+        topics: 'Revenue models',
         type: 'Business concept',
         phaseId: phase.id
       },{
@@ -210,7 +231,8 @@ module.exports = {
         yesAnswer: 'Value customers are willing to pay for has been determined',
         noAnswer: 'Value customers are willing to pay fpr not determined',
         category: 'Revenue Streams',
-        module: 'Proof of concept',
+        modules: '',
+        topics: 'Proof of concept',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -219,7 +241,8 @@ module.exports = {
         yesAnswer: 'Current payment trends of customers are known',
         noAnswer: 'Current payment trends of customers not known',
         category: 'Revenue Streams',
-        module: 'Competitor analysis',
+        modules: '',
+        topics: 'Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -228,7 +251,8 @@ module.exports = {
         yesAnswer: 'Preferred paymet method of customers has been determined.',
         noAnswer: 'Preferred paymet method of customers not determined.',
         category: 'Revenue Streams',
-        module: 'Market research, competitor analysis',
+        modules: '',
+        topics: 'Market research, competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -237,7 +261,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Revenue Streams',
-        module: 'JOB/JOB|Business Strategist',
+        modules: '',
+        topics: 'JOB/JOB|Business Strategist',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -249,7 +274,8 @@ module.exports = {
         yesAnswer: 'Problem being solved has been determined.',
         noAnswer: 'Problem being solved not determined',
         category: 'Value Proposition',
-        module: 'Value proposition canvas',
+        modules: '',
+        topics: 'Value proposition canvas',
         type: 'Business concept',
         phaseId: phase.id
       },{
@@ -257,7 +283,8 @@ module.exports = {
         yesAnswer: 'Value being delivered has been determined.',
         noAnswer: 'Value being delivered not determined.',
         category: 'Value Proposition',
-        module: 'Business model canvas',
+        modules: '',
+        topics: 'Business model canvas',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -266,7 +293,8 @@ module.exports = {
         yesAnswer: 'Customer needs have been determined.',
         noAnswer: 'Customer needs have not been determined.',
         category: 'Value Proposition',
-        module: 'Value proposition canvas',
+        modules: '',
+        topics: 'Value proposition canvas',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -275,7 +303,8 @@ module.exports = {
         yesAnswer: 'uniques selling point has been determined.',
         noAnswer: 'Uniques selling point not determined.',
         category: 'Value Proposition',
-        module: 'Value proposition canvas',
+        modules: '',
+        topics: 'Value proposition canvas',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -284,7 +313,8 @@ module.exports = {
         yesAnswer: 'An elevator pitch has been prepared.',
         noAnswer: 'No elevator pitch',
         category: 'Value Proposition',
-        module: 'Elevator pitch template',
+        modules: '',
+        topics: 'Elevator pitch template',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -296,7 +326,8 @@ module.exports = {
         yesAnswer: 'The business is aware of current solutions from competitors.',
         noAnswer: 'The business is not aware of current solutions',
         category: 'Current Alternatives',
-        module: 'Competitor analysis',
+        modules: '',
+        topics: 'Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -305,7 +336,8 @@ module.exports = {
         yesAnswer: 'The business is aware of its competitors',
         noAnswer: 'The business is not aware of its competitors',
         category: 'Current Alternatives',
-        module: 'Competitor analysis',
+        modules: '',
+        topics: 'Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -317,7 +349,8 @@ module.exports = {
         yesAnswer: 'Owners have the required experience.',
         noAnswer: "Owners don't have required experience.",
         category: 'Ownership and Mindset',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -326,7 +359,8 @@ module.exports = {
         yesAnswer: 'Owners work fulltime in the business.',
         noAnswer: 'Owners work part-time in the business.',
         category: 'Ownership and Mindset',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -335,7 +369,8 @@ module.exports = {
         yesAnswer: 'Expertise are enough to deliver on the product/service',
         noAnswer: 'Not enough expertise to deliver on products/service.',
         category: 'Ownership and Mindset',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -347,7 +382,8 @@ module.exports = {
         yesAnswer: 'Strategic partners have been determined.',
         noAnswer: 'Strategic partners have not been determined.',
         category: 'Key Partners',
-        module: 'Boot Strapping Stratgey',
+        modules: '',
+        topics: 'Boot Strapping Stratgey',
         type: 'Business concept',
         phaseId: phase.id
       },{
@@ -355,7 +391,8 @@ module.exports = {
         yesAnswer: 'The value of strategic partnerships has been determined',
         noAnswer: 'Value of strategic partnerships not determined',
         category: 'Key Partners',
-        module: 'Boot Strapping Stratgey',
+        modules: '',
+        topics: 'Boot Strapping Stratgey',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -367,7 +404,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -376,7 +414,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -385,7 +424,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -394,7 +434,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Legal Commercial Contracts Agreements',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -406,7 +447,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
-        module: 'Sales Funnel',
+        modules: '',
+        topics: 'Sales Funnel',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -415,7 +457,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -424,7 +467,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -436,7 +480,8 @@ module.exports = {
         yesAnswer: 'Budgeting and forecasting are being done.',
         noAnswer: 'No budgeting and forecasting done',
         category: 'Financial Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -445,7 +490,8 @@ module.exports = {
         yesAnswer: 'Financial reconsiliations are being recorded',
         noAnswer: 'No reconciliations done.',
         category: 'Financial Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -454,7 +500,8 @@ module.exports = {
         yesAnswer: "There's a cashflow management process in place.",
         noAnswer: 'No cashflow management systems in place',
         category: 'Financial Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -463,7 +510,8 @@ module.exports = {
         yesAnswer: 'Company financials are documented',
         noAnswer: 'Company financials not documented',
         category: 'Financial Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -472,7 +520,8 @@ module.exports = {
         yesAnswer: 'A dedicated person to manageme finances has been appointed.',
         noAnswer: 'No dedicated person for financial management.',
         category: 'Financial Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -481,7 +530,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Financial Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -493,7 +543,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        module: 'Costing, product & service pricing',
+        modules: '',
+        topics: 'Costing, product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -502,7 +553,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        module: 'Costing, product & service pricing',
+        modules: '',
+        topics: 'Costing, product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -511,7 +563,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        module: 'Costing, product & service pricing',
+        modules: '',
+        topics: 'Costing, product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -520,7 +573,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        module: 'Costing, product & service pricing',
+        modules: '',
+        topics: 'Costing, product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -529,7 +583,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -541,7 +596,8 @@ module.exports = {
         yesAnswer: 'There is a growth strategy that has been drafted',
         noAnswer: 'Growth strategy not determined.',
         category: 'Growth Strategy',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -550,7 +606,8 @@ module.exports = {
         yesAnswer: 'Investment in product/service development is being done.',
         noAnswer: 'Investment in product or service development not sufficient.',
         category: 'Growth Strategy',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -562,7 +619,8 @@ module.exports = {
         yesAnswer: 'Business processes are documented',
         noAnswer: 'Business processes are not documented',
         category: 'Business Process Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -571,7 +629,8 @@ module.exports = {
         yesAnswer: 'Business processes are reviewed',
         noAnswer: 'Business processes not reviewed regularly or updated.',
         category: 'Business Process Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -580,7 +639,8 @@ module.exports = {
         yesAnswer: 'Method to identify deviations in processes has been established.',
         noAnswer: 'No method to manage deviations in business processes.',
         category: 'Business Process Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -589,7 +649,8 @@ module.exports = {
         yesAnswer: 'Business process are communicated within the organization',
         noAnswer: 'Business processes not communicated throughout the company',
         category: 'Business Process Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -598,7 +659,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Business Process Management',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -610,7 +672,8 @@ module.exports = {
         yesAnswer: 'Employee satisfaction surveys are completed',
         noAnswer: 'No employee satisfaction surveys',
         category: 'Employee Satisfaction',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -619,7 +682,8 @@ module.exports = {
         yesAnswer: 'Employee satisfaction surveys are completed',
         noAnswer: 'No employee satisfaction surveys',
         category: 'Employee Satisfaction',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -631,7 +695,8 @@ module.exports = {
         yesAnswer: 'Key resources needed have been determined.',
         noAnswer: 'Key resources needed have not been determined',
         category: 'Key Resources',
-        module: 'organizational design and development',
+        modules: '',
+        topics: 'organizational design and development',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -643,7 +708,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -652,7 +718,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -661,7 +728,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },
@@ -670,7 +738,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Compliance and Certification',
-        module: '',
+        modules: '',
+        topics: '',
         type: 'Business structure',
         phaseId: phase.id
       },

@@ -4,7 +4,8 @@ module.exports = [
     'yesAnswer',
     'noAnswer',
     'category',
-    'module',
+    'modules',
+    'topics',
     'type',
     ['createdAt','date']
 ]
