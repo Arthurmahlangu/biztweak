@@ -1,4 +1,5 @@
 const { successResponse, failResponse } = require("../helpers/methods")
+const assessmentService = require("../services/assessment.service")
 const companyService = require("../services/company.service")
 
 const errorLog = require("simple-node-logger").createSimpleLogger({
@@ -145,6 +146,36 @@ exports.getMyCompanies = async (req, res) => {
     try {
     
         const { data } = await companyService.getMyCompanies(req.auth.id)
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createCompanyAssessment = async (req, res) => {
+    try {
+    
+        const payload = req.body
+        
+        payload.userId = req.auth.id
+        payload.companyId = req.params.id
+
+        const { data } = await assessmentService.createAssessment(payload)
     
         return res.send(
             successResponse("Success", {

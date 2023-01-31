@@ -52,7 +52,7 @@ module.exports = {
       yesAnswer: 'Customer relationship management has been established.',
       noAnswer: 'Customer relationship management not established.',
       category: 'Customer relations',
-      modules: '',
+      modules: 'Strategic planning',
       topics: 'CRM',
       type: 'Business concept',
       phaseId: phase.id
@@ -62,7 +62,7 @@ module.exports = {
       yesAnswer: 'Processes for acquiring customers are established.',
       noAnswer: 'Processes for acquiring customers are not established.',
       category: 'Customer relations',
-      modules: '',
+      modules: 'Marketing and Sales',
       topics: 'Sales funel',
       type: 'Business concept',
       phaseId: phase.id
@@ -72,7 +72,7 @@ module.exports = {
       yesAnswer: '',
       noAnswer: '',
       category: 'Customer relations',
-      modules: '',
+      modules: 'Strategic planning',
       topics: 'CRM',
       type: 'Business concept',
       phaseId: phase.id
@@ -82,7 +82,7 @@ module.exports = {
       yesAnswer: 'Processes in place for retaining customers.',
       noAnswer: 'No processes in place for retaining customers',
       category: 'Customer relations',
-      modules: '',
+      modules: 'Marketing and Sales',
       topics: 'Sales planning, Customer acquistion plan',
       type: 'Business concept',
       phaseId: phase.id
@@ -113,8 +113,8 @@ module.exports = {
       yesAnswer: 'Strategies to reach customers has been determined.',
       noAnswer: 'Strategies to reach customers not determined',
       category: 'Channels',
-      modules: '',
-      topics: 'marketing plan',
+      modules: 'Marketing and Sales',
+      topics: 'Marketing plan',
       type: 'Business concept',
       phaseId: phase.id
     },
@@ -123,7 +123,7 @@ module.exports = {
       yesAnswer: 'Network to reach target audience has been determined.',
       noAnswer: 'Network to to reach target audience not determined.',
       category: 'Channels',
-      modules: '',
+      modules: 'Marketing and Sales',
       topics: 'Sales funnel',
       type: 'Business concept',
       phaseId: phase.id
@@ -133,7 +133,7 @@ module.exports = {
       yesAnswer: 'Post sales support has been provided.',
       noAnswer: 'No post sales support provided',
       category: 'Channels',
-      modules: '',
+      modules: 'Marketing and Sales',
       topics: 'Sales personnel',
       type: 'Business concept',
       phaseId: phase.id
@@ -156,7 +156,7 @@ module.exports = {
       yesAnswer: '',
       noAnswer: '',
       category: 'e-Commerce',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Competitor analysis',
       type: '',
       phaseId: phase.id
@@ -240,7 +240,7 @@ module.exports = {
       yesAnswer: 'Target audience has been located geographically.',
       noAnswer: 'Target audience has not been located geographically',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market research',
       type: 'Business concept',
       phaseId: phase.id
@@ -250,7 +250,7 @@ module.exports = {
       yesAnswer: 'Target audience has been segmented.',
       noAnswer: 'Target audience has not been segmented.',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'SAM SOM TAM',
       type: 'Business concept',
       phaseId: phase.id
@@ -270,7 +270,7 @@ module.exports = {
       yesAnswer: 'Total observable market has been determined.',
       noAnswer: 'Total observable market has not been determined.',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market research',
       type: 'Business concept',
       phaseId: phase.id
@@ -280,7 +280,7 @@ module.exports = {
       yesAnswer: 'Ideal customer profile has been determined.',
       noAnswer: 'Ideal customer profile has not been determined.',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Ideal customer profile',
       type: 'Business concept',
       phaseId: phase.id
@@ -290,7 +290,7 @@ module.exports = {
       yesAnswer: 'Most important not determined.',
       noAnswer: 'Most important customers not determined',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market Research',
       type: 'Business concept',
       phaseId: phase.id
@@ -419,7 +419,7 @@ module.exports = {
       yesAnswer: '',
       noAnswer: '',
       category: 'Revenue Streams',
-      modules: '',
+      modules: 'Strategic planning',
       topics: 'Revenue models',
       type: 'Business concept',
       phaseId: phase.id
@@ -428,7 +428,7 @@ module.exports = {
       yesAnswer: 'Value customers are willing to pay for has been determined',
       noAnswer: 'Value customers are willing to pay fpr not determined',
       category: 'Revenue Streams',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Proof of concept',
       type: 'Business concept',
       phaseId: phase.id
@@ -438,7 +438,7 @@ module.exports = {
       yesAnswer: 'Current payment trends of customers are known',
       noAnswer: 'Current payment trends of customers not known',
       category: 'Revenue Streams',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Competitor analysis',
       type: 'Business concept',
       phaseId: phase.id
@@ -448,7 +448,7 @@ module.exports = {
       yesAnswer: 'Preferred paymet method of customers has been determined.',
       noAnswer: 'Preferred paymet method of customers not determined.',
       category: 'Revenue Streams',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market research, competitor analysis',
       type: 'Business concept',
       phaseId: phase.id

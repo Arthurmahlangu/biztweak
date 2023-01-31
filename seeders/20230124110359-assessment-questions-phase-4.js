@@ -86,7 +86,7 @@ module.exports = {
         yesAnswer: 'Customer profile has been determined.',
         noAnswer: 'Customer profile not determined',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Market Research',
         type: 'Business concept',
         phaseId: phase.id
@@ -96,7 +96,7 @@ module.exports = {
         yesAnswer: 'Target audience has been determined.',
         noAnswer: 'Target audience has not been selected',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Market Intelligence',
         type: 'Business concept',
         phaseId: phase.id
@@ -106,7 +106,7 @@ module.exports = {
         yesAnswer: 'Target audience has been located geographically.',
         noAnswer: 'Target audience has not been located geographically',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Market research',
         type: 'Business concept',
         phaseId: phase.id
@@ -116,7 +116,7 @@ module.exports = {
         yesAnswer: 'Target audience has been segmented.',
         noAnswer: 'Target audience has not been segmented.',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'SAM SOM TAM',
         type: 'Business concept',
         phaseId: phase.id
@@ -136,7 +136,7 @@ module.exports = {
         yesAnswer: 'Total observable market has been determined.',
         noAnswer: 'Total observable market has not been determined.',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Market research',
         type: 'Business concept',
         phaseId: phase.id
@@ -146,7 +146,7 @@ module.exports = {
         yesAnswer: 'Ideal customer profile has been determined.',
         noAnswer: 'Ideal customer profile has not been determined.',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Ideal customer profile',
         type: 'Business concept',
         phaseId: phase.id
@@ -156,7 +156,7 @@ module.exports = {
         yesAnswer: 'Most important not determined.',
         noAnswer: 'Most important customers not determined',
         category: 'Customer Segments',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Market Research',
         type: 'Business concept',
         phaseId: phase.id
@@ -222,7 +222,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Revenue Streams',
-        modules: '',
+        modules: 'Strategic planning',
         topics: 'Revenue models',
         type: 'Business concept',
         phaseId: phase.id
@@ -231,7 +231,7 @@ module.exports = {
         yesAnswer: 'Value customers are willing to pay for has been determined',
         noAnswer: 'Value customers are willing to pay fpr not determined',
         category: 'Revenue Streams',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Proof of concept',
         type: 'Business concept',
         phaseId: phase.id
@@ -241,7 +241,7 @@ module.exports = {
         yesAnswer: 'Current payment trends of customers are known',
         noAnswer: 'Current payment trends of customers not known',
         category: 'Revenue Streams',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
@@ -251,8 +251,8 @@ module.exports = {
         yesAnswer: 'Preferred paymet method of customers has been determined.',
         noAnswer: 'Preferred paymet method of customers not determined.',
         category: 'Revenue Streams',
-        modules: '',
-        topics: 'Market research, competitor analysis',
+        modules: 'Market Intelligence',
+        topics: 'Market research, Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -274,7 +274,7 @@ module.exports = {
         yesAnswer: 'Problem being solved has been determined.',
         noAnswer: 'Problem being solved not determined',
         category: 'Value Proposition',
-        modules: '',
+        modules: 'Strategic planning',
         topics: 'Value proposition canvas',
         type: 'Business concept',
         phaseId: phase.id
@@ -293,7 +293,7 @@ module.exports = {
         yesAnswer: 'Customer needs have been determined.',
         noAnswer: 'Customer needs have not been determined.',
         category: 'Value Proposition',
-        modules: '',
+        modules: 'Strategic planning',
         topics: 'Value proposition canvas',
         type: 'Business concept',
         phaseId: phase.id
@@ -303,7 +303,7 @@ module.exports = {
         yesAnswer: 'uniques selling point has been determined.',
         noAnswer: 'Uniques selling point not determined.',
         category: 'Value Proposition',
-        modules: '',
+        modules: 'Strategic planning',
         topics: 'Value proposition canvas',
         type: 'Business concept',
         phaseId: phase.id
@@ -326,7 +326,7 @@ module.exports = {
         yesAnswer: 'The business is aware of current solutions from competitors.',
         noAnswer: 'The business is not aware of current solutions',
         category: 'Current Alternatives',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
@@ -336,7 +336,7 @@ module.exports = {
         yesAnswer: 'The business is aware of its competitors',
         noAnswer: 'The business is not aware of its competitors',
         category: 'Current Alternatives',
-        modules: '',
+        modules: 'Market Intelligence',
         topics: 'Competitor analysis',
         type: 'Business concept',
         phaseId: phase.id
@@ -391,7 +391,7 @@ module.exports = {
         yesAnswer: 'The value of strategic partnerships has been determined',
         noAnswer: 'Value of strategic partnerships not determined',
         category: 'Key Partners',
-        modules: '',
+        modules: 'Strategic planning',
         topics: 'Boot Strapping Stratgey',
         type: 'Business concept',
         phaseId: phase.id
@@ -447,7 +447,7 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Traction',
-        modules: '',
+        modules: 'Marketing and Sales',
         topics: 'Sales Funnel',
         type: 'Business concept',
         phaseId: phase.id
@@ -553,8 +553,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        modules: '',
-        topics: 'Costing, product & service pricing',
+        modules: 'Financial Management, Marketing and Sales',
+        topics: 'Costing, Product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -563,8 +563,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        modules: '',
-        topics: 'Costing, product & service pricing',
+        modules: 'Financial Management, Marketing and Sales',
+        topics: 'Costing, Product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -573,8 +573,8 @@ module.exports = {
         yesAnswer: '',
         noAnswer: '',
         category: 'Cost Structure',
-        modules: '',
-        topics: 'Costing, product & service pricing',
+        modules: 'Financial Management, Marketing and Sales',
+        topics: 'Costing, Product & service pricing',
         type: 'Business concept',
         phaseId: phase.id
       },
@@ -695,8 +695,8 @@ module.exports = {
         yesAnswer: 'Key resources needed have been determined.',
         noAnswer: 'Key resources needed have not been determined',
         category: 'Key Resources',
-        modules: '',
-        topics: 'organizational design and development',
+        modules: 'Talent Management',
+        topics: 'Organizational design and development',
         type: 'Business concept',
         phaseId: phase.id
       },

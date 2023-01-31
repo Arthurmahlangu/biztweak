@@ -10,136 +10,11 @@
     <link href='css/railscasts.css' rel='stylesheet' />
   </head>
   <body>
-    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="-1232012556"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#biztweak-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">Biztweak API</a><div class="small pad0x quiet space-top1" data-reactid="8">Auth</div><a href="#auth-1" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Auth</a><div class="small pad0x quiet space-top1" data-reactid="10">User</div><a href="#user-1" class="line-height15 pad0x pad00y quiet block " data-reactid="11">User</a><div class="small pad0x quiet space-top1" data-reactid="12">Company</div><a href="#company-1" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Company</a><div class="small pad0x quiet space-top1" data-reactid="14">Assessment</div><a href="#assessment-1" class="line-height15 pad0x pad00y quiet block " data-reactid="15">Assessment</a><div class="small pad0x quiet space-top1" data-reactid="16">Course</div><a href="#course-1" class="line-height15 pad0x pad00y quiet block " data-reactid="17">Course</a></div></div><div class="space-left16" data-reactid="18"><div class="" data-reactid="19"><div class="clearfix" data-reactid="20"><div data-title="Biztweak API" class="keyline-top section contain clearfix " data-reactid="21"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="22"><h2 id="biztweak-api">Biztweak API</h2>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="-1204910898"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#biztweak-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">Biztweak API</a><div class="small pad0x quiet space-top1" data-reactid="8">Auth</div><a href="#auth-1" class="line-height15 pad0x pad00y quiet block " data-reactid="9">Auth</a><div class="small pad0x quiet space-top1" data-reactid="10">Industry</div><a href="#industry-1" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Industry</a><div class="small pad0x quiet space-top1" data-reactid="12">Business phase</div><a href="#business-phase-1" class="line-height15 pad0x pad00y quiet block " data-reactid="13">Business phase</a><div class="small pad0x quiet space-top1" data-reactid="14">User</div><a href="#user-1" class="line-height15 pad0x pad00y quiet block " data-reactid="15">User</a><div class="small pad0x quiet space-top1" data-reactid="16">Company</div><a href="#company-1" class="line-height15 pad0x pad00y quiet block " data-reactid="17">Company</a><div class="small pad0x quiet space-top1" data-reactid="18">Course</div><a href="#course-1" class="line-height15 pad0x pad00y quiet block " data-reactid="19">Course</a><div class="small pad0x quiet space-top1" data-reactid="20">Event</div><a href="#event-1" class="line-height15 pad0x pad00y quiet block " data-reactid="21">Event</a><div class="small pad0x quiet space-top1" data-reactid="22">Attendance</div><a href="#attendance-1" class="line-height15 pad0x pad00y quiet block " data-reactid="23">Attendance</a><div class="small pad0x quiet space-top1" data-reactid="24">Incubator</div><a href="#incubator-1" class="line-height15 pad0x pad00y quiet block " data-reactid="25">Incubator</a></div></div><div class="space-left16" data-reactid="26"><div class="" data-reactid="27"><div class="clearfix" data-reactid="28"><div data-title="Biztweak API" class="keyline-top section contain clearfix " data-reactid="29"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="30"><h2 id="biztweak-api">Biztweak API</h2>
 <p>Welcome to biztweak backend-api.</p>
-</div></div><div data-title="Auth" class="keyline-top section contain clearfix " data-reactid="23"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="24"><h2 id="auth-1">Auth</h2>
+</div></div><div data-title="Auth" class="keyline-top section contain clearfix " data-reactid="31"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="32"><h2 id="auth-1">Auth</h2>
 <p>This is our high-quality auth API. You can use this API to request resources.</p>
-</div></div><div data-title="Create biz account" class="keyline-top section contain clearfix " data-reactid="25"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="26"><h3 id="create-biz-account">Create biz account</h3>
-<p>Body</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>fullname</code></td>
-<td>String</td>
-<td>(required) the fullname</td>
-</tr>
-<tr>
-<td><code>email</code></td>
-<td>String</td>
-<td>(required) valid email address</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>String</td>
-<td>(required) strong password</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="27"><div class='endpoint dark fill-dark round '>
-      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/email-auth</div>
-    </div>
-<h4 id="response-200">Response (200)</h4>
-<pre class='hljs'>{
-  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
-  <span class="hljs-attr">"package"</span>: {
-    <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
-      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
-      <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
-      <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-13T10:12:32.000Z"</span>
-    }
-  }
-}</pre>
-</div></div><div data-title="Login to account" class="keyline-top section contain clearfix " data-reactid="28"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="29"><h3 id="login-to-account">Login to account</h3>
-<p>Body</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>email</code></td>
-<td>String</td>
-<td>(required) valid email address</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>String</td>
-<td>(required) strong password</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="30"><div class='endpoint dark fill-dark round '>
-      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/email-auth</div>
-    </div>
-<h4 id="response-200-1">Response (200)</h4>
-<pre class='hljs'>{
-  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
-  <span class="hljs-attr">"package"</span>: {
-    <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9I"</span>,
-      <span class="hljs-attr">"user"</span>: {
-        <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
-        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
-        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
-        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
-        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-13T10:12:32.000Z"</span>
-      }
-    }
-  }
-}</pre>
-</div></div><div data-title="User" class="keyline-top section contain clearfix " data-reactid="31"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="32"><h2 id="user-1">User</h2>
-<p>This is our high-quality users API. You can use this API to request resources.</p>
-</div></div><div data-title="Create admin user" class="keyline-top section contain clearfix " data-reactid="33"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="34"><h3 id="create-admin-user">Create admin user</h3>
-<p>Header</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bearer token</code></td>
-<td>String</td>
-<td>(required) Token</td>
-</tr>
-</tbody>
-</table>
+</div></div><div data-title="Create biz account" class="keyline-top section contain clearfix " data-reactid="33"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="34"><h3 id="create-biz-account">Create biz account</h3>
 <p>Body</p>
 <table>
 <thead>
@@ -169,41 +44,31 @@
 </table>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="35"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/users/admin</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/email-auth</div>
     </div>
-<h4 id="response-200-2">Response (200)</h4>
+<h4 id="response-200">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
   <span class="hljs-attr">"package"</span>: {
     <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
-      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
-      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ADMIN"</span>,
-      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
-      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+      <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-13T10:12:32.000Z"</span>
     }
   }
 }</pre>
-</div></div><div data-title="Create super user" class="keyline-top section contain clearfix " data-reactid="36"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="37"><h3 id="create-super-user">Create super user</h3>
-<p>Header</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bearer token</code></td>
-<td>String</td>
-<td>(required) Token</td>
-</tr>
-</tbody>
-</table>
+</div></div><div data-title="Login to account" class="keyline-top section contain clearfix " data-reactid="36"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="37"><h3 id="login-to-account">Login to account</h3>
 <p>Body</p>
 <table>
 <thead>
@@ -214,11 +79,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>fullname</code></td>
-<td>String</td>
-<td>(required) the fullname</td>
-</tr>
 <tr>
 <td><code>email</code></td>
 <td>String</td>
@@ -233,24 +93,233 @@
 </table>
 </div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="38"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/users/super</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/email-auth</div>
     </div>
-<h4 id="response-200-3">Response (200)</h4>
+<h4 id="response-200-1">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
   <span class="hljs-attr">"package"</span>: {
     <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
-      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"super@gmail.com"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"super@gmail.com"</span>,
-      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
-      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
-      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
+      <span class="hljs-attr">"token"</span>: <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9I"</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"lebohang@gmail.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-13T10:12:32.000Z"</span>
+      }
     }
   }
 }</pre>
-</div></div><div data-title="Create mentor user" class="keyline-top section contain clearfix " data-reactid="39"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="40"><h3 id="create-mentor-user">Create mentor user</h3>
+</div></div><div data-title="Forgot password request" class="keyline-top section contain clearfix " data-reactid="39"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="40"><h3 id="forgot-password-request">Forgot password request</h3>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="41"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/forgot-password</div>
+    </div>
+<h4 id="response-200-2">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Update forgot password" class="keyline-top section contain clearfix " data-reactid="42"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="43"><h3 id="update-forgot-password">Update forgot password</h3>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>String</td>
+<td>(required) valid forgot password url sent to user email</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="44"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/forgot-password</div>
+    </div>
+<h4 id="response-200-3">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Industry" class="keyline-top section contain clearfix " data-reactid="45"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="46"><h2 id="industry-1">Industry</h2>
+<p>This is our high-quality industries API. You can use this API to request resources.</p>
+</div></div><div data-title="List all industries" class="keyline-top section contain clearfix " data-reactid="47"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="48"><h3 id="list-all-industries">List all industries</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phaseId</code></td>
+<td>Integer</td>
+<td>(required) Business phase ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="49"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/industries</div>
+    </div>
+<h4 id="response-200-4">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Admin/Business support"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Agriculture, Forestry,Fishing and Hunting"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Arts, Entertainment and Recreation"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Constrution"</span>
+        }
+    ]
+  }
+}</pre>
+</div></div><div data-title="Business phase" class="keyline-top section contain clearfix " data-reactid="50"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="51"><h2 id="business-phase-1">Business phase</h2>
+<p>This is our high-quality business phases API. You can use this API to request resources.</p>
+</div></div><div data-title="List all business phases" class="keyline-top section contain clearfix " data-reactid="52"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="53"><h3 id="list-all-business-phases">List all business phases</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phaseId</code></td>
+<td>Integer</td>
+<td>(required) Business phase ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="54"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/phases</div>
+    </div>
+<h4 id="response-200-5">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have an idea but don’t know what to do next."</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have a business but I am not making money."</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have product/services, but I have poor sales."</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"We are generating revenue, we would like to grow through investment."</span>
+        }
+    ]
+  }
+}</pre>
+</div></div><div data-title="User" class="keyline-top section contain clearfix " data-reactid="55"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="56"><h2 id="user-1">User</h2>
+<p>This is our high-quality users API. You can use this API to request resources.</p>
+</div></div><div data-title="Create admin user" class="keyline-top section contain clearfix " data-reactid="57"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="58"><h3 id="create-admin-user">Create admin user</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -295,11 +364,139 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="41"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="59"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/admin</div>
+    </div>
+<h4 id="response-200-6">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ADMIN"</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
+    }
+  }
+}</pre>
+</div></div><div data-title="Create super user" class="keyline-top section contain clearfix " data-reactid="60"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="61"><h3 id="create-super-user">Create super user</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="62"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/users/super</div>
+    </div>
+<h4 id="response-200-7">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"super@gmail.com"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"super@gmail.com"</span>,
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
+      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
+    }
+  }
+}</pre>
+</div></div><div data-title="Create mentor user" class="keyline-top section contain clearfix " data-reactid="63"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="64"><h3 id="create-mentor-user">Create mentor user</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fullname</code></td>
+<td>String</td>
+<td>(required) the fullname</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>(required) strong password</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="65"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/mentor</div>
     </div>
-<h4 id="response-200-4">Response (200)</h4>
+<h4 id="response-200-8">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
@@ -314,7 +511,7 @@
     }
   }
 }</pre>
-</div></div><div data-title="Update user" class="keyline-top section contain clearfix " data-reactid="42"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="43"><h3 id="update-user">Update user</h3>
+</div></div><div data-title="Update user" class="keyline-top section contain clearfix " data-reactid="66"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="67"><h3 id="update-user">Update user</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -396,11 +593,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="44"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="68"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-5">Response (200)</h4>
+<h4 id="response-200-9">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
@@ -408,7 +605,7 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="Update email" class="keyline-top section contain clearfix " data-reactid="45"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="46"><h3 id="update-email">Update email</h3>
+</div></div><div data-title="Update email" class="keyline-top section contain clearfix " data-reactid="69"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="70"><h3 id="update-email">Update email</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -460,11 +657,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="47"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="71"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span>/email</div>
     </div>
-<h4 id="response-200-6">Response (200)</h4>
+<h4 id="response-200-10">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
@@ -472,7 +669,7 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="Update password" class="keyline-top section contain clearfix " data-reactid="48"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="49"><h3 id="update-password">Update password</h3>
+</div></div><div data-title="Update password" class="keyline-top section contain clearfix " data-reactid="72"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="73"><h3 id="update-password">Update password</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -524,11 +721,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="50"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="74"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span>/password</div>
     </div>
-<h4 id="response-200-7">Response (200)</h4>
+<h4 id="response-200-11">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
@@ -536,7 +733,7 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="Update role" class="keyline-top section contain clearfix " data-reactid="51"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="52"><h3 id="update-role">Update role</h3>
+</div></div><div data-title="Update role" class="keyline-top section contain clearfix " data-reactid="75"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="76"><h3 id="update-role">Update role</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -588,11 +785,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="53"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="77"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span>/role</div>
     </div>
-<h4 id="response-200-8">Response (200)</h4>
+<h4 id="response-200-12">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
@@ -600,7 +797,7 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="List all users" class="keyline-top section contain clearfix " data-reactid="54"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="55"><h3 id="list-all-users">List all users</h3>
+</div></div><div data-title="List all users" class="keyline-top section contain clearfix " data-reactid="78"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="79"><h3 id="list-all-users">List all users</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -618,11 +815,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="56"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="80"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users</div>
     </div>
-<h4 id="response-200-9">Response (200)</h4>
+<h4 id="response-200-13">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
@@ -661,7 +858,7 @@
     ]
   }
 }</pre>
-</div></div><div data-title="Find user" class="keyline-top section contain clearfix " data-reactid="57"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="58"><h3 id="find-user">Find user</h3>
+</div></div><div data-title="Find user" class="keyline-top section contain clearfix " data-reactid="81"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="82"><h3 id="find-user">Find user</h3>
 <p>Find a specific user.</p>
 <p>Header</p>
 <table>
@@ -697,11 +894,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="59"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="83"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-10">Response (200)</h4>
+<h4 id="response-200-14">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
@@ -723,7 +920,7 @@
     }
   }
 }</pre>
-</div></div><div data-title="Delete user" class="keyline-top section contain clearfix " data-reactid="60"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="61"><h3 id="delete-user">Delete user</h3>
+</div></div><div data-title="Delete user" class="keyline-top section contain clearfix " data-reactid="84"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="85"><h3 id="delete-user">Delete user</h3>
 <p>Delete a specific user.</p>
 <p>Header</p>
 <table>
@@ -759,11 +956,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="62"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="86"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
       <div class='pad0 code small endpoint-url'>/api/v1/users/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-11">Response (200)</h4>
+<h4 id="response-200-15">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
@@ -771,9 +968,9 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="Company" class="keyline-top section contain clearfix " data-reactid="63"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="64"><h2 id="company-1">Company</h2>
+</div></div><div data-title="Company" class="keyline-top section contain clearfix " data-reactid="87"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="88"><h2 id="company-1">Company</h2>
 <p>This is our high-quality companies API. You can use this API to request resources.</p>
-</div></div><div data-title="Create company" class="keyline-top section contain clearfix " data-reactid="65"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="66"><h3 id="create-company">Create company</h3>
+</div></div><div data-title="Create company" class="keyline-top section contain clearfix " data-reactid="89"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="90"><h3 id="create-company">Create company</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -817,7 +1014,7 @@
 <td>(required) company physical address</td>
 </tr>
 <tr>
-<td><code>phase</code></td>
+<td><code>phaseId</code></td>
 <td>String</td>
 <td>(required) business phase</td>
 </tr>
@@ -827,71 +1024,90 @@
 <td>(required) start of the company</td>
 </tr>
 <tr>
-<td><code>registration_number</code></td>
+<td><code>registrationNumber</code></td>
 <td>Datetime</td>
 <td>(optional) company registration number</td>
 </tr>
 <tr>
-<td><code>registration_date</code></td>
+<td><code>registrationDate</code></td>
 <td>Datetime</td>
 <td>(optional) registration date</td>
 </tr>
 <tr>
-<td><code>products_or_services</code></td>
+<td><code>productsOrServices</code></td>
 <td>String</td>
 <td>(required) company products or services</td>
 </tr>
 <tr>
-<td><code>industry</code></td>
+<td><code>industryId</code></td>
 <td>String</td>
 <td>(required) company industry</td>
 </tr>
 <tr>
-<td><code>employees</code></td>
+<td><code>numberOfEmployees</code></td>
 <td>String</td>
 <td>(required) number of employees in a company</td>
 </tr>
 <tr>
-<td><code>monthly_turnover</code></td>
+<td><code>monthlyTurnover</code></td>
 <td>String</td>
 <td>(required) monthly turnover</td>
 </tr>
 <tr>
-<td><code>annual_turnover</code></td>
+<td><code>annualTurnover</code></td>
 <td>String</td>
 <td>(required) annual turnover</td>
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="67"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="91"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/api/v1/companies</div>
     </div>
-<h4 id="response-200-12">Response (200)</h4>
+<h4 id="response-200-16">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Success"</span>,
   <span class="hljs-attr">"package"</span>: {
     <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-      <span class="hljs-attr">"userid"</span>: <span class="hljs-number">1</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
-      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
-      <span class="hljs-attr">"phase"</span>: <span class="hljs-string">"Example phase"</span>,
-      <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"Example reg number"</span>,
-      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"2022-08-08T13:00:00.000Z"</span>,
-      <span class="hljs-attr">"products_or_services"</span>: <span class="hljs-string">"Example"</span>,
-      <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example"</span>,
-      <span class="hljs-attr">"employees"</span>: <span class="hljs-number">50</span>,
-      <span class="hljs-attr">"monthly_turnover"</span>: <span class="hljs-number">3000</span>,
-      <span class="hljs-attr">"annual_turnover"</span>: <span class="hljs-number">6000000</span>,
-      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-11T08:39:15.203Z"</span>,
-      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-11T08:39:15.203Z"</span>
+      <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Company 10"</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"25 Test Street, Joburg 4342"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"registrationNumber"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-11"</span>,
+        <span class="hljs-attr">"productsOrServices"</span>: <span class="hljs-string">"Shoes, pants"</span>,
+        <span class="hljs-attr">"numberOfEmployees"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"monthlyTurnover"</span>: <span class="hljs-number">4993</span>,
+        <span class="hljs-attr">"annualTurnover"</span>: <span class="hljs-number">49987</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullNames"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"workExperience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"workExperience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"marketNewsletter"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"productUpdatesAndCommunityAnnouncements"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-31T07:10:13.000Z"</span>
+        },
+        <span class="hljs-attr">"phase"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have a business but I am not making money."</span>
+        },
+        <span class="hljs-attr">"industry"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+          <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Constrution"</span>
+        },
+        <span class="hljs-attr">"assessment"</span>: <span class="hljs-literal">null</span>
+      }
     }
   }
 }</pre>
-</div></div><div data-title="Update company" class="keyline-top section contain clearfix " data-reactid="68"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="69"><h3 id="update-company">Update company</h3>
+</div></div><div data-title="Update company" class="keyline-top section contain clearfix " data-reactid="92"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="93"><h3 id="update-company">Update company</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -998,11 +1214,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="70"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="94"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
       <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-13">Response (200)</h4>
+<h4 id="response-200-17">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
@@ -1010,7 +1226,7 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="List all companies" class="keyline-top section contain clearfix " data-reactid="71"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="72"><h3 id="list-all-companies">List all companies</h3>
+</div></div><div data-title="List all companies" class="keyline-top section contain clearfix " data-reactid="95"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="96"><h3 id="list-all-companies">List all companies</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -1028,53 +1244,44 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="73"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="97"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/api/v1/companies</div>
     </div>
-<h4 id="response-200-14">Response (200)</h4>
+<h4 id="response-200-18">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Success"</span>,
   <span class="hljs-attr">"package"</span>: {
     <span class="hljs-attr">"data"</span>: [
       {
         <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
-        <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
-        <span class="hljs-attr">"phase"</span>: <span class="hljs-string">"Example phase"</span>,
-        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"Example reg number"</span>,
-        <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"2022-08-08T13:00:00.000Z"</span>,
-        <span class="hljs-attr">"products_or_services"</span>: <span class="hljs-string">"Example"</span>,
-        <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example"</span>,
-        <span class="hljs-attr">"employees"</span>: <span class="hljs-number">50</span>,
-        <span class="hljs-attr">"monthly_turnover"</span>: <span class="hljs-number">3000</span>,
-        <span class="hljs-attr">"annual_turnover"</span>: <span class="hljs-number">6000000</span>,
-        <span class="hljs-attr">"rating"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T08:39:15.000Z"</span>,
-        <span class="hljs-attr">"user"</span>: {
-          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
-          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
-          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
-          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T08:31:01.000Z"</span>
-        },
-        <span class="hljs-attr">"report"</span>: <span class="hljs-literal">null</span>
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Company 10"</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"25 Test Street, Joburg 4342"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"registrationNumber"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-11"</span>,
+        <span class="hljs-attr">"productsOrServices"</span>: <span class="hljs-string">"Shoes, pants"</span>,
+        <span class="hljs-attr">"numberOfEmployees"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"monthlyTurnover"</span>: <span class="hljs-number">4993</span>,
+        <span class="hljs-attr">"annualTurnover"</span>: <span class="hljs-number">49987</span>
       },
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Company 10"</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"25 Test Street, Joburg 4342"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"registrationNumber"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-11"</span>,
+        <span class="hljs-attr">"productsOrServices"</span>: <span class="hljs-string">"Shoes, pants"</span>,
+        <span class="hljs-attr">"numberOfEmployees"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"monthlyTurnover"</span>: <span class="hljs-number">4993</span>,
+        <span class="hljs-attr">"annualTurnover"</span>: <span class="hljs-number">49987</span>
+      }
     ]
   }
 }</pre>
-</div></div><div data-title="Find company" class="keyline-top section contain clearfix " data-reactid="74"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="75"><h3 id="find-company">Find company</h3>
+</div></div><div data-title="Find company" class="keyline-top section contain clearfix " data-reactid="98"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="99"><h3 id="find-company">Find company</h3>
 <p>Find a specific company.</p>
 <p>Header</p>
 <table>
@@ -1110,139 +1317,133 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="76"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="100"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-15">Response (200)</h4>
+<h4 id="response-200-19">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Success"</span>,
   <span class="hljs-attr">"package"</span>: {
     <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"error"</span>: <span class="hljs-literal">false</span>,
-      <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Company 10"</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"25 Test Street, Joburg 4342"</span>,
+      <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"registrationNumber"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-11"</span>,
+      <span class="hljs-attr">"productsOrServices"</span>: <span class="hljs-string">"Shoes, pants"</span>,
+      <span class="hljs-attr">"numberOfEmployees"</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">"monthlyTurnover"</span>: <span class="hljs-number">4993</span>,
+      <span class="hljs-attr">"annualTurnover"</span>: <span class="hljs-number">49987</span>,
+      <span class="hljs-attr">"user"</span>: {
         <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
-        <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
-        <span class="hljs-attr">"phase"</span>: <span class="hljs-string">"Example phase"</span>,
-        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"Example reg number"</span>,
-        <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"2022-08-08T13:00:00.000Z"</span>,
-        <span class="hljs-attr">"products_or_services"</span>: <span class="hljs-string">"Example"</span>,
-        <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example"</span>,
-        <span class="hljs-attr">"employees"</span>: <span class="hljs-number">50</span>,
-        <span class="hljs-attr">"monthly_turnover"</span>: <span class="hljs-number">3000</span>,
-        <span class="hljs-attr">"annual_turnover"</span>: <span class="hljs-number">6000000</span>,
-        <span class="hljs-attr">"rating"</span>: <span class="hljs-string">"2"</span>,
-        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T13:27:19.000Z"</span>,
-        <span class="hljs-attr">"assessments"</span>: {
-          <span class="hljs-attr">"id"</span>: <span class="hljs-number">12</span>,
-          <span class="hljs-attr">"answers"</span>: [
-            {
-              <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-              <span class="hljs-attr">"question"</span>: <span class="hljs-string">"Example question"</span>,
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
-              <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"YES"</span>
-            }
-          ],
-          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>
-        },
-        <span class="hljs-attr">"user"</span>: {
-          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
-          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
-          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
-          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
-          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T13:21:03.000Z"</span>
-        },
-        <span class="hljs-attr">"report"</span>: {
-          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-          <span class="hljs-attr">"scores"</span>: [
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">20</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Channels"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"E-commerce"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Functional Capability"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer segments"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Business and customers"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Marketing and sales"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            },
-            {
-              <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and mindset"</span>,
-              <span class="hljs-attr">"percentage"</span>: <span class="hljs-number">0</span>
-            }
-          ],
-          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T13:42:09.000Z"</span>
-        },
-        <span class="hljs-attr">"courses"</span>: [
+        <span class="hljs-attr">"fullNames"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"workExperience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"workExperience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"marketNewsletter"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"productUpdatesAndCommunityAnnouncements"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-31T07:10:13.000Z"</span>
+      },
+      <span class="hljs-attr">"phase"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have a business but I am not making money."</span>
+      },
+      <span class="hljs-attr">"industry"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Constrution"</span>
+      },
+      <span class="hljs-attr">"assessment"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"questionsAndAnswers"</span>: [
           {
-            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
-            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Example course"</span>,
-            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Example description"</span>,
-            <span class="hljs-attr">"logo"</span>: <span class="hljs-string">"127.0.0.1:5000/storage/courses/1673444159752_a669e72e-cf80-49fb-8109-47932dccbad2.jpg"</span>,
-            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
-            <span class="hljs-attr">"score"</span>: <span class="hljs-number">80</span>,
-            <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T13:35:59.000Z"</span>,
-            <span class="hljs-attr">"recomended_course"</span>: {
-              <span class="hljs-attr">"companyid"</span>: <span class="hljs-number">1</span>,
-              <span class="hljs-attr">"courseid"</span>: <span class="hljs-number">2</span>,
-              <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>,
-              <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>
-            }
+            <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">76</span>,
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+            <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Current payment trends of customers not known"</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business concept"</span>
           },
           {
-            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
-            <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Example course 2"</span>,
-            <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Example description 2"</span>,
-            <span class="hljs-attr">"logo"</span>: <span class="hljs-string">"127.0.0.1:5000/storage/courses/1673448149069_38cf0b75-3016-4a13-8da7-ff49891dc7c2.jpg"</span>,
-            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
-            <span class="hljs-attr">"score"</span>: <span class="hljs-number">80</span>,
-            <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-11T14:42:29.000Z"</span>,
-            <span class="hljs-attr">"recomended_course"</span>: {
-              <span class="hljs-attr">"companyid"</span>: <span class="hljs-number">1</span>,
-              <span class="hljs-attr">"courseid"</span>: <span class="hljs-number">3</span>,
-              <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>,
-              <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-11T14:44:18.000Z"</span>
-            }
+            <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">77</span>,
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+            <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Preferred paymet method of customers not determined."</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business concept"</span>
+          },
+          {
+            <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">78</span>,
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+            <span class="hljs-attr">"output"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business concept"</span>
+          },
+          {
+            <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">79</span>,
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+            <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Owners don't have required experience."</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and Mindset"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
+          },
+          {
+            <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">80</span>,
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+            <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Owners work part-time in the business."</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and Mindset"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
+          },
+          {
+            <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">81</span>,
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+            <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Not enough expertise to deliver on products/service."</span>,
+            <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and Mindset"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
           }
-        ]
+        ],
+        <span class="hljs-attr">"report"</span>: {
+          <span class="hljs-attr">"Compliance and Certification"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Customer relations"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Channels"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"e-Commerce"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Functional Capability"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Customer Segments"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Business and Customers"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Marketing and Sales"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Revenue Streams"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">"Ownership and Mindset"</span>: <span class="hljs-number">0</span>
+        },
+        <span class="hljs-attr">"recommendedModules"</span>: {
+          <span class="hljs-attr">"Strategic planning"</span>: [
+            <span class="hljs-string">"CRM"</span>,
+            <span class="hljs-string">"Revenue models"</span>
+          ],
+          <span class="hljs-attr">"Marketing and Sales"</span>: [
+            <span class="hljs-string">"Sales funel"</span>,
+            <span class="hljs-string">"Sales planning"</span>,
+            <span class="hljs-string">"Customer acquistion plan"</span>,
+            <span class="hljs-string">"Marketing plan"</span>,
+            <span class="hljs-string">"Sales funnel"</span>,
+            <span class="hljs-string">"Sales personnel"</span>
+          ],
+          <span class="hljs-attr">"Market Intelligence"</span>: [
+            <span class="hljs-string">"Competitor analysis"</span>,
+            <span class="hljs-string">"Market research"</span>,
+            <span class="hljs-string">"SAM SOM TAM"</span>,
+            <span class="hljs-string">"Ideal customer profile"</span>,
+            <span class="hljs-string">"Market Research"</span>,
+            <span class="hljs-string">"Proof of concept"</span>,
+            <span class="hljs-string">"competitor analysis"</span>
+          ]
+        }
       }
     }
   }
 }</pre>
-</div></div><div data-title="Delete company" class="keyline-top section contain clearfix " data-reactid="77"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="78"><h3 id="delete-company">Delete company</h3>
+</div></div><div data-title="Delete company" class="keyline-top section contain clearfix " data-reactid="101"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="102"><h3 id="delete-company">Delete company</h3>
 <p>Delete a specific company.</p>
 <p>Header</p>
 <table>
@@ -1278,11 +1479,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="79"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="103"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
       <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-16">Response (200)</h4>
+<h4 id="response-200-20">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
@@ -1290,240 +1491,444 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="Assessment" class="keyline-top section contain clearfix " data-reactid="80"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="81"><h2 id="assessment-1">Assessment</h2>
-<p>This is our high-quality assessments API. You can use this API to request resources.</p>
-</div></div><div data-title="Create assessment" class="keyline-top section contain clearfix " data-reactid="82"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="83"><h3 id="create-assessment">Create assessment</h3>
+</div></div><div data-title="List all my companies" class="keyline-top section contain clearfix " data-reactid="104"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="105"><h3 id="list-all-my-companies">List all my companies</h3>
 <p>Header</p>
 <table>
 <thead>
 <tr>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>bearer token</code></td>
+<td>String</td>
 <td>(required) Token</td>
 </tr>
 </tbody>
 </table>
-<p>Body</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>(optional) the name of the wobble</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>(optional) a description of the wobble</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="84"><div class='endpoint dark fill-dark round '>
-      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/assessments</div>
-    </div>
-<h4 id="response-200-17">Response (200)</h4>
-<pre class='hljs'>{
-  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
-  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
-}</pre>
-</div></div><div data-title="Update assessment" class="keyline-top section contain clearfix " data-reactid="85"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="86"><h3 id="update-assessment">Update assessment</h3>
-<p>Header</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bearer token</code></td>
-<td>(required) Token</td>
-</tr>
-</tbody>
-</table>
-<p>Parameters</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>(required) Assessment ID</td>
-</tr>
-</tbody>
-</table>
-<p>Body</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>(optional) the name of the wobble</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>(optional) a description of the wobble</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="87"><div class='endpoint dark fill-dark round '>
-      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/assessments/<span class="strong">{id}</span></div>
-    </div>
-<h4 id="response-200-18">Response (200)</h4>
-<pre class='hljs'>{
-  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
-  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
-}</pre>
-</div></div><div data-title="List all assessments" class="keyline-top section contain clearfix " data-reactid="88"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="89"><h3 id="list-all-assessments">List all assessments</h3>
-<p>Header</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bearer token</code></td>
-<td>(required) Token</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="90"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="106"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/assessments</div>
-    </div>
-<h4 id="response-200-19">Response (200)</h4>
-<pre class='hljs'>[
-  {
-    <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
-    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
-    <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
-    <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
-  },
-  {
-    <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
-    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
-    <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
-    <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
-  }
-]</pre>
-</div></div><div data-title="Find assessment" class="keyline-top section contain clearfix " data-reactid="91"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="92"><h3 id="find-assessment">Find assessment</h3>
-<p>Find a specific assessment.</p>
-<p>Header</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bearer token</code></td>
-<td>(required) Token</td>
-</tr>
-</tbody>
-</table>
-<p>Parameters</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>(required) Assessment ID</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="93"><div class='endpoint dark fill-dark round '>
-      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/assessments/<span class="strong">{id}</span></div>
-    </div>
-<h4 id="response-200-20">Response (200)</h4>
-<pre class='hljs'>{
-  <span class="hljs-attr">"owner"</span>: <span class="hljs-string">"{username}"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"{wobble_id}"</span>,
-  <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
-  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
-}</pre>
-</div></div><div data-title="Delete assessment" class="keyline-top section contain clearfix " data-reactid="94"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="95"><h3 id="delete-assessment">Delete assessment</h3>
-<p>Delete a specific assessment.</p>
-<p>Header</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bearer token</code></td>
-<td>(required) Token</td>
-</tr>
-</tbody>
-</table>
-<p>Parameters</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>(required) Assessment ID</td>
-</tr>
-</tbody>
-</table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="96"><div class='endpoint dark fill-dark round '>
-      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
-      <div class='pad0 code small endpoint-url'>/api/v1/assessments/<span class="strong">{id}</span></div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies/my-companies</div>
     </div>
 <h4 id="response-200-21">Response (200)</h4>
 <pre class='hljs'>{
-  <span class="hljs-attr">"modified"</span>: <span class="hljs-string">"{timestamp}"</span>
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Success"</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Company 10"</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"25 Test Street, Joburg 4342"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"registrationNumber"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-11"</span>,
+        <span class="hljs-attr">"productsOrServices"</span>: <span class="hljs-string">"Shoes, pants"</span>,
+        <span class="hljs-attr">"numberOfEmployees"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"monthlyTurnover"</span>: <span class="hljs-number">4993</span>,
+        <span class="hljs-attr">"annualTurnover"</span>: <span class="hljs-number">49987</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullNames"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"workExperience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"workExperience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"marketNewsletter"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"productUpdatesAndCommunityAnnouncements"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-31T07:10:13.000Z"</span>
+        },
+        <span class="hljs-attr">"phase"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have a business but I am not making money."</span>
+        },
+        <span class="hljs-attr">"industry"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+          <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Constrution"</span>
+        }
+      },
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Company 10"</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"25 Test Street, Joburg 4342"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"registrationNumber"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-11"</span>,
+        <span class="hljs-attr">"productsOrServices"</span>: <span class="hljs-string">"Shoes, pants"</span>,
+        <span class="hljs-attr">"numberOfEmployees"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-attr">"monthlyTurnover"</span>: <span class="hljs-number">4993</span>,
+        <span class="hljs-attr">"annualTurnover"</span>: <span class="hljs-number">49987</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullNames"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"workExperience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"workExperience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"marketNewsletter"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"productUpdatesAndCommunityAnnouncements"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"registrationDate"</span>: <span class="hljs-string">"2023-01-31T07:10:13.000Z"</span>
+        },
+        <span class="hljs-attr">"phase"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-attr">"label"</span>: <span class="hljs-string">"I have a business but I am not making money."</span>
+        },
+        <span class="hljs-attr">"industry"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+          <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Constrution"</span>
+        }
+      }
+    ]
+  }
 }</pre>
-</div></div><div data-title="Course" class="keyline-top section contain clearfix " data-reactid="97"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="98"><h2 id="course-1">Course</h2>
+</div></div><div data-title="Create company assessment" class="keyline-top section contain clearfix " data-reactid="107"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="108"><h3 id="create-company-assessment">Create company assessment</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Company ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>questionsAndAnswers</code></td>
+<td>String</td>
+<td>(required) strinified array of json with two values (questionId, answer) e.g [{questionId: 1, answer: "YES"}]</td>
+</tr>
+</tbody>
+</table>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>companyId</code></td>
+<td>Integer</td>
+<td>(required) company ID</td>
+</tr>
+<tr>
+<td><code>questionsAndAnswers</code></td>
+<td>String</td>
+<td>(required) strinified array of json with two values (questionId, answer) e.g [{questionId: 1, answer: "YES"}]</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="109"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/companies/<span class="strong">{id}</span>/assessments</div>
+    </div>
+<h4 id="response-200-22">Response (200)</h4>
+<pre class='hljs'>{
+  "status": true,
+  "message": "Success",
+  "package": {
+    "data": {
+      "report": {
+        "Compliance and Certification": 0,
+        "Customer relations": 0,
+        "Channels": 0,
+        "e-Commerce": 0,
+        "Functional Capability": 0,
+        "Customer Segments": 0,
+        "Business and Customers": 0,
+        "Marketing and Sales": 0,
+        "Revenue Streams": 0,
+        "Ownership and Mindset": 0
+      },
+      "recommendedModules": {
+        "Strategic planning": [
+          "CRM",
+          "Revenue models"
+        ],
+        "Marketing and Sales": [
+          "Sales funel",
+          "Sales planning",
+          "Customer acquistion plan",
+          "Marketing plan",
+          "Sales funnel",
+          "Sales personnel"
+        ],
+        "Market Intelligence": [
+          "Competitor analysis",
+          "Market research",
+          "SAM SOM TAM",
+          "Ideal customer profile",
+          "Market Research",
+          "Proof of concept",
+          "competitor analysis"
+        ]
+      },
+      "questionsResponses": [
+        {
+          "questionId": 68,
+          "answer": "NO",
+          "output": "The company doesn't advertise",
+          "category": "Marketing and Sales",
+          "type": "Business structure"
+        },
+        {
+          "questionId": 77,
+          "answer": "NO",
+          "output": "Preferred paymet method of customers not determined.",
+          "category": "Revenue Streams",
+          "type": "Business concept"
+        },
+        {
+          "questionId": 78,
+          "answer": "NO",
+          "output": "",
+          "category": "Revenue Streams",
+          "type": "Business concept"
+        },
+        {
+          "questionId": 79,
+          "answer": "NO",
+          "output": "Owners don't have required experience.",
+          "category": "Ownership and Mindset",
+          "type": "Business structure"
+        },
+        {
+          "questionId": 80,
+          "answer": "NO",
+          "output": "Owners work part-time in the business.",
+          "category": "Ownership and Mindset",
+          "type": "Business structure"
+        },
+        {
+          "questionId": 81,
+          "answer": "NO",
+          "output": "Not enough expertise to deliver on products/service.",
+          "category": "Ownership and Mindset",
+          "type": "Business structure"
+        }
+      ]
+    }
+  }
+}
+```# Assessment
+## Assessment
+
+This is our high-quality assessments API. You can use this API to request resources.
+
+### Create assessment
+
+```endpoint
+POST /api/v1/assessments</pre>
+<h4 id="response-200-23">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Success"</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"report"</span>: {
+        <span class="hljs-attr">"Compliance and Certification"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Customer relations"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Channels"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"e-Commerce"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Functional Capability"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Customer Segments"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Business and Customers"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Marketing and Sales"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Revenue Streams"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"Ownership and Mindset"</span>: <span class="hljs-number">0</span>
+      },
+      <span class="hljs-attr">"recommendedModules"</span>: {
+        <span class="hljs-attr">"Strategic planning"</span>: [
+          <span class="hljs-string">"CRM"</span>,
+          <span class="hljs-string">"Revenue models"</span>
+        ],
+        <span class="hljs-attr">"Marketing and Sales"</span>: [
+          <span class="hljs-string">"Sales funel"</span>,
+          <span class="hljs-string">"Sales planning"</span>,
+          <span class="hljs-string">"Customer acquistion plan"</span>,
+          <span class="hljs-string">"Marketing plan"</span>,
+          <span class="hljs-string">"Sales funnel"</span>,
+          <span class="hljs-string">"Sales personnel"</span>
+        ],
+        <span class="hljs-attr">"Market Intelligence"</span>: [
+          <span class="hljs-string">"Competitor analysis"</span>,
+          <span class="hljs-string">"Market research"</span>,
+          <span class="hljs-string">"SAM SOM TAM"</span>,
+          <span class="hljs-string">"Ideal customer profile"</span>,
+          <span class="hljs-string">"Market Research"</span>,
+          <span class="hljs-string">"Proof of concept"</span>,
+          <span class="hljs-string">"competitor analysis"</span>
+        ]
+      },
+      <span class="hljs-attr">"questionsResponses"</span>: [
+        {
+          <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">68</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+          <span class="hljs-attr">"output"</span>: <span class="hljs-string">"The company doesn't advertise"</span>,
+          <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Marketing and Sales"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
+        },
+        {
+          <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">77</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+          <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Preferred paymet method of customers not determined."</span>,
+          <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business concept"</span>
+        },
+        {
+          <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">78</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+          <span class="hljs-attr">"output"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Revenue Streams"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business concept"</span>
+        },
+        {
+          <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">79</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+          <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Owners don't have required experience."</span>,
+          <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and Mindset"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
+        },
+        {
+          <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">80</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+          <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Owners work part-time in the business."</span>,
+          <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and Mindset"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
+        },
+        {
+          <span class="hljs-attr">"questionId"</span>: <span class="hljs-number">81</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"NO"</span>,
+          <span class="hljs-attr">"output"</span>: <span class="hljs-string">"Not enough expertise to deliver on products/service."</span>,
+          <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Ownership and Mindset"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Business structure"</span>
+        }
+      ]
+    }
+  }
+}</pre>
+</div></div><div data-title="List all assessments questions" class="keyline-top section contain clearfix " data-reactid="110"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="111"><h3 id="list-all-assessments-questions">List all assessments questions</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phaseId</code></td>
+<td>Integer</td>
+<td>(required) Business phase ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="112"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/assessments/questions/<span class="strong">{phaseId}</span></div>
+    </div>
+<h4 id="response-200-24">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
+        <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Do you know the types of relationships you need to establish with your customer segments?"</span>,
+      },
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Customer relations"</span>,
+        <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Do you have a process for retaining your customer base?"</span>,
+      }
+    ]
+  }
+}</pre>
+</div></div><div data-title="Course" class="keyline-top section contain clearfix " data-reactid="113"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="114"><h2 id="course-1">Course</h2>
 <p>This is our high-quality courses API. You can use this API to request resources.</p>
-</div></div><div data-title="Create course" class="keyline-top section contain clearfix " data-reactid="99"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="100"><h3 id="create-course">Create course</h3>
+</div></div><div data-title="Create course" class="keyline-top section contain clearfix " data-reactid="115"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="116"><h3 id="create-course">Create course</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -1554,60 +1959,63 @@
 <tr>
 <td><code>title</code></td>
 <td>String</td>
-<td>(required) the fullname</td>
+<td>(required) course title</td>
 </tr>
 <tr>
 <td><code>description</code></td>
 <td>String</td>
-<td>(required) valid email address</td>
+<td>(required) course description</td>
 </tr>
 <tr>
 <td><code>category</code></td>
 <td>String</td>
-<td>(required) strong password</td>
+<td>(required) course assessment category</td>
 </tr>
 <tr>
-<td><code>intro_video</code></td>
+<td><code>logo</code></td>
 <td>File</td>
-<td>(required) Mp4 file</td>
+<td>(optional) PNG,JPEG,JPG file</td>
 </tr>
 <tr>
-<td><code>start_datetime</code></td>
+<td><code>introVideo</code></td>
+<td>File</td>
+<td>(optional) Mp4 file</td>
+</tr>
+<tr>
+<td><code>startDatetime</code></td>
 <td>Datetime</td>
-<td>(required) start of the course</td>
+<td>(optional) start of the course</td>
 </tr>
 <tr>
-<td><code>expiry_datetime</code></td>
+<td><code>expiryDatetime</code></td>
 <td>Datetime</td>
-<td>(required) expery date of the course</td>
+<td>(optional) expery date of the course</td>
 </tr>
 <tr>
-<td><code>business_phase</code></td>
+<td><code>phaseId</code></td>
 <td>String</td>
 <td>(required) business phase</td>
 </tr>
+<tr>
+<td><code>score</code></td>
+<td>Integer</td>
+<td>(optional) between 0 - 100 minimum score for the assessment</td>
+</tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="101"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="117"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/api/v1/courses</div>
     </div>
-<h4 id="response-200-22">Response (200)</h4>
+<h4 id="response-200-25">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
   <span class="hljs-attr">"package"</span>: {
-    <span class="hljs-attr">"data"</span>: {
-      <span class="hljs-attr">"id"</span>: <span class="hljs-number">7</span>,
-      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"admin@gmail.com"</span>,
-      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ADMIN"</span>,
-      <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>,
-      <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-13T10:14:42.886Z"</span>
-    }
+    <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="Update course" class="keyline-top section contain clearfix " data-reactid="102"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="103"><h3 id="update-course">Update course</h3>
+</div></div><div data-title="Update course" class="keyline-top section contain clearfix " data-reactid="118"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="119"><h3 id="update-course">Update course</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -1655,45 +2063,55 @@
 <tr>
 <td><code>title</code></td>
 <td>String</td>
-<td>(required) the fullname</td>
+<td>(required) course title</td>
 </tr>
 <tr>
 <td><code>description</code></td>
 <td>String</td>
-<td>(required) valid email address</td>
+<td>(required) course description</td>
 </tr>
 <tr>
 <td><code>category</code></td>
 <td>String</td>
-<td>(required) strong password</td>
+<td>(required) course assessment category</td>
 </tr>
 <tr>
-<td><code>intro_video</code></td>
+<td><code>logo</code></td>
 <td>File</td>
-<td>(required) Mp4 file</td>
+<td>(optional) PNG,JPEG,JPG file</td>
 </tr>
 <tr>
-<td><code>start_datetime</code></td>
+<td><code>introVideo</code></td>
+<td>File</td>
+<td>(optional) Mp4 file</td>
+</tr>
+<tr>
+<td><code>startDatetime</code></td>
 <td>Datetime</td>
-<td>(required) start of the course</td>
+<td>(optional) start of the course</td>
 </tr>
 <tr>
-<td><code>expiry_datetime</code></td>
+<td><code>expiryDatetime</code></td>
 <td>Datetime</td>
-<td>(required) expery date of the course</td>
+<td>(optional) expery date of the course</td>
 </tr>
 <tr>
-<td><code>business_phase</code></td>
+<td><code>phaseId</code></td>
 <td>String</td>
 <td>(required) business phase</td>
 </tr>
+<tr>
+<td><code>score</code></td>
+<td>Integer</td>
+<td>(optional) between 0 - 100 minimum score for the assessment</td>
+</tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="104"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="120"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
       <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-23">Response (200)</h4>
+<h4 id="response-200-26">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
@@ -1701,7 +2119,7 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div><div data-title="List all courses" class="keyline-top section contain clearfix " data-reactid="105"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="106"><h3 id="list-all-courses">List all courses</h3>
+</div></div><div data-title="List all courses" class="keyline-top section contain clearfix " data-reactid="121"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="122"><h3 id="list-all-courses">List all courses</h3>
 <p>Header</p>
 <table>
 <thead>
@@ -1719,11 +2137,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="107"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="123"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/api/v1/courses</div>
     </div>
-<h4 id="response-200-24">Response (200)</h4>
+<h4 id="response-200-27">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
@@ -1731,38 +2149,64 @@
     <span class="hljs-attr">"data"</span>: [
       {
         <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
-        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@gamil.com"</span>,
-        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Jozi"</span>,
-        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
-        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T14:55:50.000Z"</span>
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Course title"</span>,
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Course description"</span>,
+        <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Course category"</span>,
+        <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"introVideo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"startDatetime"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"expiryDatetime"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"phaseId"</span>: <span class="hljs-string">"Course phase"</span>,
+        <span class="hljs-attr">"score"</span>: <span class="hljs-number">50</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:36:45.000Z"</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-14T04:21:21.000Z"</span>
+        }
       },
       {
-        <span class="hljs-attr">"id"</span>: <span class="hljs-number">5</span>,
-        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"entrep@gmail.com"</span>,
-        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"entrep@gmail.com"</span>,
-        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
-        <span class="hljs-attr">"photo"</span>: <span class="hljs-string">"http://146.190.224.144/storage/profiles/1673507525795_90f28214-a034-4c17-82df-ee44635792dc.jpg"</span>,
-        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
-        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T22:57:58.000Z"</span>
-      },
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Course title 2"</span>,
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Course description"</span>,
+        <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Course category"</span>,
+        <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"introVideo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"startDatetime"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"expiryDatetime"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"phaseId"</span>: <span class="hljs-string">"Course phase"</span>,
+        <span class="hljs-attr">"score"</span>: <span class="hljs-number">50</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:39:27.000Z"</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-14T04:21:21.000Z"</span>
+        }
+      }
     ]
   }
 }</pre>
-</div></div><div data-title="Find course" class="keyline-top section contain clearfix " data-reactid="108"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="109"><h3 id="find-course">Find course</h3>
+</div></div><div data-title="Find course" class="keyline-top section contain clearfix " data-reactid="124"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="125"><h3 id="find-course">Find course</h3>
 <p>Find a specific course.</p>
 <p>Header</p>
 <table>
@@ -1798,33 +2242,85 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="110"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="126"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-25">Response (200)</h4>
+<h4 id="response-200-28">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
   <span class="hljs-attr">"package"</span>: {
     <span class="hljs-attr">"data"</span>: {
       <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-      <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
-      <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Jozi"</span>,
-      <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
-      <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
-      <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-11T14:55:50.000Z"</span>
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Course title"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Course description"</span>,
+      <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Course category"</span>,
+      <span class="hljs-attr">"logo"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"introVideo"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"startDatetime"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"expiryDatetime"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"phaseId"</span>: <span class="hljs-string">"Course phase"</span>,
+      <span class="hljs-attr">"score"</span>: <span class="hljs-number">50</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:36:45.000Z"</span>,
+      <span class="hljs-attr">"audios"</span>: [
+        {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Audio name"</span>,
+          <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Audio description"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Audio type"</span>,
+          <span class="hljs-attr">"file"</span>: <span class="hljs-string">"127.0.0.1:5000/storage/courses/1673671913074_de2ab114-2f12-4c93-9412-dc33dbeb223e.mp3"</span>,
+          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:51:53.000Z"</span>
+        }
+      ],
+      <span class="hljs-attr">"videos"</span>: [
+        {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Video name"</span>,
+          <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Video description"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Video type"</span>,
+          <span class="hljs-attr">"file"</span>: <span class="hljs-string">"https://www.youtube.com/watch?v=CFo9VWOttiw"</span>,
+          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:54:00.000Z"</span>
+        }
+      ],
+      <span class="hljs-attr">"texts"</span>: [
+        {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Text name"</span>,
+          <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Text description"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Text type"</span>,
+          <span class="hljs-attr">"file"</span>: <span class="hljs-string">"127.0.0.1:5000/storage/courses/1673672319126_ef1a0a12-ba1b-4986-aa14-21d6f767fe61.pdf"</span>,
+          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:58:39.000Z"</span>
+        }
+      ],
+      <span class="hljs-attr">"test"</span>: [
+        {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"question"</span>: <span class="hljs-string">"Test question"</span>,
+          <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"Test answer"</span>,
+          <span class="hljs-attr">"correct_answer"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-14T04:58:39.000Z"</span>
+        }
+      ],
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-14T04:21:21.000Z"</span>
+      }
     }
   }
 }</pre>
-</div></div><div data-title="Delete course" class="keyline-top section contain clearfix " data-reactid="111"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="112"><h3 id="delete-course">Delete course</h3>
+</div></div><div data-title="Delete course" class="keyline-top section contain clearfix " data-reactid="127"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="128"><h3 id="delete-course">Delete course</h3>
 <p>Delete a specific course.</p>
 <p>Header</p>
 <table>
@@ -1860,11 +2356,11 @@
 </tr>
 </tbody>
 </table>
-</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="113"><div class='endpoint dark fill-dark round '>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="129"><div class='endpoint dark fill-dark round '>
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
       <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span></div>
     </div>
-<h4 id="response-200-26">Response (200)</h4>
+<h4 id="response-200-29">Response (200)</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
@@ -1872,9 +2368,1666 @@
     <span class="hljs-attr">"data"</span>: []
   }
 }</pre>
-</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="114"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="115"><div class="space-right1 small quiet inline" data-reactid="116">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="117"><a class="strong active" data-reactid="118">cURL</a><a class="strong " data-reactid="119">cli</a><a class="strong " data-reactid="120">Python</a><a class="strong " data-reactid="121">JS</a><a class="strong " data-reactid="122">Java</a><a class="strong " data-reactid="123">ObjC</a><a class="strong " data-reactid="124">Swift</a></div><div class="fr pad0" data-reactid="125"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="126"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="127"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-red" data-reactid="128"></a><div class="strong small pad0
+</div></div><div data-title="Create course audio" class="keyline-top section contain clearfix " data-reactid="130"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="131"><h3 id="create-course-audio">Create course audio</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) course audio name</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) course audio description</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) course audio type</td>
+</tr>
+<tr>
+<td><code>audio</code></td>
+<td>File/Link</td>
+<td>(required) MP3, WAV file</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="132"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span>/audio</div>
+    </div>
+<h4 id="response-200-30">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Create course video" class="keyline-top section contain clearfix " data-reactid="133"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="134"><h3 id="create-course-video">Create course video</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) course video name</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) course video description</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) course video type</td>
+</tr>
+<tr>
+<td><code>video</code></td>
+<td>File/Link</td>
+<td>(required) MP4 file</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="135"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span>/video</div>
+    </div>
+<h4 id="response-200-31">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Create course text" class="keyline-top section contain clearfix " data-reactid="136"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="137"><h3 id="create-course-text">Create course text</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) course text name</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) course text description</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) course text type</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>File/Link</td>
+<td>(required) PDF, MS FILES, etc</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="138"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span>/text</div>
+    </div>
+<h4 id="response-200-32">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Create course test" class="keyline-top section contain clearfix " data-reactid="139"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="140"><h3 id="create-course-test">Create course test</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Course ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>question</code></td>
+<td>String</td>
+<td>(required) test question</td>
+</tr>
+<tr>
+<td><code>answers</code></td>
+<td>String</td>
+<td>(required) test possible answer</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Boolean</td>
+<td>(required) correct answer</td>
+</tr>
+<tr>
+<td><code>correctAnswer</code></td>
+<td>Boolean</td>
+<td>(required) correct answer</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="141"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/courses/<span class="strong">{id}</span>/test</div>
+    </div>
+<h4 id="response-200-33">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Event" class="keyline-top section contain clearfix " data-reactid="142"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="143"><h2 id="event-1">Event</h2>
+<p>This is our high-quality events API. You can use this API to request resources.</p>
+</div></div><div data-title="Create event" class="keyline-top section contain clearfix " data-reactid="144"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="145"><h3 id="create-event">Create event</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>String</td>
+<td>(required) event title</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) event description</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) event type</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>Date</td>
+<td>(required) event start date</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Date</td>
+<td>(required) event end date</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td>String</td>
+<td>(required) event repeat [once, everyday, weekly, fortnight, monthly]</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="146"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events</div>
+    </div>
+<h4 id="response-200-34">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title event"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Description event"</span>,
+      <span class="hljs-attr">"start_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"end_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+      <span class="hljs-attr">"host"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Update event" class="keyline-top section contain clearfix " data-reactid="147"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="148"><h3 id="update-event">Update event</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Event ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>String</td>
+<td>(required) event title</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>(required) event description</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) event type</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>Date</td>
+<td>(required) event start date</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>Date</td>
+<td>(required) event end date</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td>String</td>
+<td>(required) event repeat [once, everyday, weekly, fortnight, monthly]</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="149"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-35">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="List all events" class="keyline-top section contain clearfix " data-reactid="150"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="151"><h3 id="list-all-events">List all events</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="152"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events</div>
+    </div>
+<h4 id="response-200-36">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title event"</span>,
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Description event"</span>,
+        <span class="hljs-attr">"start_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+        <span class="hljs-attr">"end_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+        <span class="hljs-attr">"host"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+        }
+      },
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title event 2"</span>,
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Description event"</span>,
+        <span class="hljs-attr">"start_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+        <span class="hljs-attr">"end_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+        <span class="hljs-attr">"host"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+        }
+      }
+    ]
+  }
+}</pre>
+</div></div><div data-title="Find event" class="keyline-top section contain clearfix " data-reactid="153"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="154"><h3 id="find-event">Find event</h3>
+<p>Find a specific event.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Event ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="155"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-37">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title event"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Description event"</span>,
+      <span class="hljs-attr">"start_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"end_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+      <span class="hljs-attr">"host"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      },
+      <span class="hljs-attr">"invites"</span>: [
+        {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>,
+          <span class="hljs-attr">"invite"</span>: {
+            <span class="hljs-attr">"userid"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"eventid"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"attending"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+            <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+            <span class="hljs-attr">"userId"</span>: <span class="hljs-number">1</span>
+          }
+        },
+        {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"root2@admin.com"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root2@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ENTREPRENEUR"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:51:33.000Z"</span>,
+          <span class="hljs-attr">"invite"</span>: {
+            <span class="hljs-attr">"userid"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"eventid"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"attending"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2023-01-15T04:11:12.000Z"</span>,
+            <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2023-01-15T04:11:12.000Z"</span>,
+            <span class="hljs-attr">"userId"</span>: <span class="hljs-number">2</span>
+          }
+        }
+      ]
+    }
+  }
+}</pre>
+</div></div><div data-title="Delete event" class="keyline-top section contain clearfix " data-reactid="156"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="157"><h3 id="delete-event">Delete event</h3>
+<p>Delete a specific event.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Event ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="158"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-38">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Create event invite" class="keyline-top section contain clearfix " data-reactid="159"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="160"><h3 id="create-event-invite">Create event invite</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>(required) valid user email</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="161"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events/<span class="strong">{id}</span>/invite</div>
+    </div>
+<h4 id="response-200-39">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Title event"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Description event"</span>,
+      <span class="hljs-attr">"start_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"end_date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-15T03:56:10.000Z"</span>,
+      <span class="hljs-attr">"host"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Update event invite" class="keyline-top section contain clearfix " data-reactid="162"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="163"><h3 id="update-event-invite">Update event invite</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eid</code></td>
+<td>Integer</td>
+<td>(required) Event ID</td>
+</tr>
+<tr>
+<td><code>iid</code></td>
+<td>Integer</td>
+<td>(required) Invite ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attending</code></td>
+<td>Boolean</td>
+<td>(required) attendence status</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="164"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events/<span class="strong">{eid}</span>/invite/<span class="strong">{iid}</span></div>
+    </div>
+<h4 id="response-200-40">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Delete event invite" class="keyline-top section contain clearfix " data-reactid="165"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="166"><h3 id="delete-event-invite">Delete event invite</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eid</code></td>
+<td>Integer</td>
+<td>(required) Event ID</td>
+</tr>
+<tr>
+<td><code>iid</code></td>
+<td>Integer</td>
+<td>(required) Invite ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="167"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/events/<span class="strong">{eid}</span>/invite/<span class="strong">{iid}</span></div>
+    </div>
+<h4 id="response-200-41">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Attendance" class="keyline-top section contain clearfix " data-reactid="168"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="169"><h2 id="attendance-1">Attendance</h2>
+<p>This is our high-quality attendances API. You can use this API to request resources.</p>
+</div></div><div data-title="Create attendance" class="keyline-top section contain clearfix " data-reactid="170"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="171"><h3 id="create-attendance">Create attendance</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>String</td>
+<td>(required) attendance category</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) attendance type</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Date</td>
+<td>(required) attendance date</td>
+</tr>
+<tr>
+<td><code>attended</code></td>
+<td>Boolean</td>
+<td>(required) attendance status</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="172"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/attendances</div>
+    </div>
+<h4 id="response-200-42">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Example category"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example type"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"attended"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"captured"</span>: <span class="hljs-string">"2023-01-15T06:37:36.000Z"</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Update attendance" class="keyline-top section contain clearfix " data-reactid="173"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="174"><h3 id="update-attendance">Update attendance</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Attendance ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>String</td>
+<td>(required) attendance category</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) attendance type</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Date</td>
+<td>(required) attendance date</td>
+</tr>
+<tr>
+<td><code>attended</code></td>
+<td>Boolean</td>
+<td>(required) attendance status</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="175"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/attendances/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-43">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="List all attendances" class="keyline-top section contain clearfix " data-reactid="176"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="177"><h3 id="list-all-attendances">List all attendances</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="178"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/attendances</div>
+    </div>
+<h4 id="response-200-44">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Example category"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example type"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+        <span class="hljs-attr">"attended"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"captured"</span>: <span class="hljs-string">"2023-01-15T05:58:54.000Z"</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+        }
+      },
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Example category"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example type"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+        <span class="hljs-attr">"attended"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"captured"</span>: <span class="hljs-string">"2023-01-15T06:37:36.000Z"</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+        }
+      }
+    ]
+  }
+}</pre>
+</div></div><div data-title="Find attendance" class="keyline-top section contain clearfix " data-reactid="179"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="180"><h3 id="find-attendance">Find attendance</h3>
+<p>Find a specific attendance.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Attendance ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="181"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/attendances/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-45">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"category"</span>: <span class="hljs-string">"Example category"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example type"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2022-02-22T11:00:00.000Z"</span>,
+      <span class="hljs-attr">"attended"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"captured"</span>: <span class="hljs-string">"2023-01-15T05:58:54.000Z"</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Delete attendance" class="keyline-top section contain clearfix " data-reactid="182"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="183"><h3 id="delete-attendance">Delete attendance</h3>
+<p>Delete a specific attendance.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Attendance ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="184"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/attendances/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-46">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="Incubator" class="keyline-top section contain clearfix " data-reactid="185"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="186"><h2 id="incubator-1">Incubator</h2>
+<p>This is our high-quality incubators API. You can use this API to request resources.</p>
+</div></div><div data-title="Create incubator" class="keyline-top section contain clearfix " data-reactid="187"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="188"><h3 id="create-incubator">Create incubator</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) incubator name</td>
+</tr>
+<tr>
+<td><code>industry</code></td>
+<td>String</td>
+<td>(required) business industry</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>String</td>
+<td>(required) physical address</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) incubator type</td>
+</tr>
+<tr>
+<td><code>sponsors</code></td>
+<td>String</td>
+<td>(required) name of sponsors</td>
+</tr>
+<tr>
+<td><code>experience</code></td>
+<td>String</td>
+<td>(required) previous experience</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="189"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/incubators</div>
+    </div>
+<h4 id="response-200-47">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
+      <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example industry"</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example Type"</span>,
+      <span class="hljs-attr">"sponsors"</span>: <span class="hljs-string">"Example Type"</span>,
+      <span class="hljs-attr">"experience"</span>: <span class="hljs-string">"Example experience"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-16T07:43:52.000Z"</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Update incubator" class="keyline-top section contain clearfix " data-reactid="190"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="191"><h3 id="update-incubator">Update incubator</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Incubator ID</td>
+</tr>
+</tbody>
+</table>
+<p>Body</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>(required) incubator name</td>
+</tr>
+<tr>
+<td><code>industry</code></td>
+<td>String</td>
+<td>(required) business industry</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>String</td>
+<td>(required) physical address</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String</td>
+<td>(required) incubator type</td>
+</tr>
+<tr>
+<td><code>sponsors</code></td>
+<td>String</td>
+<td>(required) name of sponsors</td>
+</tr>
+<tr>
+<td><code>experience</code></td>
+<td>String</td>
+<td>(required) previous experience</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="192"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PUT</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/incubators/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-48">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Updated."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div><div data-title="List all incubators" class="keyline-top section contain clearfix " data-reactid="193"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="194"><h3 id="list-all-incubators">List all incubators</h3>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="195"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/incubators</div>
+    </div>
+<h4 id="response-200-49">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: [
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
+        <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example industry"</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example Type"</span>,
+        <span class="hljs-attr">"sponsors"</span>: <span class="hljs-string">"Example Type"</span>,
+        <span class="hljs-attr">"experience"</span>: <span class="hljs-string">"Example experience"</span>,
+        <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-16T07:43:52.000Z"</span>,
+        <span class="hljs-attr">"user"</span>: {
+          <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+          <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+          <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+          <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+        }
+      }
+    ]
+  }
+}</pre>
+</div></div><div data-title="Find incubator" class="keyline-top section contain clearfix " data-reactid="196"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="197"><h3 id="find-incubator">Find incubator</h3>
+<p>Find a specific incubator.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Incubator ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="198"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/incubators/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-50">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Successful."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Example name"</span>,
+      <span class="hljs-attr">"industry"</span>: <span class="hljs-string">"Example industry"</span>,
+      <span class="hljs-attr">"location"</span>: <span class="hljs-string">"Example location"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Example Type"</span>,
+      <span class="hljs-attr">"sponsors"</span>: <span class="hljs-string">"Example Type"</span>,
+      <span class="hljs-attr">"experience"</span>: <span class="hljs-string">"Example experience"</span>,
+      <span class="hljs-attr">"date"</span>: <span class="hljs-string">"2023-01-16T07:43:52.000Z"</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"fullname"</span>: <span class="hljs-string">"Root Administrator"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"root@admin.com"</span>,
+        <span class="hljs-attr">"phone"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"education"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"work_experience2"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"location"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"photo"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"market_newsletter"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"product_updates_and_community_announcements"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"role"</span>: <span class="hljs-string">"ROOT"</span>,
+        <span class="hljs-attr">"registered"</span>: <span class="hljs-string">"2023-01-15T03:38:03.000Z"</span>
+      }
+    }
+  }
+}</pre>
+</div></div><div data-title="Delete incubator" class="keyline-top section contain clearfix " data-reactid="199"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="200"><h3 id="delete-incubator">Delete incubator</h3>
+<p>Delete a specific incubator.</p>
+<p>Header</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bearer token</code></td>
+<td>String</td>
+<td>(required) Token</td>
+</tr>
+</tbody>
+</table>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>(required) Incubator ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="201"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/api/v1/incubators/<span class="strong">{id}</span></div>
+    </div>
+<h4 id="response-200-51">Response (200)</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"status"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Deleted."</span>,
+  <span class="hljs-attr">"package"</span>: {
+    <span class="hljs-attr">"data"</span>: []
+  }
+}</pre>
+</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="202"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="203"><div class="space-right1 small quiet inline" data-reactid="204">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="205"><a class="strong active" data-reactid="206">cURL</a><a class="strong " data-reactid="207">cli</a><a class="strong " data-reactid="208">Python</a><a class="strong " data-reactid="209">JS</a><a class="strong " data-reactid="210">Java</a><a class="strong " data-reactid="211">ObjC</a><a class="strong " data-reactid="212">Swift</a></div><div class="fr pad0" data-reactid="213"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="214"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="215"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-red" data-reactid="216"></a><div class="strong small pad0
           
-          space-left4 line-height15" data-reactid="129">Biztweak API Documentation</div></div></div></div><!--STOP-->
+          space-left4 line-height15" data-reactid="217">Biztweak API Documentation</div></div></div></div><!--STOP-->
     <script src='bundle.js'></script>
   </body>
 </html>

@@ -11,4 +11,6 @@ router.get('/companies/my-companies', AuthMiddleware, companyController.getMyCom
 router.get('/companies/:id', AuthMiddleware, companyController.findCompany)
 router.get('/companies', AuthMiddleware, companyController.getCompanies)
 
+router.post('/companies/:id/assessments', AuthMiddleware, companyController.createCompanyAssessment)
+
 module.exports = router

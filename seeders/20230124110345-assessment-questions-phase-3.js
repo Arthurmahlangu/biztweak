@@ -53,7 +53,7 @@ module.exports = {
       yesAnswer: '',
       noAnswer: '',
       category: 'e-Commerce',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Competitor analysis',
       type: '',
       phaseId: phase.id
@@ -95,7 +95,7 @@ module.exports = {
       yesAnswer: 'Customer profile has been determined.',
       noAnswer: 'Customer profile not determined',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market Research',
       type: 'Business concept',
       phaseId: phase.id
@@ -105,7 +105,7 @@ module.exports = {
       yesAnswer: 'Target audience has been determined.',
       noAnswer: 'Target audience has not been selected',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market Intelligence',
       type: 'Business concept',
       phaseId: phase.id
@@ -115,7 +115,7 @@ module.exports = {
       yesAnswer: 'Target audience has been located geographically.',
       noAnswer: 'Target audience has not been located geographically',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market research',
       type: 'Business concept',
       phaseId: phase.id
@@ -125,7 +125,7 @@ module.exports = {
       yesAnswer: 'Target audience has been segmented.',
       noAnswer: 'Target audience has not been segmented.',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'SAM SOM TAM',
       type: 'Business concept',
       phaseId: phase.id
@@ -145,7 +145,7 @@ module.exports = {
       yesAnswer: 'Total observable market has been determined.',
       noAnswer: 'Total observable market has not been determined.',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market research',
       type: 'Business concept',
       phaseId: phase.id
@@ -155,7 +155,7 @@ module.exports = {
       yesAnswer: 'Ideal customer profile has been determined.',
       noAnswer: 'Ideal customer profile has not been determined.',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Ideal customer profile',
       type: 'Business concept',
       phaseId: phase.id
@@ -165,7 +165,7 @@ module.exports = {
       yesAnswer: 'Most important not determined.',
       noAnswer: 'Most important customers not determined',
       category: 'Customer Segments',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Market Research',
       type: 'Business concept',
       phaseId: phase.id
@@ -460,7 +460,7 @@ module.exports = {
       yesAnswer: 'Customer needs have been determined.',
       noAnswer: 'Customer needs have not been determined.',
       category: 'Value Proposition',
-      modules: '',
+      modules: 'Strategic planning',
       topics: 'Value proposition canvas',
       type: 'Business concept',
       phaseId: phase.id
@@ -470,7 +470,7 @@ module.exports = {
       yesAnswer: 'uniques selling point has been determined.',
       noAnswer: 'Uniques selling point not determined.',
       category: 'Value Proposition',
-      modules: '',
+      modules: 'Strategic planning',
       topics: 'Value proposition canvas',
       type: 'Business concept',
       phaseId: phase.id
@@ -493,7 +493,7 @@ module.exports = {
       yesAnswer: '',
       noAnswer: '',
       category: 'Key Activities',
-      modules: '',
+      modules: 'Business Process Management',
       topics: 'Process development',
       type: '',
       phaseId: phase.id
@@ -506,7 +506,7 @@ module.exports = {
       yesAnswer: 'The business is aware of current solutions from competitors.',
       noAnswer: 'The business is not aware of current solutions',
       category: 'Current Alternatives',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Competitor analysis',
       type: 'Business concept',
       phaseId: phase.id
@@ -516,7 +516,7 @@ module.exports = {
       yesAnswer: 'The business is aware of its competitors',
       noAnswer: 'The business is not aware of its competitors',
       category: 'Current Alternatives',
-      modules: '',
+      modules: 'Market Intelligence',
       topics: 'Competitor analysis',
       type: 'Business concept',
       phaseId: phase.id
@@ -538,7 +538,7 @@ module.exports = {
       yesAnswer: 'The value of strategic partnerships has been determined',
       noAnswer: 'Value of strategic partnerships not determined',
       category: 'Key Partners',
-      modules: '',
+      modules: 'Strategic planning',
       topics: 'Boot Strapping Stratgey',
       type: 'Business concept',
       phaseId: phase.id
@@ -552,7 +552,7 @@ module.exports = {
       yesAnswer: 'Key resources needed have been determined.',
       noAnswer: 'Key resources needed have not been determined',
       category: 'Key Resources',
-      modules: '',
+      modules: 'Talent Management',
       topics: 'organizational design and development',
       type: 'Business concept',
       phaseId: phase.id
