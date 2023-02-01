@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.phase)
+      this.belongsToMany(models.phase, {
+        through: models.phase_question
+      })
     }
   }
   assessment_question.init({
@@ -44,15 +46,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       allowNull: false
     },
+    recommendedJobOrSkills: {
+      type: DataTypes.STRING(255)
+    },
     createdAt: {
       type: DataTypes.DATE
     },
     updatedAt: {
       type: DataTypes.DATE
-    },
-    phaseId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false
     }
   }, {
     sequelize,

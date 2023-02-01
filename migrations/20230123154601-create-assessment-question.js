@@ -40,6 +40,10 @@ module.exports = {
         type: DataTypes.STRING(255),
         field: 'type'
       },
+      recommendedJobOrSkills: {
+        type: DataTypes.STRING(255),
+        field: 'recommendedJobOrSkills'
+      },
       createdAt: {
         type: DataTypes.DATE,
         field: 'createdAt',
@@ -49,12 +53,7 @@ module.exports = {
         type: DataTypes.DATE,
         field: 'updatedAt',
         defaultValue: Sequelize.literal('NOW()')
-      },
-      phaseId: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        field: 'phaseId',
-        allowNull: false
-      },
+      }
     })
   },
   down: async (queryInterface, Sequelize) => {

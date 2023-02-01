@@ -12,7 +12,7 @@ exports.createAssessment = async (payload) => {
     const report = {}
     const recommendedModules = {}
     const questionsResponses = []
-    // const recommendedTopics = {}
+    const recommendedTopics = {}
     
     const questionsAndAnswersArray = JSON.parse(questionsAndAnswers)
 
@@ -35,7 +35,7 @@ exports.createAssessment = async (payload) => {
         // throw new Error("Some of the questions were not answered.")
     }
 
-    questions.data.forEach(({ id, yesAnswer, noAnswer, category, modules, topics, type }) => {
+    questions.data.forEach(({ id, yesAnswer, noAnswer, category, modules, topics, type, recommendedJobOrSkills, phase_question }) => {
         const response = questionsAndAnswersArray.filter((questionAndAnswer) => questionAndAnswer.questionId === id)
         const questionsByCategory = questions.data.filter((question) => question.category === category)
         
@@ -59,6 +59,8 @@ exports.createAssessment = async (payload) => {
                     answer: "YES",
                     output: yesAnswer,
                     category: category,
+                    priorityElement: phase_question.priorityElement,
+                    recommendedJobOrSkills: "",
                     type
                 })
             } else {
@@ -67,6 +69,8 @@ exports.createAssessment = async (payload) => {
                     answer: "NO",
                     output: noAnswer,
                     category: category,
+                    priorityElement: phase_question.priorityElement,
+                    recommendedJobOrSkills,
                     type
                 })
 
@@ -93,6 +97,8 @@ exports.createAssessment = async (payload) => {
                 answer: "NO",
                 output: noAnswer,
                 category: category,
+                priorityElement: phase_question.priorityElement,
+                recommendedJobOrSkills,
                 type
             })
 
@@ -113,21 +119,21 @@ exports.createAssessment = async (payload) => {
                 })
             }
         }
-        // if (topics) {
-        //     const foundTopics = topics.split(",")
-        //     foundTopics.forEach((foundTopic) => {
-        //         if (recommendedTopics[category]) {
-        //             if (!recommendedTopics[category].includes(foundTopic.trimStart())) {
-        //                 recommendedTopics[category].push(foundTopic.trimStart())
-        //             }
-        //         } else {
-        //             recommendedTopics[category] = []
-        //             recommendedTopics[category].push(foundTopic.trimStart())
-        //         }
-        //     })
-        // }
+        if (topics) {
+            const foundTopics = topics.split(",")
+            foundTopics.forEach((foundTopic) => {
+                if (recommendedTopics[category]) {
+                    if (!recommendedTopics[category].includes(foundTopic.trimStart())) {
+                        recommendedTopics[category].push(foundTopic.trimStart())
+                    }
+                } else {
+                    recommendedTopics[category] = []
+                    recommendedTopics[category].push(foundTopic.trimStart())
+                }
+            })
+        }
     })
-
+    
     await assessmentRepository.createAssessment({
         userId,
         companyId,

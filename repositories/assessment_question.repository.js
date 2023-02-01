@@ -104,34 +104,44 @@ exports.getQuestionsAllInfo = async () => {
     }
 }
 
-exports.getQuestionsByPhase = async (phaseId) => {
-    const question = await db.assessment_question.findAll({ 
-        where: { phaseId }, 
-        attributes: assementQuestionResource 
+exports.getQuestionsByPhase = async (id) => {
+    const phase = await db.phase.findOne({ 
+        where: { id }, 
+        include: [
+            {
+                model: db.assessment_question,
+                attributes: assementQuestionResource 
+            }
+        ]
     })
 
     return {
-        data: question
+        data: phase.assessment_questions
     }
 }
 
-exports.getQuestionsByPhaseForSystem = async (phaseId) => {
-    const question = await db.assessment_question.findAll({ 
-        where: { phaseId }, 
-        attributes: [
-            'id', 
-            'question',
-            'yesAnswer',
-            'noAnswer',
-            'category',
-            'modules',
-            'topics',
-            'type',
-            'phaseId'
-        ] 
+exports.getQuestionsByPhaseForSystem = async (id) => {
+    const phase = await db.phase.findOne({ 
+        where: { id }, 
+        include: [
+            {
+                model: db.assessment_question,
+                attributes: [
+                    'id', 
+                    'question',
+                    'yesAnswer',
+                    'noAnswer',
+                    'category',
+                    'modules',
+                    'topics',
+                    'type',
+                    'recommendedJobOrSkills'
+                ] 
+            }
+        ]
     })
 
     return {
-        data: question
+        data: phase.assessment_questions
     }
 }

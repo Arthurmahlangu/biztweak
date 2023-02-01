@@ -97,7 +97,7 @@ exports.getCompanies = async () => {
 }
 
 exports.getMyCompanies = async (userId) => {
-    const company = await db.company.findAll({
+    const companies = await db.company.findAll({
         where: { userId },
         attributes: companyResource,
         include: [
@@ -112,11 +112,33 @@ exports.getMyCompanies = async (userId) => {
             {
                 model: db.industry,
                 attributes: industryResource
+            },
+            {
+                model: db.assessment,
+                attributes: assessmentResource
             }
         ]
     })
 
+    if (!companies) {
+        throw new Error('Company not found.')
+    }
+
+    companies.forEach((company) => {
+        if (company.assessment) {
+            if (company.assessment.questionsAndAnswers) {
+                company.assessment.questionsAndAnswers = JSON.parse(company.assessment.questionsAndAnswers)
+            }
+            if (company.assessment.recommendedModules) {
+                company.assessment.recommendedModules = JSON.parse(company.assessment.recommendedModules)
+            }
+            if (company.assessment.report) {
+                company.assessment.report = JSON.parse(company.assessment.report)
+            }
+        }
+    })
+        
     return {
-        data: company
+        data: companies
     }
 }

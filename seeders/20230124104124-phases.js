@@ -4,16 +4,19 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('phases', [{
-      label: 'I have an idea but don’t know what to do next.',
+      label: "I have an idea but don’t know what to do next",
     },
     {
-      label: 'I have a business but I am not making money.'
+      label: "I have a business but am not making money"
     },
     {
-      label: 'I have product/services, but I have poor sales.'
+      label: "I have products/services but I have poor sales"
     },
     {
-      label: 'We are generating revenue, we would like to grow through investment.'
+      label: "We are generating revenue, we would like to grow through investment"
+    },
+    {
+      label: "I would like to be an entrepreneur but don’t know where to start"
     }
     ], {});
   },
