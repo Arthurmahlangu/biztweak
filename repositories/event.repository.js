@@ -9,7 +9,7 @@ exports.createEvent = async (payload) => {
     }
 
     return {
-        data: null
+        data: await this.findEvent(event.id)
     }
 }
 
