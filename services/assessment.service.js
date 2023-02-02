@@ -10,6 +10,8 @@ exports.createAssessment = async (payload) => {
     } = payload
     
     const report = {}
+    const fullReport = {}
+    const percentages = {}
     const recommendedModules = {}
     const questionsResponses = []
     const recommendedTopics = {}
@@ -49,8 +51,8 @@ exports.createAssessment = async (payload) => {
             }
         })
 
-        report[category] = Math.ceil((n / questionsByCategory.length) * 100)
-    
+        
+        percentages[category] = Math.ceil((n / questionsByCategory.length) * 100)
         if (response[0]) {
             if (response[0].answer.match(/yes/i)) {
 
@@ -119,6 +121,7 @@ exports.createAssessment = async (payload) => {
                 })
             }
         }
+
         if (topics) {
             const foundTopics = topics.split(",")
             foundTopics.forEach((foundTopic) => {
@@ -133,6 +136,29 @@ exports.createAssessment = async (payload) => {
             })
         }
     })
+
+    fullReport.isMajorGap = []
+    fullReport.isBestPerforming = []
+    fullReport.isPriorityElement = []
+
+    for (const key in percentages) {
+        if (percentages[key] > 49) {
+            fullReport.isBestPerforming.push(key)
+        } else {
+            fullReport.isMajorGap.push(key)
+        }
+    }
+
+    questionsResponses.forEach((question) => {
+        if (question.priorityElement) {
+            if (!fullReport.isPriorityElement.includes(question.category)) {
+                fullReport.isPriorityElement.push(question.category)
+            }
+        }
+    })
+
+    report.percentages = percentages
+    report.fullReport  = fullReport
     
     await assessmentRepository.createAssessment({
         userId,
@@ -141,7 +167,6 @@ exports.createAssessment = async (payload) => {
         recommendedModules: JSON.stringify(recommendedModules),
         questionsAndAnswers: JSON.stringify(questionsResponses)
     })
-
 
     return {
         data: {
