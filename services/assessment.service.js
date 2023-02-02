@@ -2,13 +2,8 @@ const companyRepository = require("../repositories/company.repository")
 const assessmentRepository = require("../repositories/assessment.repository")
 const assessmentQuestionRepository = require("../repositories/assessment_question.repository")
 
-exports.createAssessment = async (payload) => {
-    const {
-        userId,
-        companyId,
-        questionsAndAnswers,
-    } = payload
-    
+const handleQuestionsAndAnswers = async (questionsAndAnswers, companyId) => {
+
     const report = {}
     const fullReport = {}
     const percentages = {}
@@ -50,7 +45,6 @@ exports.createAssessment = async (payload) => {
                 }
             }
         })
-
         
         percentages[category] = Math.ceil((n / questionsByCategory.length) * 100)
         if (response[0]) {
@@ -159,13 +153,32 @@ exports.createAssessment = async (payload) => {
 
     report.percentages = percentages
     report.fullReport  = fullReport
+
+    return {
+        report,
+        recommendedModules,
+        questionsResponses
+    }
+}
+
+exports.createAssessment = async (payload) => {
+    const {
+        userId,
+        companyId,
+        questionsAndAnswers,
+    } = payload
+    
+    const questionsAndAnswersResponse = await handleQuestionsAndAnswers(questionsAndAnswers, companyId)
+    const getReport                   = questionsAndAnswersResponse.report
+    const getRecommendedModules       = questionsAndAnswersResponse.recommendedModules
+    const getQuestionsAndAnswers      = questionsAndAnswersResponse.questionsResponses
     
     await assessmentRepository.createAssessment({
         userId,
         companyId,
-        report: JSON.stringify(report),
-        recommendedModules: JSON.stringify(recommendedModules),
-        questionsAndAnswers: JSON.stringify(questionsResponses)
+        report: JSON.stringify(getReport),
+        recommendedModules: JSON.stringify(getRecommendedModules),
+        questionsAndAnswers: JSON.stringify(getQuestionsAndAnswers)
     })
 
     return {
@@ -180,13 +193,19 @@ exports.createAssessment = async (payload) => {
 
 exports.updateAssessment = async (id, payload) => {
     const {
+        companyId,
         questionsAndAnswers,
     } = payload
 
+    const questionsAndAnswersResponse = await handleQuestionsAndAnswers(questionsAndAnswers, companyId)
+    const getReport                   = questionsAndAnswersResponse.report
+    const getRecommendedModules       = questionsAndAnswersResponse.recommendedModules
+    const getQuestionsAndAnswers      = questionsAndAnswersResponse.questionsResponses
+
     const assessment = await assessmentRepository.updateAssessment(id, {
-        questionsAndAnswers,
-        report,
-        recommendedModules
+        report: JSON.stringify(getReport),
+        recommendedModules: JSON.stringify(getRecommendedModules),
+        questionsAndAnswers: JSON.stringify(getQuestionsAndAnswers)
     })
 
     return assessment
