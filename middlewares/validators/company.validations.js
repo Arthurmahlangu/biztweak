@@ -19,10 +19,10 @@ exports.companyValidator = [
     body("employees")
         .exists().withMessage("Employers number do not exists")
         .isNumeric().withMessage("Invalid Number of Employers"),
-    body("monthly_turnover")
+    body("monthlyTurnover")
         .exists().withMessage("Monthly turnover amount do not exists")
         .isNumeric().withMessage("Invalid monthly turnover amount"),
-    body("annual_turnover")
+    body("annualTurnover")
         .exists().withMessage("Annual turnover amount do not exists")
         .isNumeric().withMessage("Invalid annual turnover amount")
 ]
