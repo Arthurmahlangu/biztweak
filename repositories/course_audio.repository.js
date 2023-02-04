@@ -2,21 +2,23 @@ const db = require("../models")
 const courseQuizResource = require("../resources/course_quiz.resource")
 
 exports.createCourseQuiz = async (payload) => {
-    const course_quiz = await db.course_quiz.create(payload)
+    const course_audio = await db.course_audio.create(payload)
 
-    if (!course_quiz) {
+    if (!course_audio) {
         throw new Error('Course text creation failed.')
     }
 
+    const { data } = await this.findCourseQuiz(course_audio.id)
+
     return {
-        data: null
+        data
     }
 }
 
 exports.updateCourseQuiz = async (id, payload) => {
-    const course_quiz = await db.course_quiz.update(payload, { where: { id } })
+    const course_audio = await db.course_audio.update(payload, { where: { id } })
 
-    if (!course_quiz) {
+    if (!course_audio) {
         throw new Error('Course text update failed.')
     }
 
@@ -26,9 +28,9 @@ exports.updateCourseQuiz = async (id, payload) => {
 }
 
 exports.deleteCourseQuiz = async (id) => {
-    const course_quiz = await db.course_quiz.destroy({ where: { id } })
+    const course_audio = await db.course_audio.destroy({ where: { id } })
 
-    if (!course_quiz) {
+    if (!course_audio) {
         throw new Error('Destroy course text failed.')
     }
 
@@ -38,26 +40,26 @@ exports.deleteCourseQuiz = async (id) => {
 }
 
 exports.findCourseQuiz = async (id) => {
-    const course_quiz = await db.course_quiz.findOne({
+    const course_audio = await db.course_audio.findOne({
         where: { id },
         attributes: courseQuizResource
     })
 
-    if (!course_quiz) {
+    if (!course_audio) {
         throw new Error('Course text not found.')
     }
 
     return {
-        data: course_quiz
+        data: course_audio
     }
 }
 
 exports.getCourseQuizzes = async () => {
-    const course_quiz = await db.course_quiz.findAll({
+    const course_audio = await db.course_audio.findAll({
         attributes: courseQuizResource
     })
 
     return {
-        data: course_quiz
+        data: course_audio
     }
 }

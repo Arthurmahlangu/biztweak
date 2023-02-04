@@ -8,8 +8,10 @@ exports.createEvent = async (payload) => {
         throw new Error('Event creation failed.')
     }
 
+    const { data } = await this.findEvent(event.id)
+
     return {
-        data: await this.findEvent(event.id)
+        data
     }
 }
 

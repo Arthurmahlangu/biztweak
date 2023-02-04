@@ -15,8 +15,10 @@ exports.createCourse = async (payload) => {
         throw new Error('Course creation failed.')
     }
 
+    const { data } = await this.findCourse(course.id)
+
     return {
-        data: null
+        data
     }
 }
 

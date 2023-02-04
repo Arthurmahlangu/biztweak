@@ -4,7 +4,7 @@ const assessmentController = require("../controllers/assessment.controller")
 const router = express.Router()
 
 const { validate } = require("../middlewares/validators/wrapper.validator")
-const assessmentValidations = require("../middlewares/validators/assessment.validations")
+const assessmentValidations = require("../middlewares/validators/assessment.validator")
 
 // Add routes
 router.post('/assessments', AuthMiddleware, validate(assessmentValidations.createAssessment), assessmentController.createAssessment)

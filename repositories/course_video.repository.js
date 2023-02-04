@@ -8,8 +8,10 @@ exports.createCourseVideo = async (payload) => {
         throw new Error('Course video creation failed.')
     }
 
+    const { data } = await this.findCourseVideo(course_video.id)
+
     return {
-        data: null
+        data
     }
 }
 

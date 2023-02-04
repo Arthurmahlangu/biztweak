@@ -8,8 +8,10 @@ exports.createCourseDocument = async (payload) => {
         throw new Error('Course document creation failed.')
     }
 
+    const { data } = await this.findCourseDocument(course_document.id)
+
     return {
-        data: null
+        data
     }
 }
 

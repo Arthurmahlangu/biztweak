@@ -11,9 +11,9 @@ router.post('/users/create-mentor-user', AuthMiddleware, userController.createRo
 router.post('/users/create-entrepreneur-user', AuthMiddleware, userController.createRootUser)
 
 // Update
-router.put('/users/profile/:id', AuthMiddleware, userController.updateUserProfile)
-router.put('/users/email/:id', AuthMiddleware, userController.updateEmail)
-router.put('/users/password/:id', AuthMiddleware, userController.updatePassword)
+router.put('/users/:id/profile', AuthMiddleware, userController.updateUserProfile)
+router.put('/users/:id/email', AuthMiddleware, userController.updateEmail)
+router.put('/users/:id/password', AuthMiddleware, userController.updatePassword)
 
 // Retrieve
 router.get('/users/:id', AuthMiddleware, userController.findUser)

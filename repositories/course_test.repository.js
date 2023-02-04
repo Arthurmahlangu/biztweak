@@ -8,8 +8,10 @@ exports.createCourseTest = async (payload) => {
         throw new Error('Course test creation failed.')
     }
 
+    const { data } = await this.findCourseTest(course_test.id)
+
     return {
-        data: null
+        data
     }
 }
 
