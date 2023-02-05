@@ -1,25 +1,25 @@
 const db = require("../models")
-const courseQuizResource = require("../resources/course_quiz.resource")
+const courseAudioResource = require("../resources/course_audio.resource")
 
-exports.createCourseQuiz = async (payload) => {
+exports.createCourseAudio = async (payload) => {
     const course_audio = await db.course_audio.create(payload)
 
     if (!course_audio) {
-        throw new Error('Course text creation failed.')
+        throw new Error('Course audio creation failed.')
     }
 
-    const { data } = await this.findCourseQuiz(course_audio.id)
+    const { data } = await this.findCourseAudio(course_audio.id)
 
     return {
         data
     }
 }
 
-exports.updateCourseQuiz = async (id, payload) => {
+exports.updateCourseAudio = async (id, payload) => {
     const course_audio = await db.course_audio.update(payload, { where: { id } })
 
     if (!course_audio) {
-        throw new Error('Course text update failed.')
+        throw new Error('Course audio update failed.')
     }
 
     return {
@@ -27,11 +27,11 @@ exports.updateCourseQuiz = async (id, payload) => {
     }
 }
 
-exports.deleteCourseQuiz = async (id) => {
+exports.deleteCourseAudio = async (id) => {
     const course_audio = await db.course_audio.destroy({ where: { id } })
 
     if (!course_audio) {
-        throw new Error('Destroy course text failed.')
+        throw new Error('Destroy course audio failed.')
     }
 
     return {
@@ -39,14 +39,14 @@ exports.deleteCourseQuiz = async (id) => {
     }
 }
 
-exports.findCourseQuiz = async (id) => {
+exports.findCourseAudio = async (id) => {
     const course_audio = await db.course_audio.findOne({
         where: { id },
-        attributes: courseQuizResource
+        attributes: courseAudioResource
     })
 
     if (!course_audio) {
-        throw new Error('Course text not found.')
+        throw new Error('Course audio not found.')
     }
 
     return {
@@ -54,9 +54,9 @@ exports.findCourseQuiz = async (id) => {
     }
 }
 
-exports.getCourseQuizzes = async () => {
+exports.getCourseAudios = async () => {
     const course_audio = await db.course_audio.findAll({
-        attributes: courseQuizResource
+        attributes: courseAudioResource
     })
 
     return {
