@@ -78,7 +78,7 @@ exports.findCourse = async (id) => {
             },
             {
                 model: db.course_quiz,
-                as: 'tests',
+                as: 'quizzes',
                 attributes: courseQuizResource
             },
             {
