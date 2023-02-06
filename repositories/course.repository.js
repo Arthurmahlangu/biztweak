@@ -77,6 +77,11 @@ exports.findCourse = async (id) => {
                 attributes: courseTestResource
             },
             {
+                model: db.course_quiz,
+                as: 'tests',
+                attributes: courseQuizResource
+            },
+            {
                 model: db.user,
                 attributes: userResource
             }
@@ -98,7 +103,7 @@ exports.getCourses = async () => {
         include: [
             {
                 model: db.user,
-                attributes: UserResource
+                attributes: userResource
             }
         ]
     })
