@@ -5,5 +5,7 @@ module.exports = [
     'category', 
     'timeOptions', 
     'startDatetime', 
-    'expiryDatetime', 
+    'expiryDatetime',
+    'logo',
+    'introVideo'
 ]
