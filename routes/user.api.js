@@ -9,7 +9,7 @@ router.post('/users/create-root-user', AuthMiddleware, userController.createRoot
 router.post('/users/create-admin-user', AuthMiddleware, userController.createRootUser)
 router.post('/users/create-mentor-user', AuthMiddleware, userController.createMentorUser)
 router.post('/users/create-incubator-user', AuthMiddleware, userController.createIncubatorUser)
-router.post('/users/create-entrepreneur-user', AuthMiddleware, userController.createRootUser)
+router.post('/users/create-entrepreneur-user', AuthMiddleware, userController.createEntrepreneurUser)
 
 // Update
 router.put('/users/:id/profile', AuthMiddleware, userController.updateUserProfile)
