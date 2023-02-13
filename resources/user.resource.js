@@ -10,5 +10,6 @@ module.exports = [
     'marketNewsletter',
     'productUpdatesAndCommunityAnnouncements',
     'photo',
+    'role',
     ['createdAt', 'registrationDate']
 ]

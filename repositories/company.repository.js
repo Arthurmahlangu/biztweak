@@ -87,12 +87,14 @@ exports.findCompany = async (id) => {
 }
 
 exports.getCompanies = async () => {
-    const company = await db.company.findAll({
+    const companies = await db.company.findAll({
         attributes: companyResource
     })
 
+    companies.count = companies.length
+
     return {
-        data: company
+        data: companies
     }
 }
 
@@ -137,6 +139,8 @@ exports.getMyCompanies = async (userId) => {
             }
         }
     })
+
+    companies.count = companies.length
         
     return {
         data: companies

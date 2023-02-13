@@ -81,11 +81,17 @@ exports.findUserByEmail = async (email) => {
 }
 
 exports.getUsers = async (param) => {
-    const user = await db.user.findAll({
+    const users = await db.user.findAll({
         attributes: userResource
     })
 
+    users.count = users.length
+    users.countROOT = users.filter((user) => user.role == "ROOT").length || 0
+    users.countADMIN = users.filter((user) => user.role == "ADMIN").length || 0
+    users.countINCUBATOR = users.filter((user) => user.role == "INCUBATOR").length || 0
+    users.countENTREPRENEUR = users.filter((user) => user.role == "ENTREPRENEUR").length || 0
+
     return {
-        data: user
+        data: users
     }
 }

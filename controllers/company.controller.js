@@ -99,7 +99,8 @@ exports.getCompanies = async (req, res) => {
     
         return res.send(
             successResponse("Success", {
-                data
+                data,
+                count: data.count
             })
         )
 
@@ -149,7 +150,8 @@ exports.getMyCompanies = async (req, res) => {
     
         return res.send(
             successResponse("Success", {
-                data
+                data,
+                count: data.count
             })
         )
 

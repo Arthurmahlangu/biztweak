@@ -92,13 +92,20 @@ exports.findCourse = async (id) => {
         throw new Error('Course not found.')
     }
 
+    course.countDocuments = course.documents.length
+    course.countAudios = course.audios.length
+    course.countVideos = course.videos.length
+    course.countTexts = course.texts.length
+    course.countTests = course.tests.length
+    course.countQuizzes = course.quizzes.length
+
     return {
         data: course
     }
 }
 
 exports.getCourses = async () => {
-    const course = await db.course.findAll({
+    const courses = await db.course.findAll({
         attributes: courseResource,
         include: [
             {
@@ -108,7 +115,9 @@ exports.getCourses = async () => {
         ]
     })
 
+    courses.count = courses.length
+
     return {
-        data: course
+        data: courses
     }
 }

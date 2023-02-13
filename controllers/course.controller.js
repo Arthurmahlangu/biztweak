@@ -98,7 +98,12 @@ exports.getCourses = async (req, res) => {
     
         return res.send(
             successResponse("Success", {
-                data
+                data,
+                count: data.count,
+                countCompleted: 0,
+                countInprogress: 0,
+                countTrainingTime: 0,
+                countPoints: 0
             })
         )
 
@@ -123,7 +128,13 @@ exports.findCourse = async (req, res) => {
     
         return res.send(
             successResponse("Success", {
-                data
+                data,
+                countDocuments: data.countDocuments,
+                countAudios: data.countAudios,
+                countVideos: data.countVideos,
+                countTexts: data.countTexts,
+                countTests: data.countTests,
+                countQuizzes: data.countQuizzes
             })
         )
 

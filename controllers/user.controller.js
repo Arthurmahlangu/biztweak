@@ -207,7 +207,12 @@ exports.getUsers = async (req, res) => {
     
         return res.send(
             successResponse("Success", {
-                data
+                data,
+                count: data.count,
+                countROOT: data.countROOT,
+                countADMIN: data.countADMIN,
+                countINCUBATOR: data.countINCUBATOR,
+                countENTREPRENEUR: data.countENTREPRENEUR
             })
         )
 
