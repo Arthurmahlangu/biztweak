@@ -98,7 +98,8 @@ exports.getAssessments = async (req, res) => {
     
         return res.send(
             successResponse("Success", {
-                data
+                data,
+                overview: data.overview
             })
         )
 

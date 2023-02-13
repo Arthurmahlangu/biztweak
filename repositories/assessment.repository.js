@@ -65,11 +65,45 @@ exports.findAssessment = async (id) => {
 }
 
 exports.getAssessments = async () => {
-    const assessment = await db.assessment.findAll({
+    const assessments = await db.assessment.findAll({
         attributes: assessmentResource
     })
 
+    const categories = await db.assessment_question.findAll({ 
+        attributes: ['category'],
+        group: ['category'] 
+    })
+
+    const overview = {}
+
+    categories.forEach((category) => {
+        overview[category.category] = 0
+    })
+
+    assessments.forEach((assessment) => {
+        if (assessment) {
+            if (assessment.report) {
+                assessment.report = JSON.parse(assessment.report)
+                for (const key in assessment.report.percentages) {
+                    const objectKeys = Object.keys(overview)
+
+                    if (objectKeys.includes(key)) {
+                        overview[key] += assessment.report.percentages[key] / assessments.length
+                    }
+                }
+            }
+            if (assessment.recommendedModules) {
+                assessment.recommendedModules = JSON.parse(assessment.recommendedModules)
+            }
+            if (assessment.questionsAndAnswers) {
+                assessment.questionsAndAnswers = JSON.parse(assessment.questionsAndAnswers)
+            }
+        }
+    })
+
+    assessments.overview = overview
+
     return {
-        data: assessment
+        data: assessments
     }
 }
