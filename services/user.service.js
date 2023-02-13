@@ -3,11 +3,11 @@ const uploader = require("../helpers/uploader")
 const mailer = require("../helpers/mailer")
 const bcrypt = require('bcrypt')
 
-exports.createUser = async (fullNames, email, role) => {
-    const password = ''
+exports.createUser = async (fullNames, email, role, phone = null, education = null, workExperience = null, workExperience2 = null, location = null) => {
+    const password = 'password'
 
     const user = await userRepository.createUser({
-        fullNames, email, role, password
+        fullNames, email, role, password, phone, education, workExperience, workExperience2, location
     })
 
     const mail = await mailer(email, 'New registration', `

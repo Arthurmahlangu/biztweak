@@ -16,10 +16,25 @@ exports.createRootUser = async (req, res) => {
     try {
 
         const { 
-            fullNames, email
+            fullNames, 
+            email, 
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
         } = req.body
     
-        const { data } = await userService.createUser(fullNames, email, 'ROOT')
+        const { data } = await userService.createUser(
+            fullNames, 
+            email, 
+            'ROOT',
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
+        )
     
         return res.send(
             successResponse("Success", {
@@ -45,10 +60,25 @@ exports.createAdminUser = async (req, res) => {
     try {
 
         const { 
-            fullNames, email
+            fullNames, 
+            email, 
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
         } = req.body
     
-        const { data } = await userService.createUser(fullNames, email, 'ADMIN')
+        const { data } = await userService.createUser(
+            fullNames, 
+            email, 
+            'ADMIN',
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
+        )
     
         return res.send(
             successResponse("Success", {
@@ -74,10 +104,25 @@ exports.createEntrepreneurUser = async (req, res) => {
     try {
 
         const { 
-            fullNames, email
+            fullNames, 
+            email, 
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
         } = req.body
     
-        const { data } = await userService.createUser(fullNames, email, 'ENTREPRENEUR')
+        const { data } = await userService.createUser(
+            fullNames, 
+            email, 
+            'ENTREPRENEUR',
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
+        )
     
         return res.send(
             successResponse("Success", {
@@ -103,10 +148,25 @@ exports.createIncubatorUser = async (req, res) => {
     try {
 
         const { 
-            fullNames, email
+            fullNames, 
+            email, 
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
         } = req.body
     
-        const { data } = await userService.createUser(fullNames, email, 'INCUBATOR')
+        const { data } = await userService.createUser(
+            fullNames, 
+            email, 
+            'INCUBATOR',
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
+        )
     
         return res.send(
             successResponse("Success", {
@@ -132,10 +192,25 @@ exports.createMentorUser = async (req, res) => {
     try {
 
         const { 
-            fullNames, email
+            fullNames, 
+            email, 
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
         } = req.body
     
-        const { data } = await userService.createUser(fullNames, email, 'MENTOR')
+        const { data } = await userService.createUser(
+            fullNames, 
+            email, 
+            'MENTOR',
+            phone, 
+            education, 
+            workExperience, 
+            workExperience2, 
+            location
+        )
     
         return res.send(
             successResponse("Success", {
