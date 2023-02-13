@@ -7,7 +7,8 @@ const userController = require('../controllers/user.controller')
 // Create
 router.post('/users/create-root-user', AuthMiddleware, userController.createRootUser)
 router.post('/users/create-admin-user', AuthMiddleware, userController.createRootUser)
-router.post('/users/create-mentor-user', AuthMiddleware, userController.createRootUser)
+router.post('/users/create-mentor-user', AuthMiddleware, userController.createMentorUser)
+router.post('/users/create-incubator-user', AuthMiddleware, userController.createIncubatorUser)
 router.post('/users/create-entrepreneur-user', AuthMiddleware, userController.createRootUser)
 
 // Update

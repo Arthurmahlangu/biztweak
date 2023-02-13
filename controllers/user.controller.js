@@ -99,6 +99,64 @@ exports.createEntrepreneurUser = async (req, res) => {
  * @param res
  * @returns {Promise<void>}
  */
+exports.createIncubatorUser = async (req, res) => {
+    try {
+
+        const { 
+            fullNames, email
+        } = req.body
+    
+        const { data } = await userService.createUser(fullNames, email, 'INCUBATOR')
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+exports.createMentorUser = async (req, res) => {
+    try {
+
+        const { 
+            fullNames, email
+        } = req.body
+    
+        const { data } = await userService.createUser(fullNames, email, 'MENTOR')
+    
+        return res.send(
+            successResponse("Success", {
+                data
+            })
+        )
+
+    } catch (error) {
+        errorLog.error(error.message)
+        return res.send(
+            failResponse(error.message)
+        )
+    }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 exports.updateUserProfile = async (req, res) => {
     try {
 
@@ -194,6 +252,7 @@ exports.deleteUserAccount = async (req, res) => {
         )
     }
 }
+
 /**
  *
  * @param req
@@ -237,6 +296,7 @@ exports.getUsers = async (req, res) => {
         )
     }
 }
+
 /**
  *
  * @param req

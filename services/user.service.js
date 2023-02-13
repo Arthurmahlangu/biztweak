@@ -95,6 +95,7 @@ exports.getUsers = async () => {
 
     return user
 }
+
 exports.getUsersByRole = async (role) => {
     const user = await userRepository.getUsersByRole(role)
 
