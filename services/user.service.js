@@ -95,6 +95,11 @@ exports.getUsers = async () => {
 
     return user
 }
+exports.getUsersByRole = async (role) => {
+    const user = await userRepository.getUsersByRole(role)
+
+    return user
+}
 
 exports.findUser = async (id) => {
     const user = await userRepository.findUser(id)

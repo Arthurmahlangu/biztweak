@@ -80,7 +80,7 @@ exports.findUserByEmail = async (email) => {
     }
 }
 
-exports.getUsers = async (param) => {
+exports.getUsers = async () => {
     const users = await db.user.findAll({
         attributes: userResource
     })
@@ -90,6 +90,19 @@ exports.getUsers = async (param) => {
     users.countADMIN = users.filter((user) => user.role == "ADMIN").length || 0
     users.countINCUBATOR = users.filter((user) => user.role == "INCUBATOR").length || 0
     users.countENTREPRENEUR = users.filter((user) => user.role == "ENTREPRENEUR").length || 0
+
+    return {
+        data: users
+    }
+}
+
+exports.getUsersByRole = async (role) => {
+    const users = await db.user.findAll({
+        where: { role },
+        attributes: userResource
+    })
+
+    users.count = users.length
 
     return {
         data: users

@@ -202,12 +202,26 @@ exports.deleteUserAccount = async (req, res) => {
  */
 exports.getUsers = async (req, res) => {
     try {
+
+        let users = null
+        
+        if (req.query) {
+            if (req.query.role) {
+                console.log(req.query)
+                const { data } = await userService.getUsersByRole(req.query.role)
+                users = data
+            }
+        }
     
         const { data } = await userService.getUsers()
+
+        if (!users) {
+            users = data
+        }
     
         return res.send(
             successResponse("Success", {
-                data,
+                data: users,
                 count: data.count,
                 countROOT: data.countROOT,
                 countADMIN: data.countADMIN,
