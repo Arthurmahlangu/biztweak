@@ -12,6 +12,7 @@ const attendanceApi = require("./attendance.api")
 const eventApi = require("./event.api")
 const incubatorApi = require("./incubator.api")
 const inviteApi = require("./invite.api")
+const messageApi = require("./message.api")
 
 router.get("/documentation", async (req, res) => {
     res.render("../public/documentation/index.html")
@@ -32,5 +33,6 @@ router.use("/api/v1", attendanceApi)
 router.use("/api/v1", eventApi)
 router.use("/api/v1", incubatorApi)
 router.use("/api/v1", inviteApi)
+router.use("/api/v1", messageApi)
 
 module.exports = router
